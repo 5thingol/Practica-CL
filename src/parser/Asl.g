@@ -42,8 +42,9 @@ tokens {
     ARGLIST;    // List of arguments passed in a function call
     LIST_INSTR; // Block of instructions
     BOOLEAN;    // Boolean atom (for Boolean constants "true" or "false")
-    PVALUE;     // Parameter by value in the list of parameters
+    // PVALUE;     // Parameter by value in the list of parameters
     PREF;       // Parameter by reference in the list of parameters
+    TIMEANNOTATION;
 }
 
 @header {
@@ -72,53 +73,65 @@ params	: '(' paramlist? ')' -> ^(PARAMS paramlist?)
 paramlist: param (','! param)*
         ;
 
-// Parameters with & as prefix are passed by reference
+// All parameters are passed by reference
 // Only one node with the name of the parameter is created
-param   :   '&' id=ID -> ^(PREF[$id,$id.text])
-        |   id=ID -> ^(PVALUE[$id,$id.text])
+param   :   id=ID -> ^(PREF[$id,$id.text])
         ;
 
 // A list of instructions, all of them gouped in a subtree
 block_instructions
-        :	 instruction (';' instruction)*
+        :	 instruction (ENDLINE instruction)*
             -> ^(LIST_INSTR instruction+)
         ;
 
 // The different types of instructions
 instruction
         :	assign          // Assignment
+        |   basic_instruction // Basic SVG instruction
         |	ite_stmt        // if-then-else
         |	while_stmt      // while statement
         |   funcall         // Call to a procedure (no result produced)
         |	return_stmt     // Return statement
-        |	read            // Read a variable
-        | 	write           // Write a string or an expression
+        |   time_annotation // Animation time annotation
+        // |	read            // Read a variable
+        // | 	write           // Write a string or an expression
         |                   // Nothing
         ;
 
 // Assignment
-assign	:	ID eq=EQUAL expr -> ^(ASSIGN[$eq,":="] ID expr)
+assign	:	ID eq=EQUAL basic_instruction -> ^(ASSIGN[$eq,":="] ID basic_instruction)
+        ;
+
+basic_instruction:
+            create
+        |    destroy
+        |    move
+        |    translate
+        |    modify
+        |    rotate
         ;
 
 // if-then-else (else is optional)
-ite_stmt	:	IF^ expr THEN! block_instructions (ELSE! block_instructions)? ENDIF!
+ite_stmt	:	IF^ '('! expr ')'! block_instructions (ELSEIF! '('! expr ')'! block_instructions)* (ELSE! block_instructions)? ENDIF!
             ;
 
 // while statement
-while_stmt	:	WHILE^ expr DO! block_instructions ENDWHILE!
+while_stmt	:	WHILE^ '('! expr ')'! block_instructions ENDWHILE!
             ;
 
 // Return statement with an expression
 return_stmt	:	RETURN^ expr?
         ;
 
+// HO HEM TRET
 // Read a variable
-read	:	READ^ ID
-        ;
+//read	:	READ^ ID
+//        ;
 
 // Write an expression or a string
-write	:   WRITE^ (expr | STRING )
-        ;
+// write	:   WRITE^ (expr | STRING )
+//        ;
+
 
 // Grammar for expressions with boolean, relational and aritmetic operators
 expr    :   boolterm (OR^ boolterm)*
@@ -157,7 +170,21 @@ funcall :   ID '(' expr_list? ')' -> ^(FUNCALL ID ^(ARGLIST expr_list?))
 expr_list:  expr (','! expr)*
         ;
 
+time_annotation:
+            '@' BEGIN EQUAL expr (',' finish_time)? -> ^(TIMEANNOTATION expr finish_time)
+        ;
+
+finish_time:
+            (END^ EQUAL! expr | DURATION^ EQUAL! expr)
+        ;
+
+create:     CREATE^ TYPE_OBJECT expr expr list_attributes?
+        ;
+
+list_attributes:  ATTRIBUTE^ EQUAL! expr (','! ATTRIBUTE^ EQUAL! expr)*;
+
 // Basic tokens
+ENDLINE : '\n';
 EQUAL	: '=' ;
 NOT_EQUAL: '!=' ;
 LT	    : '<' ;
@@ -173,11 +200,10 @@ NOT	    : 'not';
 AND	    : 'and' ;
 OR	    : 'or' ;	
 IF  	: 'if' ;
-THEN	: 'then' ;
-ELSE	: 'else' ;
+ELSE    : 'else' ;
+ELSEIF    : 'elseif' ;
 ENDIF	: 'endif' ;
 WHILE	: 'while' ;
-DO	    : 'do' ;
 ENDWHILE: 'endwhile' ;
 FUNC	: 'func' ;
 ENDFUNC	: 'endfunc' ;
@@ -186,6 +212,17 @@ READ	: 'read' ;
 WRITE	: 'write' ;
 TRUE    : 'true' ;
 FALSE   : 'false';
+BEGIN   : 'begin';
+END     : 'end';
+DURATION: 'duration';
+CREATE  : 'Create';
+DESTROY : 'destroy';
+MOVE    : 'move';
+TRANSLATE : 'translate';
+MODIFY  : 'modify';
+ROTATE  : 'rotate';
+TYPE_OBJECT : 'Rectangle' | 'Circle' | 'Text';  // A AMPLIAR
+ATTRIBUTES : 'width' | 'height' | 'style';                // A AMPLIAR
 ID  	:	('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'0'..'9'|'_')* ;
 INT 	:	'0'..'9'+ ;
 
@@ -207,7 +244,6 @@ ESC_SEQ
 WS  	: ( ' '
         | '\t'
         | '\r'
-        | '\n'
         ) {$channel=HIDDEN;}
     	;
 
