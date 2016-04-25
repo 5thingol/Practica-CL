@@ -496,10 +496,10 @@ public class Interp {
             AslTree p = pars.getChild(i); // Parameters of the callee
             AslTree a = args.getChild(i); // Arguments passed by the caller
             setLineNumber(a);
-            if (p.getType() == AslLexer.PVALUE) {
-                // Pass by value: evaluate the expression
-                Params.add(i,evaluateExpression(a));
-            } else {
+        //    if (p.getType() == AslLexer.PVALUE) {
+        //        // Pass by value: evaluate the expression
+        //        Params.add(i,evaluateExpression(a));
+        //    } else {
                 // Pass by reference: check that it is a variable
                 if (a.getType() != AslLexer.ID) {
                     throw new RuntimeException("Wrong argument for pass by reference");
@@ -507,7 +507,7 @@ public class Interp {
                 // Find the variable and pass the reference
                 Data v = Stack.getVariable(a.getText());
                 Params.add(i,v);
-            }
+        //    }
         }
         return Params;
     }
@@ -560,7 +560,7 @@ public class Interp {
         int nargs = params.getChildCount();
         for (int i = 0; i < nargs; ++i) {
             AslTree p = params.getChild(i);
-            if (p.getType() == AslLexer.PVALUE) continue;
+            // if (p.getType() == AslLexer.PVALUE) continue;
             trace.print(", &" + p.getText() + "=" + arg_values.get(i));
         }
         

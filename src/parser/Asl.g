@@ -45,6 +45,7 @@ tokens {
     // PVALUE;     // Parameter by value in the list of parameters
     PREF;       // Parameter by reference in the list of parameters
     TIMEANNOTATION;
+    ATTRIBUTES;
 }
 
 @header {
@@ -87,23 +88,27 @@ block_instructions
 // The different types of instructions
 instruction
         :	assign          // Assignment
-        |   basic_instruction // Basic SVG instruction
+        |   	basic_instruction // Basic SVG instruction
         |	ite_stmt        // if-then-else
         |	while_stmt      // while statement
-        |   funcall         // Call to a procedure (no result produced)
+        |	for_stmt
+        |    	funcall         // Call to a procedure (no result produced)
         |	return_stmt     // Return statement
-        |   time_annotation // Animation time annotation
+        |   	time_annotation // Animation time annotation
         // |	read            // Read a variable
         // | 	write           // Write a string or an expression
         |                   // Nothing
         ;
 
 // Assignment
-assign	:	ID eq=EQUAL basic_instruction -> ^(ASSIGN[$eq,":="] ID basic_instruction)
-        ;
+assign	:	ID eq=EQUAL basic_instruction -> ^(ASSIGN[$eq,":="] ID basic_instruction )
+	|	ID eq=EQUAL expr -> ^(ASSIGN[$eq,":="] ID expr )
+	;
 
+
+        
 basic_instruction:
-            create
+             create
         |    destroy
         |    move
         |    translate
@@ -112,11 +117,15 @@ basic_instruction:
         ;
 
 // if-then-else (else is optional)
-ite_stmt	:	IF^ '('! expr ')'! block_instructions (ELSEIF! '('! expr ')'! block_instructions)* (ELSE! block_instructions)? ENDIF!
+ite_stmt	:	IF^ '('! expr ')'! block_instructions (ELSEIF^ '('! expr ')'! block_instructions)* (ELSE^ block_instructions)? ENDIF!
             ;
 
 // while statement
 while_stmt	:	WHILE^ '('! expr ')'! block_instructions ENDWHILE!
+            ;
+            
+// for statement
+for_stmt	:	FOR^ '('! assign ';'! expr ';'! assign ')'! block_instructions ENDFOR!
             ;
 
 // Return statement with an expression
@@ -140,7 +149,7 @@ expr    :   boolterm (OR^ boolterm)*
 boolterm:   boolfact (AND^ boolfact)*
         ;
 
-boolfact:   num_expr ((EQUAL^ | NOT_EQUAL^ | LT^ | LE^ | GT^ | GE^) num_expr)?
+boolfact:   num_expr ((COND_EQUAL^ | NOT_EQUAL^ | LT^ | LE^ | GT^ | GE^) num_expr)?
         ;
 
 num_expr:   term ( (PLUS^ | MINUS^) term)*
@@ -178,14 +187,37 @@ finish_time:
             (END^ EQUAL! expr | DURATION^ EQUAL! expr)
         ;
 
-create:     CREATE^ TYPE_OBJECT expr expr list_attributes?
+create:     CREATE TYPE_OBJECT coordenades list_attributes? -> ^(CREATE TYPE_OBJECT coordenades ^(ATTRIBUTES list_attributes))
         ;
+        
+destroy:     DESTROY^ ID
+        ;
+        
+move:	 MOVE^ ID coordenades
+	;
+	
+translate:	TRANSLATE^ ID coordenades
+	;
+	
+modify:		MODIFY^ ID list_attributes
+	;
+	
+rotate:		ROTATE^ ID expr
+	;
 
-list_attributes:  ATTRIBUTE^ EQUAL! expr (','! ATTRIBUTE^ EQUAL! expr)*;
+list_attributes:   attribute (','! attribute)*
+	;
+
+attribute: ATTRIBUTE^ EQUAL! expr
+    ;
+
+coordenades: '{'! expr ','! expr '}'!
+	;
 
 // Basic tokens
 ENDLINE : '\n';
 EQUAL	: '=' ;
+COND_EQUAL	: '==' ;
 NOT_EQUAL: '!=' ;
 LT	    : '<' ;
 LE	    : '<=';
@@ -204,7 +236,9 @@ ELSE    : 'else' ;
 ELSEIF    : 'elseif' ;
 ENDIF	: 'endif' ;
 WHILE	: 'while' ;
+FOR	: 'for' ;
 ENDWHILE: 'endwhile' ;
+ENDFOR	: 'endfor' ;
 FUNC	: 'func' ;
 ENDFUNC	: 'endfunc' ;
 RETURN	: 'return' ;
@@ -216,13 +250,13 @@ BEGIN   : 'begin';
 END     : 'end';
 DURATION: 'duration';
 CREATE  : 'Create';
-DESTROY : 'destroy';
-MOVE    : 'move';
-TRANSLATE : 'translate';
-MODIFY  : 'modify';
-ROTATE  : 'rotate';
+DESTROY : 'Destroy';
+MOVE    : 'Move';
+TRANSLATE : 'Translate';
+MODIFY  : 'Modify';
+ROTATE  : 'Rotate';
 TYPE_OBJECT : 'Rectangle' | 'Circle' | 'Text';  // A AMPLIAR
-ATTRIBUTES : 'width' | 'height' | 'style';                // A AMPLIAR
+ATTRIBUTE : 'width' | 'height' | 'style';                // A AMPLIAR
 ID  	:	('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'0'..'9'|'_')* ;
 INT 	:	'0'..'9'+ ;
 
