@@ -1,0 +1,16 @@
+
+
+func main()
+	r = Create Rectangle {400,300}
+	
+	@begin=0, end=5
+	anim1 = Move r {300,200}
+
+	if (anim1.begin < time)
+		anim1.begin = 3
+	elseif (r.color == blue)
+		anim1.end = 5 
+	else
+		Destroy r
+	endif
+endfunc
