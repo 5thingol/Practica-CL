@@ -1,0 +1,9 @@
+Cambios:
+
+La gramatica no aceptaba time annotations sin duration o end porque estaba mal como reescribia el arbol.
+
+Cambiado el ite_stmt para que el arbol sea mejor
+
+Añadido que la gramatica pueda leer expresiones para acceder a atributos de un objeto -> a = object1.width()
+
+Ejemplos que prueban el bucle while, el ite y diferentes operaciones.
