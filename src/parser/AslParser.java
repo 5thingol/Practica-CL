@@ -1,4 +1,4 @@
-// $ANTLR 3.4 /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g 2016-05-02 08:45:52
+// $ANTLR 3.4 /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g 2016-05-02 08:50:56
 
 package parser;
 import interp.AslTree;
@@ -4438,7 +4438,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "acces_attribute"
-    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:183:1: acces_attribute : ID '.' ATTRIBUTE '(' ')' -> ^( ACCESATTRIBUTE ID ATTRIBUTE ) ;
+    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:183:1: acces_attribute : ID '.' att '(' ')' -> ^( ACCESATTRIBUTE ID att ) ;
     public final AslParser.acces_attribute_return acces_attribute() throws RecognitionException {
         AslParser.acces_attribute_return retval = new AslParser.acces_attribute_return();
         retval.start = input.LT(1);
@@ -4448,24 +4448,23 @@ public TreeAdaptor getTreeAdaptor() {
 
         Token ID151=null;
         Token char_literal152=null;
-        Token ATTRIBUTE153=null;
         Token char_literal154=null;
         Token char_literal155=null;
+        AslParser.att_return att153 =null;
+
 
         AslTree ID151_tree=null;
         AslTree char_literal152_tree=null;
-        AslTree ATTRIBUTE153_tree=null;
         AslTree char_literal154_tree=null;
         AslTree char_literal155_tree=null;
         RewriteRuleTokenStream stream_66=new RewriteRuleTokenStream(adaptor,"token 66");
-        RewriteRuleTokenStream stream_ATTRIBUTE=new RewriteRuleTokenStream(adaptor,"token ATTRIBUTE");
         RewriteRuleTokenStream stream_ID=new RewriteRuleTokenStream(adaptor,"token ID");
         RewriteRuleTokenStream stream_63=new RewriteRuleTokenStream(adaptor,"token 63");
         RewriteRuleTokenStream stream_64=new RewriteRuleTokenStream(adaptor,"token 64");
-
+        RewriteRuleSubtreeStream stream_att=new RewriteRuleSubtreeStream(adaptor,"rule att");
         try {
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:183:16: ( ID '.' ATTRIBUTE '(' ')' -> ^( ACCESATTRIBUTE ID ATTRIBUTE ) )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:183:18: ID '.' ATTRIBUTE '(' ')'
+            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:183:16: ( ID '.' att '(' ')' -> ^( ACCESATTRIBUTE ID att ) )
+            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:183:18: ID '.' att '(' ')'
             {
             ID151=(Token)match(input,ID,FOLLOW_ID_in_acces_attribute941);  
             stream_ID.add(ID151);
@@ -4475,9 +4474,12 @@ public TreeAdaptor getTreeAdaptor() {
             stream_66.add(char_literal152);
 
 
-            ATTRIBUTE153=(Token)match(input,ATTRIBUTE,FOLLOW_ATTRIBUTE_in_acces_attribute945);  
-            stream_ATTRIBUTE.add(ATTRIBUTE153);
+            pushFollow(FOLLOW_att_in_acces_attribute945);
+            att153=att();
 
+            state._fsp--;
+
+            stream_att.add(att153.getTree());
 
             char_literal154=(Token)match(input,63,FOLLOW_63_in_acces_attribute947);  
             stream_63.add(char_literal154);
@@ -4488,7 +4490,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
             // AST REWRITE
-            // elements: ID, ATTRIBUTE
+            // elements: ID, att
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -4498,9 +4500,9 @@ public TreeAdaptor getTreeAdaptor() {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (AslTree)adaptor.nil();
-            // 183:43: -> ^( ACCESATTRIBUTE ID ATTRIBUTE )
+            // 183:37: -> ^( ACCESATTRIBUTE ID att )
             {
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:183:46: ^( ACCESATTRIBUTE ID ATTRIBUTE )
+                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:183:40: ^( ACCESATTRIBUTE ID att )
                 {
                 AslTree root_1 = (AslTree)adaptor.nil();
                 root_1 = (AslTree)adaptor.becomeRoot(
@@ -4511,9 +4513,7 @@ public TreeAdaptor getTreeAdaptor() {
                 stream_ID.nextNode()
                 );
 
-                adaptor.addChild(root_1, 
-                stream_ATTRIBUTE.nextNode()
-                );
+                adaptor.addChild(root_1, stream_att.nextTree());
 
                 adaptor.addChild(root_0, root_1);
                 }
@@ -4545,6 +4545,71 @@ public TreeAdaptor getTreeAdaptor() {
         return retval;
     }
     // $ANTLR end "acces_attribute"
+
+
+    public static class att_return extends ParserRuleReturnScope {
+        AslTree tree;
+        public Object getTree() { return tree; }
+    };
+
+
+    // $ANTLR start "att"
+    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:186:1: att : ( ATTRIBUTE | BEGIN | END | DURATION );
+    public final AslParser.att_return att() throws RecognitionException {
+        AslParser.att_return retval = new AslParser.att_return();
+        retval.start = input.LT(1);
+
+
+        AslTree root_0 = null;
+
+        Token set156=null;
+
+        AslTree set156_tree=null;
+
+        try {
+            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:186:4: ( ATTRIBUTE | BEGIN | END | DURATION )
+            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:
+            {
+            root_0 = (AslTree)adaptor.nil();
+
+
+            set156=(Token)input.LT(1);
+
+            if ( input.LA(1)==ATTRIBUTE||input.LA(1)==BEGIN||input.LA(1)==DURATION||input.LA(1)==END ) {
+                input.consume();
+                adaptor.addChild(root_0, 
+                (AslTree)adaptor.create(set156)
+                );
+                state.errorRecovery=false;
+            }
+            else {
+                MismatchedSetException mse = new MismatchedSetException(null,input);
+                throw mse;
+            }
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+
+            retval.tree = (AslTree)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (AslTree)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+
+        finally {
+        	// do for sure before leaving
+        }
+        return retval;
+    }
+    // $ANTLR end "att"
 
     // Delegated rules
 
@@ -4707,8 +4772,8 @@ public TreeAdaptor getTreeAdaptor() {
     public static final BitSet FOLLOW_expr_in_coordenades931 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
     public static final BitSet FOLLOW_70_in_coordenades933 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ID_in_acces_attribute941 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_66_in_acces_attribute943 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_ATTRIBUTE_in_acces_attribute945 = new BitSet(new long[]{0x8000000000000000L});
+    public static final BitSet FOLLOW_66_in_acces_attribute943 = new BitSet(new long[]{0x0000000000120500L});
+    public static final BitSet FOLLOW_att_in_acces_attribute945 = new BitSet(new long[]{0x8000000000000000L});
     public static final BitSet FOLLOW_63_in_acces_attribute947 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
     public static final BitSet FOLLOW_64_in_acces_attribute949 = new BitSet(new long[]{0x0000000000000002L});
 

@@ -180,8 +180,15 @@ attribute: ATTRIBUTE^ EQUAL! expr
 ;
 coordenades: '{'! expr ','! expr '}'!
 ;
-acces_attribute: ID '.' ATTRIBUTE '(' ')' -> ^(ACCESATTRIBUTE ID ATTRIBUTE)
+acces_attribute: ID '.' att '(' ')' -> ^(ACCESATTRIBUTE ID att)
 ;
+
+att:    ATTRIBUTE
+    |   BEGIN
+    |   END
+    |   DURATION
+    ;
+
 // Basic tokens
 ENDLINE : '\n';
 EQUAL : '=' ;
