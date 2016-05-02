@@ -1,7 +1,3 @@
 #!/bin/sh
 
-<<<<<<< HEAD
-exec java -enableassertions -jar /home/carlos/CL/Practica/bin/Asl.jar "$@"
-=======
 exec java -enableassertions -jar /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/bin/Asl.jar "$@"
->>>>>>> 8233c8c15b040d82ca9190899d9ac7a39a5a4f6a

@@ -1,0 +1,73 @@
+digraph {
+
+	ordering=out;
+	ranksep=.4;
+	bgcolor="lightgrey"; node [shape=box, fixedsize=false, fontsize=12, fontname="Helvetica-bold", fontcolor="blue"
+		width=.25, height=.25, color="black", fillcolor="white", style="filled, solid, bold"];
+	edge [arrowsize=.5, color="black", style="bold"]
+
+  n0 [label="LIST_FUNCTIONS"];
+  n1 [label="func"];
+  n1 [label="func"];
+  n2 [label="createAnimatedCircle"];
+  n3 [label="PARAMS"];
+  n3 [label="PARAMS"];
+  n4 [label="x"];
+  n5 [label="y"];
+  n6 [label="LIST_INSTR"];
+  n6 [label="LIST_INSTR"];
+  n7 [label=":="];
+  n7 [label=":="];
+  n8 [label="c"];
+  n9 [label="Create"];
+  n9 [label="Create"];
+  n10 [label="Circle"];
+  n11 [label="x"];
+  n12 [label="y"];
+  n13 [label="ATTRIBUTES"];
+  n13 [label="ATTRIBUTES"];
+  n14 [label="color"];
+  n14 [label="color"];
+  n15 [label="blue"];
+  n16 [label="\n"];
+  n17 [label="func"];
+  n17 [label="func"];
+  n18 [label="main"];
+  n19 [label="PARAMS"];
+  n20 [label="LIST_INSTR"];
+  n20 [label="LIST_INSTR"];
+  n21 [label="FUNCALL"];
+  n21 [label="FUNCALL"];
+  n22 [label="createAnimatedCircle"];
+  n23 [label="ARGLIST"];
+  n23 [label="ARGLIST"];
+  n24 [label="i"];
+  n25 [label="i"];
+
+  n0 -> n1 // "LIST_FUNCTIONS" -> "func"
+  n1 -> n2 // "func" -> "createAnimatedCircle"
+  n1 -> n3 // "func" -> "PARAMS"
+  n3 -> n4 // "PARAMS" -> "x"
+  n3 -> n5 // "PARAMS" -> "y"
+  n1 -> n6 // "func" -> "LIST_INSTR"
+  n6 -> n7 // "LIST_INSTR" -> ":="
+  n7 -> n8 // ":=" -> "c"
+  n7 -> n9 // ":=" -> "Create"
+  n9 -> n10 // "Create" -> "Circle"
+  n9 -> n11 // "Create" -> "x"
+  n9 -> n12 // "Create" -> "y"
+  n9 -> n13 // "Create" -> "ATTRIBUTES"
+  n13 -> n14 // "ATTRIBUTES" -> "color"
+  n14 -> n15 // "color" -> "blue"
+  n1 -> n16 // "func" -> "\n"
+  n0 -> n17 // "LIST_FUNCTIONS" -> "func"
+  n17 -> n18 // "func" -> "main"
+  n17 -> n19 // "func" -> "PARAMS"
+  n17 -> n20 // "func" -> "LIST_INSTR"
+  n20 -> n21 // "LIST_INSTR" -> "FUNCALL"
+  n21 -> n22 // "FUNCALL" -> "createAnimatedCircle"
+  n21 -> n23 // "FUNCALL" -> "ARGLIST"
+  n23 -> n24 // "ARGLIST" -> "i"
+  n23 -> n25 // "ARGLIST" -> "i"
+
+}

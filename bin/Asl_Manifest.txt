@@ -1,6 +1,2 @@
 Main-Class: Asl.Asl
-<<<<<<< HEAD
-Class-Path: /home/carlos/CL/Practica/libs/antlr-3.4-complete.jar /home/carlos/CL/Practica/libs/commons-cli-1.2.jar
-=======
 Class-Path: /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/libs/antlr-3.4-complete.jar /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/libs/commons-cli-1.2.jar
->>>>>>> 8233c8c15b040d82ca9190899d9ac7a39a5a4f6a
