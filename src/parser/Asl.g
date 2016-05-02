@@ -58,7 +58,7 @@ package parser;
 prog : func+ EOF -> ^(LIST_FUNCTIONS func+)
 ;
 // A function has a name, a list of parameters and a block of instructions
-func : FUNC^ ID params block_instructions ENDFUNC! ENDLINE*
+func : FUNC^ ID params block_instructions ENDFUNC! (ENDLINE!)*
 ;
 // The list of parameters grouped in a subtree (it can be empty)
 params : '(' paramlist? ')' -> ^(PARAMS paramlist?)
@@ -115,8 +115,14 @@ else_stmt: (ELSE^ block_instructions)?
 while_stmt :    WHILE^ '('! expr ')'! block_instructions ENDWHILE!
 ;
 // for statement
-for_stmt :  FOR^ '('! assign ';'! expr ';'! assign ')'! block_instructions ENDFOR!
+for_stmt :  FOR^ '('! for_form ')'! block_instructions ENDFOR!
 ;
+
+for_form:  assign ';'! expr ';'! assign 
+    |  ID IN! expr ':'! expr
+    ;
+
+
 // Return statement with an expression
 return_stmt :   RETURN^ expr?
 ;
@@ -214,6 +220,7 @@ WHILE : 'while' ;
 FOR : 'for' ;
 ENDWHILE: 'endwhile' ;
 ENDFOR : 'endfor' ;
+IN :    'in' ; 
 FUNC : 'func' ;
 ENDFUNC : 'endfunc' ;
 RETURN : 'return' ;

@@ -2,7 +2,7 @@ func main()
 	object1 = Create Rectangle {20,32} width=100, height=30
 
 	@begin=0, end=3
-	Translate object1 {100,100}
-	@begin=3, duration=3
+	anim2 = Translate object1 {100,100}
+	@begin=anim2.end(), duration=4
 	anim1 = Move object1 {100,100}
 endfunc
