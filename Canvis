@@ -1,0 +1,7 @@
+Canvis:
+
+-Gramatica modificada: modifica l'arbre perquè inclogui un token ANIMATION quan hi ha una animació, i l'interpret pugui saber de quin tipus d'instrucció es tracta. També fa igual amb l'instrucció create
+
+-Interpret modificat:
+	-Accepta timeannotations
+	-Accepta creates i animations i posa el seu valor a la stack, falta fer les funcions per a tractar-les
