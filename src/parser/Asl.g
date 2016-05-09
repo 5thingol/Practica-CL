@@ -41,6 +41,8 @@ BOOLEAN; // Boolean atom (for Boolean constants "true" or "false")
 // PVALUE; // Parameter by value in the list of parameters
 PREF; // Parameter by reference in the list of parameters
 TIMEANNOTATION;
+CREATE_INSTR;
+ANIMATION;
 ACCESATTRIBUTE;
 ATTRIBUTES;
 }
@@ -85,8 +87,6 @@ instruction
 | funcall // Call to a procedure (no result produced)
 | return_stmt // Return statement
 | time_annotation // Animation time annotation
-// | read // Read a variable
-// | write // Write a string or an expression
 | // Nothing
 ;
 // Assignment
@@ -168,17 +168,17 @@ time_annotation:
 finish_time:
 (END^ EQUAL! expr | DURATION^ EQUAL! expr)
 ;
-create: CREATE TYPE_OBJECT coordenades list_attributes? -> ^(CREATE TYPE_OBJECT coordenades ^(ATTRIBUTES list_attributes)?)
+create: CREATE TYPE_OBJECT coordenades list_attributes? -> ^(CREATE_INSTR TYPE_OBJECT coordenades ^(ATTRIBUTES list_attributes)?)
 ;
-destroy: DESTROY^ ID
+destroy: DESTROY ID -> ^(ANIMATION DESTROY ID)
 ;
-move:   MOVE^ ID coordenades
+move:   MOVE^ ID coordenades -> ^(ANIMATION MOVE ID coordenades)
 ;
-translate:  TRANSLATE^ ID coordenades
+translate:  TRANSLATE^ ID coordenades -> ^(ANIMATION TRANSLATE ID coordenades)
 ;
-modify: MODIFY^ ID list_attributes
+modify: MODIFY^ ID list_attributes -> ^(ANIMATION MODIFY ID list_attributes)
 ;
-rotate: ROTATE^ ID expr
+rotate: ROTATE^ ID expr -> ^(ANIMATION ROTATE ID expr)
 ;
 list_attributes: attribute (','! attribute)*
 ;

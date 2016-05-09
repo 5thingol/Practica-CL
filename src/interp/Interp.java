@@ -63,6 +63,15 @@ public class Interp {
     /** Nested levels of function calls. */
     private int function_nesting = -1;
     
+    class TimeAnnotation {
+        double begin;
+        double duration;   
+    }
+
+    private TimeAnnotation currentTimeAnnotation = null;
+
+    private int newId = 0;
+
     /**
      * Constructor of the interpreter. It prepares the main
      * data structures for the execution of the main program.
@@ -213,6 +222,7 @@ public class Interp {
         int ninstr = t.getChildCount();
         for (int i = 0; i < ninstr; ++i) {
             result = executeInstruction (t.getChild(i));
+
             if (result != null) return result;
         }
         return null;
@@ -232,12 +242,41 @@ public class Interp {
         setLineNumber(t);
         Data value; // The returned value
 
+        if (t.getType() != AslLexer.ANIMATION && currentTimeAnnotation != null) {
+            throw new RuntimeException("Bad placement of Time Annotation: not followed by an animation instruction (Move, Tranlate, Rotate, Modify or Destroy)");
+        }
+
         // A big switch for all type of instructions
         switch (t.getType()) {
 
+            case AslLexer.CREATE:
+                Data newObject = createObject(t);
+                Stack.defineVariable("newObject"+newId, newObject);
+                newId++;
+                return null;
+            case AslLexer.TIMEANNOTATION:
+                currentTimeAnnotation = new TimeAnnotation();
+                currentTimeAnnotation.begin = (double) evaluateExpression(t.getChild(0));
+                if (t.getChild(1).getStringValue().equals("end")) {
+                    double end = (double) evaluateExpression(t.getChild(1).getChild(0));
+                    currentTimeAnnotation.duration = end - currentTimeAnnotation.begin;
+                } else 
+                    currentTimeAnnotation.duration = (double) evaluateExpression(t.getChild(1).getChild(0));
+                return null;
+            case AslLexer.ANIMATION:
+                if (currentTimeAnnotation == null) throw new RuntimeException("Animation instruction doesn't have a proper previous Time Annotation");
+                Data newAnimation = createAnimation(t);
+                Stack.defineVariable ("newAnimation"+newId, newAnimation);
+                newId++;
+                return null;
             // Assignment
             case AslLexer.ASSIGN:
-                value = evaluateExpression(t.getChild(1));
+                if (t.getChild(1).getType() == AslLexer.CREATE) {
+                    value = createObject(t.getChild(1));
+                } else if (t.getChild(1).getType() == AslLexer.ANIMATION) {
+                    value = createAnimation(t.getChild(1));
+                } else
+                    value = evaluateExpression(t.getChild(1));
                 Stack.defineVariable (t.getChild(0).getText(), value);
                 return null;
 
@@ -305,6 +344,14 @@ public class Interp {
         // All possible instructions should have been treated.
         assert false;
         return null;
+    }
+
+    private Data createObject(AslTree t) {
+
+    }
+
+    private Data createAnimation(AslTree t) {
+
     }
 
     /**
