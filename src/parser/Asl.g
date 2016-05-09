@@ -60,7 +60,7 @@ package parser;
 prog : func+ EOF -> ^(LIST_FUNCTIONS func+)
 ;
 // A function has a name, a list of parameters and a block of instructions
-func : FUNC^ ID params block_instructions ENDFUNC! (ENDLINE!)*
+func : FUNC^ ID params block_instructions ENDFUNC! 
 ;
 // The list of parameters grouped in a subtree (it can be empty)
 params : '(' paramlist? ')' -> ^(PARAMS paramlist?)
@@ -74,7 +74,7 @@ param : id=ID -> ^(PREF[$id,$id.text])
 ;
 // A list of instructions, all of them gouped in a subtree
 block_instructions
-:   instruction (ENDLINE instruction)*
+:   instruction (';' instruction)*
 -> ^(LIST_INSTR instruction+)
 ;
 // The different types of instructions
@@ -83,7 +83,7 @@ instruction
 | basic_instruction // Basic SVG instruction
 | ite_stmt // if-then-else
 | while_stmt // while statement
-| for_stmt
+| for_stmt 
 | funcall // Call to a procedure (no result produced)
 | return_stmt // Return statement
 | time_annotation // Animation time annotation
@@ -172,13 +172,13 @@ create: CREATE TYPE_OBJECT coordenades list_attributes? -> ^(CREATE_INSTR TYPE_O
 ;
 destroy: DESTROY ID -> ^(ANIMATION DESTROY ID)
 ;
-move:   MOVE^ ID coordenades -> ^(ANIMATION MOVE ID coordenades)
+move:   MOVE ID coordenades -> ^(ANIMATION MOVE ID coordenades)
 ;
-translate:  TRANSLATE^ ID coordenades -> ^(ANIMATION TRANSLATE ID coordenades)
+translate:  TRANSLATE ID coordenades -> ^(ANIMATION TRANSLATE ID coordenades)
 ;
-modify: MODIFY^ ID list_attributes -> ^(ANIMATION MODIFY ID list_attributes)
+modify: MODIFY ID list_attributes -> ^(ANIMATION MODIFY ID list_attributes)
 ;
-rotate: ROTATE^ ID expr -> ^(ANIMATION ROTATE ID expr)
+rotate: ROTATE ID expr -> ^(ANIMATION ROTATE ID expr)
 ;
 list_attributes: attribute (','! attribute)*
 ;
@@ -196,7 +196,6 @@ att:    ATTRIBUTE
     ;
 
 // Basic tokens
-ENDLINE : '\n';
 EQUAL : '=' ;
 COND_EQUAL : '==' ;
 NOT_EQUAL: '!=' ;
@@ -258,5 +257,6 @@ ESC_SEQ
 WS      : ( ' '
         | '\t'
         | '\r'
+        | '\n'
         ) {$channel=HIDDEN;}
         ;

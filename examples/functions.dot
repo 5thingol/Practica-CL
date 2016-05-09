@@ -13,14 +13,14 @@ digraph {
   n3 [label="PARAMS"];
   n3 [label="PARAMS"];
   n4 [label="x"];
-  n5 [label="y"];
+  n5 [label="r"];
   n6 [label="LIST_INSTR"];
   n6 [label="LIST_INSTR"];
   n7 [label=":="];
   n7 [label=":="];
   n8 [label="c"];
-  n9 [label="Create"];
-  n9 [label="Create"];
+  n9 [label="CREATE_INSTR"];
+  n9 [label="CREATE_INSTR"];
   n10 [label="Circle"];
   n11 [label="x"];
   n12 [label="y"];
@@ -38,68 +38,79 @@ digraph {
   n20 [label=":="];
   n20 [label=":="];
   n21 [label="Anim1"];
-  n22 [label="Translate"];
-  n22 [label="Translate"];
-  n23 [label="c"];
-  n24 [label="10"];
-  n25 [label="0"];
-  n26 [label="TIMEANNOTATION"];
-  n26 [label="TIMEANNOTATION"];
-  n27 [label="0"];
-  n28 [label="duration"];
-  n28 [label="duration"];
-  n29 [label="2"];
-  n30 [label="Modify"];
-  n30 [label="Modify"];
-  n31 [label="c"];
-  n32 [label="color"];
-  n32 [label="color"];
-  n33 [label="green"];
-  n34 [label="TIMEANNOTATION"];
-  n34 [label="TIMEANNOTATION"];
-  n35 [label="2"];
-  n36 [label="duration"];
-  n36 [label="duration"];
-  n37 [label="4"];
-  n38 [label="Translate"];
-  n38 [label="Translate"];
-  n39 [label="c"];
-  n40 [label="0"];
-  n41 [label="10"];
-  n42 [label="func"];
-  n42 [label="func"];
-  n43 [label="main"];
-  n44 [label="PARAMS"];
-  n45 [label="LIST_INSTR"];
-  n45 [label="LIST_INSTR"];
-  n46 [label="for"];
-  n46 [label="for"];
-  n47 [label="i"];
-  n48 [label="1"];
-  n49 [label="10"];
-  n50 [label="LIST_INSTR"];
-  n50 [label="LIST_INSTR"];
-  n51 [label="FUNCALL"];
-  n51 [label="FUNCALL"];
-  n52 [label="createAnimatedCircle"];
-  n53 [label="ARGLIST"];
-  n53 [label="ARGLIST"];
-  n54 [label="i"];
-  n55 [label="i"];
+  n22 [label="ANIMATION"];
+  n22 [label="ANIMATION"];
+  n23 [label="Translate"];
+  n24 [label="c"];
+  n25 [label="10"];
+  n26 [label="0"];
+  n27 [label="TIMEANNOTATION"];
+  n27 [label="TIMEANNOTATION"];
+  n28 [label="0"];
+  n29 [label="duration"];
+  n29 [label="duration"];
+  n30 [label="2"];
+  n31 [label="ANIMATION"];
+  n31 [label="ANIMATION"];
+  n32 [label="Modify"];
+  n33 [label="c"];
+  n34 [label="color"];
+  n34 [label="color"];
+  n35 [label="green"];
+  n36 [label="TIMEANNOTATION"];
+  n36 [label="TIMEANNOTATION"];
+  n37 [label="2"];
+  n38 [label="duration"];
+  n38 [label="duration"];
+  n39 [label="4"];
+  n40 [label="ANIMATION"];
+  n40 [label="ANIMATION"];
+  n41 [label="Translate"];
+  n42 [label="c"];
+  n43 [label="0"];
+  n44 [label="10"];
+  n45 [label="func"];
+  n45 [label="func"];
+  n46 [label="main"];
+  n47 [label="PARAMS"];
+  n48 [label="LIST_INSTR"];
+  n48 [label="LIST_INSTR"];
+  n49 [label=":="];
+  n49 [label=":="];
+  n50 [label="r"];
+  n51 [label="CREATE_INSTR"];
+  n51 [label="CREATE_INSTR"];
+  n52 [label="Rectangle"];
+  n53 [label="x"];
+  n54 [label="y"];
+  n55 [label="for"];
+  n55 [label="for"];
+  n56 [label="i"];
+  n57 [label="1"];
+  n58 [label="10"];
+  n59 [label="LIST_INSTR"];
+  n59 [label="LIST_INSTR"];
+  n60 [label="FUNCALL"];
+  n60 [label="FUNCALL"];
+  n61 [label="createAnimatedCircle"];
+  n62 [label="ARGLIST"];
+  n62 [label="ARGLIST"];
+  n63 [label="i"];
+  n64 [label="r"];
 
   n0 -> n1 // "LIST_FUNCTIONS" -> "func"
   n1 -> n2 // "func" -> "createAnimatedCircle"
   n1 -> n3 // "func" -> "PARAMS"
   n3 -> n4 // "PARAMS" -> "x"
-  n3 -> n5 // "PARAMS" -> "y"
+  n3 -> n5 // "PARAMS" -> "r"
   n1 -> n6 // "func" -> "LIST_INSTR"
   n6 -> n7 // "LIST_INSTR" -> ":="
   n7 -> n8 // ":=" -> "c"
-  n7 -> n9 // ":=" -> "Create"
-  n9 -> n10 // "Create" -> "Circle"
-  n9 -> n11 // "Create" -> "x"
-  n9 -> n12 // "Create" -> "y"
-  n9 -> n13 // "Create" -> "ATTRIBUTES"
+  n7 -> n9 // ":=" -> "CREATE_INSTR"
+  n9 -> n10 // "CREATE_INSTR" -> "Circle"
+  n9 -> n11 // "CREATE_INSTR" -> "x"
+  n9 -> n12 // "CREATE_INSTR" -> "y"
+  n9 -> n13 // "CREATE_INSTR" -> "ATTRIBUTES"
   n13 -> n14 // "ATTRIBUTES" -> "color"
   n14 -> n15 // "color" -> "blue"
   n6 -> n16 // "LIST_INSTR" -> "TIMEANNOTATION"
@@ -108,39 +119,48 @@ digraph {
   n18 -> n19 // "duration" -> "2"
   n6 -> n20 // "LIST_INSTR" -> ":="
   n20 -> n21 // ":=" -> "Anim1"
-  n20 -> n22 // ":=" -> "Translate"
-  n22 -> n23 // "Translate" -> "c"
-  n22 -> n24 // "Translate" -> "10"
-  n22 -> n25 // "Translate" -> "0"
-  n6 -> n26 // "LIST_INSTR" -> "TIMEANNOTATION"
-  n26 -> n27 // "TIMEANNOTATION" -> "0"
-  n26 -> n28 // "TIMEANNOTATION" -> "duration"
-  n28 -> n29 // "duration" -> "2"
-  n6 -> n30 // "LIST_INSTR" -> "Modify"
-  n30 -> n31 // "Modify" -> "c"
-  n30 -> n32 // "Modify" -> "color"
-  n32 -> n33 // "color" -> "green"
-  n6 -> n34 // "LIST_INSTR" -> "TIMEANNOTATION"
-  n34 -> n35 // "TIMEANNOTATION" -> "2"
-  n34 -> n36 // "TIMEANNOTATION" -> "duration"
-  n36 -> n37 // "duration" -> "4"
-  n6 -> n38 // "LIST_INSTR" -> "Translate"
-  n38 -> n39 // "Translate" -> "c"
-  n38 -> n40 // "Translate" -> "0"
-  n38 -> n41 // "Translate" -> "10"
-  n0 -> n42 // "LIST_FUNCTIONS" -> "func"
-  n42 -> n43 // "func" -> "main"
-  n42 -> n44 // "func" -> "PARAMS"
-  n42 -> n45 // "func" -> "LIST_INSTR"
-  n45 -> n46 // "LIST_INSTR" -> "for"
-  n46 -> n47 // "for" -> "i"
-  n46 -> n48 // "for" -> "1"
-  n46 -> n49 // "for" -> "10"
-  n46 -> n50 // "for" -> "LIST_INSTR"
-  n50 -> n51 // "LIST_INSTR" -> "FUNCALL"
-  n51 -> n52 // "FUNCALL" -> "createAnimatedCircle"
-  n51 -> n53 // "FUNCALL" -> "ARGLIST"
-  n53 -> n54 // "ARGLIST" -> "i"
-  n53 -> n55 // "ARGLIST" -> "i"
+  n20 -> n22 // ":=" -> "ANIMATION"
+  n22 -> n23 // "ANIMATION" -> "Translate"
+  n22 -> n24 // "ANIMATION" -> "c"
+  n22 -> n25 // "ANIMATION" -> "10"
+  n22 -> n26 // "ANIMATION" -> "0"
+  n6 -> n27 // "LIST_INSTR" -> "TIMEANNOTATION"
+  n27 -> n28 // "TIMEANNOTATION" -> "0"
+  n27 -> n29 // "TIMEANNOTATION" -> "duration"
+  n29 -> n30 // "duration" -> "2"
+  n6 -> n31 // "LIST_INSTR" -> "ANIMATION"
+  n31 -> n32 // "ANIMATION" -> "Modify"
+  n31 -> n33 // "ANIMATION" -> "c"
+  n31 -> n34 // "ANIMATION" -> "color"
+  n34 -> n35 // "color" -> "green"
+  n6 -> n36 // "LIST_INSTR" -> "TIMEANNOTATION"
+  n36 -> n37 // "TIMEANNOTATION" -> "2"
+  n36 -> n38 // "TIMEANNOTATION" -> "duration"
+  n38 -> n39 // "duration" -> "4"
+  n6 -> n40 // "LIST_INSTR" -> "ANIMATION"
+  n40 -> n41 // "ANIMATION" -> "Translate"
+  n40 -> n42 // "ANIMATION" -> "c"
+  n40 -> n43 // "ANIMATION" -> "0"
+  n40 -> n44 // "ANIMATION" -> "10"
+  n0 -> n45 // "LIST_FUNCTIONS" -> "func"
+  n45 -> n46 // "func" -> "main"
+  n45 -> n47 // "func" -> "PARAMS"
+  n45 -> n48 // "func" -> "LIST_INSTR"
+  n48 -> n49 // "LIST_INSTR" -> ":="
+  n49 -> n50 // ":=" -> "r"
+  n49 -> n51 // ":=" -> "CREATE_INSTR"
+  n51 -> n52 // "CREATE_INSTR" -> "Rectangle"
+  n51 -> n53 // "CREATE_INSTR" -> "x"
+  n51 -> n54 // "CREATE_INSTR" -> "y"
+  n48 -> n55 // "LIST_INSTR" -> "for"
+  n55 -> n56 // "for" -> "i"
+  n55 -> n57 // "for" -> "1"
+  n55 -> n58 // "for" -> "10"
+  n55 -> n59 // "for" -> "LIST_INSTR"
+  n59 -> n60 // "LIST_INSTR" -> "FUNCALL"
+  n60 -> n61 // "FUNCALL" -> "createAnimatedCircle"
+  n60 -> n62 // "FUNCALL" -> "ARGLIST"
+  n62 -> n63 // "ARGLIST" -> "i"
+  n62 -> n64 // "ARGLIST" -> "r"
 
 }

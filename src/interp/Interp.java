@@ -72,6 +72,8 @@ public class Interp {
 
     private int newId = 0;
 
+    private SVGParser svgParser;
+
     /**
      * Constructor of the interpreter. It prepares the main
      * data structures for the execution of the main program.
@@ -92,6 +94,8 @@ public class Interp {
             }
         }
         function_nesting = -1;
+
+        svgParser = new SVGParser();
     }
 
     /** Runs the program by calling the main function without parameters. */
@@ -256,12 +260,12 @@ public class Interp {
                 return null;
             case AslLexer.TIMEANNOTATION:
                 currentTimeAnnotation = new TimeAnnotation();
-                currentTimeAnnotation.begin = (double) evaluateExpression(t.getChild(0));
+                currentTimeAnnotation.begin = (double) evaluateExpression(t.getChild(0)).getIntegerValue();
                 if (t.getChild(1).getStringValue().equals("end")) {
-                    double end = (double) evaluateExpression(t.getChild(1).getChild(0));
+                    double end = (double) evaluateExpression(t.getChild(1).getChild(0)).getIntegerValue();
                     currentTimeAnnotation.duration = end - currentTimeAnnotation.begin;
                 } else 
-                    currentTimeAnnotation.duration = (double) evaluateExpression(t.getChild(1).getChild(0));
+                    currentTimeAnnotation.duration = (double) evaluateExpression(t.getChild(1).getChild(0)).getIntegerValue();
                 return null;
             case AslLexer.ANIMATION:
                 if (currentTimeAnnotation == null) throw new RuntimeException("Animation instruction doesn't have a proper previous Time Annotation");
@@ -347,11 +351,12 @@ public class Interp {
     }
 
     private Data createObject(AslTree t) {
-
+               
+        return null;
     }
 
     private Data createAnimation(AslTree t) {
-
+        return null;
     }
 
     /**

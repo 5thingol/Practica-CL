@@ -1,4 +1,4 @@
-// $ANTLR 3.4 /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g 2016-05-02 09:10:48
+// $ANTLR 3.4 /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g 2016-05-09 09:11:33
 
 package parser;
 import interp.AslTree;
@@ -41,11 +41,10 @@ import org.antlr.runtime.tree.*;
 @SuppressWarnings({"all", "warnings", "unchecked"})
 public class AslParser extends Parser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "ACCESATTRIBUTE", "AND", "ARGLIST", "ASSIGN", "ATTRIBUTE", "ATTRIBUTES", "BEGIN", "BOOLEAN", "COMMENT", "COND_EQUAL", "CREATE", "DESTROY", "DIV", "DURATION", "ELSE", "ELSEIF", "END", "ENDFOR", "ENDFUNC", "ENDIF", "ENDLINE", "ENDWHILE", "EQUAL", "ESC_SEQ", "FALSE", "FOR", "FUNC", "FUNCALL", "GE", "GT", "ID", "IF", "IN", "INT", "LE", "LIST_FUNCTIONS", "LIST_INSTR", "LT", "MINUS", "MOD", "MODIFY", "MOVE", "MUL", "NOT", "NOT_EQUAL", "OR", "PARAMS", "PLUS", "PREF", "READ", "RETURN", "ROTATE", "STRING", "TIMEANNOTATION", "TRANSLATE", "TRUE", "TYPE_OBJECT", "WHILE", "WRITE", "WS", "'('", "')'", "','", "'.'", "':'", "';'", "'@'", "'{'", "'}'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "ACCESATTRIBUTE", "AND", "ANIMATION", "ARGLIST", "ASSIGN", "ATTRIBUTE", "ATTRIBUTES", "BEGIN", "BOOLEAN", "COMMENT", "COND_EQUAL", "CREATE", "CREATE_INSTR", "DESTROY", "DIV", "DURATION", "ELSE", "ELSEIF", "END", "ENDFOR", "ENDFUNC", "ENDIF", "ENDWHILE", "EQUAL", "ESC_SEQ", "FALSE", "FOR", "FUNC", "FUNCALL", "GE", "GT", "ID", "IF", "IN", "INT", "LE", "LIST_FUNCTIONS", "LIST_INSTR", "LT", "MINUS", "MOD", "MODIFY", "MOVE", "MUL", "NOT", "NOT_EQUAL", "OR", "PARAMS", "PLUS", "PREF", "READ", "RETURN", "ROTATE", "STRING", "TIMEANNOTATION", "TRANSLATE", "TRUE", "TYPE_OBJECT", "WHILE", "WRITE", "WS", "'('", "')'", "','", "'.'", "':'", "';'", "'@'", "'{'", "'}'"
     };
 
     public static final int EOF=-1;
-    public static final int T__64=64;
     public static final int T__65=65;
     public static final int T__66=66;
     public static final int T__67=67;
@@ -54,66 +53,68 @@ public class AslParser extends Parser {
     public static final int T__70=70;
     public static final int T__71=71;
     public static final int T__72=72;
+    public static final int T__73=73;
     public static final int ACCESATTRIBUTE=4;
     public static final int AND=5;
-    public static final int ARGLIST=6;
-    public static final int ASSIGN=7;
-    public static final int ATTRIBUTE=8;
-    public static final int ATTRIBUTES=9;
-    public static final int BEGIN=10;
-    public static final int BOOLEAN=11;
-    public static final int COMMENT=12;
-    public static final int COND_EQUAL=13;
-    public static final int CREATE=14;
-    public static final int DESTROY=15;
-    public static final int DIV=16;
-    public static final int DURATION=17;
-    public static final int ELSE=18;
-    public static final int ELSEIF=19;
-    public static final int END=20;
-    public static final int ENDFOR=21;
-    public static final int ENDFUNC=22;
-    public static final int ENDIF=23;
-    public static final int ENDLINE=24;
-    public static final int ENDWHILE=25;
-    public static final int EQUAL=26;
-    public static final int ESC_SEQ=27;
-    public static final int FALSE=28;
-    public static final int FOR=29;
-    public static final int FUNC=30;
-    public static final int FUNCALL=31;
-    public static final int GE=32;
-    public static final int GT=33;
-    public static final int ID=34;
-    public static final int IF=35;
-    public static final int IN=36;
-    public static final int INT=37;
-    public static final int LE=38;
-    public static final int LIST_FUNCTIONS=39;
-    public static final int LIST_INSTR=40;
-    public static final int LT=41;
-    public static final int MINUS=42;
-    public static final int MOD=43;
-    public static final int MODIFY=44;
-    public static final int MOVE=45;
-    public static final int MUL=46;
-    public static final int NOT=47;
-    public static final int NOT_EQUAL=48;
-    public static final int OR=49;
-    public static final int PARAMS=50;
-    public static final int PLUS=51;
-    public static final int PREF=52;
-    public static final int READ=53;
-    public static final int RETURN=54;
-    public static final int ROTATE=55;
-    public static final int STRING=56;
-    public static final int TIMEANNOTATION=57;
-    public static final int TRANSLATE=58;
-    public static final int TRUE=59;
-    public static final int TYPE_OBJECT=60;
-    public static final int WHILE=61;
-    public static final int WRITE=62;
-    public static final int WS=63;
+    public static final int ANIMATION=6;
+    public static final int ARGLIST=7;
+    public static final int ASSIGN=8;
+    public static final int ATTRIBUTE=9;
+    public static final int ATTRIBUTES=10;
+    public static final int BEGIN=11;
+    public static final int BOOLEAN=12;
+    public static final int COMMENT=13;
+    public static final int COND_EQUAL=14;
+    public static final int CREATE=15;
+    public static final int CREATE_INSTR=16;
+    public static final int DESTROY=17;
+    public static final int DIV=18;
+    public static final int DURATION=19;
+    public static final int ELSE=20;
+    public static final int ELSEIF=21;
+    public static final int END=22;
+    public static final int ENDFOR=23;
+    public static final int ENDFUNC=24;
+    public static final int ENDIF=25;
+    public static final int ENDWHILE=26;
+    public static final int EQUAL=27;
+    public static final int ESC_SEQ=28;
+    public static final int FALSE=29;
+    public static final int FOR=30;
+    public static final int FUNC=31;
+    public static final int FUNCALL=32;
+    public static final int GE=33;
+    public static final int GT=34;
+    public static final int ID=35;
+    public static final int IF=36;
+    public static final int IN=37;
+    public static final int INT=38;
+    public static final int LE=39;
+    public static final int LIST_FUNCTIONS=40;
+    public static final int LIST_INSTR=41;
+    public static final int LT=42;
+    public static final int MINUS=43;
+    public static final int MOD=44;
+    public static final int MODIFY=45;
+    public static final int MOVE=46;
+    public static final int MUL=47;
+    public static final int NOT=48;
+    public static final int NOT_EQUAL=49;
+    public static final int OR=50;
+    public static final int PARAMS=51;
+    public static final int PLUS=52;
+    public static final int PREF=53;
+    public static final int READ=54;
+    public static final int RETURN=55;
+    public static final int ROTATE=56;
+    public static final int STRING=57;
+    public static final int TIMEANNOTATION=58;
+    public static final int TRANSLATE=59;
+    public static final int TRUE=60;
+    public static final int TYPE_OBJECT=61;
+    public static final int WHILE=62;
+    public static final int WRITE=63;
+    public static final int WS=64;
 
     // delegates
     public Parser[] getDelegates() {
@@ -149,7 +150,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "prog"
-    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:58:1: prog : ( func )+ EOF -> ^( LIST_FUNCTIONS ( func )+ ) ;
+    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:60:1: prog : ( func )+ EOF -> ^( LIST_FUNCTIONS ( func )+ ) ;
     public final AslParser.prog_return prog() throws RecognitionException {
         AslParser.prog_return retval = new AslParser.prog_return();
         retval.start = input.LT(1);
@@ -165,10 +166,10 @@ public TreeAdaptor getTreeAdaptor() {
         RewriteRuleTokenStream stream_EOF=new RewriteRuleTokenStream(adaptor,"token EOF");
         RewriteRuleSubtreeStream stream_func=new RewriteRuleSubtreeStream(adaptor,"rule func");
         try {
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:58:6: ( ( func )+ EOF -> ^( LIST_FUNCTIONS ( func )+ ) )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:58:8: ( func )+ EOF
+            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:60:6: ( ( func )+ EOF -> ^( LIST_FUNCTIONS ( func )+ ) )
+            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:60:8: ( func )+ EOF
             {
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:58:8: ( func )+
+            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:60:8: ( func )+
             int cnt1=0;
             loop1:
             do {
@@ -182,9 +183,9 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt1) {
             	case 1 :
-            	    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:58:8: func
+            	    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:60:8: func
             	    {
-            	    pushFollow(FOLLOW_func_in_prog93);
+            	    pushFollow(FOLLOW_func_in_prog99);
             	    func1=func();
 
             	    state._fsp--;
@@ -204,7 +205,7 @@ public TreeAdaptor getTreeAdaptor() {
             } while (true);
 
 
-            EOF2=(Token)match(input,EOF,FOLLOW_EOF_in_prog96);  
+            EOF2=(Token)match(input,EOF,FOLLOW_EOF_in_prog102);  
             stream_EOF.add(EOF2);
 
 
@@ -219,9 +220,9 @@ public TreeAdaptor getTreeAdaptor() {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (AslTree)adaptor.nil();
-            // 58:18: -> ^( LIST_FUNCTIONS ( func )+ )
+            // 60:18: -> ^( LIST_FUNCTIONS ( func )+ )
             {
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:58:21: ^( LIST_FUNCTIONS ( func )+ )
+                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:60:21: ^( LIST_FUNCTIONS ( func )+ )
                 {
                 AslTree root_1 = (AslTree)adaptor.nil();
                 root_1 = (AslTree)adaptor.becomeRoot(
@@ -276,7 +277,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "func"
-    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:61:1: func : FUNC ^ ID params block_instructions ENDFUNC ! ( ENDLINE !)* ;
+    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:63:1: func : FUNC ^ ID params block_instructions ENDFUNC !;
     public final AslParser.func_return func() throws RecognitionException {
         AslParser.func_return retval = new AslParser.func_return();
         retval.start = input.LT(1);
@@ -287,7 +288,6 @@ public TreeAdaptor getTreeAdaptor() {
         Token FUNC3=null;
         Token ID4=null;
         Token ENDFUNC7=null;
-        Token ENDLINE8=null;
         AslParser.params_return params5 =null;
 
         AslParser.block_instructions_return block_instructions6 =null;
@@ -296,70 +296,43 @@ public TreeAdaptor getTreeAdaptor() {
         AslTree FUNC3_tree=null;
         AslTree ID4_tree=null;
         AslTree ENDFUNC7_tree=null;
-        AslTree ENDLINE8_tree=null;
 
         try {
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:61:6: ( FUNC ^ ID params block_instructions ENDFUNC ! ( ENDLINE !)* )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:61:8: FUNC ^ ID params block_instructions ENDFUNC ! ( ENDLINE !)*
+            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:63:6: ( FUNC ^ ID params block_instructions ENDFUNC !)
+            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:63:8: FUNC ^ ID params block_instructions ENDFUNC !
             {
             root_0 = (AslTree)adaptor.nil();
 
 
-            FUNC3=(Token)match(input,FUNC,FOLLOW_FUNC_in_func114); 
+            FUNC3=(Token)match(input,FUNC,FOLLOW_FUNC_in_func120); 
             FUNC3_tree = 
             (AslTree)adaptor.create(FUNC3)
             ;
             root_0 = (AslTree)adaptor.becomeRoot(FUNC3_tree, root_0);
 
 
-            ID4=(Token)match(input,ID,FOLLOW_ID_in_func117); 
+            ID4=(Token)match(input,ID,FOLLOW_ID_in_func123); 
             ID4_tree = 
             (AslTree)adaptor.create(ID4)
             ;
             adaptor.addChild(root_0, ID4_tree);
 
 
-            pushFollow(FOLLOW_params_in_func119);
+            pushFollow(FOLLOW_params_in_func125);
             params5=params();
 
             state._fsp--;
 
             adaptor.addChild(root_0, params5.getTree());
 
-            pushFollow(FOLLOW_block_instructions_in_func121);
+            pushFollow(FOLLOW_block_instructions_in_func127);
             block_instructions6=block_instructions();
 
             state._fsp--;
 
             adaptor.addChild(root_0, block_instructions6.getTree());
 
-            ENDFUNC7=(Token)match(input,ENDFUNC,FOLLOW_ENDFUNC_in_func123); 
-
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:61:52: ( ENDLINE !)*
-            loop2:
-            do {
-                int alt2=2;
-                int LA2_0 = input.LA(1);
-
-                if ( (LA2_0==ENDLINE) ) {
-                    alt2=1;
-                }
-
-
-                switch (alt2) {
-            	case 1 :
-            	    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:61:53: ENDLINE !
-            	    {
-            	    ENDLINE8=(Token)match(input,ENDLINE,FOLLOW_ENDLINE_in_func127); 
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop2;
-                }
-            } while (true);
-
+            ENDFUNC7=(Token)match(input,ENDFUNC,FOLLOW_ENDFUNC_in_func129); 
 
             }
 
@@ -392,7 +365,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "params"
-    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:64:1: params : '(' ( paramlist )? ')' -> ^( PARAMS ( paramlist )? ) ;
+    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:66:1: params : '(' ( paramlist )? ')' -> ^( PARAMS ( paramlist )? ) ;
     public final AslParser.params_return params() throws RecognitionException {
         AslParser.params_return retval = new AslParser.params_return();
         retval.start = input.LT(1);
@@ -400,41 +373,41 @@ public TreeAdaptor getTreeAdaptor() {
 
         AslTree root_0 = null;
 
-        Token char_literal9=null;
-        Token char_literal11=null;
-        AslParser.paramlist_return paramlist10 =null;
+        Token char_literal8=null;
+        Token char_literal10=null;
+        AslParser.paramlist_return paramlist9 =null;
 
 
-        AslTree char_literal9_tree=null;
-        AslTree char_literal11_tree=null;
-        RewriteRuleTokenStream stream_64=new RewriteRuleTokenStream(adaptor,"token 64");
+        AslTree char_literal8_tree=null;
+        AslTree char_literal10_tree=null;
+        RewriteRuleTokenStream stream_66=new RewriteRuleTokenStream(adaptor,"token 66");
         RewriteRuleTokenStream stream_65=new RewriteRuleTokenStream(adaptor,"token 65");
         RewriteRuleSubtreeStream stream_paramlist=new RewriteRuleSubtreeStream(adaptor,"rule paramlist");
         try {
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:64:8: ( '(' ( paramlist )? ')' -> ^( PARAMS ( paramlist )? ) )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:64:10: '(' ( paramlist )? ')'
+            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:66:8: ( '(' ( paramlist )? ')' -> ^( PARAMS ( paramlist )? ) )
+            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:66:10: '(' ( paramlist )? ')'
             {
-            char_literal9=(Token)match(input,64,FOLLOW_64_in_params139);  
-            stream_64.add(char_literal9);
+            char_literal8=(Token)match(input,65,FOLLOW_65_in_params140);  
+            stream_65.add(char_literal8);
 
 
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:64:14: ( paramlist )?
-            int alt3=2;
-            int LA3_0 = input.LA(1);
+            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:66:14: ( paramlist )?
+            int alt2=2;
+            int LA2_0 = input.LA(1);
 
-            if ( (LA3_0==ID) ) {
-                alt3=1;
+            if ( (LA2_0==ID) ) {
+                alt2=1;
             }
-            switch (alt3) {
+            switch (alt2) {
                 case 1 :
-                    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:64:14: paramlist
+                    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:66:14: paramlist
                     {
-                    pushFollow(FOLLOW_paramlist_in_params141);
-                    paramlist10=paramlist();
+                    pushFollow(FOLLOW_paramlist_in_params142);
+                    paramlist9=paramlist();
 
                     state._fsp--;
 
-                    stream_paramlist.add(paramlist10.getTree());
+                    stream_paramlist.add(paramlist9.getTree());
 
                     }
                     break;
@@ -442,8 +415,8 @@ public TreeAdaptor getTreeAdaptor() {
             }
 
 
-            char_literal11=(Token)match(input,65,FOLLOW_65_in_params144);  
-            stream_65.add(char_literal11);
+            char_literal10=(Token)match(input,66,FOLLOW_66_in_params145);  
+            stream_66.add(char_literal10);
 
 
             // AST REWRITE
@@ -457,16 +430,16 @@ public TreeAdaptor getTreeAdaptor() {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (AslTree)adaptor.nil();
-            // 64:29: -> ^( PARAMS ( paramlist )? )
+            // 66:29: -> ^( PARAMS ( paramlist )? )
             {
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:64:32: ^( PARAMS ( paramlist )? )
+                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:66:32: ^( PARAMS ( paramlist )? )
                 {
                 AslTree root_1 = (AslTree)adaptor.nil();
                 root_1 = (AslTree)adaptor.becomeRoot(
                 (AslTree)adaptor.create(PARAMS, "PARAMS")
                 , root_1);
 
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:64:41: ( paramlist )?
+                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:66:41: ( paramlist )?
                 if ( stream_paramlist.hasNext() ) {
                     adaptor.addChild(root_1, stream_paramlist.nextTree());
 
@@ -512,7 +485,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "paramlist"
-    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:67:1: paramlist : param ( ',' ! param )* ;
+    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:69:1: paramlist : param ( ',' ! param )* ;
     public final AslParser.paramlist_return paramlist() throws RecognitionException {
         AslParser.paramlist_return retval = new AslParser.paramlist_return();
         retval.start = input.LT(1);
@@ -520,57 +493,57 @@ public TreeAdaptor getTreeAdaptor() {
 
         AslTree root_0 = null;
 
-        Token char_literal13=null;
-        AslParser.param_return param12 =null;
+        Token char_literal12=null;
+        AslParser.param_return param11 =null;
 
-        AslParser.param_return param14 =null;
+        AslParser.param_return param13 =null;
 
 
-        AslTree char_literal13_tree=null;
+        AslTree char_literal12_tree=null;
 
         try {
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:67:10: ( param ( ',' ! param )* )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:67:12: param ( ',' ! param )*
+            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:69:10: ( param ( ',' ! param )* )
+            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:69:12: param ( ',' ! param )*
             {
             root_0 = (AslTree)adaptor.nil();
 
 
-            pushFollow(FOLLOW_param_in_paramlist161);
-            param12=param();
+            pushFollow(FOLLOW_param_in_paramlist162);
+            param11=param();
 
             state._fsp--;
 
-            adaptor.addChild(root_0, param12.getTree());
+            adaptor.addChild(root_0, param11.getTree());
 
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:67:18: ( ',' ! param )*
-            loop4:
+            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:69:18: ( ',' ! param )*
+            loop3:
             do {
-                int alt4=2;
-                int LA4_0 = input.LA(1);
+                int alt3=2;
+                int LA3_0 = input.LA(1);
 
-                if ( (LA4_0==66) ) {
-                    alt4=1;
+                if ( (LA3_0==67) ) {
+                    alt3=1;
                 }
 
 
-                switch (alt4) {
+                switch (alt3) {
             	case 1 :
-            	    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:67:19: ',' ! param
+            	    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:69:19: ',' ! param
             	    {
-            	    char_literal13=(Token)match(input,66,FOLLOW_66_in_paramlist164); 
+            	    char_literal12=(Token)match(input,67,FOLLOW_67_in_paramlist165); 
 
-            	    pushFollow(FOLLOW_param_in_paramlist167);
-            	    param14=param();
+            	    pushFollow(FOLLOW_param_in_paramlist168);
+            	    param13=param();
 
             	    state._fsp--;
 
-            	    adaptor.addChild(root_0, param14.getTree());
+            	    adaptor.addChild(root_0, param13.getTree());
 
             	    }
             	    break;
 
             	default :
-            	    break loop4;
+            	    break loop3;
                 }
             } while (true);
 
@@ -606,7 +579,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "param"
-    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:71:1: param : id= ID -> ^( PREF[$id,$id.text] ) ;
+    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:73:1: param : id= ID -> ^( PREF[$id,$id.text] ) ;
     public final AslParser.param_return param() throws RecognitionException {
         AslParser.param_return retval = new AslParser.param_return();
         retval.start = input.LT(1);
@@ -620,10 +593,10 @@ public TreeAdaptor getTreeAdaptor() {
         RewriteRuleTokenStream stream_ID=new RewriteRuleTokenStream(adaptor,"token ID");
 
         try {
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:71:7: (id= ID -> ^( PREF[$id,$id.text] ) )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:71:9: id= ID
+            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:73:7: (id= ID -> ^( PREF[$id,$id.text] ) )
+            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:73:9: id= ID
             {
-            id=(Token)match(input,ID,FOLLOW_ID_in_param181);  
+            id=(Token)match(input,ID,FOLLOW_ID_in_param182);  
             stream_ID.add(id);
 
 
@@ -638,9 +611,9 @@ public TreeAdaptor getTreeAdaptor() {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (AslTree)adaptor.nil();
-            // 71:15: -> ^( PREF[$id,$id.text] )
+            // 73:15: -> ^( PREF[$id,$id.text] )
             {
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:71:18: ^( PREF[$id,$id.text] )
+                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:73:18: ^( PREF[$id,$id.text] )
                 {
                 AslTree root_1 = (AslTree)adaptor.nil();
                 root_1 = (AslTree)adaptor.becomeRoot(
@@ -686,7 +659,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "block_instructions"
-    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:74:1: block_instructions : instruction ( ENDLINE instruction )* -> ^( LIST_INSTR ( instruction )+ ) ;
+    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:76:1: block_instructions : instruction ( ';' instruction )* -> ^( LIST_INSTR ( instruction )+ ) ;
     public final AslParser.block_instructions_return block_instructions() throws RecognitionException {
         AslParser.block_instructions_return retval = new AslParser.block_instructions_return();
         retval.start = input.LT(1);
@@ -694,57 +667,57 @@ public TreeAdaptor getTreeAdaptor() {
 
         AslTree root_0 = null;
 
-        Token ENDLINE16=null;
-        AslParser.instruction_return instruction15 =null;
+        Token char_literal15=null;
+        AslParser.instruction_return instruction14 =null;
 
-        AslParser.instruction_return instruction17 =null;
+        AslParser.instruction_return instruction16 =null;
 
 
-        AslTree ENDLINE16_tree=null;
-        RewriteRuleTokenStream stream_ENDLINE=new RewriteRuleTokenStream(adaptor,"token ENDLINE");
+        AslTree char_literal15_tree=null;
+        RewriteRuleTokenStream stream_70=new RewriteRuleTokenStream(adaptor,"token 70");
         RewriteRuleSubtreeStream stream_instruction=new RewriteRuleSubtreeStream(adaptor,"rule instruction");
         try {
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:75:5: ( instruction ( ENDLINE instruction )* -> ^( LIST_INSTR ( instruction )+ ) )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:75:5: instruction ( ENDLINE instruction )*
+            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:77:5: ( instruction ( ';' instruction )* -> ^( LIST_INSTR ( instruction )+ ) )
+            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:77:5: instruction ( ';' instruction )*
             {
-            pushFollow(FOLLOW_instruction_in_block_instructions199);
-            instruction15=instruction();
+            pushFollow(FOLLOW_instruction_in_block_instructions200);
+            instruction14=instruction();
 
             state._fsp--;
 
-            stream_instruction.add(instruction15.getTree());
+            stream_instruction.add(instruction14.getTree());
 
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:75:17: ( ENDLINE instruction )*
-            loop5:
+            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:77:17: ( ';' instruction )*
+            loop4:
             do {
-                int alt5=2;
-                int LA5_0 = input.LA(1);
+                int alt4=2;
+                int LA4_0 = input.LA(1);
 
-                if ( (LA5_0==ENDLINE) ) {
-                    alt5=1;
+                if ( (LA4_0==70) ) {
+                    alt4=1;
                 }
 
 
-                switch (alt5) {
+                switch (alt4) {
             	case 1 :
-            	    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:75:18: ENDLINE instruction
+            	    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:77:18: ';' instruction
             	    {
-            	    ENDLINE16=(Token)match(input,ENDLINE,FOLLOW_ENDLINE_in_block_instructions202);  
-            	    stream_ENDLINE.add(ENDLINE16);
+            	    char_literal15=(Token)match(input,70,FOLLOW_70_in_block_instructions203);  
+            	    stream_70.add(char_literal15);
 
 
-            	    pushFollow(FOLLOW_instruction_in_block_instructions204);
-            	    instruction17=instruction();
+            	    pushFollow(FOLLOW_instruction_in_block_instructions205);
+            	    instruction16=instruction();
 
             	    state._fsp--;
 
-            	    stream_instruction.add(instruction17.getTree());
+            	    stream_instruction.add(instruction16.getTree());
 
             	    }
             	    break;
 
             	default :
-            	    break loop5;
+            	    break loop4;
                 }
             } while (true);
 
@@ -760,9 +733,9 @@ public TreeAdaptor getTreeAdaptor() {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (AslTree)adaptor.nil();
-            // 76:4: -> ^( LIST_INSTR ( instruction )+ )
+            // 78:4: -> ^( LIST_INSTR ( instruction )+ )
             {
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:76:4: ^( LIST_INSTR ( instruction )+ )
+                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:78:4: ^( LIST_INSTR ( instruction )+ )
                 {
                 AslTree root_1 = (AslTree)adaptor.nil();
                 root_1 = (AslTree)adaptor.becomeRoot(
@@ -817,7 +790,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "instruction"
-    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:79:1: instruction : ( assign | basic_instruction | ite_stmt | while_stmt | for_stmt | funcall | return_stmt | time_annotation |);
+    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:81:1: instruction : ( assign | basic_instruction | ite_stmt | while_stmt | for_stmt | funcall | return_stmt | time_annotation |);
     public final AslParser.instruction_return instruction() throws RecognitionException {
         AslParser.instruction_return retval = new AslParser.instruction_return();
         retval.start = input.LT(1);
@@ -825,41 +798,41 @@ public TreeAdaptor getTreeAdaptor() {
 
         AslTree root_0 = null;
 
-        AslParser.assign_return assign18 =null;
+        AslParser.assign_return assign17 =null;
 
-        AslParser.basic_instruction_return basic_instruction19 =null;
+        AslParser.basic_instruction_return basic_instruction18 =null;
 
-        AslParser.ite_stmt_return ite_stmt20 =null;
+        AslParser.ite_stmt_return ite_stmt19 =null;
 
-        AslParser.while_stmt_return while_stmt21 =null;
+        AslParser.while_stmt_return while_stmt20 =null;
 
-        AslParser.for_stmt_return for_stmt22 =null;
+        AslParser.for_stmt_return for_stmt21 =null;
 
-        AslParser.funcall_return funcall23 =null;
+        AslParser.funcall_return funcall22 =null;
 
-        AslParser.return_stmt_return return_stmt24 =null;
+        AslParser.return_stmt_return return_stmt23 =null;
 
-        AslParser.time_annotation_return time_annotation25 =null;
+        AslParser.time_annotation_return time_annotation24 =null;
 
 
 
         try {
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:80:5: ( assign | basic_instruction | ite_stmt | while_stmt | for_stmt | funcall | return_stmt | time_annotation |)
-            int alt6=9;
+            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:82:5: ( assign | basic_instruction | ite_stmt | while_stmt | for_stmt | funcall | return_stmt | time_annotation |)
+            int alt5=9;
             switch ( input.LA(1) ) {
             case ID:
                 {
-                int LA6_1 = input.LA(2);
+                int LA5_1 = input.LA(2);
 
-                if ( (LA6_1==EQUAL) ) {
-                    alt6=1;
+                if ( (LA5_1==EQUAL) ) {
+                    alt5=1;
                 }
-                else if ( (LA6_1==64) ) {
-                    alt6=6;
+                else if ( (LA5_1==65) ) {
+                    alt5=6;
                 }
                 else {
                     NoViableAltException nvae =
-                        new NoViableAltException("", 6, 1, input);
+                        new NoViableAltException("", 5, 1, input);
 
                     throw nvae;
 
@@ -873,32 +846,32 @@ public TreeAdaptor getTreeAdaptor() {
             case ROTATE:
             case TRANSLATE:
                 {
-                alt6=2;
+                alt5=2;
                 }
                 break;
             case IF:
                 {
-                alt6=3;
+                alt5=3;
                 }
                 break;
             case WHILE:
                 {
-                alt6=4;
+                alt5=4;
                 }
                 break;
             case FOR:
                 {
-                alt6=5;
+                alt5=5;
                 }
                 break;
             case RETURN:
                 {
-                alt6=7;
+                alt5=7;
                 }
                 break;
-            case 70:
+            case 71:
                 {
-                alt6=8;
+                alt5=8;
                 }
                 break;
             case ELSE:
@@ -906,138 +879,138 @@ public TreeAdaptor getTreeAdaptor() {
             case ENDFOR:
             case ENDFUNC:
             case ENDIF:
-            case ENDLINE:
             case ENDWHILE:
+            case 70:
                 {
-                alt6=9;
+                alt5=9;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 6, 0, input);
+                    new NoViableAltException("", 5, 0, input);
 
                 throw nvae;
 
             }
 
-            switch (alt6) {
+            switch (alt5) {
                 case 1 :
-                    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:80:5: assign
+                    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:82:5: assign
                     {
                     root_0 = (AslTree)adaptor.nil();
 
 
-                    pushFollow(FOLLOW_assign_in_instruction226);
-                    assign18=assign();
+                    pushFollow(FOLLOW_assign_in_instruction227);
+                    assign17=assign();
 
                     state._fsp--;
 
-                    adaptor.addChild(root_0, assign18.getTree());
+                    adaptor.addChild(root_0, assign17.getTree());
 
                     }
                     break;
                 case 2 :
-                    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:81:3: basic_instruction
+                    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:83:3: basic_instruction
                     {
                     root_0 = (AslTree)adaptor.nil();
 
 
-                    pushFollow(FOLLOW_basic_instruction_in_instruction231);
-                    basic_instruction19=basic_instruction();
+                    pushFollow(FOLLOW_basic_instruction_in_instruction232);
+                    basic_instruction18=basic_instruction();
 
                     state._fsp--;
 
-                    adaptor.addChild(root_0, basic_instruction19.getTree());
+                    adaptor.addChild(root_0, basic_instruction18.getTree());
 
                     }
                     break;
                 case 3 :
-                    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:82:3: ite_stmt
+                    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:84:3: ite_stmt
                     {
                     root_0 = (AslTree)adaptor.nil();
 
 
-                    pushFollow(FOLLOW_ite_stmt_in_instruction236);
-                    ite_stmt20=ite_stmt();
+                    pushFollow(FOLLOW_ite_stmt_in_instruction237);
+                    ite_stmt19=ite_stmt();
 
                     state._fsp--;
 
-                    adaptor.addChild(root_0, ite_stmt20.getTree());
+                    adaptor.addChild(root_0, ite_stmt19.getTree());
 
                     }
                     break;
                 case 4 :
-                    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:83:3: while_stmt
+                    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:85:3: while_stmt
                     {
                     root_0 = (AslTree)adaptor.nil();
 
 
-                    pushFollow(FOLLOW_while_stmt_in_instruction241);
-                    while_stmt21=while_stmt();
+                    pushFollow(FOLLOW_while_stmt_in_instruction242);
+                    while_stmt20=while_stmt();
 
                     state._fsp--;
 
-                    adaptor.addChild(root_0, while_stmt21.getTree());
+                    adaptor.addChild(root_0, while_stmt20.getTree());
 
                     }
                     break;
                 case 5 :
-                    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:84:3: for_stmt
+                    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:86:3: for_stmt
                     {
                     root_0 = (AslTree)adaptor.nil();
 
 
-                    pushFollow(FOLLOW_for_stmt_in_instruction246);
-                    for_stmt22=for_stmt();
+                    pushFollow(FOLLOW_for_stmt_in_instruction247);
+                    for_stmt21=for_stmt();
 
                     state._fsp--;
 
-                    adaptor.addChild(root_0, for_stmt22.getTree());
+                    adaptor.addChild(root_0, for_stmt21.getTree());
 
                     }
                     break;
                 case 6 :
-                    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:85:3: funcall
+                    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:87:3: funcall
                     {
                     root_0 = (AslTree)adaptor.nil();
 
 
-                    pushFollow(FOLLOW_funcall_in_instruction250);
-                    funcall23=funcall();
+                    pushFollow(FOLLOW_funcall_in_instruction252);
+                    funcall22=funcall();
 
                     state._fsp--;
 
-                    adaptor.addChild(root_0, funcall23.getTree());
+                    adaptor.addChild(root_0, funcall22.getTree());
 
                     }
                     break;
                 case 7 :
-                    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:86:3: return_stmt
+                    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:88:3: return_stmt
                     {
                     root_0 = (AslTree)adaptor.nil();
 
 
-                    pushFollow(FOLLOW_return_stmt_in_instruction255);
-                    return_stmt24=return_stmt();
+                    pushFollow(FOLLOW_return_stmt_in_instruction257);
+                    return_stmt23=return_stmt();
 
                     state._fsp--;
 
-                    adaptor.addChild(root_0, return_stmt24.getTree());
+                    adaptor.addChild(root_0, return_stmt23.getTree());
 
                     }
                     break;
                 case 8 :
-                    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:87:3: time_annotation
+                    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:89:3: time_annotation
                     {
                     root_0 = (AslTree)adaptor.nil();
 
 
-                    pushFollow(FOLLOW_time_annotation_in_instruction260);
-                    time_annotation25=time_annotation();
+                    pushFollow(FOLLOW_time_annotation_in_instruction262);
+                    time_annotation24=time_annotation();
 
                     state._fsp--;
 
-                    adaptor.addChild(root_0, time_annotation25.getTree());
+                    adaptor.addChild(root_0, time_annotation24.getTree());
 
                     }
                     break;
@@ -1089,40 +1062,40 @@ public TreeAdaptor getTreeAdaptor() {
         AslTree root_0 = null;
 
         Token eq=null;
-        Token ID26=null;
-        Token ID28=null;
-        AslParser.basic_instruction_return basic_instruction27 =null;
+        Token ID25=null;
+        Token ID27=null;
+        AslParser.basic_instruction_return basic_instruction26 =null;
 
-        AslParser.expr_return expr29 =null;
+        AslParser.expr_return expr28 =null;
 
 
         AslTree eq_tree=null;
-        AslTree ID26_tree=null;
-        AslTree ID28_tree=null;
+        AslTree ID25_tree=null;
+        AslTree ID27_tree=null;
         RewriteRuleTokenStream stream_EQUAL=new RewriteRuleTokenStream(adaptor,"token EQUAL");
         RewriteRuleTokenStream stream_ID=new RewriteRuleTokenStream(adaptor,"token ID");
         RewriteRuleSubtreeStream stream_basic_instruction=new RewriteRuleSubtreeStream(adaptor,"rule basic_instruction");
         RewriteRuleSubtreeStream stream_expr=new RewriteRuleSubtreeStream(adaptor,"rule expr");
         try {
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:93:8: ( ID eq= EQUAL basic_instruction -> ^( ASSIGN[$eq,\":=\"] ID basic_instruction ) | ID eq= EQUAL expr -> ^( ASSIGN[$eq,\":=\"] ID expr ) )
-            int alt7=2;
-            int LA7_0 = input.LA(1);
+            int alt6=2;
+            int LA6_0 = input.LA(1);
 
-            if ( (LA7_0==ID) ) {
-                int LA7_1 = input.LA(2);
+            if ( (LA6_0==ID) ) {
+                int LA6_1 = input.LA(2);
 
-                if ( (LA7_1==EQUAL) ) {
-                    int LA7_2 = input.LA(3);
+                if ( (LA6_1==EQUAL) ) {
+                    int LA6_2 = input.LA(3);
 
-                    if ( ((LA7_2 >= CREATE && LA7_2 <= DESTROY)||(LA7_2 >= MODIFY && LA7_2 <= MOVE)||LA7_2==ROTATE||LA7_2==TRANSLATE) ) {
-                        alt7=1;
+                    if ( (LA6_2==CREATE||LA6_2==DESTROY||(LA6_2 >= MODIFY && LA6_2 <= MOVE)||LA6_2==ROTATE||LA6_2==TRANSLATE) ) {
+                        alt6=1;
                     }
-                    else if ( (LA7_2==FALSE||LA7_2==ID||LA7_2==INT||LA7_2==MINUS||LA7_2==NOT||LA7_2==PLUS||LA7_2==TRUE||LA7_2==64) ) {
-                        alt7=2;
+                    else if ( (LA6_2==FALSE||LA6_2==ID||LA6_2==INT||LA6_2==MINUS||LA6_2==NOT||LA6_2==PLUS||LA6_2==TRUE||LA6_2==65) ) {
+                        alt6=2;
                     }
                     else {
                         NoViableAltException nvae =
-                            new NoViableAltException("", 7, 2, input);
+                            new NoViableAltException("", 6, 2, input);
 
                         throw nvae;
 
@@ -1130,7 +1103,7 @@ public TreeAdaptor getTreeAdaptor() {
                 }
                 else {
                     NoViableAltException nvae =
-                        new NoViableAltException("", 7, 1, input);
+                        new NoViableAltException("", 6, 1, input);
 
                     throw nvae;
 
@@ -1138,17 +1111,17 @@ public TreeAdaptor getTreeAdaptor() {
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 7, 0, input);
+                    new NoViableAltException("", 6, 0, input);
 
                 throw nvae;
 
             }
-            switch (alt7) {
+            switch (alt6) {
                 case 1 :
                     // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:93:13: ID eq= EQUAL basic_instruction
                     {
-                    ID26=(Token)match(input,ID,FOLLOW_ID_in_assign278);  
-                    stream_ID.add(ID26);
+                    ID25=(Token)match(input,ID,FOLLOW_ID_in_assign278);  
+                    stream_ID.add(ID25);
 
 
                     eq=(Token)match(input,EQUAL,FOLLOW_EQUAL_in_assign282);  
@@ -1156,14 +1129,14 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                     pushFollow(FOLLOW_basic_instruction_in_assign284);
-                    basic_instruction27=basic_instruction();
+                    basic_instruction26=basic_instruction();
 
                     state._fsp--;
 
-                    stream_basic_instruction.add(basic_instruction27.getTree());
+                    stream_basic_instruction.add(basic_instruction26.getTree());
 
                     // AST REWRITE
-                    // elements: basic_instruction, ID
+                    // elements: ID, basic_instruction
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -1201,8 +1174,8 @@ public TreeAdaptor getTreeAdaptor() {
                 case 2 :
                     // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:94:3: ID eq= EQUAL expr
                     {
-                    ID28=(Token)match(input,ID,FOLLOW_ID_in_assign300);  
-                    stream_ID.add(ID28);
+                    ID27=(Token)match(input,ID,FOLLOW_ID_in_assign300);  
+                    stream_ID.add(ID27);
 
 
                     eq=(Token)match(input,EQUAL,FOLLOW_EQUAL_in_assign304);  
@@ -1210,11 +1183,11 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                     pushFollow(FOLLOW_expr_in_assign306);
-                    expr29=expr();
+                    expr28=expr();
 
                     state._fsp--;
 
-                    stream_expr.add(expr29.getTree());
+                    stream_expr.add(expr28.getTree());
 
                     // AST REWRITE
                     // elements: ID, expr
@@ -1291,63 +1264,63 @@ public TreeAdaptor getTreeAdaptor() {
 
         AslTree root_0 = null;
 
-        AslParser.create_return create30 =null;
+        AslParser.create_return create29 =null;
 
-        AslParser.destroy_return destroy31 =null;
+        AslParser.destroy_return destroy30 =null;
 
-        AslParser.move_return move32 =null;
+        AslParser.move_return move31 =null;
 
-        AslParser.translate_return translate33 =null;
+        AslParser.translate_return translate32 =null;
 
-        AslParser.modify_return modify34 =null;
+        AslParser.modify_return modify33 =null;
 
-        AslParser.rotate_return rotate35 =null;
+        AslParser.rotate_return rotate34 =null;
 
 
 
         try {
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:96:18: ( create | destroy | move | translate | modify | rotate )
-            int alt8=6;
+            int alt7=6;
             switch ( input.LA(1) ) {
             case CREATE:
                 {
-                alt8=1;
+                alt7=1;
                 }
                 break;
             case DESTROY:
                 {
-                alt8=2;
+                alt7=2;
                 }
                 break;
             case MOVE:
                 {
-                alt8=3;
+                alt7=3;
                 }
                 break;
             case TRANSLATE:
                 {
-                alt8=4;
+                alt7=4;
                 }
                 break;
             case MODIFY:
                 {
-                alt8=5;
+                alt7=5;
                 }
                 break;
             case ROTATE:
                 {
-                alt8=6;
+                alt7=6;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 8, 0, input);
+                    new NoViableAltException("", 7, 0, input);
 
                 throw nvae;
 
             }
 
-            switch (alt8) {
+            switch (alt7) {
                 case 1 :
                     // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:97:1: create
                     {
@@ -1355,11 +1328,11 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                     pushFollow(FOLLOW_create_in_basic_instruction325);
-                    create30=create();
+                    create29=create();
 
                     state._fsp--;
 
-                    adaptor.addChild(root_0, create30.getTree());
+                    adaptor.addChild(root_0, create29.getTree());
 
                     }
                     break;
@@ -1370,11 +1343,11 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                     pushFollow(FOLLOW_destroy_in_basic_instruction329);
-                    destroy31=destroy();
+                    destroy30=destroy();
 
                     state._fsp--;
 
-                    adaptor.addChild(root_0, destroy31.getTree());
+                    adaptor.addChild(root_0, destroy30.getTree());
 
                     }
                     break;
@@ -1385,11 +1358,11 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                     pushFollow(FOLLOW_move_in_basic_instruction333);
-                    move32=move();
+                    move31=move();
 
                     state._fsp--;
 
-                    adaptor.addChild(root_0, move32.getTree());
+                    adaptor.addChild(root_0, move31.getTree());
 
                     }
                     break;
@@ -1400,11 +1373,11 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                     pushFollow(FOLLOW_translate_in_basic_instruction337);
-                    translate33=translate();
+                    translate32=translate();
 
                     state._fsp--;
 
-                    adaptor.addChild(root_0, translate33.getTree());
+                    adaptor.addChild(root_0, translate32.getTree());
 
                     }
                     break;
@@ -1415,11 +1388,11 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                     pushFollow(FOLLOW_modify_in_basic_instruction341);
-                    modify34=modify();
+                    modify33=modify();
 
                     state._fsp--;
 
-                    adaptor.addChild(root_0, modify34.getTree());
+                    adaptor.addChild(root_0, modify33.getTree());
 
                     }
                     break;
@@ -1430,11 +1403,11 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                     pushFollow(FOLLOW_rotate_in_basic_instruction345);
-                    rotate35=rotate();
+                    rotate34=rotate();
 
                     state._fsp--;
 
-                    adaptor.addChild(root_0, rotate35.getTree());
+                    adaptor.addChild(root_0, rotate34.getTree());
 
                     }
                     break;
@@ -1477,23 +1450,23 @@ public TreeAdaptor getTreeAdaptor() {
 
         AslTree root_0 = null;
 
-        Token IF36=null;
-        Token char_literal37=null;
-        Token char_literal39=null;
-        Token ENDIF43=null;
-        AslParser.expr_return expr38 =null;
+        Token IF35=null;
+        Token char_literal36=null;
+        Token char_literal38=null;
+        Token ENDIF42=null;
+        AslParser.expr_return expr37 =null;
 
-        AslParser.block_instructions_return block_instructions40 =null;
+        AslParser.block_instructions_return block_instructions39 =null;
 
-        AslParser.elseif_stmt_return elseif_stmt41 =null;
+        AslParser.elseif_stmt_return elseif_stmt40 =null;
 
-        AslParser.else_stmt_return else_stmt42 =null;
+        AslParser.else_stmt_return else_stmt41 =null;
 
 
-        AslTree IF36_tree=null;
-        AslTree char_literal37_tree=null;
-        AslTree char_literal39_tree=null;
-        AslTree ENDIF43_tree=null;
+        AslTree IF35_tree=null;
+        AslTree char_literal36_tree=null;
+        AslTree char_literal38_tree=null;
+        AslTree ENDIF42_tree=null;
 
         try {
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:105:10: ( IF ^ '(' ! expr ')' ! block_instructions elseif_stmt else_stmt ENDIF !)
@@ -1502,46 +1475,46 @@ public TreeAdaptor getTreeAdaptor() {
             root_0 = (AslTree)adaptor.nil();
 
 
-            IF36=(Token)match(input,IF,FOLLOW_IF_in_ite_stmt355); 
-            IF36_tree = 
-            (AslTree)adaptor.create(IF36)
+            IF35=(Token)match(input,IF,FOLLOW_IF_in_ite_stmt355); 
+            IF35_tree = 
+            (AslTree)adaptor.create(IF35)
             ;
-            root_0 = (AslTree)adaptor.becomeRoot(IF36_tree, root_0);
+            root_0 = (AslTree)adaptor.becomeRoot(IF35_tree, root_0);
 
 
-            char_literal37=(Token)match(input,64,FOLLOW_64_in_ite_stmt358); 
+            char_literal36=(Token)match(input,65,FOLLOW_65_in_ite_stmt358); 
 
             pushFollow(FOLLOW_expr_in_ite_stmt361);
-            expr38=expr();
+            expr37=expr();
 
             state._fsp--;
 
-            adaptor.addChild(root_0, expr38.getTree());
+            adaptor.addChild(root_0, expr37.getTree());
 
-            char_literal39=(Token)match(input,65,FOLLOW_65_in_ite_stmt363); 
+            char_literal38=(Token)match(input,66,FOLLOW_66_in_ite_stmt363); 
 
             pushFollow(FOLLOW_block_instructions_in_ite_stmt366);
-            block_instructions40=block_instructions();
+            block_instructions39=block_instructions();
 
             state._fsp--;
 
-            adaptor.addChild(root_0, block_instructions40.getTree());
+            adaptor.addChild(root_0, block_instructions39.getTree());
 
             pushFollow(FOLLOW_elseif_stmt_in_ite_stmt368);
-            elseif_stmt41=elseif_stmt();
+            elseif_stmt40=elseif_stmt();
 
             state._fsp--;
 
-            adaptor.addChild(root_0, elseif_stmt41.getTree());
+            adaptor.addChild(root_0, elseif_stmt40.getTree());
 
             pushFollow(FOLLOW_else_stmt_in_ite_stmt370);
-            else_stmt42=else_stmt();
+            else_stmt41=else_stmt();
 
             state._fsp--;
 
-            adaptor.addChild(root_0, else_stmt42.getTree());
+            adaptor.addChild(root_0, else_stmt41.getTree());
 
-            ENDIF43=(Token)match(input,ENDIF,FOLLOW_ENDIF_in_ite_stmt372); 
+            ENDIF42=(Token)match(input,ENDIF,FOLLOW_ENDIF_in_ite_stmt372); 
 
             }
 
@@ -1582,17 +1555,17 @@ public TreeAdaptor getTreeAdaptor() {
 
         AslTree root_0 = null;
 
-        Token ELSEIF44=null;
-        Token char_literal45=null;
-        Token char_literal47=null;
-        AslParser.expr_return expr46 =null;
+        Token ELSEIF43=null;
+        Token char_literal44=null;
+        Token char_literal46=null;
+        AslParser.expr_return expr45 =null;
 
-        AslParser.block_instructions_return block_instructions48 =null;
+        AslParser.block_instructions_return block_instructions47 =null;
 
 
-        AslTree ELSEIF44_tree=null;
-        AslTree char_literal45_tree=null;
-        AslTree char_literal47_tree=null;
+        AslTree ELSEIF43_tree=null;
+        AslTree char_literal44_tree=null;
+        AslTree char_literal46_tree=null;
 
         try {
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:108:12: ( ( ELSEIF ^ '(' ! expr ')' ! block_instructions )* )
@@ -1602,50 +1575,50 @@ public TreeAdaptor getTreeAdaptor() {
 
 
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:108:14: ( ELSEIF ^ '(' ! expr ')' ! block_instructions )*
-            loop9:
+            loop8:
             do {
-                int alt9=2;
-                int LA9_0 = input.LA(1);
+                int alt8=2;
+                int LA8_0 = input.LA(1);
 
-                if ( (LA9_0==ELSEIF) ) {
-                    alt9=1;
+                if ( (LA8_0==ELSEIF) ) {
+                    alt8=1;
                 }
 
 
-                switch (alt9) {
+                switch (alt8) {
             	case 1 :
             	    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:108:15: ELSEIF ^ '(' ! expr ')' ! block_instructions
             	    {
-            	    ELSEIF44=(Token)match(input,ELSEIF,FOLLOW_ELSEIF_in_elseif_stmt382); 
-            	    ELSEIF44_tree = 
-            	    (AslTree)adaptor.create(ELSEIF44)
+            	    ELSEIF43=(Token)match(input,ELSEIF,FOLLOW_ELSEIF_in_elseif_stmt382); 
+            	    ELSEIF43_tree = 
+            	    (AslTree)adaptor.create(ELSEIF43)
             	    ;
-            	    root_0 = (AslTree)adaptor.becomeRoot(ELSEIF44_tree, root_0);
+            	    root_0 = (AslTree)adaptor.becomeRoot(ELSEIF43_tree, root_0);
 
 
-            	    char_literal45=(Token)match(input,64,FOLLOW_64_in_elseif_stmt385); 
+            	    char_literal44=(Token)match(input,65,FOLLOW_65_in_elseif_stmt385); 
 
             	    pushFollow(FOLLOW_expr_in_elseif_stmt388);
-            	    expr46=expr();
+            	    expr45=expr();
 
             	    state._fsp--;
 
-            	    adaptor.addChild(root_0, expr46.getTree());
+            	    adaptor.addChild(root_0, expr45.getTree());
 
-            	    char_literal47=(Token)match(input,65,FOLLOW_65_in_elseif_stmt390); 
+            	    char_literal46=(Token)match(input,66,FOLLOW_66_in_elseif_stmt390); 
 
             	    pushFollow(FOLLOW_block_instructions_in_elseif_stmt393);
-            	    block_instructions48=block_instructions();
+            	    block_instructions47=block_instructions();
 
             	    state._fsp--;
 
-            	    adaptor.addChild(root_0, block_instructions48.getTree());
+            	    adaptor.addChild(root_0, block_instructions47.getTree());
 
             	    }
             	    break;
 
             	default :
-            	    break loop9;
+            	    break loop8;
                 }
             } while (true);
 
@@ -1689,11 +1662,11 @@ public TreeAdaptor getTreeAdaptor() {
 
         AslTree root_0 = null;
 
-        Token ELSE49=null;
-        AslParser.block_instructions_return block_instructions50 =null;
+        Token ELSE48=null;
+        AslParser.block_instructions_return block_instructions49 =null;
 
 
-        AslTree ELSE49_tree=null;
+        AslTree ELSE48_tree=null;
 
         try {
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:111:10: ( ( ELSE ^ block_instructions )? )
@@ -1703,29 +1676,29 @@ public TreeAdaptor getTreeAdaptor() {
 
 
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:111:12: ( ELSE ^ block_instructions )?
-            int alt10=2;
-            int LA10_0 = input.LA(1);
+            int alt9=2;
+            int LA9_0 = input.LA(1);
 
-            if ( (LA10_0==ELSE) ) {
-                alt10=1;
+            if ( (LA9_0==ELSE) ) {
+                alt9=1;
             }
-            switch (alt10) {
+            switch (alt9) {
                 case 1 :
                     // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:111:13: ELSE ^ block_instructions
                     {
-                    ELSE49=(Token)match(input,ELSE,FOLLOW_ELSE_in_else_stmt404); 
-                    ELSE49_tree = 
-                    (AslTree)adaptor.create(ELSE49)
+                    ELSE48=(Token)match(input,ELSE,FOLLOW_ELSE_in_else_stmt404); 
+                    ELSE48_tree = 
+                    (AslTree)adaptor.create(ELSE48)
                     ;
-                    root_0 = (AslTree)adaptor.becomeRoot(ELSE49_tree, root_0);
+                    root_0 = (AslTree)adaptor.becomeRoot(ELSE48_tree, root_0);
 
 
                     pushFollow(FOLLOW_block_instructions_in_else_stmt407);
-                    block_instructions50=block_instructions();
+                    block_instructions49=block_instructions();
 
                     state._fsp--;
 
-                    adaptor.addChild(root_0, block_instructions50.getTree());
+                    adaptor.addChild(root_0, block_instructions49.getTree());
 
                     }
                     break;
@@ -1772,19 +1745,19 @@ public TreeAdaptor getTreeAdaptor() {
 
         AslTree root_0 = null;
 
-        Token WHILE51=null;
-        Token char_literal52=null;
-        Token char_literal54=null;
-        Token ENDWHILE56=null;
-        AslParser.expr_return expr53 =null;
+        Token WHILE50=null;
+        Token char_literal51=null;
+        Token char_literal53=null;
+        Token ENDWHILE55=null;
+        AslParser.expr_return expr52 =null;
 
-        AslParser.block_instructions_return block_instructions55 =null;
+        AslParser.block_instructions_return block_instructions54 =null;
 
 
-        AslTree WHILE51_tree=null;
-        AslTree char_literal52_tree=null;
-        AslTree char_literal54_tree=null;
-        AslTree ENDWHILE56_tree=null;
+        AslTree WHILE50_tree=null;
+        AslTree char_literal51_tree=null;
+        AslTree char_literal53_tree=null;
+        AslTree ENDWHILE55_tree=null;
 
         try {
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:115:12: ( WHILE ^ '(' ! expr ')' ! block_instructions ENDWHILE !)
@@ -1793,32 +1766,32 @@ public TreeAdaptor getTreeAdaptor() {
             root_0 = (AslTree)adaptor.nil();
 
 
-            WHILE51=(Token)match(input,WHILE,FOLLOW_WHILE_in_while_stmt422); 
-            WHILE51_tree = 
-            (AslTree)adaptor.create(WHILE51)
+            WHILE50=(Token)match(input,WHILE,FOLLOW_WHILE_in_while_stmt422); 
+            WHILE50_tree = 
+            (AslTree)adaptor.create(WHILE50)
             ;
-            root_0 = (AslTree)adaptor.becomeRoot(WHILE51_tree, root_0);
+            root_0 = (AslTree)adaptor.becomeRoot(WHILE50_tree, root_0);
 
 
-            char_literal52=(Token)match(input,64,FOLLOW_64_in_while_stmt425); 
+            char_literal51=(Token)match(input,65,FOLLOW_65_in_while_stmt425); 
 
             pushFollow(FOLLOW_expr_in_while_stmt428);
-            expr53=expr();
+            expr52=expr();
 
             state._fsp--;
 
-            adaptor.addChild(root_0, expr53.getTree());
+            adaptor.addChild(root_0, expr52.getTree());
 
-            char_literal54=(Token)match(input,65,FOLLOW_65_in_while_stmt430); 
+            char_literal53=(Token)match(input,66,FOLLOW_66_in_while_stmt430); 
 
             pushFollow(FOLLOW_block_instructions_in_while_stmt433);
-            block_instructions55=block_instructions();
+            block_instructions54=block_instructions();
 
             state._fsp--;
 
-            adaptor.addChild(root_0, block_instructions55.getTree());
+            adaptor.addChild(root_0, block_instructions54.getTree());
 
-            ENDWHILE56=(Token)match(input,ENDWHILE,FOLLOW_ENDWHILE_in_while_stmt435); 
+            ENDWHILE55=(Token)match(input,ENDWHILE,FOLLOW_ENDWHILE_in_while_stmt435); 
 
             }
 
@@ -1859,19 +1832,19 @@ public TreeAdaptor getTreeAdaptor() {
 
         AslTree root_0 = null;
 
-        Token FOR57=null;
-        Token char_literal58=null;
-        Token char_literal60=null;
-        Token ENDFOR62=null;
-        AslParser.for_form_return for_form59 =null;
+        Token FOR56=null;
+        Token char_literal57=null;
+        Token char_literal59=null;
+        Token ENDFOR61=null;
+        AslParser.for_form_return for_form58 =null;
 
-        AslParser.block_instructions_return block_instructions61 =null;
+        AslParser.block_instructions_return block_instructions60 =null;
 
 
-        AslTree FOR57_tree=null;
-        AslTree char_literal58_tree=null;
-        AslTree char_literal60_tree=null;
-        AslTree ENDFOR62_tree=null;
+        AslTree FOR56_tree=null;
+        AslTree char_literal57_tree=null;
+        AslTree char_literal59_tree=null;
+        AslTree ENDFOR61_tree=null;
 
         try {
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:118:10: ( FOR ^ '(' ! for_form ')' ! block_instructions ENDFOR !)
@@ -1880,32 +1853,32 @@ public TreeAdaptor getTreeAdaptor() {
             root_0 = (AslTree)adaptor.nil();
 
 
-            FOR57=(Token)match(input,FOR,FOLLOW_FOR_in_for_stmt446); 
-            FOR57_tree = 
-            (AslTree)adaptor.create(FOR57)
+            FOR56=(Token)match(input,FOR,FOLLOW_FOR_in_for_stmt446); 
+            FOR56_tree = 
+            (AslTree)adaptor.create(FOR56)
             ;
-            root_0 = (AslTree)adaptor.becomeRoot(FOR57_tree, root_0);
+            root_0 = (AslTree)adaptor.becomeRoot(FOR56_tree, root_0);
 
 
-            char_literal58=(Token)match(input,64,FOLLOW_64_in_for_stmt449); 
+            char_literal57=(Token)match(input,65,FOLLOW_65_in_for_stmt449); 
 
             pushFollow(FOLLOW_for_form_in_for_stmt452);
-            for_form59=for_form();
+            for_form58=for_form();
 
             state._fsp--;
 
-            adaptor.addChild(root_0, for_form59.getTree());
+            adaptor.addChild(root_0, for_form58.getTree());
 
-            char_literal60=(Token)match(input,65,FOLLOW_65_in_for_stmt454); 
+            char_literal59=(Token)match(input,66,FOLLOW_66_in_for_stmt454); 
 
             pushFollow(FOLLOW_block_instructions_in_for_stmt457);
-            block_instructions61=block_instructions();
+            block_instructions60=block_instructions();
 
             state._fsp--;
 
-            adaptor.addChild(root_0, block_instructions61.getTree());
+            adaptor.addChild(root_0, block_instructions60.getTree());
 
-            ENDFOR62=(Token)match(input,ENDFOR,FOLLOW_ENDFOR_in_for_stmt459); 
+            ENDFOR61=(Token)match(input,ENDFOR,FOLLOW_ENDFOR_in_for_stmt459); 
 
             }
 
@@ -1946,45 +1919,45 @@ public TreeAdaptor getTreeAdaptor() {
 
         AslTree root_0 = null;
 
-        Token char_literal64=null;
-        Token char_literal66=null;
-        Token ID68=null;
-        Token IN69=null;
-        Token char_literal71=null;
-        AslParser.assign_return assign63 =null;
+        Token char_literal63=null;
+        Token char_literal65=null;
+        Token ID67=null;
+        Token IN68=null;
+        Token char_literal70=null;
+        AslParser.assign_return assign62 =null;
 
-        AslParser.expr_return expr65 =null;
+        AslParser.expr_return expr64 =null;
 
-        AslParser.assign_return assign67 =null;
+        AslParser.assign_return assign66 =null;
 
-        AslParser.expr_return expr70 =null;
+        AslParser.expr_return expr69 =null;
 
-        AslParser.expr_return expr72 =null;
+        AslParser.expr_return expr71 =null;
 
 
-        AslTree char_literal64_tree=null;
-        AslTree char_literal66_tree=null;
-        AslTree ID68_tree=null;
-        AslTree IN69_tree=null;
-        AslTree char_literal71_tree=null;
+        AslTree char_literal63_tree=null;
+        AslTree char_literal65_tree=null;
+        AslTree ID67_tree=null;
+        AslTree IN68_tree=null;
+        AslTree char_literal70_tree=null;
 
         try {
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:121:9: ( assign ';' ! expr ';' ! assign | ID IN ! expr ':' ! expr )
-            int alt11=2;
-            int LA11_0 = input.LA(1);
+            int alt10=2;
+            int LA10_0 = input.LA(1);
 
-            if ( (LA11_0==ID) ) {
-                int LA11_1 = input.LA(2);
+            if ( (LA10_0==ID) ) {
+                int LA10_1 = input.LA(2);
 
-                if ( (LA11_1==EQUAL) ) {
-                    alt11=1;
+                if ( (LA10_1==EQUAL) ) {
+                    alt10=1;
                 }
-                else if ( (LA11_1==IN) ) {
-                    alt11=2;
+                else if ( (LA10_1==IN) ) {
+                    alt10=2;
                 }
                 else {
                     NoViableAltException nvae =
-                        new NoViableAltException("", 11, 1, input);
+                        new NoViableAltException("", 10, 1, input);
 
                     throw nvae;
 
@@ -1992,12 +1965,12 @@ public TreeAdaptor getTreeAdaptor() {
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 11, 0, input);
+                    new NoViableAltException("", 10, 0, input);
 
                 throw nvae;
 
             }
-            switch (alt11) {
+            switch (alt10) {
                 case 1 :
                     // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:121:12: assign ';' ! expr ';' ! assign
                     {
@@ -2005,29 +1978,29 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                     pushFollow(FOLLOW_assign_in_for_form469);
-                    assign63=assign();
+                    assign62=assign();
 
                     state._fsp--;
 
-                    adaptor.addChild(root_0, assign63.getTree());
+                    adaptor.addChild(root_0, assign62.getTree());
 
-                    char_literal64=(Token)match(input,69,FOLLOW_69_in_for_form471); 
+                    char_literal63=(Token)match(input,70,FOLLOW_70_in_for_form471); 
 
                     pushFollow(FOLLOW_expr_in_for_form474);
-                    expr65=expr();
+                    expr64=expr();
 
                     state._fsp--;
 
-                    adaptor.addChild(root_0, expr65.getTree());
+                    adaptor.addChild(root_0, expr64.getTree());
 
-                    char_literal66=(Token)match(input,69,FOLLOW_69_in_for_form476); 
+                    char_literal65=(Token)match(input,70,FOLLOW_70_in_for_form476); 
 
                     pushFollow(FOLLOW_assign_in_for_form479);
-                    assign67=assign();
+                    assign66=assign();
 
                     state._fsp--;
 
-                    adaptor.addChild(root_0, assign67.getTree());
+                    adaptor.addChild(root_0, assign66.getTree());
 
                     }
                     break;
@@ -2037,30 +2010,30 @@ public TreeAdaptor getTreeAdaptor() {
                     root_0 = (AslTree)adaptor.nil();
 
 
-                    ID68=(Token)match(input,ID,FOLLOW_ID_in_for_form489); 
-                    ID68_tree = 
-                    (AslTree)adaptor.create(ID68)
+                    ID67=(Token)match(input,ID,FOLLOW_ID_in_for_form489); 
+                    ID67_tree = 
+                    (AslTree)adaptor.create(ID67)
                     ;
-                    adaptor.addChild(root_0, ID68_tree);
+                    adaptor.addChild(root_0, ID67_tree);
 
 
-                    IN69=(Token)match(input,IN,FOLLOW_IN_in_for_form491); 
+                    IN68=(Token)match(input,IN,FOLLOW_IN_in_for_form491); 
 
                     pushFollow(FOLLOW_expr_in_for_form494);
-                    expr70=expr();
+                    expr69=expr();
 
                     state._fsp--;
 
-                    adaptor.addChild(root_0, expr70.getTree());
+                    adaptor.addChild(root_0, expr69.getTree());
 
-                    char_literal71=(Token)match(input,68,FOLLOW_68_in_for_form496); 
+                    char_literal70=(Token)match(input,69,FOLLOW_69_in_for_form496); 
 
                     pushFollow(FOLLOW_expr_in_for_form499);
-                    expr72=expr();
+                    expr71=expr();
 
                     state._fsp--;
 
-                    adaptor.addChild(root_0, expr72.getTree());
+                    adaptor.addChild(root_0, expr71.getTree());
 
                     }
                     break;
@@ -2103,11 +2076,11 @@ public TreeAdaptor getTreeAdaptor() {
 
         AslTree root_0 = null;
 
-        Token RETURN73=null;
-        AslParser.expr_return expr74 =null;
+        Token RETURN72=null;
+        AslParser.expr_return expr73 =null;
 
 
-        AslTree RETURN73_tree=null;
+        AslTree RETURN72_tree=null;
 
         try {
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:127:13: ( RETURN ^ ( expr )? )
@@ -2116,30 +2089,30 @@ public TreeAdaptor getTreeAdaptor() {
             root_0 = (AslTree)adaptor.nil();
 
 
-            RETURN73=(Token)match(input,RETURN,FOLLOW_RETURN_in_return_stmt516); 
-            RETURN73_tree = 
-            (AslTree)adaptor.create(RETURN73)
+            RETURN72=(Token)match(input,RETURN,FOLLOW_RETURN_in_return_stmt516); 
+            RETURN72_tree = 
+            (AslTree)adaptor.create(RETURN72)
             ;
-            root_0 = (AslTree)adaptor.becomeRoot(RETURN73_tree, root_0);
+            root_0 = (AslTree)adaptor.becomeRoot(RETURN72_tree, root_0);
 
 
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:127:25: ( expr )?
-            int alt12=2;
-            int LA12_0 = input.LA(1);
+            int alt11=2;
+            int LA11_0 = input.LA(1);
 
-            if ( (LA12_0==FALSE||LA12_0==ID||LA12_0==INT||LA12_0==MINUS||LA12_0==NOT||LA12_0==PLUS||LA12_0==TRUE||LA12_0==64) ) {
-                alt12=1;
+            if ( (LA11_0==FALSE||LA11_0==ID||LA11_0==INT||LA11_0==MINUS||LA11_0==NOT||LA11_0==PLUS||LA11_0==TRUE||LA11_0==65) ) {
+                alt11=1;
             }
-            switch (alt12) {
+            switch (alt11) {
                 case 1 :
                     // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:127:25: expr
                     {
                     pushFollow(FOLLOW_expr_in_return_stmt519);
-                    expr74=expr();
+                    expr73=expr();
 
                     state._fsp--;
 
-                    adaptor.addChild(root_0, expr74.getTree());
+                    adaptor.addChild(root_0, expr73.getTree());
 
                     }
                     break;
@@ -2186,13 +2159,13 @@ public TreeAdaptor getTreeAdaptor() {
 
         AslTree root_0 = null;
 
-        Token OR76=null;
-        AslParser.boolterm_return boolterm75 =null;
+        Token OR75=null;
+        AslParser.boolterm_return boolterm74 =null;
 
-        AslParser.boolterm_return boolterm77 =null;
+        AslParser.boolterm_return boolterm76 =null;
 
 
-        AslTree OR76_tree=null;
+        AslTree OR75_tree=null;
 
         try {
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:137:6: ( boolterm ( OR ^ boolterm )* )
@@ -2202,46 +2175,46 @@ public TreeAdaptor getTreeAdaptor() {
 
 
             pushFollow(FOLLOW_boolterm_in_expr536);
-            boolterm75=boolterm();
+            boolterm74=boolterm();
 
             state._fsp--;
 
-            adaptor.addChild(root_0, boolterm75.getTree());
+            adaptor.addChild(root_0, boolterm74.getTree());
 
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:137:17: ( OR ^ boolterm )*
-            loop13:
+            loop12:
             do {
-                int alt13=2;
-                int LA13_0 = input.LA(1);
+                int alt12=2;
+                int LA12_0 = input.LA(1);
 
-                if ( (LA13_0==OR) ) {
-                    alt13=1;
+                if ( (LA12_0==OR) ) {
+                    alt12=1;
                 }
 
 
-                switch (alt13) {
+                switch (alt12) {
             	case 1 :
             	    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:137:18: OR ^ boolterm
             	    {
-            	    OR76=(Token)match(input,OR,FOLLOW_OR_in_expr539); 
-            	    OR76_tree = 
-            	    (AslTree)adaptor.create(OR76)
+            	    OR75=(Token)match(input,OR,FOLLOW_OR_in_expr539); 
+            	    OR75_tree = 
+            	    (AslTree)adaptor.create(OR75)
             	    ;
-            	    root_0 = (AslTree)adaptor.becomeRoot(OR76_tree, root_0);
+            	    root_0 = (AslTree)adaptor.becomeRoot(OR75_tree, root_0);
 
 
             	    pushFollow(FOLLOW_boolterm_in_expr542);
-            	    boolterm77=boolterm();
+            	    boolterm76=boolterm();
 
             	    state._fsp--;
 
-            	    adaptor.addChild(root_0, boolterm77.getTree());
+            	    adaptor.addChild(root_0, boolterm76.getTree());
 
             	    }
             	    break;
 
             	default :
-            	    break loop13;
+            	    break loop12;
                 }
             } while (true);
 
@@ -2285,13 +2258,13 @@ public TreeAdaptor getTreeAdaptor() {
 
         AslTree root_0 = null;
 
-        Token AND79=null;
-        AslParser.boolfact_return boolfact78 =null;
+        Token AND78=null;
+        AslParser.boolfact_return boolfact77 =null;
 
-        AslParser.boolfact_return boolfact80 =null;
+        AslParser.boolfact_return boolfact79 =null;
 
 
-        AslTree AND79_tree=null;
+        AslTree AND78_tree=null;
 
         try {
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:139:9: ( boolfact ( AND ^ boolfact )* )
@@ -2301,46 +2274,46 @@ public TreeAdaptor getTreeAdaptor() {
 
 
             pushFollow(FOLLOW_boolfact_in_boolterm551);
-            boolfact78=boolfact();
+            boolfact77=boolfact();
 
             state._fsp--;
 
-            adaptor.addChild(root_0, boolfact78.getTree());
+            adaptor.addChild(root_0, boolfact77.getTree());
 
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:139:20: ( AND ^ boolfact )*
-            loop14:
+            loop13:
             do {
-                int alt14=2;
-                int LA14_0 = input.LA(1);
+                int alt13=2;
+                int LA13_0 = input.LA(1);
 
-                if ( (LA14_0==AND) ) {
-                    alt14=1;
+                if ( (LA13_0==AND) ) {
+                    alt13=1;
                 }
 
 
-                switch (alt14) {
+                switch (alt13) {
             	case 1 :
             	    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:139:21: AND ^ boolfact
             	    {
-            	    AND79=(Token)match(input,AND,FOLLOW_AND_in_boolterm554); 
-            	    AND79_tree = 
-            	    (AslTree)adaptor.create(AND79)
+            	    AND78=(Token)match(input,AND,FOLLOW_AND_in_boolterm554); 
+            	    AND78_tree = 
+            	    (AslTree)adaptor.create(AND78)
             	    ;
-            	    root_0 = (AslTree)adaptor.becomeRoot(AND79_tree, root_0);
+            	    root_0 = (AslTree)adaptor.becomeRoot(AND78_tree, root_0);
 
 
             	    pushFollow(FOLLOW_boolfact_in_boolterm557);
-            	    boolfact80=boolfact();
+            	    boolfact79=boolfact();
 
             	    state._fsp--;
 
-            	    adaptor.addChild(root_0, boolfact80.getTree());
+            	    adaptor.addChild(root_0, boolfact79.getTree());
 
             	    }
             	    break;
 
             	default :
-            	    break loop14;
+            	    break loop13;
                 }
             } while (true);
 
@@ -2384,23 +2357,23 @@ public TreeAdaptor getTreeAdaptor() {
 
         AslTree root_0 = null;
 
-        Token COND_EQUAL82=null;
-        Token NOT_EQUAL83=null;
-        Token LT84=null;
-        Token LE85=null;
-        Token GT86=null;
-        Token GE87=null;
-        AslParser.num_expr_return num_expr81 =null;
+        Token COND_EQUAL81=null;
+        Token NOT_EQUAL82=null;
+        Token LT83=null;
+        Token LE84=null;
+        Token GT85=null;
+        Token GE86=null;
+        AslParser.num_expr_return num_expr80 =null;
 
-        AslParser.num_expr_return num_expr88 =null;
+        AslParser.num_expr_return num_expr87 =null;
 
 
-        AslTree COND_EQUAL82_tree=null;
-        AslTree NOT_EQUAL83_tree=null;
-        AslTree LT84_tree=null;
-        AslTree LE85_tree=null;
-        AslTree GT86_tree=null;
-        AslTree GE87_tree=null;
+        AslTree COND_EQUAL81_tree=null;
+        AslTree NOT_EQUAL82_tree=null;
+        AslTree LT83_tree=null;
+        AslTree LE84_tree=null;
+        AslTree GT85_tree=null;
+        AslTree GE86_tree=null;
 
         try {
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:141:9: ( num_expr ( ( COND_EQUAL ^| NOT_EQUAL ^| LT ^| LE ^| GT ^| GE ^) num_expr )? )
@@ -2410,73 +2383,73 @@ public TreeAdaptor getTreeAdaptor() {
 
 
             pushFollow(FOLLOW_num_expr_in_boolfact566);
-            num_expr81=num_expr();
+            num_expr80=num_expr();
 
             state._fsp--;
 
-            adaptor.addChild(root_0, num_expr81.getTree());
+            adaptor.addChild(root_0, num_expr80.getTree());
 
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:141:20: ( ( COND_EQUAL ^| NOT_EQUAL ^| LT ^| LE ^| GT ^| GE ^) num_expr )?
-            int alt16=2;
-            int LA16_0 = input.LA(1);
+            int alt15=2;
+            int LA15_0 = input.LA(1);
 
-            if ( (LA16_0==COND_EQUAL||(LA16_0 >= GE && LA16_0 <= GT)||LA16_0==LE||LA16_0==LT||LA16_0==NOT_EQUAL) ) {
-                alt16=1;
+            if ( (LA15_0==COND_EQUAL||(LA15_0 >= GE && LA15_0 <= GT)||LA15_0==LE||LA15_0==LT||LA15_0==NOT_EQUAL) ) {
+                alt15=1;
             }
-            switch (alt16) {
+            switch (alt15) {
                 case 1 :
                     // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:141:21: ( COND_EQUAL ^| NOT_EQUAL ^| LT ^| LE ^| GT ^| GE ^) num_expr
                     {
                     // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:141:21: ( COND_EQUAL ^| NOT_EQUAL ^| LT ^| LE ^| GT ^| GE ^)
-                    int alt15=6;
+                    int alt14=6;
                     switch ( input.LA(1) ) {
                     case COND_EQUAL:
                         {
-                        alt15=1;
+                        alt14=1;
                         }
                         break;
                     case NOT_EQUAL:
                         {
-                        alt15=2;
+                        alt14=2;
                         }
                         break;
                     case LT:
                         {
-                        alt15=3;
+                        alt14=3;
                         }
                         break;
                     case LE:
                         {
-                        alt15=4;
+                        alt14=4;
                         }
                         break;
                     case GT:
                         {
-                        alt15=5;
+                        alt14=5;
                         }
                         break;
                     case GE:
                         {
-                        alt15=6;
+                        alt14=6;
                         }
                         break;
                     default:
                         NoViableAltException nvae =
-                            new NoViableAltException("", 15, 0, input);
+                            new NoViableAltException("", 14, 0, input);
 
                         throw nvae;
 
                     }
 
-                    switch (alt15) {
+                    switch (alt14) {
                         case 1 :
                             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:141:22: COND_EQUAL ^
                             {
-                            COND_EQUAL82=(Token)match(input,COND_EQUAL,FOLLOW_COND_EQUAL_in_boolfact570); 
-                            COND_EQUAL82_tree = 
-                            (AslTree)adaptor.create(COND_EQUAL82)
+                            COND_EQUAL81=(Token)match(input,COND_EQUAL,FOLLOW_COND_EQUAL_in_boolfact570); 
+                            COND_EQUAL81_tree = 
+                            (AslTree)adaptor.create(COND_EQUAL81)
                             ;
-                            root_0 = (AslTree)adaptor.becomeRoot(COND_EQUAL82_tree, root_0);
+                            root_0 = (AslTree)adaptor.becomeRoot(COND_EQUAL81_tree, root_0);
 
 
                             }
@@ -2484,11 +2457,11 @@ public TreeAdaptor getTreeAdaptor() {
                         case 2 :
                             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:141:36: NOT_EQUAL ^
                             {
-                            NOT_EQUAL83=(Token)match(input,NOT_EQUAL,FOLLOW_NOT_EQUAL_in_boolfact575); 
-                            NOT_EQUAL83_tree = 
-                            (AslTree)adaptor.create(NOT_EQUAL83)
+                            NOT_EQUAL82=(Token)match(input,NOT_EQUAL,FOLLOW_NOT_EQUAL_in_boolfact575); 
+                            NOT_EQUAL82_tree = 
+                            (AslTree)adaptor.create(NOT_EQUAL82)
                             ;
-                            root_0 = (AslTree)adaptor.becomeRoot(NOT_EQUAL83_tree, root_0);
+                            root_0 = (AslTree)adaptor.becomeRoot(NOT_EQUAL82_tree, root_0);
 
 
                             }
@@ -2496,11 +2469,11 @@ public TreeAdaptor getTreeAdaptor() {
                         case 3 :
                             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:141:49: LT ^
                             {
-                            LT84=(Token)match(input,LT,FOLLOW_LT_in_boolfact580); 
-                            LT84_tree = 
-                            (AslTree)adaptor.create(LT84)
+                            LT83=(Token)match(input,LT,FOLLOW_LT_in_boolfact580); 
+                            LT83_tree = 
+                            (AslTree)adaptor.create(LT83)
                             ;
-                            root_0 = (AslTree)adaptor.becomeRoot(LT84_tree, root_0);
+                            root_0 = (AslTree)adaptor.becomeRoot(LT83_tree, root_0);
 
 
                             }
@@ -2508,11 +2481,11 @@ public TreeAdaptor getTreeAdaptor() {
                         case 4 :
                             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:141:55: LE ^
                             {
-                            LE85=(Token)match(input,LE,FOLLOW_LE_in_boolfact585); 
-                            LE85_tree = 
-                            (AslTree)adaptor.create(LE85)
+                            LE84=(Token)match(input,LE,FOLLOW_LE_in_boolfact585); 
+                            LE84_tree = 
+                            (AslTree)adaptor.create(LE84)
                             ;
-                            root_0 = (AslTree)adaptor.becomeRoot(LE85_tree, root_0);
+                            root_0 = (AslTree)adaptor.becomeRoot(LE84_tree, root_0);
 
 
                             }
@@ -2520,11 +2493,11 @@ public TreeAdaptor getTreeAdaptor() {
                         case 5 :
                             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:141:61: GT ^
                             {
-                            GT86=(Token)match(input,GT,FOLLOW_GT_in_boolfact590); 
-                            GT86_tree = 
-                            (AslTree)adaptor.create(GT86)
+                            GT85=(Token)match(input,GT,FOLLOW_GT_in_boolfact590); 
+                            GT85_tree = 
+                            (AslTree)adaptor.create(GT85)
                             ;
-                            root_0 = (AslTree)adaptor.becomeRoot(GT86_tree, root_0);
+                            root_0 = (AslTree)adaptor.becomeRoot(GT85_tree, root_0);
 
 
                             }
@@ -2532,11 +2505,11 @@ public TreeAdaptor getTreeAdaptor() {
                         case 6 :
                             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:141:67: GE ^
                             {
-                            GE87=(Token)match(input,GE,FOLLOW_GE_in_boolfact595); 
-                            GE87_tree = 
-                            (AslTree)adaptor.create(GE87)
+                            GE86=(Token)match(input,GE,FOLLOW_GE_in_boolfact595); 
+                            GE86_tree = 
+                            (AslTree)adaptor.create(GE86)
                             ;
-                            root_0 = (AslTree)adaptor.becomeRoot(GE87_tree, root_0);
+                            root_0 = (AslTree)adaptor.becomeRoot(GE86_tree, root_0);
 
 
                             }
@@ -2546,11 +2519,11 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                     pushFollow(FOLLOW_num_expr_in_boolfact599);
-                    num_expr88=num_expr();
+                    num_expr87=num_expr();
 
                     state._fsp--;
 
-                    adaptor.addChild(root_0, num_expr88.getTree());
+                    adaptor.addChild(root_0, num_expr87.getTree());
 
                     }
                     break;
@@ -2597,15 +2570,15 @@ public TreeAdaptor getTreeAdaptor() {
 
         AslTree root_0 = null;
 
-        Token PLUS90=null;
-        Token MINUS91=null;
-        AslParser.term_return term89 =null;
+        Token PLUS89=null;
+        Token MINUS90=null;
+        AslParser.term_return term88 =null;
 
-        AslParser.term_return term92 =null;
+        AslParser.term_return term91 =null;
 
 
-        AslTree PLUS90_tree=null;
-        AslTree MINUS91_tree=null;
+        AslTree PLUS89_tree=null;
+        AslTree MINUS90_tree=null;
 
         try {
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:143:9: ( term ( ( PLUS ^| MINUS ^) term )* )
@@ -2615,53 +2588,53 @@ public TreeAdaptor getTreeAdaptor() {
 
 
             pushFollow(FOLLOW_term_in_num_expr608);
-            term89=term();
+            term88=term();
 
             state._fsp--;
 
-            adaptor.addChild(root_0, term89.getTree());
+            adaptor.addChild(root_0, term88.getTree());
 
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:143:16: ( ( PLUS ^| MINUS ^) term )*
-            loop18:
+            loop17:
             do {
-                int alt18=2;
-                int LA18_0 = input.LA(1);
+                int alt17=2;
+                int LA17_0 = input.LA(1);
 
-                if ( (LA18_0==MINUS||LA18_0==PLUS) ) {
-                    alt18=1;
+                if ( (LA17_0==MINUS||LA17_0==PLUS) ) {
+                    alt17=1;
                 }
 
 
-                switch (alt18) {
+                switch (alt17) {
             	case 1 :
             	    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:143:18: ( PLUS ^| MINUS ^) term
             	    {
             	    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:143:18: ( PLUS ^| MINUS ^)
-            	    int alt17=2;
-            	    int LA17_0 = input.LA(1);
+            	    int alt16=2;
+            	    int LA16_0 = input.LA(1);
 
-            	    if ( (LA17_0==PLUS) ) {
-            	        alt17=1;
+            	    if ( (LA16_0==PLUS) ) {
+            	        alt16=1;
             	    }
-            	    else if ( (LA17_0==MINUS) ) {
-            	        alt17=2;
+            	    else if ( (LA16_0==MINUS) ) {
+            	        alt16=2;
             	    }
             	    else {
             	        NoViableAltException nvae =
-            	            new NoViableAltException("", 17, 0, input);
+            	            new NoViableAltException("", 16, 0, input);
 
             	        throw nvae;
 
             	    }
-            	    switch (alt17) {
+            	    switch (alt16) {
             	        case 1 :
             	            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:143:19: PLUS ^
             	            {
-            	            PLUS90=(Token)match(input,PLUS,FOLLOW_PLUS_in_num_expr613); 
-            	            PLUS90_tree = 
-            	            (AslTree)adaptor.create(PLUS90)
+            	            PLUS89=(Token)match(input,PLUS,FOLLOW_PLUS_in_num_expr613); 
+            	            PLUS89_tree = 
+            	            (AslTree)adaptor.create(PLUS89)
             	            ;
-            	            root_0 = (AslTree)adaptor.becomeRoot(PLUS90_tree, root_0);
+            	            root_0 = (AslTree)adaptor.becomeRoot(PLUS89_tree, root_0);
 
 
             	            }
@@ -2669,11 +2642,11 @@ public TreeAdaptor getTreeAdaptor() {
             	        case 2 :
             	            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:143:27: MINUS ^
             	            {
-            	            MINUS91=(Token)match(input,MINUS,FOLLOW_MINUS_in_num_expr618); 
-            	            MINUS91_tree = 
-            	            (AslTree)adaptor.create(MINUS91)
+            	            MINUS90=(Token)match(input,MINUS,FOLLOW_MINUS_in_num_expr618); 
+            	            MINUS90_tree = 
+            	            (AslTree)adaptor.create(MINUS90)
             	            ;
-            	            root_0 = (AslTree)adaptor.becomeRoot(MINUS91_tree, root_0);
+            	            root_0 = (AslTree)adaptor.becomeRoot(MINUS90_tree, root_0);
 
 
             	            }
@@ -2683,17 +2656,17 @@ public TreeAdaptor getTreeAdaptor() {
 
 
             	    pushFollow(FOLLOW_term_in_num_expr622);
-            	    term92=term();
+            	    term91=term();
 
             	    state._fsp--;
 
-            	    adaptor.addChild(root_0, term92.getTree());
+            	    adaptor.addChild(root_0, term91.getTree());
 
             	    }
             	    break;
 
             	default :
-            	    break loop18;
+            	    break loop17;
                 }
             } while (true);
 
@@ -2737,17 +2710,17 @@ public TreeAdaptor getTreeAdaptor() {
 
         AslTree root_0 = null;
 
-        Token MUL94=null;
-        Token DIV95=null;
-        Token MOD96=null;
-        AslParser.factor_return factor93 =null;
+        Token MUL93=null;
+        Token DIV94=null;
+        Token MOD95=null;
+        AslParser.factor_return factor92 =null;
 
-        AslParser.factor_return factor97 =null;
+        AslParser.factor_return factor96 =null;
 
 
-        AslTree MUL94_tree=null;
-        AslTree DIV95_tree=null;
-        AslTree MOD96_tree=null;
+        AslTree MUL93_tree=null;
+        AslTree DIV94_tree=null;
+        AslTree MOD95_tree=null;
 
         try {
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:145:6: ( factor ( ( MUL ^| DIV ^| MOD ^) factor )* )
@@ -2757,62 +2730,62 @@ public TreeAdaptor getTreeAdaptor() {
 
 
             pushFollow(FOLLOW_factor_in_term632);
-            factor93=factor();
+            factor92=factor();
 
             state._fsp--;
 
-            adaptor.addChild(root_0, factor93.getTree());
+            adaptor.addChild(root_0, factor92.getTree());
 
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:145:15: ( ( MUL ^| DIV ^| MOD ^) factor )*
-            loop20:
+            loop19:
             do {
-                int alt20=2;
-                int LA20_0 = input.LA(1);
+                int alt19=2;
+                int LA19_0 = input.LA(1);
 
-                if ( (LA20_0==DIV||LA20_0==MOD||LA20_0==MUL) ) {
-                    alt20=1;
+                if ( (LA19_0==DIV||LA19_0==MOD||LA19_0==MUL) ) {
+                    alt19=1;
                 }
 
 
-                switch (alt20) {
+                switch (alt19) {
             	case 1 :
             	    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:145:17: ( MUL ^| DIV ^| MOD ^) factor
             	    {
             	    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:145:17: ( MUL ^| DIV ^| MOD ^)
-            	    int alt19=3;
+            	    int alt18=3;
             	    switch ( input.LA(1) ) {
             	    case MUL:
             	        {
-            	        alt19=1;
+            	        alt18=1;
             	        }
             	        break;
             	    case DIV:
             	        {
-            	        alt19=2;
+            	        alt18=2;
             	        }
             	        break;
             	    case MOD:
             	        {
-            	        alt19=3;
+            	        alt18=3;
             	        }
             	        break;
             	    default:
             	        NoViableAltException nvae =
-            	            new NoViableAltException("", 19, 0, input);
+            	            new NoViableAltException("", 18, 0, input);
 
             	        throw nvae;
 
             	    }
 
-            	    switch (alt19) {
+            	    switch (alt18) {
             	        case 1 :
             	            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:145:18: MUL ^
             	            {
-            	            MUL94=(Token)match(input,MUL,FOLLOW_MUL_in_term637); 
-            	            MUL94_tree = 
-            	            (AslTree)adaptor.create(MUL94)
+            	            MUL93=(Token)match(input,MUL,FOLLOW_MUL_in_term637); 
+            	            MUL93_tree = 
+            	            (AslTree)adaptor.create(MUL93)
             	            ;
-            	            root_0 = (AslTree)adaptor.becomeRoot(MUL94_tree, root_0);
+            	            root_0 = (AslTree)adaptor.becomeRoot(MUL93_tree, root_0);
 
 
             	            }
@@ -2820,11 +2793,11 @@ public TreeAdaptor getTreeAdaptor() {
             	        case 2 :
             	            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:145:25: DIV ^
             	            {
-            	            DIV95=(Token)match(input,DIV,FOLLOW_DIV_in_term642); 
-            	            DIV95_tree = 
-            	            (AslTree)adaptor.create(DIV95)
+            	            DIV94=(Token)match(input,DIV,FOLLOW_DIV_in_term642); 
+            	            DIV94_tree = 
+            	            (AslTree)adaptor.create(DIV94)
             	            ;
-            	            root_0 = (AslTree)adaptor.becomeRoot(DIV95_tree, root_0);
+            	            root_0 = (AslTree)adaptor.becomeRoot(DIV94_tree, root_0);
 
 
             	            }
@@ -2832,11 +2805,11 @@ public TreeAdaptor getTreeAdaptor() {
             	        case 3 :
             	            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:145:32: MOD ^
             	            {
-            	            MOD96=(Token)match(input,MOD,FOLLOW_MOD_in_term647); 
-            	            MOD96_tree = 
-            	            (AslTree)adaptor.create(MOD96)
+            	            MOD95=(Token)match(input,MOD,FOLLOW_MOD_in_term647); 
+            	            MOD95_tree = 
+            	            (AslTree)adaptor.create(MOD95)
             	            ;
-            	            root_0 = (AslTree)adaptor.becomeRoot(MOD96_tree, root_0);
+            	            root_0 = (AslTree)adaptor.becomeRoot(MOD95_tree, root_0);
 
 
             	            }
@@ -2846,17 +2819,17 @@ public TreeAdaptor getTreeAdaptor() {
 
 
             	    pushFollow(FOLLOW_factor_in_term651);
-            	    factor97=factor();
+            	    factor96=factor();
 
             	    state._fsp--;
 
-            	    adaptor.addChild(root_0, factor97.getTree());
+            	    adaptor.addChild(root_0, factor96.getTree());
 
             	    }
             	    break;
 
             	default :
-            	    break loop20;
+            	    break loop19;
                 }
             } while (true);
 
@@ -2900,15 +2873,15 @@ public TreeAdaptor getTreeAdaptor() {
 
         AslTree root_0 = null;
 
-        Token NOT98=null;
-        Token PLUS99=null;
-        Token MINUS100=null;
-        AslParser.atom_return atom101 =null;
+        Token NOT97=null;
+        Token PLUS98=null;
+        Token MINUS99=null;
+        AslParser.atom_return atom100 =null;
 
 
-        AslTree NOT98_tree=null;
-        AslTree PLUS99_tree=null;
-        AslTree MINUS100_tree=null;
+        AslTree NOT97_tree=null;
+        AslTree PLUS98_tree=null;
+        AslTree MINUS99_tree=null;
 
         try {
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:147:8: ( ( NOT ^| PLUS ^| MINUS ^)? atom )
@@ -2918,34 +2891,34 @@ public TreeAdaptor getTreeAdaptor() {
 
 
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:147:10: ( NOT ^| PLUS ^| MINUS ^)?
-            int alt21=4;
+            int alt20=4;
             switch ( input.LA(1) ) {
                 case NOT:
                     {
-                    alt21=1;
+                    alt20=1;
                     }
                     break;
                 case PLUS:
                     {
-                    alt21=2;
+                    alt20=2;
                     }
                     break;
                 case MINUS:
                     {
-                    alt21=3;
+                    alt20=3;
                     }
                     break;
             }
 
-            switch (alt21) {
+            switch (alt20) {
                 case 1 :
                     // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:147:11: NOT ^
                     {
-                    NOT98=(Token)match(input,NOT,FOLLOW_NOT_in_factor662); 
-                    NOT98_tree = 
-                    (AslTree)adaptor.create(NOT98)
+                    NOT97=(Token)match(input,NOT,FOLLOW_NOT_in_factor662); 
+                    NOT97_tree = 
+                    (AslTree)adaptor.create(NOT97)
                     ;
-                    root_0 = (AslTree)adaptor.becomeRoot(NOT98_tree, root_0);
+                    root_0 = (AslTree)adaptor.becomeRoot(NOT97_tree, root_0);
 
 
                     }
@@ -2953,11 +2926,11 @@ public TreeAdaptor getTreeAdaptor() {
                 case 2 :
                     // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:147:18: PLUS ^
                     {
-                    PLUS99=(Token)match(input,PLUS,FOLLOW_PLUS_in_factor667); 
-                    PLUS99_tree = 
-                    (AslTree)adaptor.create(PLUS99)
+                    PLUS98=(Token)match(input,PLUS,FOLLOW_PLUS_in_factor667); 
+                    PLUS98_tree = 
+                    (AslTree)adaptor.create(PLUS98)
                     ;
-                    root_0 = (AslTree)adaptor.becomeRoot(PLUS99_tree, root_0);
+                    root_0 = (AslTree)adaptor.becomeRoot(PLUS98_tree, root_0);
 
 
                     }
@@ -2965,11 +2938,11 @@ public TreeAdaptor getTreeAdaptor() {
                 case 3 :
                     // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:147:26: MINUS ^
                     {
-                    MINUS100=(Token)match(input,MINUS,FOLLOW_MINUS_in_factor672); 
-                    MINUS100_tree = 
-                    (AslTree)adaptor.create(MINUS100)
+                    MINUS99=(Token)match(input,MINUS,FOLLOW_MINUS_in_factor672); 
+                    MINUS99_tree = 
+                    (AslTree)adaptor.create(MINUS99)
                     ;
-                    root_0 = (AslTree)adaptor.becomeRoot(MINUS100_tree, root_0);
+                    root_0 = (AslTree)adaptor.becomeRoot(MINUS99_tree, root_0);
 
 
                     }
@@ -2979,11 +2952,11 @@ public TreeAdaptor getTreeAdaptor() {
 
 
             pushFollow(FOLLOW_atom_in_factor677);
-            atom101=atom();
+            atom100=atom();
 
             state._fsp--;
 
-            adaptor.addChild(root_0, atom101.getTree());
+            adaptor.addChild(root_0, atom100.getTree());
 
             }
 
@@ -3025,40 +2998,40 @@ public TreeAdaptor getTreeAdaptor() {
         AslTree root_0 = null;
 
         Token b=null;
-        Token ID102=null;
-        Token INT103=null;
-        Token char_literal105=null;
-        Token char_literal107=null;
-        AslParser.funcall_return funcall104 =null;
+        Token ID101=null;
+        Token INT102=null;
+        Token char_literal104=null;
+        Token char_literal106=null;
+        AslParser.funcall_return funcall103 =null;
 
-        AslParser.expr_return expr106 =null;
+        AslParser.expr_return expr105 =null;
 
-        AslParser.acces_attribute_return acces_attribute108 =null;
+        AslParser.acces_attribute_return acces_attribute107 =null;
 
 
         AslTree b_tree=null;
-        AslTree ID102_tree=null;
-        AslTree INT103_tree=null;
-        AslTree char_literal105_tree=null;
-        AslTree char_literal107_tree=null;
+        AslTree ID101_tree=null;
+        AslTree INT102_tree=null;
+        AslTree char_literal104_tree=null;
+        AslTree char_literal106_tree=null;
         RewriteRuleTokenStream stream_TRUE=new RewriteRuleTokenStream(adaptor,"token TRUE");
         RewriteRuleTokenStream stream_FALSE=new RewriteRuleTokenStream(adaptor,"token FALSE");
 
         try {
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:152:6: ( ID | INT | (b= TRUE |b= FALSE ) -> ^( BOOLEAN[$b,$b.text] ) | funcall | '(' ! expr ')' !| acces_attribute )
-            int alt23=6;
+            int alt22=6;
             switch ( input.LA(1) ) {
             case ID:
                 {
                 switch ( input.LA(2) ) {
-                case 64:
+                case 65:
                     {
-                    alt23=4;
+                    alt22=4;
                     }
                     break;
-                case 67:
+                case 68:
                     {
-                    alt23=6;
+                    alt22=6;
                     }
                     break;
                 case AND:
@@ -3069,7 +3042,6 @@ public TreeAdaptor getTreeAdaptor() {
                 case ENDFOR:
                 case ENDFUNC:
                 case ENDIF:
-                case ENDLINE:
                 case ENDWHILE:
                 case GE:
                 case GT:
@@ -3081,18 +3053,18 @@ public TreeAdaptor getTreeAdaptor() {
                 case NOT_EQUAL:
                 case OR:
                 case PLUS:
-                case 65:
                 case 66:
-                case 68:
+                case 67:
                 case 69:
-                case 72:
+                case 70:
+                case 73:
                     {
-                    alt23=1;
+                    alt22=1;
                     }
                     break;
                 default:
                     NoViableAltException nvae =
-                        new NoViableAltException("", 23, 1, input);
+                        new NoViableAltException("", 22, 1, input);
 
                     throw nvae;
 
@@ -3102,40 +3074,40 @@ public TreeAdaptor getTreeAdaptor() {
                 break;
             case INT:
                 {
-                alt23=2;
+                alt22=2;
                 }
                 break;
             case FALSE:
             case TRUE:
                 {
-                alt23=3;
+                alt22=3;
                 }
                 break;
-            case 64:
+            case 65:
                 {
-                alt23=5;
+                alt22=5;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 23, 0, input);
+                    new NoViableAltException("", 22, 0, input);
 
                 throw nvae;
 
             }
 
-            switch (alt23) {
+            switch (alt22) {
                 case 1 :
                     // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:152:8: ID
                     {
                     root_0 = (AslTree)adaptor.nil();
 
 
-                    ID102=(Token)match(input,ID,FOLLOW_ID_in_atom688); 
-                    ID102_tree = 
-                    (AslTree)adaptor.create(ID102)
+                    ID101=(Token)match(input,ID,FOLLOW_ID_in_atom688); 
+                    ID101_tree = 
+                    (AslTree)adaptor.create(ID101)
                     ;
-                    adaptor.addChild(root_0, ID102_tree);
+                    adaptor.addChild(root_0, ID101_tree);
 
 
                     }
@@ -3146,11 +3118,11 @@ public TreeAdaptor getTreeAdaptor() {
                     root_0 = (AslTree)adaptor.nil();
 
 
-                    INT103=(Token)match(input,INT,FOLLOW_INT_in_atom692); 
-                    INT103_tree = 
-                    (AslTree)adaptor.create(INT103)
+                    INT102=(Token)match(input,INT,FOLLOW_INT_in_atom692); 
+                    INT102_tree = 
+                    (AslTree)adaptor.create(INT102)
                     ;
-                    adaptor.addChild(root_0, INT103_tree);
+                    adaptor.addChild(root_0, INT102_tree);
 
 
                     }
@@ -3159,23 +3131,23 @@ public TreeAdaptor getTreeAdaptor() {
                     // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:154:3: (b= TRUE |b= FALSE )
                     {
                     // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:154:3: (b= TRUE |b= FALSE )
-                    int alt22=2;
-                    int LA22_0 = input.LA(1);
+                    int alt21=2;
+                    int LA21_0 = input.LA(1);
 
-                    if ( (LA22_0==TRUE) ) {
-                        alt22=1;
+                    if ( (LA21_0==TRUE) ) {
+                        alt21=1;
                     }
-                    else if ( (LA22_0==FALSE) ) {
-                        alt22=2;
+                    else if ( (LA21_0==FALSE) ) {
+                        alt21=2;
                     }
                     else {
                         NoViableAltException nvae =
-                            new NoViableAltException("", 22, 0, input);
+                            new NoViableAltException("", 21, 0, input);
 
                         throw nvae;
 
                     }
-                    switch (alt22) {
+                    switch (alt21) {
                         case 1 :
                             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:154:4: b= TRUE
                             {
@@ -3235,11 +3207,11 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                     pushFollow(FOLLOW_funcall_in_atom717);
-                    funcall104=funcall();
+                    funcall103=funcall();
 
                     state._fsp--;
 
-                    adaptor.addChild(root_0, funcall104.getTree());
+                    adaptor.addChild(root_0, funcall103.getTree());
 
                     }
                     break;
@@ -3249,16 +3221,16 @@ public TreeAdaptor getTreeAdaptor() {
                     root_0 = (AslTree)adaptor.nil();
 
 
-                    char_literal105=(Token)match(input,64,FOLLOW_64_in_atom721); 
+                    char_literal104=(Token)match(input,65,FOLLOW_65_in_atom721); 
 
                     pushFollow(FOLLOW_expr_in_atom724);
-                    expr106=expr();
+                    expr105=expr();
 
                     state._fsp--;
 
-                    adaptor.addChild(root_0, expr106.getTree());
+                    adaptor.addChild(root_0, expr105.getTree());
 
-                    char_literal107=(Token)match(input,65,FOLLOW_65_in_atom726); 
+                    char_literal106=(Token)match(input,66,FOLLOW_66_in_atom726); 
 
                     }
                     break;
@@ -3269,11 +3241,11 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                     pushFollow(FOLLOW_acces_attribute_in_atom731);
-                    acces_attribute108=acces_attribute();
+                    acces_attribute107=acces_attribute();
 
                     state._fsp--;
 
-                    adaptor.addChild(root_0, acces_attribute108.getTree());
+                    adaptor.addChild(root_0, acces_attribute107.getTree());
 
                     }
                     break;
@@ -3316,48 +3288,48 @@ public TreeAdaptor getTreeAdaptor() {
 
         AslTree root_0 = null;
 
-        Token ID109=null;
-        Token char_literal110=null;
-        Token char_literal112=null;
-        AslParser.expr_list_return expr_list111 =null;
+        Token ID108=null;
+        Token char_literal109=null;
+        Token char_literal111=null;
+        AslParser.expr_list_return expr_list110 =null;
 
 
-        AslTree ID109_tree=null;
-        AslTree char_literal110_tree=null;
-        AslTree char_literal112_tree=null;
+        AslTree ID108_tree=null;
+        AslTree char_literal109_tree=null;
+        AslTree char_literal111_tree=null;
+        RewriteRuleTokenStream stream_66=new RewriteRuleTokenStream(adaptor,"token 66");
         RewriteRuleTokenStream stream_ID=new RewriteRuleTokenStream(adaptor,"token ID");
-        RewriteRuleTokenStream stream_64=new RewriteRuleTokenStream(adaptor,"token 64");
         RewriteRuleTokenStream stream_65=new RewriteRuleTokenStream(adaptor,"token 65");
         RewriteRuleSubtreeStream stream_expr_list=new RewriteRuleSubtreeStream(adaptor,"rule expr_list");
         try {
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:160:9: ( ID '(' ( expr_list )? ')' -> ^( FUNCALL ID ^( ARGLIST ( expr_list )? ) ) )
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:160:11: ID '(' ( expr_list )? ')'
             {
-            ID109=(Token)match(input,ID,FOLLOW_ID_in_funcall740);  
-            stream_ID.add(ID109);
+            ID108=(Token)match(input,ID,FOLLOW_ID_in_funcall740);  
+            stream_ID.add(ID108);
 
 
-            char_literal110=(Token)match(input,64,FOLLOW_64_in_funcall742);  
-            stream_64.add(char_literal110);
+            char_literal109=(Token)match(input,65,FOLLOW_65_in_funcall742);  
+            stream_65.add(char_literal109);
 
 
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:160:18: ( expr_list )?
-            int alt24=2;
-            int LA24_0 = input.LA(1);
+            int alt23=2;
+            int LA23_0 = input.LA(1);
 
-            if ( (LA24_0==FALSE||LA24_0==ID||LA24_0==INT||LA24_0==MINUS||LA24_0==NOT||LA24_0==PLUS||LA24_0==TRUE||LA24_0==64) ) {
-                alt24=1;
+            if ( (LA23_0==FALSE||LA23_0==ID||LA23_0==INT||LA23_0==MINUS||LA23_0==NOT||LA23_0==PLUS||LA23_0==TRUE||LA23_0==65) ) {
+                alt23=1;
             }
-            switch (alt24) {
+            switch (alt23) {
                 case 1 :
                     // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:160:18: expr_list
                     {
                     pushFollow(FOLLOW_expr_list_in_funcall744);
-                    expr_list111=expr_list();
+                    expr_list110=expr_list();
 
                     state._fsp--;
 
-                    stream_expr_list.add(expr_list111.getTree());
+                    stream_expr_list.add(expr_list110.getTree());
 
                     }
                     break;
@@ -3365,8 +3337,8 @@ public TreeAdaptor getTreeAdaptor() {
             }
 
 
-            char_literal112=(Token)match(input,65,FOLLOW_65_in_funcall747);  
-            stream_65.add(char_literal112);
+            char_literal111=(Token)match(input,66,FOLLOW_66_in_funcall747);  
+            stream_66.add(char_literal111);
 
 
             // AST REWRITE
@@ -3457,13 +3429,13 @@ public TreeAdaptor getTreeAdaptor() {
 
         AslTree root_0 = null;
 
-        Token char_literal114=null;
-        AslParser.expr_return expr113 =null;
+        Token char_literal113=null;
+        AslParser.expr_return expr112 =null;
 
-        AslParser.expr_return expr115 =null;
+        AslParser.expr_return expr114 =null;
 
 
-        AslTree char_literal114_tree=null;
+        AslTree char_literal113_tree=null;
 
         try {
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:163:10: ( expr ( ',' ! expr )* )
@@ -3473,41 +3445,41 @@ public TreeAdaptor getTreeAdaptor() {
 
 
             pushFollow(FOLLOW_expr_in_expr_list770);
-            expr113=expr();
+            expr112=expr();
 
             state._fsp--;
 
-            adaptor.addChild(root_0, expr113.getTree());
+            adaptor.addChild(root_0, expr112.getTree());
 
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:163:17: ( ',' ! expr )*
-            loop25:
+            loop24:
             do {
-                int alt25=2;
-                int LA25_0 = input.LA(1);
+                int alt24=2;
+                int LA24_0 = input.LA(1);
 
-                if ( (LA25_0==66) ) {
-                    alt25=1;
+                if ( (LA24_0==67) ) {
+                    alt24=1;
                 }
 
 
-                switch (alt25) {
+                switch (alt24) {
             	case 1 :
             	    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:163:18: ',' ! expr
             	    {
-            	    char_literal114=(Token)match(input,66,FOLLOW_66_in_expr_list773); 
+            	    char_literal113=(Token)match(input,67,FOLLOW_67_in_expr_list773); 
 
             	    pushFollow(FOLLOW_expr_in_expr_list776);
-            	    expr115=expr();
+            	    expr114=expr();
 
             	    state._fsp--;
 
-            	    adaptor.addChild(root_0, expr115.getTree());
+            	    adaptor.addChild(root_0, expr114.getTree());
 
             	    }
             	    break;
 
             	default :
-            	    break loop25;
+            	    break loop24;
                 }
             } while (true);
 
@@ -3551,22 +3523,22 @@ public TreeAdaptor getTreeAdaptor() {
 
         AslTree root_0 = null;
 
-        Token char_literal116=null;
-        Token BEGIN117=null;
-        Token EQUAL118=null;
-        Token char_literal120=null;
-        AslParser.expr_return expr119 =null;
+        Token char_literal115=null;
+        Token BEGIN116=null;
+        Token EQUAL117=null;
+        Token char_literal119=null;
+        AslParser.expr_return expr118 =null;
 
-        AslParser.finish_time_return finish_time121 =null;
+        AslParser.finish_time_return finish_time120 =null;
 
 
-        AslTree char_literal116_tree=null;
-        AslTree BEGIN117_tree=null;
-        AslTree EQUAL118_tree=null;
-        AslTree char_literal120_tree=null;
-        RewriteRuleTokenStream stream_66=new RewriteRuleTokenStream(adaptor,"token 66");
+        AslTree char_literal115_tree=null;
+        AslTree BEGIN116_tree=null;
+        AslTree EQUAL117_tree=null;
+        AslTree char_literal119_tree=null;
+        RewriteRuleTokenStream stream_67=new RewriteRuleTokenStream(adaptor,"token 67");
         RewriteRuleTokenStream stream_EQUAL=new RewriteRuleTokenStream(adaptor,"token EQUAL");
-        RewriteRuleTokenStream stream_70=new RewriteRuleTokenStream(adaptor,"token 70");
+        RewriteRuleTokenStream stream_71=new RewriteRuleTokenStream(adaptor,"token 71");
         RewriteRuleTokenStream stream_BEGIN=new RewriteRuleTokenStream(adaptor,"token BEGIN");
         RewriteRuleSubtreeStream stream_expr=new RewriteRuleSubtreeStream(adaptor,"rule expr");
         RewriteRuleSubtreeStream stream_finish_time=new RewriteRuleSubtreeStream(adaptor,"rule finish_time");
@@ -3574,46 +3546,46 @@ public TreeAdaptor getTreeAdaptor() {
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:165:16: ( '@' BEGIN EQUAL expr ( ',' finish_time )? -> ^( TIMEANNOTATION expr ( finish_time )? ) )
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:166:1: '@' BEGIN EQUAL expr ( ',' finish_time )?
             {
-            char_literal116=(Token)match(input,70,FOLLOW_70_in_time_annotation785);  
-            stream_70.add(char_literal116);
+            char_literal115=(Token)match(input,71,FOLLOW_71_in_time_annotation785);  
+            stream_71.add(char_literal115);
 
 
-            BEGIN117=(Token)match(input,BEGIN,FOLLOW_BEGIN_in_time_annotation787);  
-            stream_BEGIN.add(BEGIN117);
+            BEGIN116=(Token)match(input,BEGIN,FOLLOW_BEGIN_in_time_annotation787);  
+            stream_BEGIN.add(BEGIN116);
 
 
-            EQUAL118=(Token)match(input,EQUAL,FOLLOW_EQUAL_in_time_annotation789);  
-            stream_EQUAL.add(EQUAL118);
+            EQUAL117=(Token)match(input,EQUAL,FOLLOW_EQUAL_in_time_annotation789);  
+            stream_EQUAL.add(EQUAL117);
 
 
             pushFollow(FOLLOW_expr_in_time_annotation791);
-            expr119=expr();
+            expr118=expr();
 
             state._fsp--;
 
-            stream_expr.add(expr119.getTree());
+            stream_expr.add(expr118.getTree());
 
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:166:22: ( ',' finish_time )?
-            int alt26=2;
-            int LA26_0 = input.LA(1);
+            int alt25=2;
+            int LA25_0 = input.LA(1);
 
-            if ( (LA26_0==66) ) {
-                alt26=1;
+            if ( (LA25_0==67) ) {
+                alt25=1;
             }
-            switch (alt26) {
+            switch (alt25) {
                 case 1 :
                     // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:166:23: ',' finish_time
                     {
-                    char_literal120=(Token)match(input,66,FOLLOW_66_in_time_annotation794);  
-                    stream_66.add(char_literal120);
+                    char_literal119=(Token)match(input,67,FOLLOW_67_in_time_annotation794);  
+                    stream_67.add(char_literal119);
 
 
                     pushFollow(FOLLOW_finish_time_in_time_annotation796);
-                    finish_time121=finish_time();
+                    finish_time120=finish_time();
 
                     state._fsp--;
 
-                    stream_finish_time.add(finish_time121.getTree());
+                    stream_finish_time.add(finish_time120.getTree());
 
                     }
                     break;
@@ -3622,7 +3594,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
             // AST REWRITE
-            // elements: finish_time, expr
+            // elements: expr, finish_time
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -3697,19 +3669,19 @@ public TreeAdaptor getTreeAdaptor() {
 
         AslTree root_0 = null;
 
-        Token END122=null;
-        Token EQUAL123=null;
-        Token DURATION125=null;
-        Token EQUAL126=null;
-        AslParser.expr_return expr124 =null;
+        Token END121=null;
+        Token EQUAL122=null;
+        Token DURATION124=null;
+        Token EQUAL125=null;
+        AslParser.expr_return expr123 =null;
 
-        AslParser.expr_return expr127 =null;
+        AslParser.expr_return expr126 =null;
 
 
-        AslTree END122_tree=null;
-        AslTree EQUAL123_tree=null;
-        AslTree DURATION125_tree=null;
-        AslTree EQUAL126_tree=null;
+        AslTree END121_tree=null;
+        AslTree EQUAL122_tree=null;
+        AslTree DURATION124_tree=null;
+        AslTree EQUAL125_tree=null;
 
         try {
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:168:12: ( ( END ^ EQUAL ! expr | DURATION ^ EQUAL ! expr ) )
@@ -3719,62 +3691,62 @@ public TreeAdaptor getTreeAdaptor() {
 
 
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:169:2: ( END ^ EQUAL ! expr | DURATION ^ EQUAL ! expr )
-            int alt27=2;
-            int LA27_0 = input.LA(1);
+            int alt26=2;
+            int LA26_0 = input.LA(1);
 
-            if ( (LA27_0==END) ) {
-                alt27=1;
+            if ( (LA26_0==END) ) {
+                alt26=1;
             }
-            else if ( (LA27_0==DURATION) ) {
-                alt27=2;
+            else if ( (LA26_0==DURATION) ) {
+                alt26=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 27, 0, input);
+                    new NoViableAltException("", 26, 0, input);
 
                 throw nvae;
 
             }
-            switch (alt27) {
+            switch (alt26) {
                 case 1 :
                     // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:169:2: END ^ EQUAL ! expr
                     {
-                    END122=(Token)match(input,END,FOLLOW_END_in_finish_time817); 
-                    END122_tree = 
-                    (AslTree)adaptor.create(END122)
+                    END121=(Token)match(input,END,FOLLOW_END_in_finish_time817); 
+                    END121_tree = 
+                    (AslTree)adaptor.create(END121)
                     ;
-                    root_0 = (AslTree)adaptor.becomeRoot(END122_tree, root_0);
+                    root_0 = (AslTree)adaptor.becomeRoot(END121_tree, root_0);
 
 
-                    EQUAL123=(Token)match(input,EQUAL,FOLLOW_EQUAL_in_finish_time820); 
+                    EQUAL122=(Token)match(input,EQUAL,FOLLOW_EQUAL_in_finish_time820); 
 
                     pushFollow(FOLLOW_expr_in_finish_time823);
-                    expr124=expr();
+                    expr123=expr();
 
                     state._fsp--;
 
-                    adaptor.addChild(root_0, expr124.getTree());
+                    adaptor.addChild(root_0, expr123.getTree());
 
                     }
                     break;
                 case 2 :
                     // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:169:21: DURATION ^ EQUAL ! expr
                     {
-                    DURATION125=(Token)match(input,DURATION,FOLLOW_DURATION_in_finish_time827); 
-                    DURATION125_tree = 
-                    (AslTree)adaptor.create(DURATION125)
+                    DURATION124=(Token)match(input,DURATION,FOLLOW_DURATION_in_finish_time827); 
+                    DURATION124_tree = 
+                    (AslTree)adaptor.create(DURATION124)
                     ;
-                    root_0 = (AslTree)adaptor.becomeRoot(DURATION125_tree, root_0);
+                    root_0 = (AslTree)adaptor.becomeRoot(DURATION124_tree, root_0);
 
 
-                    EQUAL126=(Token)match(input,EQUAL,FOLLOW_EQUAL_in_finish_time830); 
+                    EQUAL125=(Token)match(input,EQUAL,FOLLOW_EQUAL_in_finish_time830); 
 
                     pushFollow(FOLLOW_expr_in_finish_time833);
-                    expr127=expr();
+                    expr126=expr();
 
                     state._fsp--;
 
-                    adaptor.addChild(root_0, expr127.getTree());
+                    adaptor.addChild(root_0, expr126.getTree());
 
                     }
                     break;
@@ -3813,7 +3785,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "create"
-    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:171:1: create : CREATE TYPE_OBJECT coordenades ( list_attributes )? -> ^( CREATE TYPE_OBJECT coordenades ( ^( ATTRIBUTES list_attributes ) )? ) ;
+    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:171:1: create : CREATE TYPE_OBJECT coordenades ( list_attributes )? -> ^( CREATE_INSTR TYPE_OBJECT coordenades ( ^( ATTRIBUTES list_attributes ) )? ) ;
     public final AslParser.create_return create() throws RecognitionException {
         AslParser.create_return retval = new AslParser.create_return();
         retval.start = input.LT(1);
@@ -3821,55 +3793,55 @@ public TreeAdaptor getTreeAdaptor() {
 
         AslTree root_0 = null;
 
-        Token CREATE128=null;
-        Token TYPE_OBJECT129=null;
-        AslParser.coordenades_return coordenades130 =null;
+        Token CREATE127=null;
+        Token TYPE_OBJECT128=null;
+        AslParser.coordenades_return coordenades129 =null;
 
-        AslParser.list_attributes_return list_attributes131 =null;
+        AslParser.list_attributes_return list_attributes130 =null;
 
 
-        AslTree CREATE128_tree=null;
-        AslTree TYPE_OBJECT129_tree=null;
+        AslTree CREATE127_tree=null;
+        AslTree TYPE_OBJECT128_tree=null;
         RewriteRuleTokenStream stream_CREATE=new RewriteRuleTokenStream(adaptor,"token CREATE");
         RewriteRuleTokenStream stream_TYPE_OBJECT=new RewriteRuleTokenStream(adaptor,"token TYPE_OBJECT");
         RewriteRuleSubtreeStream stream_coordenades=new RewriteRuleSubtreeStream(adaptor,"rule coordenades");
         RewriteRuleSubtreeStream stream_list_attributes=new RewriteRuleSubtreeStream(adaptor,"rule list_attributes");
         try {
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:171:7: ( CREATE TYPE_OBJECT coordenades ( list_attributes )? -> ^( CREATE TYPE_OBJECT coordenades ( ^( ATTRIBUTES list_attributes ) )? ) )
+            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:171:7: ( CREATE TYPE_OBJECT coordenades ( list_attributes )? -> ^( CREATE_INSTR TYPE_OBJECT coordenades ( ^( ATTRIBUTES list_attributes ) )? ) )
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:171:9: CREATE TYPE_OBJECT coordenades ( list_attributes )?
             {
-            CREATE128=(Token)match(input,CREATE,FOLLOW_CREATE_in_create841);  
-            stream_CREATE.add(CREATE128);
+            CREATE127=(Token)match(input,CREATE,FOLLOW_CREATE_in_create841);  
+            stream_CREATE.add(CREATE127);
 
 
-            TYPE_OBJECT129=(Token)match(input,TYPE_OBJECT,FOLLOW_TYPE_OBJECT_in_create843);  
-            stream_TYPE_OBJECT.add(TYPE_OBJECT129);
+            TYPE_OBJECT128=(Token)match(input,TYPE_OBJECT,FOLLOW_TYPE_OBJECT_in_create843);  
+            stream_TYPE_OBJECT.add(TYPE_OBJECT128);
 
 
             pushFollow(FOLLOW_coordenades_in_create845);
-            coordenades130=coordenades();
+            coordenades129=coordenades();
 
             state._fsp--;
 
-            stream_coordenades.add(coordenades130.getTree());
+            stream_coordenades.add(coordenades129.getTree());
 
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:171:40: ( list_attributes )?
-            int alt28=2;
-            int LA28_0 = input.LA(1);
+            int alt27=2;
+            int LA27_0 = input.LA(1);
 
-            if ( (LA28_0==ATTRIBUTE) ) {
-                alt28=1;
+            if ( (LA27_0==ATTRIBUTE) ) {
+                alt27=1;
             }
-            switch (alt28) {
+            switch (alt27) {
                 case 1 :
                     // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:171:40: list_attributes
                     {
                     pushFollow(FOLLOW_list_attributes_in_create847);
-                    list_attributes131=list_attributes();
+                    list_attributes130=list_attributes();
 
                     state._fsp--;
 
-                    stream_list_attributes.add(list_attributes131.getTree());
+                    stream_list_attributes.add(list_attributes130.getTree());
 
                     }
                     break;
@@ -3878,7 +3850,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
             // AST REWRITE
-            // elements: coordenades, list_attributes, CREATE, TYPE_OBJECT
+            // elements: coordenades, TYPE_OBJECT, list_attributes
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -3888,13 +3860,13 @@ public TreeAdaptor getTreeAdaptor() {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (AslTree)adaptor.nil();
-            // 171:57: -> ^( CREATE TYPE_OBJECT coordenades ( ^( ATTRIBUTES list_attributes ) )? )
+            // 171:57: -> ^( CREATE_INSTR TYPE_OBJECT coordenades ( ^( ATTRIBUTES list_attributes ) )? )
             {
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:171:60: ^( CREATE TYPE_OBJECT coordenades ( ^( ATTRIBUTES list_attributes ) )? )
+                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:171:60: ^( CREATE_INSTR TYPE_OBJECT coordenades ( ^( ATTRIBUTES list_attributes ) )? )
                 {
                 AslTree root_1 = (AslTree)adaptor.nil();
                 root_1 = (AslTree)adaptor.becomeRoot(
-                stream_CREATE.nextNode()
+                (AslTree)adaptor.create(CREATE_INSTR, "CREATE_INSTR")
                 , root_1);
 
                 adaptor.addChild(root_1, 
@@ -3903,9 +3875,9 @@ public TreeAdaptor getTreeAdaptor() {
 
                 adaptor.addChild(root_1, stream_coordenades.nextTree());
 
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:171:93: ( ^( ATTRIBUTES list_attributes ) )?
+                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:171:99: ( ^( ATTRIBUTES list_attributes ) )?
                 if ( stream_list_attributes.hasNext() ) {
-                    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:171:93: ^( ATTRIBUTES list_attributes )
+                    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:171:99: ^( ATTRIBUTES list_attributes )
                     {
                     AslTree root_2 = (AslTree)adaptor.nil();
                     root_2 = (AslTree)adaptor.becomeRoot(
@@ -3959,7 +3931,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "destroy"
-    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:173:1: destroy : DESTROY ^ ID ;
+    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:173:1: destroy : DESTROY ID -> ^( ANIMATION DESTROY ID ) ;
     public final AslParser.destroy_return destroy() throws RecognitionException {
         AslParser.destroy_return retval = new AslParser.destroy_return();
         retval.start = input.LT(1);
@@ -3967,32 +3939,61 @@ public TreeAdaptor getTreeAdaptor() {
 
         AslTree root_0 = null;
 
-        Token DESTROY132=null;
-        Token ID133=null;
+        Token DESTROY131=null;
+        Token ID132=null;
 
-        AslTree DESTROY132_tree=null;
-        AslTree ID133_tree=null;
+        AslTree DESTROY131_tree=null;
+        AslTree ID132_tree=null;
+        RewriteRuleTokenStream stream_DESTROY=new RewriteRuleTokenStream(adaptor,"token DESTROY");
+        RewriteRuleTokenStream stream_ID=new RewriteRuleTokenStream(adaptor,"token ID");
 
         try {
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:173:8: ( DESTROY ^ ID )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:173:10: DESTROY ^ ID
+            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:173:8: ( DESTROY ID -> ^( ANIMATION DESTROY ID ) )
+            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:173:10: DESTROY ID
             {
+            DESTROY131=(Token)match(input,DESTROY,FOLLOW_DESTROY_in_destroy872);  
+            stream_DESTROY.add(DESTROY131);
+
+
+            ID132=(Token)match(input,ID,FOLLOW_ID_in_destroy874);  
+            stream_ID.add(ID132);
+
+
+            // AST REWRITE
+            // elements: DESTROY, ID
+            // token labels: 
+            // rule labels: retval
+            // token list labels: 
+            // rule list labels: 
+            // wildcard labels: 
+            retval.tree = root_0;
+            RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
+
             root_0 = (AslTree)adaptor.nil();
+            // 173:21: -> ^( ANIMATION DESTROY ID )
+            {
+                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:173:24: ^( ANIMATION DESTROY ID )
+                {
+                AslTree root_1 = (AslTree)adaptor.nil();
+                root_1 = (AslTree)adaptor.becomeRoot(
+                (AslTree)adaptor.create(ANIMATION, "ANIMATION")
+                , root_1);
+
+                adaptor.addChild(root_1, 
+                stream_DESTROY.nextNode()
+                );
+
+                adaptor.addChild(root_1, 
+                stream_ID.nextNode()
+                );
+
+                adaptor.addChild(root_0, root_1);
+                }
+
+            }
 
 
-            DESTROY132=(Token)match(input,DESTROY,FOLLOW_DESTROY_in_destroy872); 
-            DESTROY132_tree = 
-            (AslTree)adaptor.create(DESTROY132)
-            ;
-            root_0 = (AslTree)adaptor.becomeRoot(DESTROY132_tree, root_0);
-
-
-            ID133=(Token)match(input,ID,FOLLOW_ID_in_destroy875); 
-            ID133_tree = 
-            (AslTree)adaptor.create(ID133)
-            ;
-            adaptor.addChild(root_0, ID133_tree);
-
+            retval.tree = root_0;
 
             }
 
@@ -4025,7 +4026,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "move"
-    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:175:1: move : MOVE ^ ID coordenades ;
+    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:175:1: move : MOVE ID coordenades -> ^( ANIMATION MOVE ID coordenades ) ;
     public final AslParser.move_return move() throws RecognitionException {
         AslParser.move_return retval = new AslParser.move_return();
         retval.start = input.LT(1);
@@ -4033,41 +4034,72 @@ public TreeAdaptor getTreeAdaptor() {
 
         AslTree root_0 = null;
 
-        Token MOVE134=null;
-        Token ID135=null;
-        AslParser.coordenades_return coordenades136 =null;
+        Token MOVE133=null;
+        Token ID134=null;
+        AslParser.coordenades_return coordenades135 =null;
 
 
-        AslTree MOVE134_tree=null;
-        AslTree ID135_tree=null;
-
+        AslTree MOVE133_tree=null;
+        AslTree ID134_tree=null;
+        RewriteRuleTokenStream stream_MOVE=new RewriteRuleTokenStream(adaptor,"token MOVE");
+        RewriteRuleTokenStream stream_ID=new RewriteRuleTokenStream(adaptor,"token ID");
+        RewriteRuleSubtreeStream stream_coordenades=new RewriteRuleSubtreeStream(adaptor,"rule coordenades");
         try {
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:175:5: ( MOVE ^ ID coordenades )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:175:9: MOVE ^ ID coordenades
+            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:175:5: ( MOVE ID coordenades -> ^( ANIMATION MOVE ID coordenades ) )
+            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:175:9: MOVE ID coordenades
             {
-            root_0 = (AslTree)adaptor.nil();
+            MOVE133=(Token)match(input,MOVE,FOLLOW_MOVE_in_move893);  
+            stream_MOVE.add(MOVE133);
 
 
-            MOVE134=(Token)match(input,MOVE,FOLLOW_MOVE_in_move884); 
-            MOVE134_tree = 
-            (AslTree)adaptor.create(MOVE134)
-            ;
-            root_0 = (AslTree)adaptor.becomeRoot(MOVE134_tree, root_0);
+            ID134=(Token)match(input,ID,FOLLOW_ID_in_move895);  
+            stream_ID.add(ID134);
 
 
-            ID135=(Token)match(input,ID,FOLLOW_ID_in_move887); 
-            ID135_tree = 
-            (AslTree)adaptor.create(ID135)
-            ;
-            adaptor.addChild(root_0, ID135_tree);
-
-
-            pushFollow(FOLLOW_coordenades_in_move889);
-            coordenades136=coordenades();
+            pushFollow(FOLLOW_coordenades_in_move897);
+            coordenades135=coordenades();
 
             state._fsp--;
 
-            adaptor.addChild(root_0, coordenades136.getTree());
+            stream_coordenades.add(coordenades135.getTree());
+
+            // AST REWRITE
+            // elements: MOVE, ID, coordenades
+            // token labels: 
+            // rule labels: retval
+            // token list labels: 
+            // rule list labels: 
+            // wildcard labels: 
+            retval.tree = root_0;
+            RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
+
+            root_0 = (AslTree)adaptor.nil();
+            // 175:29: -> ^( ANIMATION MOVE ID coordenades )
+            {
+                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:175:32: ^( ANIMATION MOVE ID coordenades )
+                {
+                AslTree root_1 = (AslTree)adaptor.nil();
+                root_1 = (AslTree)adaptor.becomeRoot(
+                (AslTree)adaptor.create(ANIMATION, "ANIMATION")
+                , root_1);
+
+                adaptor.addChild(root_1, 
+                stream_MOVE.nextNode()
+                );
+
+                adaptor.addChild(root_1, 
+                stream_ID.nextNode()
+                );
+
+                adaptor.addChild(root_1, stream_coordenades.nextTree());
+
+                adaptor.addChild(root_0, root_1);
+                }
+
+            }
+
+
+            retval.tree = root_0;
 
             }
 
@@ -4100,7 +4132,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "translate"
-    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:177:1: translate : TRANSLATE ^ ID coordenades ;
+    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:177:1: translate : TRANSLATE ID coordenades -> ^( ANIMATION TRANSLATE ID coordenades ) ;
     public final AslParser.translate_return translate() throws RecognitionException {
         AslParser.translate_return retval = new AslParser.translate_return();
         retval.start = input.LT(1);
@@ -4108,41 +4140,72 @@ public TreeAdaptor getTreeAdaptor() {
 
         AslTree root_0 = null;
 
-        Token TRANSLATE137=null;
-        Token ID138=null;
-        AslParser.coordenades_return coordenades139 =null;
+        Token TRANSLATE136=null;
+        Token ID137=null;
+        AslParser.coordenades_return coordenades138 =null;
 
 
-        AslTree TRANSLATE137_tree=null;
-        AslTree ID138_tree=null;
-
+        AslTree TRANSLATE136_tree=null;
+        AslTree ID137_tree=null;
+        RewriteRuleTokenStream stream_TRANSLATE=new RewriteRuleTokenStream(adaptor,"token TRANSLATE");
+        RewriteRuleTokenStream stream_ID=new RewriteRuleTokenStream(adaptor,"token ID");
+        RewriteRuleSubtreeStream stream_coordenades=new RewriteRuleSubtreeStream(adaptor,"rule coordenades");
         try {
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:177:10: ( TRANSLATE ^ ID coordenades )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:177:13: TRANSLATE ^ ID coordenades
+            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:177:10: ( TRANSLATE ID coordenades -> ^( ANIMATION TRANSLATE ID coordenades ) )
+            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:177:13: TRANSLATE ID coordenades
             {
-            root_0 = (AslTree)adaptor.nil();
+            TRANSLATE136=(Token)match(input,TRANSLATE,FOLLOW_TRANSLATE_in_translate917);  
+            stream_TRANSLATE.add(TRANSLATE136);
 
 
-            TRANSLATE137=(Token)match(input,TRANSLATE,FOLLOW_TRANSLATE_in_translate897); 
-            TRANSLATE137_tree = 
-            (AslTree)adaptor.create(TRANSLATE137)
-            ;
-            root_0 = (AslTree)adaptor.becomeRoot(TRANSLATE137_tree, root_0);
+            ID137=(Token)match(input,ID,FOLLOW_ID_in_translate919);  
+            stream_ID.add(ID137);
 
 
-            ID138=(Token)match(input,ID,FOLLOW_ID_in_translate900); 
-            ID138_tree = 
-            (AslTree)adaptor.create(ID138)
-            ;
-            adaptor.addChild(root_0, ID138_tree);
-
-
-            pushFollow(FOLLOW_coordenades_in_translate902);
-            coordenades139=coordenades();
+            pushFollow(FOLLOW_coordenades_in_translate921);
+            coordenades138=coordenades();
 
             state._fsp--;
 
-            adaptor.addChild(root_0, coordenades139.getTree());
+            stream_coordenades.add(coordenades138.getTree());
+
+            // AST REWRITE
+            // elements: coordenades, TRANSLATE, ID
+            // token labels: 
+            // rule labels: retval
+            // token list labels: 
+            // rule list labels: 
+            // wildcard labels: 
+            retval.tree = root_0;
+            RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
+
+            root_0 = (AslTree)adaptor.nil();
+            // 177:38: -> ^( ANIMATION TRANSLATE ID coordenades )
+            {
+                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:177:41: ^( ANIMATION TRANSLATE ID coordenades )
+                {
+                AslTree root_1 = (AslTree)adaptor.nil();
+                root_1 = (AslTree)adaptor.becomeRoot(
+                (AslTree)adaptor.create(ANIMATION, "ANIMATION")
+                , root_1);
+
+                adaptor.addChild(root_1, 
+                stream_TRANSLATE.nextNode()
+                );
+
+                adaptor.addChild(root_1, 
+                stream_ID.nextNode()
+                );
+
+                adaptor.addChild(root_1, stream_coordenades.nextTree());
+
+                adaptor.addChild(root_0, root_1);
+                }
+
+            }
+
+
+            retval.tree = root_0;
 
             }
 
@@ -4175,7 +4238,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "modify"
-    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:179:1: modify : MODIFY ^ ID list_attributes ;
+    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:179:1: modify : MODIFY ID list_attributes -> ^( ANIMATION MODIFY ID list_attributes ) ;
     public final AslParser.modify_return modify() throws RecognitionException {
         AslParser.modify_return retval = new AslParser.modify_return();
         retval.start = input.LT(1);
@@ -4183,41 +4246,72 @@ public TreeAdaptor getTreeAdaptor() {
 
         AslTree root_0 = null;
 
-        Token MODIFY140=null;
-        Token ID141=null;
-        AslParser.list_attributes_return list_attributes142 =null;
+        Token MODIFY139=null;
+        Token ID140=null;
+        AslParser.list_attributes_return list_attributes141 =null;
 
 
-        AslTree MODIFY140_tree=null;
-        AslTree ID141_tree=null;
-
+        AslTree MODIFY139_tree=null;
+        AslTree ID140_tree=null;
+        RewriteRuleTokenStream stream_MODIFY=new RewriteRuleTokenStream(adaptor,"token MODIFY");
+        RewriteRuleTokenStream stream_ID=new RewriteRuleTokenStream(adaptor,"token ID");
+        RewriteRuleSubtreeStream stream_list_attributes=new RewriteRuleSubtreeStream(adaptor,"rule list_attributes");
         try {
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:179:7: ( MODIFY ^ ID list_attributes )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:179:9: MODIFY ^ ID list_attributes
+            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:179:7: ( MODIFY ID list_attributes -> ^( ANIMATION MODIFY ID list_attributes ) )
+            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:179:9: MODIFY ID list_attributes
             {
-            root_0 = (AslTree)adaptor.nil();
+            MODIFY139=(Token)match(input,MODIFY,FOLLOW_MODIFY_in_modify940);  
+            stream_MODIFY.add(MODIFY139);
 
 
-            MODIFY140=(Token)match(input,MODIFY,FOLLOW_MODIFY_in_modify909); 
-            MODIFY140_tree = 
-            (AslTree)adaptor.create(MODIFY140)
-            ;
-            root_0 = (AslTree)adaptor.becomeRoot(MODIFY140_tree, root_0);
+            ID140=(Token)match(input,ID,FOLLOW_ID_in_modify942);  
+            stream_ID.add(ID140);
 
 
-            ID141=(Token)match(input,ID,FOLLOW_ID_in_modify912); 
-            ID141_tree = 
-            (AslTree)adaptor.create(ID141)
-            ;
-            adaptor.addChild(root_0, ID141_tree);
-
-
-            pushFollow(FOLLOW_list_attributes_in_modify914);
-            list_attributes142=list_attributes();
+            pushFollow(FOLLOW_list_attributes_in_modify944);
+            list_attributes141=list_attributes();
 
             state._fsp--;
 
-            adaptor.addChild(root_0, list_attributes142.getTree());
+            stream_list_attributes.add(list_attributes141.getTree());
+
+            // AST REWRITE
+            // elements: list_attributes, MODIFY, ID
+            // token labels: 
+            // rule labels: retval
+            // token list labels: 
+            // rule list labels: 
+            // wildcard labels: 
+            retval.tree = root_0;
+            RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
+
+            root_0 = (AslTree)adaptor.nil();
+            // 179:35: -> ^( ANIMATION MODIFY ID list_attributes )
+            {
+                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:179:38: ^( ANIMATION MODIFY ID list_attributes )
+                {
+                AslTree root_1 = (AslTree)adaptor.nil();
+                root_1 = (AslTree)adaptor.becomeRoot(
+                (AslTree)adaptor.create(ANIMATION, "ANIMATION")
+                , root_1);
+
+                adaptor.addChild(root_1, 
+                stream_MODIFY.nextNode()
+                );
+
+                adaptor.addChild(root_1, 
+                stream_ID.nextNode()
+                );
+
+                adaptor.addChild(root_1, stream_list_attributes.nextTree());
+
+                adaptor.addChild(root_0, root_1);
+                }
+
+            }
+
+
+            retval.tree = root_0;
 
             }
 
@@ -4250,7 +4344,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "rotate"
-    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:181:1: rotate : ROTATE ^ ID expr ;
+    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:181:1: rotate : ROTATE ID expr -> ^( ANIMATION ROTATE ID expr ) ;
     public final AslParser.rotate_return rotate() throws RecognitionException {
         AslParser.rotate_return retval = new AslParser.rotate_return();
         retval.start = input.LT(1);
@@ -4258,41 +4352,72 @@ public TreeAdaptor getTreeAdaptor() {
 
         AslTree root_0 = null;
 
-        Token ROTATE143=null;
-        Token ID144=null;
-        AslParser.expr_return expr145 =null;
+        Token ROTATE142=null;
+        Token ID143=null;
+        AslParser.expr_return expr144 =null;
 
 
-        AslTree ROTATE143_tree=null;
-        AslTree ID144_tree=null;
-
+        AslTree ROTATE142_tree=null;
+        AslTree ID143_tree=null;
+        RewriteRuleTokenStream stream_ROTATE=new RewriteRuleTokenStream(adaptor,"token ROTATE");
+        RewriteRuleTokenStream stream_ID=new RewriteRuleTokenStream(adaptor,"token ID");
+        RewriteRuleSubtreeStream stream_expr=new RewriteRuleSubtreeStream(adaptor,"rule expr");
         try {
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:181:7: ( ROTATE ^ ID expr )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:181:9: ROTATE ^ ID expr
+            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:181:7: ( ROTATE ID expr -> ^( ANIMATION ROTATE ID expr ) )
+            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:181:9: ROTATE ID expr
             {
-            root_0 = (AslTree)adaptor.nil();
+            ROTATE142=(Token)match(input,ROTATE,FOLLOW_ROTATE_in_rotate963);  
+            stream_ROTATE.add(ROTATE142);
 
 
-            ROTATE143=(Token)match(input,ROTATE,FOLLOW_ROTATE_in_rotate921); 
-            ROTATE143_tree = 
-            (AslTree)adaptor.create(ROTATE143)
-            ;
-            root_0 = (AslTree)adaptor.becomeRoot(ROTATE143_tree, root_0);
+            ID143=(Token)match(input,ID,FOLLOW_ID_in_rotate965);  
+            stream_ID.add(ID143);
 
 
-            ID144=(Token)match(input,ID,FOLLOW_ID_in_rotate924); 
-            ID144_tree = 
-            (AslTree)adaptor.create(ID144)
-            ;
-            adaptor.addChild(root_0, ID144_tree);
-
-
-            pushFollow(FOLLOW_expr_in_rotate926);
-            expr145=expr();
+            pushFollow(FOLLOW_expr_in_rotate967);
+            expr144=expr();
 
             state._fsp--;
 
-            adaptor.addChild(root_0, expr145.getTree());
+            stream_expr.add(expr144.getTree());
+
+            // AST REWRITE
+            // elements: ID, ROTATE, expr
+            // token labels: 
+            // rule labels: retval
+            // token list labels: 
+            // rule list labels: 
+            // wildcard labels: 
+            retval.tree = root_0;
+            RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
+
+            root_0 = (AslTree)adaptor.nil();
+            // 181:24: -> ^( ANIMATION ROTATE ID expr )
+            {
+                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:181:27: ^( ANIMATION ROTATE ID expr )
+                {
+                AslTree root_1 = (AslTree)adaptor.nil();
+                root_1 = (AslTree)adaptor.becomeRoot(
+                (AslTree)adaptor.create(ANIMATION, "ANIMATION")
+                , root_1);
+
+                adaptor.addChild(root_1, 
+                stream_ROTATE.nextNode()
+                );
+
+                adaptor.addChild(root_1, 
+                stream_ID.nextNode()
+                );
+
+                adaptor.addChild(root_1, stream_expr.nextTree());
+
+                adaptor.addChild(root_0, root_1);
+                }
+
+            }
+
+
+            retval.tree = root_0;
 
             }
 
@@ -4333,13 +4458,13 @@ public TreeAdaptor getTreeAdaptor() {
 
         AslTree root_0 = null;
 
-        Token char_literal147=null;
-        AslParser.attribute_return attribute146 =null;
+        Token char_literal146=null;
+        AslParser.attribute_return attribute145 =null;
 
-        AslParser.attribute_return attribute148 =null;
+        AslParser.attribute_return attribute147 =null;
 
 
-        AslTree char_literal147_tree=null;
+        AslTree char_literal146_tree=null;
 
         try {
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:183:16: ( attribute ( ',' ! attribute )* )
@@ -4348,42 +4473,42 @@ public TreeAdaptor getTreeAdaptor() {
             root_0 = (AslTree)adaptor.nil();
 
 
-            pushFollow(FOLLOW_attribute_in_list_attributes933);
-            attribute146=attribute();
+            pushFollow(FOLLOW_attribute_in_list_attributes986);
+            attribute145=attribute();
 
             state._fsp--;
 
-            adaptor.addChild(root_0, attribute146.getTree());
+            adaptor.addChild(root_0, attribute145.getTree());
 
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:183:28: ( ',' ! attribute )*
-            loop29:
+            loop28:
             do {
-                int alt29=2;
-                int LA29_0 = input.LA(1);
+                int alt28=2;
+                int LA28_0 = input.LA(1);
 
-                if ( (LA29_0==66) ) {
-                    alt29=1;
+                if ( (LA28_0==67) ) {
+                    alt28=1;
                 }
 
 
-                switch (alt29) {
+                switch (alt28) {
             	case 1 :
             	    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:183:29: ',' ! attribute
             	    {
-            	    char_literal147=(Token)match(input,66,FOLLOW_66_in_list_attributes936); 
+            	    char_literal146=(Token)match(input,67,FOLLOW_67_in_list_attributes989); 
 
-            	    pushFollow(FOLLOW_attribute_in_list_attributes939);
-            	    attribute148=attribute();
+            	    pushFollow(FOLLOW_attribute_in_list_attributes992);
+            	    attribute147=attribute();
 
             	    state._fsp--;
 
-            	    adaptor.addChild(root_0, attribute148.getTree());
+            	    adaptor.addChild(root_0, attribute147.getTree());
 
             	    }
             	    break;
 
             	default :
-            	    break loop29;
+            	    break loop28;
                 }
             } while (true);
 
@@ -4427,13 +4552,13 @@ public TreeAdaptor getTreeAdaptor() {
 
         AslTree root_0 = null;
 
-        Token ATTRIBUTE149=null;
-        Token EQUAL150=null;
-        AslParser.expr_return expr151 =null;
+        Token ATTRIBUTE148=null;
+        Token EQUAL149=null;
+        AslParser.expr_return expr150 =null;
 
 
-        AslTree ATTRIBUTE149_tree=null;
-        AslTree EQUAL150_tree=null;
+        AslTree ATTRIBUTE148_tree=null;
+        AslTree EQUAL149_tree=null;
 
         try {
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:185:10: ( ATTRIBUTE ^ EQUAL ! expr )
@@ -4442,21 +4567,21 @@ public TreeAdaptor getTreeAdaptor() {
             root_0 = (AslTree)adaptor.nil();
 
 
-            ATTRIBUTE149=(Token)match(input,ATTRIBUTE,FOLLOW_ATTRIBUTE_in_attribute948); 
-            ATTRIBUTE149_tree = 
-            (AslTree)adaptor.create(ATTRIBUTE149)
+            ATTRIBUTE148=(Token)match(input,ATTRIBUTE,FOLLOW_ATTRIBUTE_in_attribute1001); 
+            ATTRIBUTE148_tree = 
+            (AslTree)adaptor.create(ATTRIBUTE148)
             ;
-            root_0 = (AslTree)adaptor.becomeRoot(ATTRIBUTE149_tree, root_0);
+            root_0 = (AslTree)adaptor.becomeRoot(ATTRIBUTE148_tree, root_0);
 
 
-            EQUAL150=(Token)match(input,EQUAL,FOLLOW_EQUAL_in_attribute951); 
+            EQUAL149=(Token)match(input,EQUAL,FOLLOW_EQUAL_in_attribute1004); 
 
-            pushFollow(FOLLOW_expr_in_attribute954);
-            expr151=expr();
+            pushFollow(FOLLOW_expr_in_attribute1007);
+            expr150=expr();
 
             state._fsp--;
 
-            adaptor.addChild(root_0, expr151.getTree());
+            adaptor.addChild(root_0, expr150.getTree());
 
             }
 
@@ -4497,17 +4622,17 @@ public TreeAdaptor getTreeAdaptor() {
 
         AslTree root_0 = null;
 
-        Token char_literal152=null;
-        Token char_literal154=null;
-        Token char_literal156=null;
-        AslParser.expr_return expr153 =null;
+        Token char_literal151=null;
+        Token char_literal153=null;
+        Token char_literal155=null;
+        AslParser.expr_return expr152 =null;
 
-        AslParser.expr_return expr155 =null;
+        AslParser.expr_return expr154 =null;
 
 
-        AslTree char_literal152_tree=null;
-        AslTree char_literal154_tree=null;
-        AslTree char_literal156_tree=null;
+        AslTree char_literal151_tree=null;
+        AslTree char_literal153_tree=null;
+        AslTree char_literal155_tree=null;
 
         try {
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:187:12: ( '{' ! expr ',' ! expr '}' !)
@@ -4516,25 +4641,25 @@ public TreeAdaptor getTreeAdaptor() {
             root_0 = (AslTree)adaptor.nil();
 
 
-            char_literal152=(Token)match(input,71,FOLLOW_71_in_coordenades961); 
+            char_literal151=(Token)match(input,72,FOLLOW_72_in_coordenades1014); 
 
-            pushFollow(FOLLOW_expr_in_coordenades964);
-            expr153=expr();
-
-            state._fsp--;
-
-            adaptor.addChild(root_0, expr153.getTree());
-
-            char_literal154=(Token)match(input,66,FOLLOW_66_in_coordenades966); 
-
-            pushFollow(FOLLOW_expr_in_coordenades969);
-            expr155=expr();
+            pushFollow(FOLLOW_expr_in_coordenades1017);
+            expr152=expr();
 
             state._fsp--;
 
-            adaptor.addChild(root_0, expr155.getTree());
+            adaptor.addChild(root_0, expr152.getTree());
 
-            char_literal156=(Token)match(input,72,FOLLOW_72_in_coordenades971); 
+            char_literal153=(Token)match(input,67,FOLLOW_67_in_coordenades1019); 
+
+            pushFollow(FOLLOW_expr_in_coordenades1022);
+            expr154=expr();
+
+            state._fsp--;
+
+            adaptor.addChild(root_0, expr154.getTree());
+
+            char_literal155=(Token)match(input,73,FOLLOW_73_in_coordenades1024); 
 
             }
 
@@ -4575,47 +4700,47 @@ public TreeAdaptor getTreeAdaptor() {
 
         AslTree root_0 = null;
 
-        Token ID157=null;
-        Token char_literal158=null;
+        Token ID156=null;
+        Token char_literal157=null;
+        Token char_literal159=null;
         Token char_literal160=null;
-        Token char_literal161=null;
-        AslParser.att_return att159 =null;
+        AslParser.att_return att158 =null;
 
 
-        AslTree ID157_tree=null;
-        AslTree char_literal158_tree=null;
+        AslTree ID156_tree=null;
+        AslTree char_literal157_tree=null;
+        AslTree char_literal159_tree=null;
         AslTree char_literal160_tree=null;
-        AslTree char_literal161_tree=null;
-        RewriteRuleTokenStream stream_67=new RewriteRuleTokenStream(adaptor,"token 67");
+        RewriteRuleTokenStream stream_66=new RewriteRuleTokenStream(adaptor,"token 66");
+        RewriteRuleTokenStream stream_68=new RewriteRuleTokenStream(adaptor,"token 68");
         RewriteRuleTokenStream stream_ID=new RewriteRuleTokenStream(adaptor,"token ID");
-        RewriteRuleTokenStream stream_64=new RewriteRuleTokenStream(adaptor,"token 64");
         RewriteRuleTokenStream stream_65=new RewriteRuleTokenStream(adaptor,"token 65");
         RewriteRuleSubtreeStream stream_att=new RewriteRuleSubtreeStream(adaptor,"rule att");
         try {
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:189:16: ( ID '.' att '(' ')' -> ^( ACCESATTRIBUTE ID att ) )
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:189:18: ID '.' att '(' ')'
             {
-            ID157=(Token)match(input,ID,FOLLOW_ID_in_acces_attribute979);  
-            stream_ID.add(ID157);
+            ID156=(Token)match(input,ID,FOLLOW_ID_in_acces_attribute1032);  
+            stream_ID.add(ID156);
 
 
-            char_literal158=(Token)match(input,67,FOLLOW_67_in_acces_attribute981);  
-            stream_67.add(char_literal158);
+            char_literal157=(Token)match(input,68,FOLLOW_68_in_acces_attribute1034);  
+            stream_68.add(char_literal157);
 
 
-            pushFollow(FOLLOW_att_in_acces_attribute983);
-            att159=att();
+            pushFollow(FOLLOW_att_in_acces_attribute1036);
+            att158=att();
 
             state._fsp--;
 
-            stream_att.add(att159.getTree());
+            stream_att.add(att158.getTree());
 
-            char_literal160=(Token)match(input,64,FOLLOW_64_in_acces_attribute985);  
-            stream_64.add(char_literal160);
+            char_literal159=(Token)match(input,65,FOLLOW_65_in_acces_attribute1038);  
+            stream_65.add(char_literal159);
 
 
-            char_literal161=(Token)match(input,65,FOLLOW_65_in_acces_attribute987);  
-            stream_65.add(char_literal161);
+            char_literal160=(Token)match(input,66,FOLLOW_66_in_acces_attribute1040);  
+            stream_66.add(char_literal160);
 
 
             // AST REWRITE
@@ -4691,9 +4816,9 @@ public TreeAdaptor getTreeAdaptor() {
 
         AslTree root_0 = null;
 
-        Token set162=null;
+        Token set161=null;
 
-        AslTree set162_tree=null;
+        AslTree set161_tree=null;
 
         try {
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:192:4: ( ATTRIBUTE | BEGIN | END | DURATION )
@@ -4702,12 +4827,12 @@ public TreeAdaptor getTreeAdaptor() {
             root_0 = (AslTree)adaptor.nil();
 
 
-            set162=(Token)input.LT(1);
+            set161=(Token)input.LT(1);
 
             if ( input.LA(1)==ATTRIBUTE||input.LA(1)==BEGIN||input.LA(1)==DURATION||input.LA(1)==END ) {
                 input.consume();
                 adaptor.addChild(root_0, 
-                (AslTree)adaptor.create(set162)
+                (AslTree)adaptor.create(set161)
                 );
                 state.errorRecovery=false;
             }
@@ -4745,37 +4870,36 @@ public TreeAdaptor getTreeAdaptor() {
 
  
 
-    public static final BitSet FOLLOW_func_in_prog93 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_EOF_in_prog96 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FUNC_in_func114 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_ID_in_func117 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_params_in_func119 = new BitSet(new long[]{0x24C0300C2100C000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_block_instructions_in_func121 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_ENDFUNC_in_func123 = new BitSet(new long[]{0x0000000001000002L});
-    public static final BitSet FOLLOW_ENDLINE_in_func127 = new BitSet(new long[]{0x0000000001000002L});
-    public static final BitSet FOLLOW_64_in_params139 = new BitSet(new long[]{0x0000000400000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_paramlist_in_params141 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_65_in_params144 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_param_in_paramlist161 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000004L});
-    public static final BitSet FOLLOW_66_in_paramlist164 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_param_in_paramlist167 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000004L});
-    public static final BitSet FOLLOW_ID_in_param181 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_instruction_in_block_instructions199 = new BitSet(new long[]{0x0000000001000002L});
-    public static final BitSet FOLLOW_ENDLINE_in_block_instructions202 = new BitSet(new long[]{0x24C0300C2100C000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_instruction_in_block_instructions204 = new BitSet(new long[]{0x0000000001000002L});
-    public static final BitSet FOLLOW_assign_in_instruction226 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_basic_instruction_in_instruction231 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ite_stmt_in_instruction236 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_while_stmt_in_instruction241 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_for_stmt_in_instruction246 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_funcall_in_instruction250 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_return_stmt_in_instruction255 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_time_annotation_in_instruction260 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ID_in_assign278 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_EQUAL_in_assign282 = new BitSet(new long[]{0x048030000000C000L});
+    public static final BitSet FOLLOW_func_in_prog99 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_EOF_in_prog102 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FUNC_in_func120 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_ID_in_func123 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_params_in_func125 = new BitSet(new long[]{0x4980601840028000L,0x00000000000000C0L});
+    public static final BitSet FOLLOW_block_instructions_in_func127 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_ENDFUNC_in_func129 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_65_in_params140 = new BitSet(new long[]{0x0000000800000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_paramlist_in_params142 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_66_in_params145 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_param_in_paramlist162 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000008L});
+    public static final BitSet FOLLOW_67_in_paramlist165 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_param_in_paramlist168 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000008L});
+    public static final BitSet FOLLOW_ID_in_param182 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_instruction_in_block_instructions200 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000040L});
+    public static final BitSet FOLLOW_70_in_block_instructions203 = new BitSet(new long[]{0x4980601840028000L,0x00000000000000C0L});
+    public static final BitSet FOLLOW_instruction_in_block_instructions205 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000040L});
+    public static final BitSet FOLLOW_assign_in_instruction227 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_basic_instruction_in_instruction232 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ite_stmt_in_instruction237 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_while_stmt_in_instruction242 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_for_stmt_in_instruction247 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_funcall_in_instruction252 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_return_stmt_in_instruction257 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_time_annotation_in_instruction262 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ID_in_assign278 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_EQUAL_in_assign282 = new BitSet(new long[]{0x0900600000028000L});
     public static final BitSet FOLLOW_basic_instruction_in_assign284 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ID_in_assign300 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_EQUAL_in_assign304 = new BitSet(new long[]{0x0808842410000000L,0x0000000000000001L});
+    public static final BitSet FOLLOW_ID_in_assign300 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_EQUAL_in_assign304 = new BitSet(new long[]{0x1011084820000000L,0x0000000000000002L});
     public static final BitSet FOLLOW_expr_in_assign306 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_create_in_basic_instruction325 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_destroy_in_basic_instruction329 = new BitSet(new long[]{0x0000000000000002L});
@@ -4783,133 +4907,133 @@ public TreeAdaptor getTreeAdaptor() {
     public static final BitSet FOLLOW_translate_in_basic_instruction337 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_modify_in_basic_instruction341 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rotate_in_basic_instruction345 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IF_in_ite_stmt355 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_64_in_ite_stmt358 = new BitSet(new long[]{0x0808842410000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_expr_in_ite_stmt361 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_65_in_ite_stmt363 = new BitSet(new long[]{0x24C0300C2100C000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_block_instructions_in_ite_stmt366 = new BitSet(new long[]{0x00000000008C0000L});
-    public static final BitSet FOLLOW_elseif_stmt_in_ite_stmt368 = new BitSet(new long[]{0x0000000000840000L});
-    public static final BitSet FOLLOW_else_stmt_in_ite_stmt370 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_IF_in_ite_stmt355 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_65_in_ite_stmt358 = new BitSet(new long[]{0x1011084820000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_expr_in_ite_stmt361 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_66_in_ite_stmt363 = new BitSet(new long[]{0x4980601840028000L,0x00000000000000C0L});
+    public static final BitSet FOLLOW_block_instructions_in_ite_stmt366 = new BitSet(new long[]{0x0000000002300000L});
+    public static final BitSet FOLLOW_elseif_stmt_in_ite_stmt368 = new BitSet(new long[]{0x0000000002100000L});
+    public static final BitSet FOLLOW_else_stmt_in_ite_stmt370 = new BitSet(new long[]{0x0000000002000000L});
     public static final BitSet FOLLOW_ENDIF_in_ite_stmt372 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ELSEIF_in_elseif_stmt382 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_64_in_elseif_stmt385 = new BitSet(new long[]{0x0808842410000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_expr_in_elseif_stmt388 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_65_in_elseif_stmt390 = new BitSet(new long[]{0x24C0300C2100C000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_block_instructions_in_elseif_stmt393 = new BitSet(new long[]{0x0000000000080002L});
-    public static final BitSet FOLLOW_ELSE_in_else_stmt404 = new BitSet(new long[]{0x24C0300C2100C000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_ELSEIF_in_elseif_stmt382 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_65_in_elseif_stmt385 = new BitSet(new long[]{0x1011084820000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_expr_in_elseif_stmt388 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_66_in_elseif_stmt390 = new BitSet(new long[]{0x4980601840028000L,0x00000000000000C0L});
+    public static final BitSet FOLLOW_block_instructions_in_elseif_stmt393 = new BitSet(new long[]{0x0000000000200002L});
+    public static final BitSet FOLLOW_ELSE_in_else_stmt404 = new BitSet(new long[]{0x4980601840028000L,0x00000000000000C0L});
     public static final BitSet FOLLOW_block_instructions_in_else_stmt407 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_WHILE_in_while_stmt422 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_64_in_while_stmt425 = new BitSet(new long[]{0x0808842410000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_expr_in_while_stmt428 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_65_in_while_stmt430 = new BitSet(new long[]{0x24C0300C2100C000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_block_instructions_in_while_stmt433 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_WHILE_in_while_stmt422 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_65_in_while_stmt425 = new BitSet(new long[]{0x1011084820000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_expr_in_while_stmt428 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_66_in_while_stmt430 = new BitSet(new long[]{0x4980601840028000L,0x00000000000000C0L});
+    public static final BitSet FOLLOW_block_instructions_in_while_stmt433 = new BitSet(new long[]{0x0000000004000000L});
     public static final BitSet FOLLOW_ENDWHILE_in_while_stmt435 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FOR_in_for_stmt446 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_64_in_for_stmt449 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_for_form_in_for_stmt452 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_65_in_for_stmt454 = new BitSet(new long[]{0x24C0300C2100C000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_block_instructions_in_for_stmt457 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_FOR_in_for_stmt446 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_65_in_for_stmt449 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_for_form_in_for_stmt452 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_66_in_for_stmt454 = new BitSet(new long[]{0x4980601840028000L,0x00000000000000C0L});
+    public static final BitSet FOLLOW_block_instructions_in_for_stmt457 = new BitSet(new long[]{0x0000000000800000L});
     public static final BitSet FOLLOW_ENDFOR_in_for_stmt459 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_assign_in_for_form469 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
-    public static final BitSet FOLLOW_69_in_for_form471 = new BitSet(new long[]{0x0808842410000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_expr_in_for_form474 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
-    public static final BitSet FOLLOW_69_in_for_form476 = new BitSet(new long[]{0x0000000400000000L});
+    public static final BitSet FOLLOW_assign_in_for_form469 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_70_in_for_form471 = new BitSet(new long[]{0x1011084820000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_expr_in_for_form474 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_70_in_for_form476 = new BitSet(new long[]{0x0000000800000000L});
     public static final BitSet FOLLOW_assign_in_for_form479 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ID_in_for_form489 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_IN_in_for_form491 = new BitSet(new long[]{0x0808842410000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_expr_in_for_form494 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
-    public static final BitSet FOLLOW_68_in_for_form496 = new BitSet(new long[]{0x0808842410000000L,0x0000000000000001L});
+    public static final BitSet FOLLOW_ID_in_for_form489 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_IN_in_for_form491 = new BitSet(new long[]{0x1011084820000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_expr_in_for_form494 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
+    public static final BitSet FOLLOW_69_in_for_form496 = new BitSet(new long[]{0x1011084820000000L,0x0000000000000002L});
     public static final BitSet FOLLOW_expr_in_for_form499 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RETURN_in_return_stmt516 = new BitSet(new long[]{0x0808842410000002L,0x0000000000000001L});
+    public static final BitSet FOLLOW_RETURN_in_return_stmt516 = new BitSet(new long[]{0x1011084820000002L,0x0000000000000002L});
     public static final BitSet FOLLOW_expr_in_return_stmt519 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_boolterm_in_expr536 = new BitSet(new long[]{0x0002000000000002L});
-    public static final BitSet FOLLOW_OR_in_expr539 = new BitSet(new long[]{0x0808842410000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_boolterm_in_expr542 = new BitSet(new long[]{0x0002000000000002L});
+    public static final BitSet FOLLOW_boolterm_in_expr536 = new BitSet(new long[]{0x0004000000000002L});
+    public static final BitSet FOLLOW_OR_in_expr539 = new BitSet(new long[]{0x1011084820000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_boolterm_in_expr542 = new BitSet(new long[]{0x0004000000000002L});
     public static final BitSet FOLLOW_boolfact_in_boolterm551 = new BitSet(new long[]{0x0000000000000022L});
-    public static final BitSet FOLLOW_AND_in_boolterm554 = new BitSet(new long[]{0x0808842410000000L,0x0000000000000001L});
+    public static final BitSet FOLLOW_AND_in_boolterm554 = new BitSet(new long[]{0x1011084820000000L,0x0000000000000002L});
     public static final BitSet FOLLOW_boolfact_in_boolterm557 = new BitSet(new long[]{0x0000000000000022L});
-    public static final BitSet FOLLOW_num_expr_in_boolfact566 = new BitSet(new long[]{0x0001024300002002L});
-    public static final BitSet FOLLOW_COND_EQUAL_in_boolfact570 = new BitSet(new long[]{0x0808842410000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_NOT_EQUAL_in_boolfact575 = new BitSet(new long[]{0x0808842410000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_LT_in_boolfact580 = new BitSet(new long[]{0x0808842410000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_LE_in_boolfact585 = new BitSet(new long[]{0x0808842410000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_GT_in_boolfact590 = new BitSet(new long[]{0x0808842410000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_GE_in_boolfact595 = new BitSet(new long[]{0x0808842410000000L,0x0000000000000001L});
+    public static final BitSet FOLLOW_num_expr_in_boolfact566 = new BitSet(new long[]{0x0002048600004002L});
+    public static final BitSet FOLLOW_COND_EQUAL_in_boolfact570 = new BitSet(new long[]{0x1011084820000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_NOT_EQUAL_in_boolfact575 = new BitSet(new long[]{0x1011084820000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_LT_in_boolfact580 = new BitSet(new long[]{0x1011084820000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_LE_in_boolfact585 = new BitSet(new long[]{0x1011084820000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_GT_in_boolfact590 = new BitSet(new long[]{0x1011084820000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_GE_in_boolfact595 = new BitSet(new long[]{0x1011084820000000L,0x0000000000000002L});
     public static final BitSet FOLLOW_num_expr_in_boolfact599 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_term_in_num_expr608 = new BitSet(new long[]{0x0008040000000002L});
-    public static final BitSet FOLLOW_PLUS_in_num_expr613 = new BitSet(new long[]{0x0808842410000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_MINUS_in_num_expr618 = new BitSet(new long[]{0x0808842410000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_term_in_num_expr622 = new BitSet(new long[]{0x0008040000000002L});
-    public static final BitSet FOLLOW_factor_in_term632 = new BitSet(new long[]{0x0000480000010002L});
-    public static final BitSet FOLLOW_MUL_in_term637 = new BitSet(new long[]{0x0808842410000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_DIV_in_term642 = new BitSet(new long[]{0x0808842410000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_MOD_in_term647 = new BitSet(new long[]{0x0808842410000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_factor_in_term651 = new BitSet(new long[]{0x0000480000010002L});
-    public static final BitSet FOLLOW_NOT_in_factor662 = new BitSet(new long[]{0x0800002410000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_PLUS_in_factor667 = new BitSet(new long[]{0x0800002410000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_MINUS_in_factor672 = new BitSet(new long[]{0x0800002410000000L,0x0000000000000001L});
+    public static final BitSet FOLLOW_term_in_num_expr608 = new BitSet(new long[]{0x0010080000000002L});
+    public static final BitSet FOLLOW_PLUS_in_num_expr613 = new BitSet(new long[]{0x1011084820000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_MINUS_in_num_expr618 = new BitSet(new long[]{0x1011084820000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_term_in_num_expr622 = new BitSet(new long[]{0x0010080000000002L});
+    public static final BitSet FOLLOW_factor_in_term632 = new BitSet(new long[]{0x0000900000040002L});
+    public static final BitSet FOLLOW_MUL_in_term637 = new BitSet(new long[]{0x1011084820000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_DIV_in_term642 = new BitSet(new long[]{0x1011084820000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_MOD_in_term647 = new BitSet(new long[]{0x1011084820000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_factor_in_term651 = new BitSet(new long[]{0x0000900000040002L});
+    public static final BitSet FOLLOW_NOT_in_factor662 = new BitSet(new long[]{0x1000004820000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_PLUS_in_factor667 = new BitSet(new long[]{0x1000004820000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_MINUS_in_factor672 = new BitSet(new long[]{0x1000004820000000L,0x0000000000000002L});
     public static final BitSet FOLLOW_atom_in_factor677 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ID_in_atom688 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_INT_in_atom692 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_TRUE_in_atom699 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_FALSE_in_atom705 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_funcall_in_atom717 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_64_in_atom721 = new BitSet(new long[]{0x0808842410000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_expr_in_atom724 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_65_in_atom726 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_65_in_atom721 = new BitSet(new long[]{0x1011084820000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_expr_in_atom724 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_66_in_atom726 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_acces_attribute_in_atom731 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ID_in_funcall740 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_64_in_funcall742 = new BitSet(new long[]{0x0808842410000000L,0x0000000000000003L});
-    public static final BitSet FOLLOW_expr_list_in_funcall744 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_65_in_funcall747 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_expr_in_expr_list770 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000004L});
-    public static final BitSet FOLLOW_66_in_expr_list773 = new BitSet(new long[]{0x0808842410000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_expr_in_expr_list776 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000004L});
-    public static final BitSet FOLLOW_70_in_time_annotation785 = new BitSet(new long[]{0x0000000000000400L});
-    public static final BitSet FOLLOW_BEGIN_in_time_annotation787 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_EQUAL_in_time_annotation789 = new BitSet(new long[]{0x0808842410000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_expr_in_time_annotation791 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000004L});
-    public static final BitSet FOLLOW_66_in_time_annotation794 = new BitSet(new long[]{0x0000000000120000L});
+    public static final BitSet FOLLOW_ID_in_funcall740 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_65_in_funcall742 = new BitSet(new long[]{0x1011084820000000L,0x0000000000000006L});
+    public static final BitSet FOLLOW_expr_list_in_funcall744 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_66_in_funcall747 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_expr_in_expr_list770 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000008L});
+    public static final BitSet FOLLOW_67_in_expr_list773 = new BitSet(new long[]{0x1011084820000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_expr_in_expr_list776 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000008L});
+    public static final BitSet FOLLOW_71_in_time_annotation785 = new BitSet(new long[]{0x0000000000000800L});
+    public static final BitSet FOLLOW_BEGIN_in_time_annotation787 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_EQUAL_in_time_annotation789 = new BitSet(new long[]{0x1011084820000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_expr_in_time_annotation791 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000008L});
+    public static final BitSet FOLLOW_67_in_time_annotation794 = new BitSet(new long[]{0x0000000000480000L});
     public static final BitSet FOLLOW_finish_time_in_time_annotation796 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_END_in_finish_time817 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_EQUAL_in_finish_time820 = new BitSet(new long[]{0x0808842410000000L,0x0000000000000001L});
+    public static final BitSet FOLLOW_END_in_finish_time817 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_EQUAL_in_finish_time820 = new BitSet(new long[]{0x1011084820000000L,0x0000000000000002L});
     public static final BitSet FOLLOW_expr_in_finish_time823 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DURATION_in_finish_time827 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_EQUAL_in_finish_time830 = new BitSet(new long[]{0x0808842410000000L,0x0000000000000001L});
+    public static final BitSet FOLLOW_DURATION_in_finish_time827 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_EQUAL_in_finish_time830 = new BitSet(new long[]{0x1011084820000000L,0x0000000000000002L});
     public static final BitSet FOLLOW_expr_in_finish_time833 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_CREATE_in_create841 = new BitSet(new long[]{0x1000000000000000L});
-    public static final BitSet FOLLOW_TYPE_OBJECT_in_create843 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L});
-    public static final BitSet FOLLOW_coordenades_in_create845 = new BitSet(new long[]{0x0000000000000102L});
+    public static final BitSet FOLLOW_CREATE_in_create841 = new BitSet(new long[]{0x2000000000000000L});
+    public static final BitSet FOLLOW_TYPE_OBJECT_in_create843 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
+    public static final BitSet FOLLOW_coordenades_in_create845 = new BitSet(new long[]{0x0000000000000202L});
     public static final BitSet FOLLOW_list_attributes_in_create847 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DESTROY_in_destroy872 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_ID_in_destroy875 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MOVE_in_move884 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_ID_in_move887 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L});
-    public static final BitSet FOLLOW_coordenades_in_move889 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TRANSLATE_in_translate897 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_ID_in_translate900 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L});
-    public static final BitSet FOLLOW_coordenades_in_translate902 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MODIFY_in_modify909 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_ID_in_modify912 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_list_attributes_in_modify914 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ROTATE_in_rotate921 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_ID_in_rotate924 = new BitSet(new long[]{0x0808842410000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_expr_in_rotate926 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_attribute_in_list_attributes933 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000004L});
-    public static final BitSet FOLLOW_66_in_list_attributes936 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_attribute_in_list_attributes939 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000004L});
-    public static final BitSet FOLLOW_ATTRIBUTE_in_attribute948 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_EQUAL_in_attribute951 = new BitSet(new long[]{0x0808842410000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_expr_in_attribute954 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_71_in_coordenades961 = new BitSet(new long[]{0x0808842410000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_expr_in_coordenades964 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_66_in_coordenades966 = new BitSet(new long[]{0x0808842410000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_expr_in_coordenades969 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
-    public static final BitSet FOLLOW_72_in_coordenades971 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ID_in_acces_attribute979 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_67_in_acces_attribute981 = new BitSet(new long[]{0x0000000000120500L});
-    public static final BitSet FOLLOW_att_in_acces_attribute983 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_64_in_acces_attribute985 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_65_in_acces_attribute987 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DESTROY_in_destroy872 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_ID_in_destroy874 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_MOVE_in_move893 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_ID_in_move895 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
+    public static final BitSet FOLLOW_coordenades_in_move897 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TRANSLATE_in_translate917 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_ID_in_translate919 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
+    public static final BitSet FOLLOW_coordenades_in_translate921 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_MODIFY_in_modify940 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_ID_in_modify942 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_list_attributes_in_modify944 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ROTATE_in_rotate963 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_ID_in_rotate965 = new BitSet(new long[]{0x1011084820000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_expr_in_rotate967 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_attribute_in_list_attributes986 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000008L});
+    public static final BitSet FOLLOW_67_in_list_attributes989 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_attribute_in_list_attributes992 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000008L});
+    public static final BitSet FOLLOW_ATTRIBUTE_in_attribute1001 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_EQUAL_in_attribute1004 = new BitSet(new long[]{0x1011084820000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_expr_in_attribute1007 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_72_in_coordenades1014 = new BitSet(new long[]{0x1011084820000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_expr_in_coordenades1017 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_67_in_coordenades1019 = new BitSet(new long[]{0x1011084820000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_expr_in_coordenades1022 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
+    public static final BitSet FOLLOW_73_in_coordenades1024 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ID_in_acces_attribute1032 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
+    public static final BitSet FOLLOW_68_in_acces_attribute1034 = new BitSet(new long[]{0x0000000000480A00L});
+    public static final BitSet FOLLOW_att_in_acces_attribute1036 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_65_in_acces_attribute1038 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_66_in_acces_attribute1040 = new BitSet(new long[]{0x0000000000000002L});
 
 }
