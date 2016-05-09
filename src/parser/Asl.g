@@ -168,7 +168,7 @@ time_annotation:
 finish_time:
 (END^ EQUAL! expr | DURATION^ EQUAL! expr)
 ;
-create: CREATE TYPE_OBJECT coordenades list_attributes? -> ^(CREATE_INSTR TYPE_OBJECT coordenades ^(ATTRIBUTES list_attributes)?)
+create: CREATE TYPE_OBJECT coordenades? list_attributes? -> ^(CREATE_INSTR TYPE_OBJECT coordenades? ^(ATTRIBUTES list_attributes)?)
 ;
 destroy: DESTROY ID -> ^(ANIMATION DESTROY ID)
 ;
