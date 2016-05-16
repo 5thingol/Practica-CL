@@ -85,6 +85,7 @@ public class Data {
         height = h;
         fill = f;
         rotation = r;
+        this.tipus = tipus;
     }
 
     /** Constructor for animation data */
