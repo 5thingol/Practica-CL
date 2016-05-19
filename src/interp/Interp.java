@@ -351,12 +351,74 @@ public class Interp {
     }
 
     private Data createObject(AslTree t) {
-               
-        return null;
+        int child = 1
+        String tipus = t.getChild(0).getText();
+        int x = 0;
+        int y = 0;
+        int width = 0;
+        int height = 0;
+        String color = "black";
+        int rotation = 0;
+        if (t.getChildCount() > 1){
+            if (t.getChild(1).getType() == AslLexer.INT) 
+            {
+                x = t.getChild(1);
+                ++child;
+                y = t.getChild(2); 
+                ++child
+            }
+            if (t.getChild(child).getType() == AslLexer.ATTRIBUTES)
+            {
+                setAttributes(t.getChild(child), width, height,color)
+            }
+        }
+        return new Data(tipus, x, y, width, height, color, rotation);
     }
 
-    private Data createAnimation(AslTree t) {
-        return null;
+    private void setAttributes(AslTree t, int w, int h, String color)
+    {
+        for (int i = 0; i < t.getChildCount(); ++i){
+            switch(t.getType())  {
+                
+                case AslLexer.WIDTH:
+                w = t.getChild(i).getIntValue();
+                break;
+
+                case AslLexer.HEIGHT:
+                h = t.getChild(i).getIntValue();
+                break;
+
+                case AslLexer.COLOR:
+                color = t.getChild(i).getText();
+                break;
+
+                case AslLexer.STYLE:
+                String s = t.getChild(i).getText();
+                String[] parts = s.split(";");
+                String[] st
+                for(int i : parts) {
+                    if (parts[i].contains("width")){
+                        st = parts[i].split(":");
+                        w = st[1];
+                    }
+
+                    else if (parts[i].contains("height")){
+                        st = parts[i].split(":");
+                        h = st[1];
+                    }
+
+                    else if (parts[i].contains("color")){
+                        st = parts[i].split(":");
+                        color = st[1];
+                    }
+                }
+            }
+        }
+    }
+
+    private Data createAnimation() 
+    {
+        return new Data(currentTimeAnnotation.begin, currentTimeAnnotation.begin+currentTimeAnnotation.duration);
     }
 
     /**
