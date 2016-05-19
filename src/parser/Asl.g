@@ -236,7 +236,7 @@ MOVE : 'Move';
 TRANSLATE : 'Translate';
 MODIFY : 'Modify';
 ROTATE : 'Rotate';
-TYPE_OBJECT : 'Rectangle' | 'Circle' | 'Text'; // A AMPLIAR
+TYPE_OBJECT : 'Rectangle' | 'Circle' | 'Text' | 'Ellipse' | 'Line' ; // AMPLIAT
 ATTRIBUTE : 'width' | 'height' | 'style' | 'color' ; // A AMPLIAR
 ID :    ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'0'..'9'|'_')* ;
 INT :   '0'..'9'+ ;

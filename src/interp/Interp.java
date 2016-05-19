@@ -209,6 +209,7 @@ public class Interp {
         // Destroy the activation record
         Stack.popActivationRecord();
 
+        svgParser.clearObjects();
         return result;
     }
 

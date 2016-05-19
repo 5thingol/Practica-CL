@@ -56,6 +56,7 @@ public class Data {
     private int width;
     private int height;
     private int rotation;
+
     private String fill;
 
     /** Valors de les animacions */

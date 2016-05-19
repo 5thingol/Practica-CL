@@ -1,6 +1,8 @@
 func main()
-	r = Create Rectangle {400,300}
+	r = Create Rectangle {400,300} stroke-width="30",
+	if (id.stroke-width == 30) 
 
+	Modify r color="blue"->"red",
 	@begin=0, end=3
 	anim1 = Move r {300,200}
 	
