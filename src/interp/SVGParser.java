@@ -67,28 +67,29 @@ public class SVGParser {
 		SVGObjects.clear();
 	}
 
-<<<<<<< Updated upstream
 
 
 	/** FUNCIONS PER A ESCRIURE AL SVG */
 
 	private String propertiesToString(Data data) {
+		if (!data.isObject()) throw new RuntimeException("Data is not an object");
+
 		String properties = "";
-		if (data.getTipus().equals("Rectangle")) {
+		if (data.getTipusObject().equals("Rectangle")) {
 			if (data.getObjectCoordX() != null) properties += " x=\"" + data.getObjectCoordX() + "\"";
 			if (data.getObjectCoordY() != null) properties += " y=\"" + data.getObjectCoordY() + "\"";
 			if (data.getObjectWidth() != null) properties += " width=\"" + data.getObjectWidth() + "\"";
 			if (data.getObjectHeight() != null) properties += " height=\"" + data.getObjectHeight() + "\"";
-		} else if (data.getTipus().equals("Circle") || data.getTipus().equals("Ellipse")) {
+		} else if (data.getTipusObject().equals("Circle") || data.getTipusObject().equals("Ellipse")) {
 			if (data.getObjectCoordX() != null) properties += " cx=\"" + data.getObjectCoordX() + "\"";
 			if (data.getObjectCoordY() != null) properties += " cy=\"" + data.getObjectCoordY() + "\"";
 			
-			if (data.getTipus().equals("Circle") && data.getObjectRadi() != null) properties += " r=\"" + data.getObjectRadi() + "\"";
+			if (data.getTipusObject().equals("Circle") && data.getObjectRadi() != null) properties += " r=\"" + data.getObjectRadi() + "\"";
 			else {
 				if (data.getObjectRadiX() != null) properties += " rx=\"" + data.getObjectRadiX() + "\"";
 				if (data.getObjectRadiY() != null) properties += " ry=\"" + data.getObjectRadiY() + "\"";
 			}
-		} else if (data.getTipus().equals("Line")) {
+		} else if (data.getTipusObject().equals("Line")) {
 			if (data.getObjectCoordX() != null) properties += " x1=\"" + data.getObjectCoordX() + "\"";
 			if (data.getObjectCoordY() != null) properties += " y1=\"" + data.getObjectCoordY() + "\"";
 			if (data.getObjectRadiX() != null) properties += " x2=\"" + data.getObjectRadiX() + "\"";
@@ -96,70 +97,75 @@ public class SVGParser {
 		}
 		
 		if (data.getObjectColor() != null) properties += " fill=\"" + data.getObjectColor() + "\"";
-		if (data.getRotation() != null) properties += " transform=\"rotate(" + data.getRotation() + ")\"";
+		if (data.getObjectRotation() != null) properties += " transform=\"rotate(" + data.getObjectRotation() + ")\"";
 		if (data.getAttributes() != null) properties += data.getAttributes();
 
 		return properties;
 	}
 
 	private String animationToString(Animation a) {
-		String animation = "<animate";
 		Data anim = a.data;
 
-		// TODO: complete the function
+		if (!anim.isAnimation()) throw new RuntimeException("Added element to object is not an animation");
+		String animation = "<animate";																// Animation element
 
-		if (anim.getTipus().equals("Modify")) {
-			animation += " attributeName=\"" + anim.getAttribute() + "\"";
-		} else if (anim.getTipus().equals("Move")) {
-
-		} else if (anim.getTipus().equals("Translate")) { // QUAN HI HAGI TRANSLATE -> ANIMATEMOTION
-=======
-	private String basicShapeToString(String tipus) {
-		if (tipus.Equals("Rectangle")) return "rect";
-		if (tipus.Equals("Circle")) return "circle";
-		if (tipus.Equals("Ellipse")) return "ellipse";
-		if (tipus.Equals("Line")) return "line";
-	}
-
-	private String propertiesToString(Data data) {
-		if (!data.isObject()) throw new RuntimeException("Initial properties of the object are not well formed");
-		String properties = " ";
-		if (data.getObjectCoordX() != null) properties += " x=\"" + data.getObjectCoordX() + "\"";
-		if (data.getObjectCoordY() != null) properties += " y=\"" + data.getObjectCoordY() + "\"";
-			// TODO: ADD ALL PROPERTIES
-		return properties;
-	}
-
-	private String animationToString(Animation anim) {
-		if (!anim.data.isAnimation()) throw new RuntimeException("Added element to object is not an animation");
-		String animation = "<animate";						// Animation element
-
-		animation += " id=\"" + anim.id + "\"";				// Animation id
-		animation += " attributeName=\"" + 					// Animated attribute
-		  anim.data.getTipus() + "\"";
-		animation += " attributeType=\"XML\"";				
-		animation += " begin=\"" + anim.data.getBegin()		// Animation begin
-		  + "s\"";
-		animation += " dur=\"" + anim.data.getDuration() + "s\"";	// Animation end
-
-
-		// TODO: add more possibilities to the function
-
-		animation += "/>";
->>>>>>> Stashed changes
-
+		animation += " id=\"" + a.id + "\"";														// Animation id
+		
+		if (anim.getTipusAnimation().equals("Modify")) {
 			
-		} else if (anim.getTipus().equals("Rotate")) {
+			if (anim.getAnimationAttribute() == null) throw new RuntimeException("Modify animation has no attribute");
+			if (anim.getAnimationFrom() == null) throw new RuntimeException("Modify animation has no from attribute");
+			if (anim.getAnimationTo() == null) throw new RuntimeException("Modify animation has no to attribute");
 
-		} else if (anim.getTipus().equals("Destroy")) {
+			animation += " attributeName=\"" + anim.getAnimationAttribute() + "\" attributeType=\"XML\" from=\"" + 
+				anim.getAnimationFrom() + "\" to=\"" + anim.getAnimationTo() + "\" begin=\"" + 
+				anim.getAnimationBegin()	+ "s\" dur=\"" + anim.getAnimationEnd()-anim.getAnimationBegin() 
+				+ "s\"";
+		
+		} else if (anim.getTipusAnimation().equals("Move")) {
+			
+			if (anim.getAnimationCoordX() == null) throw new RuntimeException("Move animation has no X coordinate");
+			if (anim.getAnimationCoordY() == null) throw new RuntimeException("Move animation has no Y coordinate");
 
+			animation += " attributeName=\"x\" attributeType=\"XML\" to=\"" + anim.getAnimationCoordX() + "\" 
+				begin=\"" + anim.getAnimationBegin() + "s\" dur=\"" + anim.getAnimationEnd()-anim.getAnimationBegin() + 
+				"s\"";
+			
+			if (anim.getAnimationFill() != null) animation += "fill=\"" + anim.getAnimationFill() + "\"";
+			
+			animation += "/><animate attributeName=\"y\" attributeType=\"XML\" to=\"" + 
+				anim.getAnimationCoordY() + "\" begin=\"" + anim.getAnimationBegin() + "s\" dur=\"" + 
+				anim.getAnimationEnd()-anim.getAnimationBegin() + "s\"";
+
+		} else if (anim.getTipusAnimation().equals("Translate")) { // QUAN HI HAGI TRANSLATE -> ANIMATEMOTION
+			
+			if (anim.getAnimationCoordX() == null) throw new RuntimeException("Translate animation has no X coordinate");
+			if (anim.getAnimationCoordY() == null) throw new RuntimeException("Translate animation has no Y coordinate");
+
+			animation += "Transform attributeName=\"transform\" attributeType=\"XML\" type=\"translate\" to=\"" 
+				+ anim.getAnimationCoordX() + " " + anim.getAnimationCoordY() + "\" begin=\"" + anim.getAnimationBegin() + 
+				"s\" dur=\"" + anim.getAnimationEnd()-anim.getAnimationBegin() "s\"";
+			
+		} else if (anim.getTipusAnimation().equals("Rotate")) {
+			
+			if (anim.getAnimationRotation() == null) throw new RuntimeException("Rotation animation has no rotation angle");
+
+			animation += "Transform attributeName=\"transform\" attributeType=\"XML\" type=\"rotate\" to=\"" 
+				+ anim.getAnimationRotation() + "\" begin=\"" + anim.getAnimationBegin() + "s\" dur=\"" 
+				+ anim.getAnimationEnd()-anim.getAnimationBegin() "s\"";
+		
+		} else if (anim.getTipusAnimation().equals("Destroy")) {
+			
+			animation = "<set visibility=\"hidden\" begin=\"" + anim.getAnimationBegin() + "s\"";
+		
 		}
 
-
-		animation += "/>";
+		// TODO: DEBUUG
+		if (anim.getAnimationFill() != null) animation += "fill=\"" + anim.getAnimationFill() + "\"/>";
 		return animation;
 	}
 
+			
 	private String toSvgBasicShape(String tipus) {
 		if (tipus.equals("Rectangle")) return "rect";
 		if (tipus.equals("Circle")) return "circle";
@@ -170,11 +176,7 @@ public class SVGParser {
 	private void writeObjectToSVGFile(String id, List<Animation> dades) {
 		String newObject = "<";
 		Dades initialProperties = dades.get(0).data;
-<<<<<<< Updated upstream
 		newObject += toSvgBasicShape(initialProperties.getTipus());
-=======
-		newObject += basicShapeToString(initialProperties.getTipus());
->>>>>>> Stashed changes
 		newObject += propertiesToString(initialProperties);
 		
 		dades.remove(0);
