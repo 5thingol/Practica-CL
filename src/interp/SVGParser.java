@@ -67,6 +67,7 @@ public class SVGParser {
 		SVGObjects.clear();
 	}
 
+<<<<<<< Updated upstream
 
 
 	/** FUNCIONS PER A ESCRIURE AL SVG */
@@ -112,6 +113,40 @@ public class SVGParser {
 		} else if (anim.getTipus().equals("Move")) {
 
 		} else if (anim.getTipus().equals("Translate")) { // QUAN HI HAGI TRANSLATE -> ANIMATEMOTION
+=======
+	private String basicShapeToString(String tipus) {
+		if (tipus.Equals("Rectangle")) return "rect";
+		if (tipus.Equals("Circle")) return "circle";
+		if (tipus.Equals("Ellipse")) return "ellipse";
+		if (tipus.Equals("Line")) return "line";
+	}
+
+	private String propertiesToString(Data data) {
+		if (!data.isObject()) throw new RuntimeException("Initial properties of the object are not well formed");
+		String properties = " ";
+		if (data.getObjectCoordX() != null) properties += " x=\"" + data.getObjectCoordX() + "\"";
+		if (data.getObjectCoordY() != null) properties += " y=\"" + data.getObjectCoordY() + "\"";
+			// TODO: ADD ALL PROPERTIES
+		return properties;
+	}
+
+	private String animationToString(Animation anim) {
+		if (!anim.data.isAnimation()) throw new RuntimeException("Added element to object is not an animation");
+		String animation = "<animate";						// Animation element
+
+		animation += " id=\"" + anim.id + "\"";				// Animation id
+		animation += " attributeName=\"" + 					// Animated attribute
+		  anim.data.getTipus() + "\"";
+		animation += " attributeType=\"XML\"";				
+		animation += " begin=\"" + anim.data.getBegin()		// Animation begin
+		  + "s\"";
+		animation += " dur=\"" + anim.data.getDuration() + "s\"";	// Animation end
+
+
+		// TODO: add more possibilities to the function
+
+		animation += "/>";
+>>>>>>> Stashed changes
 
 			
 		} else if (anim.getTipus().equals("Rotate")) {
@@ -135,7 +170,11 @@ public class SVGParser {
 	private void writeObjectToSVGFile(String id, List<Animation> dades) {
 		String newObject = "<";
 		Dades initialProperties = dades.get(0).data;
+<<<<<<< Updated upstream
 		newObject += toSvgBasicShape(initialProperties.getTipus());
+=======
+		newObject += basicShapeToString(initialProperties.getTipus());
+>>>>>>> Stashed changes
 		newObject += propertiesToString(initialProperties);
 		
 		dades.remove(0);

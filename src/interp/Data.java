@@ -61,7 +61,7 @@ public class Data {
 
     /** Valors de les animacions */
     private int begin;
-    private int end;
+    private int duration;
 
 
     /** Valors de les animacions */
@@ -174,9 +174,9 @@ public class Data {
         return begin;
     }
 
-    public int getEnd(){
+    public int getDuration(){
         assert type = Type.ANIMATION;
-        return end;
+        return duration;
 
     }
 
@@ -222,7 +222,7 @@ public class Data {
 
     public void setBegin(int b) { type = Type.ANIMATION; begin = b; }
 
-    public void setEnd(int e) { type = Type.ANIMATION; end = e; }
+    public void setDuration(int d) { type = Type.ANIMATION; duration = d; }
 
     /** Copies the value from another data */
     public void setData(Data d) { type = d.type; value = d.value; }
