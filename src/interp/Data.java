@@ -210,7 +210,7 @@ public class Data {
      * Gets the values of an Animation data. The method asserts that
      * the data is an Animation.
      */
-    public int getAnimationAttribute(){
+    public String getAnimationAttribute(){
         assert type == Type.ANIMATION;
         return attribute;
     }
@@ -230,17 +230,17 @@ public class Data {
         return rotation;
     }
 
-    public int getAnimationFill(){
+    public String getAnimationFill(){
         assert type == Type.ANIMATION;
         return fill;
     }
 
-    public int getAnimationFrom(){
+    public String getAnimationFrom(){
         assert type == Type.ANIMATION;
         return from;
     }
 
-    public int getAnimationTo(){
+    public String getAnimationTo(){
         assert type == Type.ANIMATION;
         return begin;
     }
