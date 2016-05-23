@@ -33,7 +33,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 import java.io.*;
-import interp.SVGParser;
+import interp.SVGPasrser;
 
 /** Class that implements the interpreter of the language. */
 
@@ -210,7 +210,6 @@ public class Interp {
         // Destroy the activation record
         Stack.popActivationRecord();
 
-        svgParser.clearObjects();
         return result;
     }
 
@@ -233,7 +232,6 @@ public class Interp {
         }
         return null;
     }
-
     
     /**
      * Executes an instruction. 
@@ -258,58 +256,51 @@ public class Interp {
 
             case AslLexer.CREATE:
                 Data newObject = createObject(t);
-                String id = "newObject"+newId;
-                Stack.defineVariable(id, newObject);
-
-                svgParser.createSVGObject(id,newObject);
-
+                Stack.defineVariable("newObject"+newId, newObject);
+                svgParser.createObject("newObject"+newId, newObject);
                 newId++;
                 return null;
             case AslLexer.GROUP:
                 return null;
             case AslLexer.TIMEANNOTATION:
                 currentTimeAnnotation = new TimeAnnotation();
-                currentTimeAnnotation.begin = (double) evaluateExpression(t.getChild(0)).getIntegerValue();
-                if (t.getChild(1).getStringValue().equals("end")) {
-                    double end = (double) evaluateExpression(t.getChild(1).getChild(0)).getIntegerValue();
-                    currentTimeAnnotation.duration = end - currentTimeAnnotation.begin;
-                } else 
-                    currentTimeAnnotation.duration = (double) evaluateExpression(t.getChild(1).getChild(0)).getIntegerValue();
+                currentTimeAnnotation.begin = (double) evaluateExpression(t.getChild(0));
+                if (t,getChild(1) != null) {
+                    if (t.getChild(1).getStringValue().equals("end")) {
+                        double end = (double) evaluateExpression(t.getChild(1).getChild(0));
+                        currentTimeAnnotation.duration = end - currentTimeAnnotation.begin;
+                    } else 
+                        currentTimeAnnotation.duration = (double) evaluateExpression(t.getChild(1).getChild(0));
+                }
+                else currentTimeAnnotation.duration = 0;
                 return null;
             case AslLexer.ANIMATION:
                 if (currentTimeAnnotation == null) throw new RuntimeException("Animation instruction doesn't have a proper previous Time Annotation");
                 Data newAnimation = createAnimation(t);
-                String id = "newAnimation"+newId;
-                Stack.defineVariable(id, newAnimation);
-
-                svgParser.addSVGAnimation(value.getAnimationIdObject(), id, value);
-
+                Stack.defineVariable (newAnimation.getAnimationIdObject(),"newAnimation"+newId, newAnimation);
+                svgParser.addSVGAnimation(newAnimation.getAnimationIdObject(),"newAnimation"+newId, newAnimation);
                 newId++;
                 return null;
             // Assignment
             case AslLexer.ASSIGN:
-                String id = t.getChild(0).getText();
                 if (t.getChild(1).getType() == AslLexer.CREATE) {
                     value = createObject(t.getChild(1));
-
-                    svgParser.createSVGObject(id,value);
-                    
-                } else if (t.getChild(1).getType() == AslLexer.GROUP) {
+                    svgParser.createSVGObject(t.getChild(0).getText(), value)
+                } 
+                else if (t.getChild(1).getType() == AslLexer.GROUP) {
                     List<String> idObjects = new ArrayList<String>();
                     for (int i = 0; i < t.getChild(1).getChildCount(); ++i) {
                         idObjects.add(t.getChild(1).getChild(i).getText());
                     }
-
                     svgParser.createSVGGroup(id, idObjects);
+                } 
 
-                } else if (t.getChild(1).getType() == AslLexer.ANIMATION) {
+                else if (t.getChild(1).getType() == AslLexer.ANIMATION) {
                     value = createAnimation(t.getChild(1));
-
-                    svgParser.addSVGAnimation(value.getAnimationIdObject(), id, value);
-
+                    svgParser.addSVGAnimation(value.getAnimationIdObject(), t.getChild(0).getText(), value)
                 } else
                     value = evaluateExpression(t.getChild(1));
-                Stack.defineVariable (id, value);
+                Stack.defineVariable (t.getChild(0).getText(), value);
                 return null;
 
             // If-then-else
@@ -379,7 +370,7 @@ public class Interp {
     }
 
     private Data createObject(AslTree t) {
-        int child = 1;
+        int child = 1
         String tipus = t.getChild(0).getText();
         int x = 0;
         int y = 0;
@@ -387,17 +378,26 @@ public class Interp {
         int height = 0;
         String color = "black";
         int rotation = 0;
+        int rx = null;
+        int ry = null;
         if (t.getChildCount() > 1){
             if (t.getChild(1).getType() == AslLexer.INT) 
             {
                 x = t.getChild(1);
                 ++child;
                 y = t.getChild(2); 
+                ++child
+            }
+            if (t.getChild(child).getType() == AslLexer.INT)
+            {
+                rx = t.getChild(child);
+                ++child;
+                ry = t.getChild(child);
                 ++child;
             }
             if (t.getChild(child).getType() == AslLexer.ATTRIBUTES)
             {
-                setAttributes(t.getChild(child), width, height,color);
+                setAttributes(t.getChild(child), width, height,color)
             }
         }
         return new Data(tipus, x, y, width, height, color, rotation);
@@ -423,10 +423,11 @@ public class Interp {
                 case AslLexer.STYLE:
                 String s = t.getChild(i).getText();
                 String[] parts = s.split(";");
-                String[] st;
+                String[] st
                 for(int i : parts) {
                     if (parts[i].contains("width")){
                         st = parts[i].split(":");
+                        st[1].replaceall('"')
                         w = st[1];
                     }
 
@@ -444,13 +445,98 @@ public class Interp {
         }
     }
 
-    // DUMMY EXAMPLE: MODIFY WIDTH FROM 1 TO 2
-    // TODO: make the real function
     private Data createAnimation(AslTree t) 
     {
-        String idObject = t.getChild(0).getText();
+        AslTree node = t.getChild(0);
+        String tipus = node.getText();
+        String idObject; 
+        int begin = currentTimeAnnotation.begin; 
+        int end = currentTimeAnnotation.begin+currentTimeAnnotation.duration; 
+        int x = null; 
+        int y = null;
+        int rotation = null;
+        String attribute = null;
+        String from = null;
+        String to = null;
+        String fill = "freeze";
+        switch(tipus){
+            
+            case "Destroy":
+            idObject = node.getChild(0).getText();
+            break;
 
-        return new Data("Modify",idObject, currentTimeAnnotation.begin, currentTimeAnnotation.begin+currentTimeAnnotation.duration, null, null, null, "width",1,2,null);
+            case "Move":
+            idObject = node.getChild(0).getText();
+            x = node.getChild(1).getIntValue();
+            y = node.getChild(2).getIntValue();
+            break;
+
+            case "Translate":
+            idObject = node.getChild(0).getText();
+            x = idObject.getObjectCoordX() + node.getChild(1).getIntValue();
+            y = idObject.getObjectCoordY() + node.getChild(2).getIntValue();
+            break;
+
+            case "Rotation":
+            idObject = node.getChild(0).getText();
+            rotation = node.getChild(1).getIntValue();
+            break;
+
+            case "Modify":
+            idObject = node.getChild(0).getText();
+            attribute = node.getChild(1).getText();
+            switch(attribute){
+                
+                case 'width':
+                from = Int.toString(idObject.getObjectCoordX());
+                to = node.getChild(1).getChild(0).getText();
+                break;
+
+                case 'height':
+                from = Int.toString(idObject.getObjectCoordY());
+                to = node.getChild(1).getChild(0).getText();
+                break;
+
+                case 'color':
+                from = idObject.getObjectColor();
+                to = node.getChild(1).getChild(0).getText();
+                break;
+
+            }
+            if (t.getChildCount() > 2){
+                novaAnimacio(node,idObject,2,t.getChildCount())
+            }
+
+
+        }
+        return new Data(tipus, idObject, begin, end, x, y, rotation, attribute, from, to , fill);
+    }
+
+    private void novaAnimacio(AslTree t, String id, int child, int totalChild, String tip, Int b, int e){
+        if (child < totalChild){
+            attribute = t.getChild(child).getText();
+            switch(attribute){
+                
+                case 'width':
+                from = Int.toString(idObject.getObjectCoordX());
+                to = t.getChild(child).getChild(0).getText();
+                break;
+
+                case 'height':
+                from = Int.toString(idObject.getObjectCoordY());
+                to = t.getChild(child).getChild(0).getText();
+                break;
+
+                case 'color':
+                from = idObject.getObjectColor();
+                to = t.getChild(child).getChild(0).getText();
+                break;
+            }
+            anim = new Data(tip,  id,  b,  e, null, null, null, attribute, from, to,"freeze");
+            svgParser.addSVGAnimation(id,"newAnimation"+newId, anim);
+            ++newId;
+            novaAnimacio(t, id, child+1, totalChild, tip, b, e);
+        }
     }
 
     /**
@@ -458,6 +544,7 @@ public class Interp {
      * @param t The AST of the expression
      * @return The value of the expression.
      */
+     
     private Data evaluateExpression(AslTree t) {
         assert t != null;
 
