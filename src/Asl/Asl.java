@@ -119,7 +119,8 @@ public class Asl{
             Interp I = null;
             int linenumber = -1;
             try {
-                I = new Interp(t, tracefile); // prepares the interpreter
+                t = importModules(t);
+                I = new Interp(t.getChild(0), tracefile); // prepares the interpreter
                 I.Run();                  // Executes the code
             } catch (RuntimeException e) {
                 if (I != null) linenumber = I.lineNumber();
@@ -136,6 +137,62 @@ public class Asl{
                 System.err.format (I.getStackTrace(5));
             }
         }
+    }
+
+    /** Takes the tree and substitutes the import(s) (if present) for all its functions and includes */
+    private AslTree importModules(AslTree t) {
+        int importsIndex = 0;
+        if (t.getChildCount() == 1) return t;
+        else if (t.getChild(0).getType() == AslLexer.MODULE) importsIndex++; // It's a module definition: import all the imports and return the list_func tree
+        
+        AslTree importedT = t.getChild(importsIndex);
+        for (int i = 0; i < importedT.getChildCount(); ++i) {
+            AslTree moduleTree = getModuleTree(importedT.getChild(i).getText());
+            List<AslTree> funcs = moduleTree.getChild(0).getChild(0).getChildren();
+            t.getChild(importsIndex+1).addChildren(funcs);
+        }
+        
+        return t;
+    }
+
+    /** Open the module file and import its contents */
+    private AslTree getModuleTree(String moduleName) {
+        CharStream input = null;
+        try {
+            input = new ANTLRFileStream(moduleName);
+        } catch (IOException e) {
+            System.err.println ("Error: module file " + moduleName + " could not be opened.");
+            System.exit(1);
+        }
+
+        // Creates the lexer
+        AslLexer lex = new AslLexer(input);
+        CommonTokenStream tokens = new CommonTokenStream(lex);
+
+        // Creates and runs the parser. As a result, an AST is created
+        AslParser parser = new AslParser(tokens);
+        AslTreeAdaptor adaptor = new AslTreeAdaptor();
+        parser.setTreeAdaptor(adaptor);
+        AslParser.prog_return result = null;
+        try {
+            result = parser.prog();
+        } catch (Exception e) {} // Just catch the exception (nothing to do)
+        
+        // Check for parsing errors
+        int nerrors = parser.getNumberOfSyntaxErrors();
+        if (nerrors > 0) {
+            System.err.println (nerrors + " errors detected in the module" + moduleName + ". " +
+                                "The program has not been executed.");
+            System.exit(1);
+        }
+
+        // Get the AST
+        AslTree t = (AslTree)result.getTree();
+
+        t = importModules(t);
+
+        return t;
+
     }
 
     /**

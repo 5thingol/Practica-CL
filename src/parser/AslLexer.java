@@ -1,4 +1,4 @@
-// $ANTLR 3.4 /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g 2016-05-23 09:13:50
+// $ANTLR 3.4 /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g 2016-05-23 21:47:30
 
 package parser;
 
@@ -11,15 +11,16 @@ import java.util.ArrayList;
 @SuppressWarnings({"all", "warnings", "unchecked"})
 public class AslLexer extends Lexer {
     public static final int EOF=-1;
-    public static final int T__65=65;
-    public static final int T__66=66;
-    public static final int T__67=67;
-    public static final int T__68=68;
     public static final int T__69=69;
     public static final int T__70=70;
     public static final int T__71=71;
     public static final int T__72=72;
     public static final int T__73=73;
+    public static final int T__74=74;
+    public static final int T__75=75;
+    public static final int T__76=76;
+    public static final int T__77=77;
+    public static final int T__78=78;
     public static final int ACCESATTRIBUTE=4;
     public static final int AND=5;
     public static final int ANIMATION=6;
@@ -50,37 +51,41 @@ public class AslLexer extends Lexer {
     public static final int FUNC=31;
     public static final int FUNCALL=32;
     public static final int GE=33;
-    public static final int GT=34;
-    public static final int ID=35;
-    public static final int IF=36;
-    public static final int IN=37;
-    public static final int INT=38;
-    public static final int LE=39;
-    public static final int LIST_FUNCTIONS=40;
-    public static final int LIST_INSTR=41;
-    public static final int LT=42;
-    public static final int MINUS=43;
-    public static final int MOD=44;
-    public static final int MODIFY=45;
-    public static final int MOVE=46;
-    public static final int MUL=47;
-    public static final int NOT=48;
-    public static final int NOT_EQUAL=49;
-    public static final int OR=50;
-    public static final int PARAMS=51;
-    public static final int PLUS=52;
-    public static final int PREF=53;
-    public static final int READ=54;
-    public static final int RETURN=55;
-    public static final int ROTATE=56;
-    public static final int STRING=57;
-    public static final int TIMEANNOTATION=58;
-    public static final int TRANSLATE=59;
-    public static final int TRUE=60;
-    public static final int TYPE_OBJECT=61;
-    public static final int WHILE=62;
-    public static final int WRITE=63;
-    public static final int WS=64;
+    public static final int GROUP=34;
+    public static final int GT=35;
+    public static final int ID=36;
+    public static final int IF=37;
+    public static final int IMPORT=38;
+    public static final int IN=39;
+    public static final int INT=40;
+    public static final int LE=41;
+    public static final int LIST_FUNCTIONS=42;
+    public static final int LIST_INSTR=43;
+    public static final int LT=44;
+    public static final int MINUS=45;
+    public static final int MOD=46;
+    public static final int MODIFY=47;
+    public static final int MODULE=48;
+    public static final int MOVE=49;
+    public static final int MUL=50;
+    public static final int NOT=51;
+    public static final int NOT_EQUAL=52;
+    public static final int OR=53;
+    public static final int PARAMS=54;
+    public static final int PLUS=55;
+    public static final int PREF=56;
+    public static final int PROG=57;
+    public static final int READ=58;
+    public static final int RETURN=59;
+    public static final int ROTATE=60;
+    public static final int STRING=61;
+    public static final int TIMEANNOTATION=62;
+    public static final int TRANSLATE=63;
+    public static final int TRUE=64;
+    public static final int TYPE_OBJECT=65;
+    public static final int WHILE=66;
+    public static final int WRITE=67;
+    public static final int WS=68;
 
     // delegates
     // delegators
@@ -95,101 +100,17 @@ public class AslLexer extends Lexer {
     public AslLexer(CharStream input, RecognizerSharedState state) {
         super(input,state);
     }
-    public String getGrammarFileName() { return "/home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g"; }
-
-    // $ANTLR start "T__65"
-    public final void mT__65() throws RecognitionException {
-        try {
-            int _type = T__65;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:6:7: ( '(' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:6:9: '('
-            {
-            match('('); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        	// do for sure before leaving
-        }
-    }
-    // $ANTLR end "T__65"
-
-    // $ANTLR start "T__66"
-    public final void mT__66() throws RecognitionException {
-        try {
-            int _type = T__66;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:7:7: ( ')' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:7:9: ')'
-            {
-            match(')'); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        	// do for sure before leaving
-        }
-    }
-    // $ANTLR end "T__66"
-
-    // $ANTLR start "T__67"
-    public final void mT__67() throws RecognitionException {
-        try {
-            int _type = T__67;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:8:7: ( ',' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:8:9: ','
-            {
-            match(','); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        	// do for sure before leaving
-        }
-    }
-    // $ANTLR end "T__67"
-
-    // $ANTLR start "T__68"
-    public final void mT__68() throws RecognitionException {
-        try {
-            int _type = T__68;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:9:7: ( '.' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:9:9: '.'
-            {
-            match('.'); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        	// do for sure before leaving
-        }
-    }
-    // $ANTLR end "T__68"
+    public String getGrammarFileName() { return "/home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g"; }
 
     // $ANTLR start "T__69"
     public final void mT__69() throws RecognitionException {
         try {
             int _type = T__69;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:10:7: ( ':' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:10:9: ':'
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:6:7: ( '\"' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:6:9: '\"'
             {
-            match(':'); 
+            match('\"'); 
 
             }
 
@@ -207,10 +128,10 @@ public class AslLexer extends Lexer {
         try {
             int _type = T__70;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:11:7: ( ';' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:11:9: ';'
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:7:7: ( '(' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:7:9: '('
             {
-            match(';'); 
+            match('('); 
 
             }
 
@@ -228,10 +149,10 @@ public class AslLexer extends Lexer {
         try {
             int _type = T__71;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:12:7: ( '@' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:12:9: '@'
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:8:7: ( ')' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:8:9: ')'
             {
-            match('@'); 
+            match(')'); 
 
             }
 
@@ -249,10 +170,10 @@ public class AslLexer extends Lexer {
         try {
             int _type = T__72;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:13:7: ( '{' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:13:9: '{'
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:9:7: ( ',' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:9:9: ','
             {
-            match('{'); 
+            match(','); 
 
             }
 
@@ -270,10 +191,10 @@ public class AslLexer extends Lexer {
         try {
             int _type = T__73;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:14:7: ( '}' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:14:9: '}'
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:10:7: ( '.' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:10:9: '.'
             {
-            match('}'); 
+            match('.'); 
 
             }
 
@@ -286,13 +207,118 @@ public class AslLexer extends Lexer {
     }
     // $ANTLR end "T__73"
 
+    // $ANTLR start "T__74"
+    public final void mT__74() throws RecognitionException {
+        try {
+            int _type = T__74;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:11:7: ( ':' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:11:9: ':'
+            {
+            match(':'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        	// do for sure before leaving
+        }
+    }
+    // $ANTLR end "T__74"
+
+    // $ANTLR start "T__75"
+    public final void mT__75() throws RecognitionException {
+        try {
+            int _type = T__75;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:12:7: ( ';' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:12:9: ';'
+            {
+            match(';'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        	// do for sure before leaving
+        }
+    }
+    // $ANTLR end "T__75"
+
+    // $ANTLR start "T__76"
+    public final void mT__76() throws RecognitionException {
+        try {
+            int _type = T__76;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:13:7: ( '@' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:13:9: '@'
+            {
+            match('@'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        	// do for sure before leaving
+        }
+    }
+    // $ANTLR end "T__76"
+
+    // $ANTLR start "T__77"
+    public final void mT__77() throws RecognitionException {
+        try {
+            int _type = T__77;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:14:7: ( '{' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:14:9: '{'
+            {
+            match('{'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        	// do for sure before leaving
+        }
+    }
+    // $ANTLR end "T__77"
+
+    // $ANTLR start "T__78"
+    public final void mT__78() throws RecognitionException {
+        try {
+            int _type = T__78;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:15:7: ( '}' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:15:9: '}'
+            {
+            match('}'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        	// do for sure before leaving
+        }
+    }
+    // $ANTLR end "T__78"
+
     // $ANTLR start "EQUAL"
     public final void mEQUAL() throws RecognitionException {
         try {
             int _type = EQUAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:199:7: ( '=' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:199:9: '='
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:216:7: ( '=' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:216:9: '='
             {
             match('='); 
 
@@ -312,8 +338,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = COND_EQUAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:200:12: ( '==' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:200:14: '=='
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:217:12: ( '==' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:217:14: '=='
             {
             match("=="); 
 
@@ -335,8 +361,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = NOT_EQUAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:201:10: ( '!=' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:201:12: '!='
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:218:10: ( '!=' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:218:12: '!='
             {
             match("!="); 
 
@@ -358,8 +384,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = LT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:202:4: ( '<' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:202:6: '<'
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:219:4: ( '<' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:219:6: '<'
             {
             match('<'); 
 
@@ -379,8 +405,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = LE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:203:4: ( '<=' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:203:6: '<='
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:220:4: ( '<=' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:220:6: '<='
             {
             match("<="); 
 
@@ -402,8 +428,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = GT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:204:4: ( '>' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:204:6: '>'
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:221:4: ( '>' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:221:6: '>'
             {
             match('>'); 
 
@@ -423,8 +449,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = GE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:205:4: ( '>=' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:205:6: '>='
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:222:4: ( '>=' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:222:6: '>='
             {
             match(">="); 
 
@@ -446,8 +472,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = PLUS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:206:6: ( '+' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:206:8: '+'
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:223:6: ( '+' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:223:8: '+'
             {
             match('+'); 
 
@@ -467,8 +493,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = MINUS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:207:7: ( '-' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:207:9: '-'
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:224:7: ( '-' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:224:9: '-'
             {
             match('-'); 
 
@@ -488,8 +514,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = MUL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:208:5: ( '*' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:208:7: '*'
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:225:5: ( '*' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:225:7: '*'
             {
             match('*'); 
 
@@ -509,8 +535,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = DIV;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:209:5: ( '/' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:209:7: '/'
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:226:5: ( '/' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:226:7: '/'
             {
             match('/'); 
 
@@ -530,8 +556,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = MOD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:210:5: ( '%' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:210:7: '%'
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:227:5: ( '%' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:227:7: '%'
             {
             match('%'); 
 
@@ -551,8 +577,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = NOT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:211:5: ( 'not' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:211:7: 'not'
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:228:5: ( 'not' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:228:7: 'not'
             {
             match("not"); 
 
@@ -574,8 +600,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = AND;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:212:5: ( 'and' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:212:7: 'and'
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:229:5: ( 'and' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:229:7: 'and'
             {
             match("and"); 
 
@@ -597,8 +623,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = OR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:213:4: ( 'or' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:213:6: 'or'
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:230:4: ( 'or' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:230:6: 'or'
             {
             match("or"); 
 
@@ -620,8 +646,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = IF;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:214:4: ( 'if' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:214:6: 'if'
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:231:4: ( 'if' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:231:6: 'if'
             {
             match("if"); 
 
@@ -643,8 +669,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = ELSE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:215:6: ( 'else' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:215:8: 'else'
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:232:6: ( 'else' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:232:8: 'else'
             {
             match("else"); 
 
@@ -666,8 +692,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = ELSEIF;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:216:8: ( 'elseif' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:216:10: 'elseif'
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:233:8: ( 'elseif' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:233:10: 'elseif'
             {
             match("elseif"); 
 
@@ -689,8 +715,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = ENDIF;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:217:7: ( 'endif' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:217:9: 'endif'
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:234:7: ( 'endif' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:234:9: 'endif'
             {
             match("endif"); 
 
@@ -712,8 +738,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = WHILE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:218:7: ( 'while' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:218:9: 'while'
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:235:7: ( 'while' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:235:9: 'while'
             {
             match("while"); 
 
@@ -735,8 +761,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = FOR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:219:5: ( 'for' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:219:7: 'for'
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:236:5: ( 'for' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:236:7: 'for'
             {
             match("for"); 
 
@@ -758,8 +784,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = ENDWHILE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:220:9: ( 'endwhile' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:220:11: 'endwhile'
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:237:9: ( 'endwhile' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:237:11: 'endwhile'
             {
             match("endwhile"); 
 
@@ -781,8 +807,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = ENDFOR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:221:8: ( 'endfor' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:221:10: 'endfor'
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:238:8: ( 'endfor' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:238:10: 'endfor'
             {
             match("endfor"); 
 
@@ -804,8 +830,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = IN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:222:4: ( 'in' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:222:9: 'in'
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:239:4: ( 'in' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:239:9: 'in'
             {
             match("in"); 
 
@@ -822,13 +848,59 @@ public class AslLexer extends Lexer {
     }
     // $ANTLR end "IN"
 
+    // $ANTLR start "IMPORT"
+    public final void mIMPORT() throws RecognitionException {
+        try {
+            int _type = IMPORT;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:240:8: ( 'import' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:240:10: 'import'
+            {
+            match("import"); 
+
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        	// do for sure before leaving
+        }
+    }
+    // $ANTLR end "IMPORT"
+
+    // $ANTLR start "MODULE"
+    public final void mMODULE() throws RecognitionException {
+        try {
+            int _type = MODULE;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:241:8: ( 'module' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:241:10: 'module'
+            {
+            match("module"); 
+
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        	// do for sure before leaving
+        }
+    }
+    // $ANTLR end "MODULE"
+
     // $ANTLR start "FUNC"
     public final void mFUNC() throws RecognitionException {
         try {
             int _type = FUNC;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:223:6: ( 'func' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:223:8: 'func'
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:242:6: ( 'func' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:242:8: 'func'
             {
             match("func"); 
 
@@ -850,8 +922,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = ENDFUNC;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:224:9: ( 'endfunc' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:224:11: 'endfunc'
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:243:9: ( 'endfunc' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:243:11: 'endfunc'
             {
             match("endfunc"); 
 
@@ -873,8 +945,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = RETURN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:225:8: ( 'return' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:225:10: 'return'
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:244:8: ( 'return' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:244:10: 'return'
             {
             match("return"); 
 
@@ -896,8 +968,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = READ;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:226:6: ( 'read' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:226:8: 'read'
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:245:6: ( 'read' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:245:8: 'read'
             {
             match("read"); 
 
@@ -919,8 +991,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = WRITE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:227:7: ( 'write' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:227:9: 'write'
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:246:7: ( 'write' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:246:9: 'write'
             {
             match("write"); 
 
@@ -942,8 +1014,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = TRUE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:228:6: ( 'true' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:228:8: 'true'
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:247:6: ( 'true' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:247:8: 'true'
             {
             match("true"); 
 
@@ -965,8 +1037,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = FALSE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:229:7: ( 'false' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:229:9: 'false'
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:248:7: ( 'false' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:248:9: 'false'
             {
             match("false"); 
 
@@ -988,8 +1060,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = BEGIN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:230:7: ( 'begin' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:230:9: 'begin'
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:249:7: ( 'begin' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:249:9: 'begin'
             {
             match("begin"); 
 
@@ -1011,8 +1083,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = END;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:231:5: ( 'end' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:231:7: 'end'
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:250:5: ( 'end' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:250:7: 'end'
             {
             match("end"); 
 
@@ -1034,8 +1106,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = DURATION;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:232:9: ( 'duration' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:232:11: 'duration'
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:251:9: ( 'duration' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:251:11: 'duration'
             {
             match("duration"); 
 
@@ -1057,8 +1129,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = CREATE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:233:8: ( 'Create' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:233:10: 'Create'
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:252:8: ( 'Create' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:252:10: 'Create'
             {
             match("Create"); 
 
@@ -1075,13 +1147,36 @@ public class AslLexer extends Lexer {
     }
     // $ANTLR end "CREATE"
 
+    // $ANTLR start "GROUP"
+    public final void mGROUP() throws RecognitionException {
+        try {
+            int _type = GROUP;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:253:7: ( 'Group' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:253:10: 'Group'
+            {
+            match("Group"); 
+
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        	// do for sure before leaving
+        }
+    }
+    // $ANTLR end "GROUP"
+
     // $ANTLR start "DESTROY"
     public final void mDESTROY() throws RecognitionException {
         try {
             int _type = DESTROY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:234:9: ( 'Destroy' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:234:11: 'Destroy'
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:254:9: ( 'Destroy' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:254:11: 'Destroy'
             {
             match("Destroy"); 
 
@@ -1103,8 +1198,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = MOVE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:235:6: ( 'Move' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:235:8: 'Move'
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:255:6: ( 'Move' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:255:8: 'Move'
             {
             match("Move"); 
 
@@ -1126,8 +1221,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = TRANSLATE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:236:11: ( 'Translate' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:236:13: 'Translate'
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:256:11: ( 'Translate' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:256:13: 'Translate'
             {
             match("Translate"); 
 
@@ -1149,8 +1244,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = MODIFY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:237:8: ( 'Modify' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:237:10: 'Modify'
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:257:8: ( 'Modify' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:257:10: 'Modify'
             {
             match("Modify"); 
 
@@ -1172,8 +1267,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = ROTATE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:238:8: ( 'Rotate' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:238:10: 'Rotate'
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:258:8: ( 'Rotate' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:258:10: 'Rotate'
             {
             match("Rotate"); 
 
@@ -1195,7 +1290,7 @@ public class AslLexer extends Lexer {
         try {
             int _type = TYPE_OBJECT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:239:13: ( 'Rectangle' | 'Circle' | 'Text' | 'Ellipse' | 'Line' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:259:13: ( 'Rectangle' | 'Circle' | 'Text' | 'Ellipse' | 'Line' )
             int alt1=5;
             switch ( input.LA(1) ) {
             case 'R':
@@ -1233,7 +1328,7 @@ public class AslLexer extends Lexer {
 
             switch (alt1) {
                 case 1 :
-                    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:239:15: 'Rectangle'
+                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:259:15: 'Rectangle'
                     {
                     match("Rectangle"); 
 
@@ -1242,7 +1337,7 @@ public class AslLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:239:29: 'Circle'
+                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:259:29: 'Circle'
                     {
                     match("Circle"); 
 
@@ -1251,7 +1346,7 @@ public class AslLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:239:40: 'Text'
+                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:259:40: 'Text'
                     {
                     match("Text"); 
 
@@ -1260,7 +1355,7 @@ public class AslLexer extends Lexer {
                     }
                     break;
                 case 4 :
-                    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:239:49: 'Ellipse'
+                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:259:49: 'Ellipse'
                     {
                     match("Ellipse"); 
 
@@ -1269,7 +1364,7 @@ public class AslLexer extends Lexer {
                     }
                     break;
                 case 5 :
-                    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:239:61: 'Line'
+                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:259:61: 'Line'
                     {
                     match("Line"); 
 
@@ -1293,7 +1388,7 @@ public class AslLexer extends Lexer {
         try {
             int _type = ATTRIBUTE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:240:11: ( 'width' | 'height' | 'style' | 'color' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:260:11: ( 'width' | 'height' | 'style' | 'color' )
             int alt2=4;
             switch ( input.LA(1) ) {
             case 'w':
@@ -1326,7 +1421,7 @@ public class AslLexer extends Lexer {
 
             switch (alt2) {
                 case 1 :
-                    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:240:13: 'width'
+                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:260:13: 'width'
                     {
                     match("width"); 
 
@@ -1335,7 +1430,7 @@ public class AslLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:240:23: 'height'
+                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:260:23: 'height'
                     {
                     match("height"); 
 
@@ -1344,7 +1439,7 @@ public class AslLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:240:34: 'style'
+                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:260:34: 'style'
                     {
                     match("style"); 
 
@@ -1353,7 +1448,7 @@ public class AslLexer extends Lexer {
                     }
                     break;
                 case 4 :
-                    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:240:44: 'color'
+                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:260:44: 'color'
                     {
                     match("color"); 
 
@@ -1377,8 +1472,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:241:4: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )* )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:241:9: ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:261:4: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )* )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:261:9: ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*
             {
             if ( (input.LA(1) >= 'A' && input.LA(1) <= 'Z')||input.LA(1)=='_'||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
                 input.consume();
@@ -1390,7 +1485,7 @@ public class AslLexer extends Lexer {
             }
 
 
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:241:33: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:261:33: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*
             loop3:
             do {
                 int alt3=2;
@@ -1403,7 +1498,7 @@ public class AslLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:
+            	    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:
             	    {
             	    if ( (input.LA(1) >= '0' && input.LA(1) <= '9')||(input.LA(1) >= 'A' && input.LA(1) <= 'Z')||input.LA(1)=='_'||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
             	        input.consume();
@@ -1440,10 +1535,10 @@ public class AslLexer extends Lexer {
         try {
             int _type = INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:242:5: ( ( '0' .. '9' )+ )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:242:9: ( '0' .. '9' )+
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:262:5: ( ( '0' .. '9' )+ )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:262:9: ( '0' .. '9' )+
             {
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:242:9: ( '0' .. '9' )+
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:262:9: ( '0' .. '9' )+
             int cnt4=0;
             loop4:
             do {
@@ -1457,7 +1552,7 @@ public class AslLexer extends Lexer {
 
                 switch (alt4) {
             	case 1 :
-            	    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:
+            	    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:
             	    {
             	    if ( (input.LA(1) >= '0' && input.LA(1) <= '9') ) {
             	        input.consume();
@@ -1498,7 +1593,7 @@ public class AslLexer extends Lexer {
         try {
             int _type = COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:244:9: ( '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n' | '/*' ( options {greedy=false; } : . )* '*/' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:264:9: ( '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n' | '/*' ( options {greedy=false; } : . )* '*/' )
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -1528,13 +1623,13 @@ public class AslLexer extends Lexer {
             }
             switch (alt8) {
                 case 1 :
-                    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:244:11: '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n'
+                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:264:11: '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n'
                     {
                     match("//"); 
 
 
 
-                    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:244:16: (~ ( '\\n' | '\\r' ) )*
+                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:264:16: (~ ( '\\n' | '\\r' ) )*
                     loop5:
                     do {
                         int alt5=2;
@@ -1547,7 +1642,7 @@ public class AslLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:
+                    	    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:
                     	    {
                     	    if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '\t')||(input.LA(1) >= '\u000B' && input.LA(1) <= '\f')||(input.LA(1) >= '\u000E' && input.LA(1) <= '\uFFFF') ) {
                     	        input.consume();
@@ -1568,7 +1663,7 @@ public class AslLexer extends Lexer {
                     } while (true);
 
 
-                    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:244:30: ( '\\r' )?
+                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:264:30: ( '\\r' )?
                     int alt6=2;
                     int LA6_0 = input.LA(1);
 
@@ -1577,7 +1672,7 @@ public class AslLexer extends Lexer {
                     }
                     switch (alt6) {
                         case 1 :
-                            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:244:30: '\\r'
+                            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:264:30: '\\r'
                             {
                             match('\r'); 
 
@@ -1594,13 +1689,13 @@ public class AslLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:245:3: '/*' ( options {greedy=false; } : . )* '*/'
+                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:265:3: '/*' ( options {greedy=false; } : . )* '*/'
                     {
                     match("/*"); 
 
 
 
-                    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:245:8: ( options {greedy=false; } : . )*
+                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:265:8: ( options {greedy=false; } : . )*
                     loop7:
                     do {
                         int alt7=2;
@@ -1625,7 +1720,7 @@ public class AslLexer extends Lexer {
 
                         switch (alt7) {
                     	case 1 :
-                    	    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:245:36: .
+                    	    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:265:36: .
                     	    {
                     	    matchAny(); 
 
@@ -1662,12 +1757,12 @@ public class AslLexer extends Lexer {
         try {
             int _type = STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:248:8: ( '\"' ( ESC_SEQ |~ ( '\\\\' | '\"' ) )* '\"' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:248:10: '\"' ( ESC_SEQ |~ ( '\\\\' | '\"' ) )* '\"'
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:268:8: ( '\"' ( ESC_SEQ |~ ( '\\\\' | '\"' ) )* '\"' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:268:10: '\"' ( ESC_SEQ |~ ( '\\\\' | '\"' ) )* '\"'
             {
             match('\"'); 
 
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:248:14: ( ESC_SEQ |~ ( '\\\\' | '\"' ) )*
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:268:14: ( ESC_SEQ |~ ( '\\\\' | '\"' ) )*
             loop9:
             do {
                 int alt9=3;
@@ -1683,7 +1778,7 @@ public class AslLexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:248:16: ESC_SEQ
+            	    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:268:16: ESC_SEQ
             	    {
             	    mESC_SEQ(); 
 
@@ -1691,7 +1786,7 @@ public class AslLexer extends Lexer {
             	    }
             	    break;
             	case 2 :
-            	    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:248:26: ~ ( '\\\\' | '\"' )
+            	    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:268:26: ~ ( '\\\\' | '\"' )
             	    {
             	    if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '!')||(input.LA(1) >= '#' && input.LA(1) <= '[')||(input.LA(1) >= ']' && input.LA(1) <= '\uFFFF') ) {
             	        input.consume();
@@ -1728,8 +1823,8 @@ public class AslLexer extends Lexer {
     // $ANTLR start "ESC_SEQ"
     public final void mESC_SEQ() throws RecognitionException {
         try {
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:254:3: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' ) )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:254:3: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:274:3: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' ) )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:274:3: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' )
             {
             match('\\'); 
 
@@ -1758,8 +1853,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:257:9: ( ( ' ' | '\\t' | '\\r' | '\\n' ) )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:257:11: ( ' ' | '\\t' | '\\r' | '\\n' )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:277:9: ( ( ' ' | '\\t' | '\\r' | '\\n' ) )
+            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:277:11: ( ' ' | '\\t' | '\\r' | '\\n' )
             {
             if ( (input.LA(1) >= '\t' && input.LA(1) <= '\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
                 input.consume();
@@ -1785,452 +1880,484 @@ public class AslLexer extends Lexer {
     // $ANTLR end "WS"
 
     public void mTokens() throws RecognitionException {
-        // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:8: ( T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | EQUAL | COND_EQUAL | NOT_EQUAL | LT | LE | GT | GE | PLUS | MINUS | MUL | DIV | MOD | NOT | AND | OR | IF | ELSE | ELSEIF | ENDIF | WHILE | FOR | ENDWHILE | ENDFOR | IN | FUNC | ENDFUNC | RETURN | READ | WRITE | TRUE | FALSE | BEGIN | END | DURATION | CREATE | DESTROY | MOVE | TRANSLATE | MODIFY | ROTATE | TYPE_OBJECT | ATTRIBUTE | ID | INT | COMMENT | STRING | WS )
-        int alt10=56;
+        // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:8: ( T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | EQUAL | COND_EQUAL | NOT_EQUAL | LT | LE | GT | GE | PLUS | MINUS | MUL | DIV | MOD | NOT | AND | OR | IF | ELSE | ELSEIF | ENDIF | WHILE | FOR | ENDWHILE | ENDFOR | IN | IMPORT | MODULE | FUNC | ENDFUNC | RETURN | READ | WRITE | TRUE | FALSE | BEGIN | END | DURATION | CREATE | GROUP | DESTROY | MOVE | TRANSLATE | MODIFY | ROTATE | TYPE_OBJECT | ATTRIBUTE | ID | INT | COMMENT | STRING | WS )
+        int alt10=60;
         alt10 = dfa10.predict(input);
         switch (alt10) {
             case 1 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:10: T__65
-                {
-                mT__65(); 
-
-
-                }
-                break;
-            case 2 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:16: T__66
-                {
-                mT__66(); 
-
-
-                }
-                break;
-            case 3 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:22: T__67
-                {
-                mT__67(); 
-
-
-                }
-                break;
-            case 4 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:28: T__68
-                {
-                mT__68(); 
-
-
-                }
-                break;
-            case 5 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:34: T__69
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:10: T__69
                 {
                 mT__69(); 
 
 
                 }
                 break;
-            case 6 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:40: T__70
+            case 2 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:16: T__70
                 {
                 mT__70(); 
 
 
                 }
                 break;
-            case 7 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:46: T__71
+            case 3 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:22: T__71
                 {
                 mT__71(); 
 
 
                 }
                 break;
-            case 8 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:52: T__72
+            case 4 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:28: T__72
                 {
                 mT__72(); 
 
 
                 }
                 break;
-            case 9 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:58: T__73
+            case 5 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:34: T__73
                 {
                 mT__73(); 
 
 
                 }
                 break;
+            case 6 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:40: T__74
+                {
+                mT__74(); 
+
+
+                }
+                break;
+            case 7 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:46: T__75
+                {
+                mT__75(); 
+
+
+                }
+                break;
+            case 8 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:52: T__76
+                {
+                mT__76(); 
+
+
+                }
+                break;
+            case 9 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:58: T__77
+                {
+                mT__77(); 
+
+
+                }
+                break;
             case 10 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:64: EQUAL
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:64: T__78
+                {
+                mT__78(); 
+
+
+                }
+                break;
+            case 11 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:70: EQUAL
                 {
                 mEQUAL(); 
 
 
                 }
                 break;
-            case 11 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:70: COND_EQUAL
+            case 12 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:76: COND_EQUAL
                 {
                 mCOND_EQUAL(); 
 
 
                 }
                 break;
-            case 12 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:81: NOT_EQUAL
+            case 13 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:87: NOT_EQUAL
                 {
                 mNOT_EQUAL(); 
 
 
                 }
                 break;
-            case 13 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:91: LT
+            case 14 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:97: LT
                 {
                 mLT(); 
 
 
                 }
                 break;
-            case 14 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:94: LE
+            case 15 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:100: LE
                 {
                 mLE(); 
 
 
                 }
                 break;
-            case 15 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:97: GT
+            case 16 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:103: GT
                 {
                 mGT(); 
 
 
                 }
                 break;
-            case 16 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:100: GE
+            case 17 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:106: GE
                 {
                 mGE(); 
 
 
                 }
                 break;
-            case 17 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:103: PLUS
+            case 18 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:109: PLUS
                 {
                 mPLUS(); 
 
 
                 }
                 break;
-            case 18 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:108: MINUS
+            case 19 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:114: MINUS
                 {
                 mMINUS(); 
 
 
                 }
                 break;
-            case 19 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:114: MUL
+            case 20 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:120: MUL
                 {
                 mMUL(); 
 
 
                 }
                 break;
-            case 20 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:118: DIV
+            case 21 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:124: DIV
                 {
                 mDIV(); 
 
 
                 }
                 break;
-            case 21 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:122: MOD
+            case 22 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:128: MOD
                 {
                 mMOD(); 
 
 
                 }
                 break;
-            case 22 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:126: NOT
+            case 23 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:132: NOT
                 {
                 mNOT(); 
 
 
                 }
                 break;
-            case 23 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:130: AND
+            case 24 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:136: AND
                 {
                 mAND(); 
 
 
                 }
                 break;
-            case 24 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:134: OR
+            case 25 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:140: OR
                 {
                 mOR(); 
 
 
                 }
                 break;
-            case 25 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:137: IF
+            case 26 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:143: IF
                 {
                 mIF(); 
 
 
                 }
                 break;
-            case 26 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:140: ELSE
+            case 27 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:146: ELSE
                 {
                 mELSE(); 
 
 
                 }
                 break;
-            case 27 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:145: ELSEIF
+            case 28 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:151: ELSEIF
                 {
                 mELSEIF(); 
 
 
                 }
                 break;
-            case 28 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:152: ENDIF
+            case 29 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:158: ENDIF
                 {
                 mENDIF(); 
 
 
                 }
                 break;
-            case 29 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:158: WHILE
+            case 30 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:164: WHILE
                 {
                 mWHILE(); 
 
 
                 }
                 break;
-            case 30 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:164: FOR
+            case 31 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:170: FOR
                 {
                 mFOR(); 
 
 
                 }
                 break;
-            case 31 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:168: ENDWHILE
+            case 32 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:174: ENDWHILE
                 {
                 mENDWHILE(); 
 
 
                 }
                 break;
-            case 32 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:177: ENDFOR
+            case 33 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:183: ENDFOR
                 {
                 mENDFOR(); 
 
 
                 }
                 break;
-            case 33 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:184: IN
+            case 34 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:190: IN
                 {
                 mIN(); 
 
 
                 }
                 break;
-            case 34 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:187: FUNC
+            case 35 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:193: IMPORT
+                {
+                mIMPORT(); 
+
+
+                }
+                break;
+            case 36 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:200: MODULE
+                {
+                mMODULE(); 
+
+
+                }
+                break;
+            case 37 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:207: FUNC
                 {
                 mFUNC(); 
 
 
                 }
                 break;
-            case 35 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:192: ENDFUNC
+            case 38 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:212: ENDFUNC
                 {
                 mENDFUNC(); 
 
 
                 }
                 break;
-            case 36 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:200: RETURN
+            case 39 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:220: RETURN
                 {
                 mRETURN(); 
 
 
                 }
                 break;
-            case 37 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:207: READ
+            case 40 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:227: READ
                 {
                 mREAD(); 
 
 
                 }
                 break;
-            case 38 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:212: WRITE
+            case 41 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:232: WRITE
                 {
                 mWRITE(); 
 
 
                 }
                 break;
-            case 39 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:218: TRUE
+            case 42 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:238: TRUE
                 {
                 mTRUE(); 
 
 
                 }
                 break;
-            case 40 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:223: FALSE
+            case 43 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:243: FALSE
                 {
                 mFALSE(); 
 
 
                 }
                 break;
-            case 41 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:229: BEGIN
+            case 44 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:249: BEGIN
                 {
                 mBEGIN(); 
 
 
                 }
                 break;
-            case 42 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:235: END
+            case 45 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:255: END
                 {
                 mEND(); 
 
 
                 }
                 break;
-            case 43 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:239: DURATION
+            case 46 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:259: DURATION
                 {
                 mDURATION(); 
 
 
                 }
                 break;
-            case 44 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:248: CREATE
+            case 47 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:268: CREATE
                 {
                 mCREATE(); 
 
 
                 }
                 break;
-            case 45 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:255: DESTROY
+            case 48 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:275: GROUP
+                {
+                mGROUP(); 
+
+
+                }
+                break;
+            case 49 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:281: DESTROY
                 {
                 mDESTROY(); 
 
 
                 }
                 break;
-            case 46 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:263: MOVE
+            case 50 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:289: MOVE
                 {
                 mMOVE(); 
 
 
                 }
                 break;
-            case 47 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:268: TRANSLATE
+            case 51 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:294: TRANSLATE
                 {
                 mTRANSLATE(); 
 
 
                 }
                 break;
-            case 48 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:278: MODIFY
+            case 52 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:304: MODIFY
                 {
                 mMODIFY(); 
 
 
                 }
                 break;
-            case 49 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:285: ROTATE
+            case 53 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:311: ROTATE
                 {
                 mROTATE(); 
 
 
                 }
                 break;
-            case 50 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:292: TYPE_OBJECT
+            case 54 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:318: TYPE_OBJECT
                 {
                 mTYPE_OBJECT(); 
 
 
                 }
                 break;
-            case 51 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:304: ATTRIBUTE
+            case 55 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:330: ATTRIBUTE
                 {
                 mATTRIBUTE(); 
 
 
                 }
                 break;
-            case 52 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:314: ID
+            case 56 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:340: ID
                 {
                 mID(); 
 
 
                 }
                 break;
-            case 53 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:317: INT
+            case 57 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:343: INT
                 {
                 mINT(); 
 
 
                 }
                 break;
-            case 54 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:321: COMMENT
+            case 58 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:347: COMMENT
                 {
                 mCOMMENT(); 
 
 
                 }
                 break;
-            case 55 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:329: STRING
+            case 59 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:355: STRING
                 {
                 mSTRING(); 
 
 
                 }
                 break;
-            case 56 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:336: WS
+            case 60 :
+                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:1:362: WS
                 {
                 mWS(); 
 
@@ -2245,73 +2372,78 @@ public class AslLexer extends Lexer {
 
     protected DFA10 dfa10 = new DFA10(this);
     static final String DFA10_eotS =
-        "\12\uffff\1\55\1\uffff\1\57\1\61\3\uffff\1\63\1\uffff\25\50\14\uffff"+
-        "\2\50\1\124\1\125\1\126\31\50\1\162\1\163\3\uffff\1\50\1\170\3\50"+
-        "\1\174\25\50\2\uffff\1\u0093\3\50\1\uffff\3\50\1\uffff\1\u009b\2"+
-        "\50\1\u009e\1\u009f\5\50\1\u00a5\2\50\1\u00a8\3\50\1\u00a8\4\50"+
-        "\1\uffff\1\u00b0\3\50\1\u00b4\1\u00b5\1\u00b6\1\uffff\1\u00b7\1"+
-        "\50\2\uffff\1\u00b9\4\50\1\uffff\2\50\1\uffff\4\50\2\u00b6\1\u00c4"+
-        "\1\uffff\1\50\1\u00c6\1\50\4\uffff\1\u00c8\1\uffff\1\50\1\u00ca"+
-        "\1\u00a8\1\50\1\u00cc\1\50\1\u00ce\2\50\1\u00b6\1\uffff\1\50\1\uffff"+
-        "\1\u00d2\1\uffff\1\50\1\uffff\1\u00d4\1\uffff\1\50\1\uffff\1\50"+
-        "\1\u00a8\1\u00d7\1\uffff\1\u00d8\1\uffff\2\50\2\uffff\1\u00db\1"+
-        "\u00a8\1\uffff";
+        "\1\uffff\1\56\11\uffff\1\61\1\uffff\1\63\1\65\3\uffff\1\67\1\uffff"+
+        "\27\53\15\uffff\2\53\1\133\1\134\1\135\34\53\1\174\1\175\3\uffff"+
+        "\2\53\1\u0083\3\53\1\u0087\27\53\2\uffff\1\53\1\u00a1\3\53\1\uffff"+
+        "\3\53\1\uffff\1\u00a9\3\53\1\u00ad\1\u00ae\6\53\1\u00b5\2\53\1\u00b8"+
+        "\3\53\1\u00b8\5\53\1\uffff\1\u00c1\3\53\1\u00c5\1\u00c6\1\u00c7"+
+        "\1\uffff\1\u00c8\2\53\2\uffff\1\u00cb\3\53\1\u00cf\1\53\1\uffff"+
+        "\2\53\1\uffff\4\53\2\u00c7\1\u00d7\1\u00d8\1\uffff\1\53\1\u00da"+
+        "\1\53\4\uffff\1\u00dc\1\u00dd\1\uffff\1\53\1\u00df\1\u00b8\1\uffff"+
+        "\1\53\1\u00e1\1\53\1\u00e3\2\53\1\u00c7\2\uffff\1\53\1\uffff\1\u00e7"+
+        "\2\uffff\1\53\1\uffff\1\u00e9\1\uffff\1\53\1\uffff\1\53\1\u00b8"+
+        "\1\u00ec\1\uffff\1\u00ed\1\uffff\2\53\2\uffff\1\u00f0\1\u00b8\1"+
+        "\uffff";
     static final String DFA10_eofS =
-        "\u00dc\uffff";
+        "\u00f1\uffff";
     static final String DFA10_minS =
-        "\1\11\11\uffff\1\75\1\uffff\2\75\3\uffff\1\52\1\uffff\1\157\1\156"+
-        "\1\162\1\146\1\154\1\150\1\141\1\145\1\162\1\145\1\165\1\151\1\145"+
-        "\1\157\2\145\1\154\1\151\1\145\1\164\1\157\14\uffff\1\164\1\144"+
-        "\3\60\1\163\1\144\2\151\1\144\1\162\1\156\1\154\1\141\1\165\1\147"+
-        "\1\162\1\145\1\162\1\163\1\144\1\141\1\170\1\164\1\143\1\154\1\156"+
-        "\1\151\1\171\1\154\2\60\3\uffff\1\145\1\60\1\154\2\164\1\60\1\143"+
-        "\1\163\1\165\1\144\1\145\1\151\2\141\1\143\1\164\1\145\1\151\1\156"+
-        "\1\164\1\141\1\164\1\151\1\145\1\147\1\154\1\157\2\uffff\1\60\1"+
-        "\146\1\150\1\157\1\uffff\2\145\1\150\1\uffff\1\60\1\145\1\162\2"+
-        "\60\1\156\2\164\1\154\1\162\1\60\1\146\1\163\1\60\1\164\1\141\1"+
-        "\160\1\60\1\150\1\145\1\162\1\146\1\uffff\1\60\1\151\1\162\1\156"+
-        "\3\60\1\uffff\1\60\1\156\2\uffff\1\60\1\151\2\145\1\157\1\uffff"+
-        "\1\171\1\154\1\uffff\1\145\1\156\1\163\1\164\3\60\1\uffff\1\154"+
-        "\1\60\1\143\4\uffff\1\60\1\uffff\1\157\2\60\1\171\1\60\1\141\1\60"+
-        "\1\147\1\145\1\60\1\uffff\1\145\1\uffff\1\60\1\uffff\1\156\1\uffff"+
-        "\1\60\1\uffff\1\164\1\uffff\1\154\2\60\1\uffff\1\60\1\uffff\2\145"+
-        "\2\uffff\2\60\1\uffff";
+        "\1\11\1\0\11\uffff\1\75\1\uffff\2\75\3\uffff\1\52\1\uffff\1\157"+
+        "\1\156\1\162\1\146\1\154\1\150\1\141\1\157\1\145\1\162\1\145\1\165"+
+        "\1\151\1\162\1\145\1\157\2\145\1\154\1\151\1\145\1\164\1\157\15"+
+        "\uffff\1\164\1\144\3\60\1\160\1\163\1\144\2\151\1\144\1\162\1\156"+
+        "\1\154\1\144\1\141\1\165\1\147\1\162\1\145\1\162\1\157\1\163\1\144"+
+        "\1\141\1\170\1\164\1\143\1\154\1\156\1\151\1\171\1\154\2\60\3\uffff"+
+        "\1\157\1\145\1\60\1\154\2\164\1\60\1\143\1\163\2\165\1\144\1\145"+
+        "\1\151\2\141\1\143\1\165\1\164\1\145\1\151\1\156\1\164\1\141\1\164"+
+        "\1\151\1\145\1\147\1\154\1\157\2\uffff\1\162\1\60\1\146\1\150\1"+
+        "\157\1\uffff\2\145\1\150\1\uffff\1\60\1\145\1\154\1\162\2\60\1\156"+
+        "\2\164\1\154\1\160\1\162\1\60\1\146\1\163\1\60\1\164\1\141\1\160"+
+        "\1\60\1\150\1\145\1\162\1\164\1\146\1\uffff\1\60\1\151\1\162\1\156"+
+        "\3\60\1\uffff\1\60\1\145\1\156\2\uffff\1\60\1\151\2\145\1\60\1\157"+
+        "\1\uffff\1\171\1\154\1\uffff\1\145\1\156\1\163\1\164\4\60\1\uffff"+
+        "\1\154\1\60\1\143\4\uffff\2\60\1\uffff\1\157\2\60\1\uffff\1\171"+
+        "\1\60\1\141\1\60\1\147\1\145\1\60\2\uffff\1\145\1\uffff\1\60\2\uffff"+
+        "\1\156\1\uffff\1\60\1\uffff\1\164\1\uffff\1\154\2\60\1\uffff\1\60"+
+        "\1\uffff\2\145\2\uffff\2\60\1\uffff";
     static final String DFA10_maxS =
-        "\1\175\11\uffff\1\75\1\uffff\2\75\3\uffff\1\57\1\uffff\1\157\1\156"+
-        "\1\162\2\156\1\162\1\165\1\145\1\162\1\145\1\165\1\162\1\145\1\157"+
-        "\1\162\1\157\1\154\1\151\1\145\1\164\1\157\14\uffff\1\164\1\144"+
-        "\3\172\1\163\1\144\2\151\1\144\1\162\1\156\1\154\1\164\1\165\1\147"+
-        "\1\162\1\145\1\162\1\163\1\166\1\141\1\170\1\164\1\143\1\154\1\156"+
-        "\1\151\1\171\1\154\2\172\3\uffff\1\145\1\172\1\154\2\164\1\172\1"+
-        "\143\1\163\1\165\1\144\1\145\1\151\2\141\1\143\1\164\1\145\1\151"+
-        "\1\156\1\164\1\141\1\164\1\151\1\145\1\147\1\154\1\157\2\uffff\1"+
-        "\172\1\146\1\150\1\165\1\uffff\2\145\1\150\1\uffff\1\172\1\145\1"+
-        "\162\2\172\1\156\2\164\1\154\1\162\1\172\1\146\1\163\1\172\1\164"+
-        "\1\141\1\160\1\172\1\150\1\145\1\162\1\146\1\uffff\1\172\1\151\1"+
-        "\162\1\156\3\172\1\uffff\1\172\1\156\2\uffff\1\172\1\151\2\145\1"+
-        "\157\1\uffff\1\171\1\154\1\uffff\1\145\1\156\1\163\1\164\3\172\1"+
-        "\uffff\1\154\1\172\1\143\4\uffff\1\172\1\uffff\1\157\2\172\1\171"+
-        "\1\172\1\141\1\172\1\147\1\145\1\172\1\uffff\1\145\1\uffff\1\172"+
-        "\1\uffff\1\156\1\uffff\1\172\1\uffff\1\164\1\uffff\1\154\2\172\1"+
-        "\uffff\1\172\1\uffff\2\145\2\uffff\2\172\1\uffff";
+        "\1\175\1\uffff\11\uffff\1\75\1\uffff\2\75\3\uffff\1\57\1\uffff\1"+
+        "\157\1\156\1\162\2\156\1\162\1\165\1\157\1\145\1\162\1\145\1\165"+
+        "\2\162\1\145\1\157\1\162\1\157\1\154\1\151\1\145\1\164\1\157\15"+
+        "\uffff\1\164\1\144\3\172\1\160\1\163\1\144\2\151\1\144\1\162\1\156"+
+        "\1\154\1\144\1\164\1\165\1\147\1\162\1\145\1\162\1\157\1\163\1\166"+
+        "\1\141\1\170\1\164\1\143\1\154\1\156\1\151\1\171\1\154\2\172\3\uffff"+
+        "\1\157\1\145\1\172\1\154\2\164\1\172\1\143\1\163\2\165\1\144\1\145"+
+        "\1\151\2\141\1\143\1\165\1\164\1\145\1\151\1\156\1\164\1\141\1\164"+
+        "\1\151\1\145\1\147\1\154\1\157\2\uffff\1\162\1\172\1\146\1\150\1"+
+        "\165\1\uffff\2\145\1\150\1\uffff\1\172\1\145\1\154\1\162\2\172\1"+
+        "\156\2\164\1\154\1\160\1\162\1\172\1\146\1\163\1\172\1\164\1\141"+
+        "\1\160\1\172\1\150\1\145\1\162\1\164\1\146\1\uffff\1\172\1\151\1"+
+        "\162\1\156\3\172\1\uffff\1\172\1\145\1\156\2\uffff\1\172\1\151\2"+
+        "\145\1\172\1\157\1\uffff\1\171\1\154\1\uffff\1\145\1\156\1\163\1"+
+        "\164\4\172\1\uffff\1\154\1\172\1\143\4\uffff\2\172\1\uffff\1\157"+
+        "\2\172\1\uffff\1\171\1\172\1\141\1\172\1\147\1\145\1\172\2\uffff"+
+        "\1\145\1\uffff\1\172\2\uffff\1\156\1\uffff\1\172\1\uffff\1\164\1"+
+        "\uffff\1\154\2\172\1\uffff\1\172\1\uffff\2\145\2\uffff\2\172\1\uffff";
     static final String DFA10_acceptS =
-        "\1\uffff\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\uffff\1\14\2\uffff"+
-        "\1\21\1\22\1\23\1\uffff\1\25\25\uffff\1\64\1\65\1\67\1\70\1\13\1"+
-        "\12\1\16\1\15\1\20\1\17\1\66\1\24\40\uffff\1\30\1\31\1\41\33\uffff"+
-        "\1\26\1\27\4\uffff\1\52\3\uffff\1\36\26\uffff\1\32\7\uffff\1\42"+
-        "\2\uffff\1\45\1\47\5\uffff\1\56\2\uffff\1\62\7\uffff\1\34\3\uffff"+
-        "\1\35\1\46\1\63\1\50\1\uffff\1\51\12\uffff\1\33\1\uffff\1\40\1\uffff"+
-        "\1\44\1\uffff\1\54\1\uffff\1\60\1\uffff\1\61\3\uffff\1\43\1\uffff"+
-        "\1\55\2\uffff\1\37\1\53\2\uffff\1\57";
+        "\2\uffff\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\uffff\1\15\2\uffff"+
+        "\1\22\1\23\1\24\1\uffff\1\26\27\uffff\1\70\1\71\1\74\1\1\1\73\1"+
+        "\14\1\13\1\17\1\16\1\21\1\20\1\72\1\25\43\uffff\1\31\1\32\1\42\36"+
+        "\uffff\1\27\1\30\5\uffff\1\55\3\uffff\1\37\31\uffff\1\33\7\uffff"+
+        "\1\45\3\uffff\1\50\1\52\6\uffff\1\62\2\uffff\1\66\10\uffff\1\35"+
+        "\3\uffff\1\36\1\51\1\67\1\53\2\uffff\1\54\3\uffff\1\60\7\uffff\1"+
+        "\43\1\34\1\uffff\1\41\1\uffff\1\44\1\47\1\uffff\1\57\1\uffff\1\64"+
+        "\1\uffff\1\65\3\uffff\1\46\1\uffff\1\61\2\uffff\1\40\1\56\2\uffff"+
+        "\1\63";
     static final String DFA10_specialS =
-        "\u00dc\uffff}>";
+        "\1\uffff\1\0\u00ef\uffff}>";
     static final String[] DFA10_transitionS = {
-            "\2\53\2\uffff\1\53\22\uffff\1\53\1\13\1\52\2\uffff\1\22\2\uffff"+
-            "\1\1\1\2\1\20\1\16\1\3\1\17\1\4\1\21\12\51\1\5\1\6\1\14\1\12"+
-            "\1\15\1\uffff\1\7\2\50\1\36\1\37\1\43\6\50\1\44\1\40\4\50\1"+
-            "\42\1\50\1\41\6\50\4\uffff\1\50\1\uffff\1\24\1\34\1\47\1\35"+
-            "\1\27\1\31\1\50\1\45\1\26\4\50\1\23\1\25\2\50\1\32\1\46\1\33"+
-            "\2\50\1\30\3\50\1\10\1\uffff\1\11",
+            "\2\55\2\uffff\1\55\22\uffff\1\55\1\14\1\1\2\uffff\1\23\2\uffff"+
+            "\1\2\1\3\1\21\1\17\1\4\1\20\1\5\1\22\12\54\1\6\1\7\1\15\1\13"+
+            "\1\16\1\uffff\1\10\2\53\1\40\1\42\1\46\1\53\1\41\4\53\1\47\1"+
+            "\43\4\53\1\45\1\53\1\44\6\53\4\uffff\1\53\1\uffff\1\25\1\36"+
+            "\1\52\1\37\1\30\1\32\1\53\1\50\1\27\3\53\1\33\1\24\1\26\2\53"+
+            "\1\34\1\51\1\35\2\53\1\31\3\53\1\11\1\uffff\1\12",
+            "\0\57",
             "",
             "",
             "",
@@ -2321,70 +2453,67 @@ public class AslLexer extends Lexer {
             "",
             "",
             "",
-            "\1\54",
-            "",
-            "\1\56",
             "\1\60",
             "",
-            "",
-            "",
-            "\1\62\4\uffff\1\62",
-            "",
+            "\1\62",
             "\1\64",
-            "\1\65",
-            "\1\66",
-            "\1\67\7\uffff\1\70",
-            "\1\71\1\uffff\1\72",
-            "\1\73\1\75\10\uffff\1\74",
-            "\1\100\15\uffff\1\76\5\uffff\1\77",
-            "\1\101",
-            "\1\102",
-            "\1\103",
-            "\1\104",
-            "\1\106\10\uffff\1\105",
+            "",
+            "",
+            "",
+            "\1\66\4\uffff\1\66",
+            "",
+            "\1\70",
+            "\1\71",
+            "\1\72",
+            "\1\73\6\uffff\1\75\1\74",
+            "\1\76\1\uffff\1\77",
+            "\1\100\1\102\10\uffff\1\101",
+            "\1\105\15\uffff\1\103\5\uffff\1\104",
+            "\1\106",
             "\1\107",
             "\1\110",
-            "\1\112\14\uffff\1\111",
-            "\1\114\11\uffff\1\113",
+            "\1\111",
+            "\1\112",
+            "\1\114\10\uffff\1\113",
             "\1\115",
             "\1\116",
             "\1\117",
-            "\1\120",
-            "\1\121",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\122",
-            "\1\123",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\1\121\14\uffff\1\120",
+            "\1\123\11\uffff\1\122",
+            "\1\124",
+            "\1\125",
+            "\1\126",
             "\1\127",
             "\1\130",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\131",
             "\1\132",
-            "\1\133",
-            "\1\134",
-            "\1\135",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "\1\136",
-            "\1\140\22\uffff\1\137",
+            "\1\137",
+            "\1\140",
             "\1\141",
             "\1\142",
             "\1\143",
             "\1\144",
             "\1\145",
             "\1\146",
-            "\1\150\21\uffff\1\147",
-            "\1\151",
+            "\1\147",
+            "\1\151\22\uffff\1\150",
             "\1\152",
             "\1\153",
             "\1\154",
@@ -2392,30 +2521,29 @@ public class AslLexer extends Lexer {
             "\1\156",
             "\1\157",
             "\1\160",
-            "\1\161",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "",
-            "",
-            "",
+            "\1\162\21\uffff\1\161",
+            "\1\163",
             "\1\164",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\5\50\1\167\2\50\1"+
-            "\165\15\50\1\166\3\50",
+            "\1\165",
+            "\1\166",
+            "\1\167",
+            "\1\170",
             "\1\171",
             "\1\172",
             "\1\173",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\1\175",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "",
+            "",
+            "",
             "\1\176",
             "\1\177",
-            "\1\u0080",
-            "\1\u0081",
-            "\1\u0082",
-            "\1\u0083",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\5\53\1\u0082\2\53"+
+            "\1\u0080\15\53\1\u0081\3\53",
             "\1\u0084",
             "\1\u0085",
             "\1\u0086",
-            "\1\u0087",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "\1\u0088",
             "\1\u0089",
             "\1\u008a",
@@ -2426,112 +2554,136 @@ public class AslLexer extends Lexer {
             "\1\u008f",
             "\1\u0090",
             "\1\u0091",
-            "",
-            "",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\10\50\1\u0092\21"+
-            "\50",
+            "\1\u0092",
+            "\1\u0093",
             "\1\u0094",
             "\1\u0095",
-            "\1\u0096\5\uffff\1\u0097",
-            "",
+            "\1\u0096",
+            "\1\u0097",
             "\1\u0098",
             "\1\u0099",
             "\1\u009a",
-            "",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\1\u009b",
             "\1\u009c",
             "\1\u009d",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\1\u00a0",
-            "\1\u00a1",
+            "\1\u009e",
+            "",
+            "",
+            "\1\u009f",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\10\53\1\u00a0\21"+
+            "\53",
             "\1\u00a2",
             "\1\u00a3",
-            "\1\u00a4",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\1\u00a4\5\uffff\1\u00a5",
+            "",
             "\1\u00a6",
             "\1\u00a7",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\1\u00a9",
+            "\1\u00a8",
+            "",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "\1\u00aa",
             "\1\u00ab",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\1\u00ac",
-            "\1\u00ad",
-            "\1\u00ae",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "\1\u00af",
-            "",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\1\u00b0",
             "\1\u00b1",
             "\1\u00b2",
             "\1\u00b3",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\1\u00b8",
-            "",
-            "",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\1\u00b4",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u00b6",
+            "\1\u00b7",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u00b9",
             "\1\u00ba",
             "\1\u00bb",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "\1\u00bc",
             "\1\u00bd",
-            "",
             "\1\u00be",
             "\1\u00bf",
-            "",
             "\1\u00c0",
-            "\1\u00c1",
+            "",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "\1\u00c2",
             "\1\u00c3",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\1\u00c4",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "",
-            "\1\u00c5",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\1\u00c7",
-            "",
-            "",
-            "",
-            "",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "\1\u00c9",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\1\u00cb",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\1\u00ca",
+            "",
+            "",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u00cc",
             "\1\u00cd",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\1\u00cf",
+            "\1\u00ce",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "\1\u00d0",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "",
             "\1\u00d1",
-            "",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\1\u00d2",
             "",
             "\1\u00d3",
-            "",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "",
+            "\1\u00d4",
             "\1\u00d5",
-            "",
             "\1\u00d6",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "",
             "\1\u00d9",
-            "\1\u00da",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u00db",
             "",
             "",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "",
+            "",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "",
+            "\1\u00de",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "",
+            "\1\u00e0",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u00e2",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u00e4",
+            "\1\u00e5",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "",
+            "",
+            "\1\u00e6",
+            "",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "",
+            "",
+            "\1\u00e8",
+            "",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "",
+            "\1\u00ea",
+            "",
+            "\1\u00eb",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "",
+            "\1\u00ee",
+            "\1\u00ef",
+            "",
+            "",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             ""
     };
 
@@ -2565,8 +2717,29 @@ public class AslLexer extends Lexer {
             this.transition = DFA10_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | EQUAL | COND_EQUAL | NOT_EQUAL | LT | LE | GT | GE | PLUS | MINUS | MUL | DIV | MOD | NOT | AND | OR | IF | ELSE | ELSEIF | ENDIF | WHILE | FOR | ENDWHILE | ENDFOR | IN | FUNC | ENDFUNC | RETURN | READ | WRITE | TRUE | FALSE | BEGIN | END | DURATION | CREATE | DESTROY | MOVE | TRANSLATE | MODIFY | ROTATE | TYPE_OBJECT | ATTRIBUTE | ID | INT | COMMENT | STRING | WS );";
+            return "1:1: Tokens : ( T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | EQUAL | COND_EQUAL | NOT_EQUAL | LT | LE | GT | GE | PLUS | MINUS | MUL | DIV | MOD | NOT | AND | OR | IF | ELSE | ELSEIF | ENDIF | WHILE | FOR | ENDWHILE | ENDFOR | IN | IMPORT | MODULE | FUNC | ENDFUNC | RETURN | READ | WRITE | TRUE | FALSE | BEGIN | END | DURATION | CREATE | GROUP | DESTROY | MOVE | TRANSLATE | MODIFY | ROTATE | TYPE_OBJECT | ATTRIBUTE | ID | INT | COMMENT | STRING | WS );";
         }
+        public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
+            IntStream input = _input;
+        	int _s = s;
+            switch ( s ) {
+                    case 0 : 
+                        int LA10_1 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA10_1 >= '\u0000' && LA10_1 <= '\uFFFF')) ) {s = 47;}
+
+                        else s = 46;
+
+                        if ( s>=0 ) return s;
+                        break;
+            }
+            NoViableAltException nvae =
+                new NoViableAltException(getDescription(), 10, _s, input);
+            error(nvae);
+            throw nvae;
+        }
+
     }
  
 

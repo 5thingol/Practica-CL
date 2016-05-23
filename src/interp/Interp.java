@@ -33,7 +33,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 import java.io.*;
-import interp.SVGPasrser;
+import interp.SVGParser;
 
 /** Class that implements the interpreter of the language. */
 

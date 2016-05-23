@@ -1,7 +1,7 @@
 package interp;
 
 
-/** Class that implements the interpreter of the language. */
+/** Class responsible for transforming the structured data obtained from the tree to SVG language. */
 
 public class SVGParser {
 

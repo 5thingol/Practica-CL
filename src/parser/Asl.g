@@ -31,6 +31,7 @@ ASTLabelType = AslTree;
 }
 // Imaginary tokens to create some AST nodes
 tokens {
+PROG;
 LIST_FUNCTIONS; // List of functions (the root of the tree)
 ASSIGN; // Assignment instruction
 PARAMS; // List of parameters in the declaration of a function
@@ -56,9 +57,21 @@ import interp.AslTree;
 package parser;
 }
 
-// A program is a list of functions
-prog : func+ EOF -> ^(LIST_FUNCTIONS func+)
+// A program is a possible import and a list of functions
+// or a module
+prog : imports? list_func -> ^(PROG imports? list_func)
+    | module_def imports? list_func -> ^(PROG module_def imports? list_func)
 ;
+
+module_def : MODULE^ '"'! ID '"'! ';'!
+;
+
+imports : (IMPORT^ '"'! ID '"'! ';'!)+
+;
+
+list_func : func+ EOF -> ^(LIST_FUNCTIONS func+)
+;
+
 // A function has a name, a list of parameters and a block of instructions
 func : FUNC^ ID params block_instructions ENDFUNC! 
 ;
@@ -224,6 +237,8 @@ FOR : 'for' ;
 ENDWHILE: 'endwhile' ;
 ENDFOR : 'endfor' ;
 IN :    'in' ; 
+IMPORT : 'import';
+MODULE : 'module';
 FUNC : 'func' ;
 ENDFUNC : 'endfunc' ;
 RETURN : 'return' ;
