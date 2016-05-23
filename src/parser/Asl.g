@@ -95,6 +95,7 @@ assign :    ID eq=EQUAL basic_instruction -> ^(ASSIGN[$eq,":="] ID basic_instruc
 ;
 basic_instruction:
 create
+| group
 | destroy
 | move
 | translate
@@ -170,6 +171,9 @@ finish_time:
 ;
 create: CREATE TYPE_OBJECT coordenades? list_attributes? -> ^(CREATE_INSTR TYPE_OBJECT coordenades? ^(ATTRIBUTES list_attributes)?)
 ;
+
+group: GROUP^ ID (','! ID)+
+;
 destroy: DESTROY ID -> ^(ANIMATION DESTROY ID)
 ;
 move:   MOVE ID coordenades -> ^(ANIMATION MOVE ID coordenades)
@@ -231,6 +235,7 @@ BEGIN : 'begin';
 END : 'end';
 DURATION: 'duration';
 CREATE : 'Create';
+GROUP :  'Group';
 DESTROY : 'Destroy';
 MOVE : 'Move';
 TRANSLATE : 'Translate';

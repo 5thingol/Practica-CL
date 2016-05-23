@@ -1,15 +1,43 @@
 package interp;
 
+
 /** Class that implements the interpreter of the language. */
 
 public class SVGParser {
 
 	private class Animation {
-		String id;
-		Data data;
+		public String id;
+		public Data data;
 		public Animation(String id, Data data) {
 			this.id = id;
 			this.data = data;
+		}
+	}
+
+	private class SVGGroup extends Animation {
+		// Objectes que es troben dins del grup
+		private List<String> idObjects;
+		// Objectes ja tancats que es troben dins del grup
+		private List<Animation> objects;
+
+		public SVGGroup(String id, Data initialProperties, List<String> idObjects) {
+			this.id = id;
+			this.data = initialProperties;
+			this.idObjects = idObjects;
+			objects = new ArrayList<Animation>();
+		}
+
+		public addObject(String id) {
+			idObjects.add(id);
+		}
+
+		public addClosedObject(Animation anim) {
+			for (int i = 0; i < idObjects; i++) {
+				if (idObjects.get(i).equals(anim.id)) {
+					idObjects.remove(i);
+				}
+			}			
+			objects.add(anim);
 		}
 	}
 
@@ -48,6 +76,14 @@ public class SVGParser {
         } 
 	}
 
+	/** Crea un grup agrupant diversos objectes */
+	public void createSVGGroup(String id, List<String> idObjects) {
+		Data newData = new Data("Group", -1,-1,-1,-1,null,-1,-1,-1);
+		SVGGroup group = new SVGGroup(id, newData, idObjects);
+	}
+
+	
+
 	/** Afegeix a l'objecte idObject previament creat una animacio */ 
 	public void addSVGAnimation(String idObject, String idAnimation, Data animation) {
 		Animation anim = Animation(idAnimation, animation);
@@ -59,9 +95,9 @@ public class SVGParser {
 
 	/** Escriu i neteja les variables de tipus objecte tractats actualment. S'ha de cridar quan s'acabi una funcio */
 	public void clearObjects() {
-		for (Map.Entry<String, List<Data> > entry : SVGObjects.entrySet()) {
+		for (Map.Entry<String, List<Animation> > entry : SVGObjects.entrySet()) {
     		String key = entry.getKey();
-	    	List<Data> dades = entry.getValue();
+	    	List<Animation> dades = entry.getValue();
 	    	writeObjectToSVGFile(key, dades);
 		}
 		SVGObjects.clear();

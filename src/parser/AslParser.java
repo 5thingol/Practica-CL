@@ -1,4 +1,4 @@
-// $ANTLR 3.4 /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g 2016-05-09 09:11:33
+// $ANTLR 3.4 /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g 2016-05-23 09:13:50
 
 package parser;
 import interp.AslTree;
@@ -3785,7 +3785,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "create"
-    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:171:1: create : CREATE TYPE_OBJECT coordenades ( list_attributes )? -> ^( CREATE_INSTR TYPE_OBJECT coordenades ( ^( ATTRIBUTES list_attributes ) )? ) ;
+    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:171:1: create : CREATE TYPE_OBJECT ( coordenades )? ( list_attributes )? -> ^( CREATE_INSTR TYPE_OBJECT ( coordenades )? ( ^( ATTRIBUTES list_attributes ) )? ) ;
     public final AslParser.create_return create() throws RecognitionException {
         AslParser.create_return retval = new AslParser.create_return();
         retval.start = input.LT(1);
@@ -3807,8 +3807,8 @@ public TreeAdaptor getTreeAdaptor() {
         RewriteRuleSubtreeStream stream_coordenades=new RewriteRuleSubtreeStream(adaptor,"rule coordenades");
         RewriteRuleSubtreeStream stream_list_attributes=new RewriteRuleSubtreeStream(adaptor,"rule list_attributes");
         try {
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:171:7: ( CREATE TYPE_OBJECT coordenades ( list_attributes )? -> ^( CREATE_INSTR TYPE_OBJECT coordenades ( ^( ATTRIBUTES list_attributes ) )? ) )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:171:9: CREATE TYPE_OBJECT coordenades ( list_attributes )?
+            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:171:7: ( CREATE TYPE_OBJECT ( coordenades )? ( list_attributes )? -> ^( CREATE_INSTR TYPE_OBJECT ( coordenades )? ( ^( ATTRIBUTES list_attributes ) )? ) )
+            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:171:9: CREATE TYPE_OBJECT ( coordenades )? ( list_attributes )?
             {
             CREATE127=(Token)match(input,CREATE,FOLLOW_CREATE_in_create841);  
             stream_CREATE.add(CREATE127);
@@ -3818,25 +3818,42 @@ public TreeAdaptor getTreeAdaptor() {
             stream_TYPE_OBJECT.add(TYPE_OBJECT128);
 
 
-            pushFollow(FOLLOW_coordenades_in_create845);
-            coordenades129=coordenades();
-
-            state._fsp--;
-
-            stream_coordenades.add(coordenades129.getTree());
-
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:171:40: ( list_attributes )?
+            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:171:28: ( coordenades )?
             int alt27=2;
             int LA27_0 = input.LA(1);
 
-            if ( (LA27_0==ATTRIBUTE) ) {
+            if ( (LA27_0==72) ) {
                 alt27=1;
             }
             switch (alt27) {
                 case 1 :
-                    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:171:40: list_attributes
+                    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:171:28: coordenades
                     {
-                    pushFollow(FOLLOW_list_attributes_in_create847);
+                    pushFollow(FOLLOW_coordenades_in_create845);
+                    coordenades129=coordenades();
+
+                    state._fsp--;
+
+                    stream_coordenades.add(coordenades129.getTree());
+
+                    }
+                    break;
+
+            }
+
+
+            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:171:41: ( list_attributes )?
+            int alt28=2;
+            int LA28_0 = input.LA(1);
+
+            if ( (LA28_0==ATTRIBUTE) ) {
+                alt28=1;
+            }
+            switch (alt28) {
+                case 1 :
+                    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:171:41: list_attributes
+                    {
+                    pushFollow(FOLLOW_list_attributes_in_create848);
                     list_attributes130=list_attributes();
 
                     state._fsp--;
@@ -3860,9 +3877,9 @@ public TreeAdaptor getTreeAdaptor() {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (AslTree)adaptor.nil();
-            // 171:57: -> ^( CREATE_INSTR TYPE_OBJECT coordenades ( ^( ATTRIBUTES list_attributes ) )? )
+            // 171:58: -> ^( CREATE_INSTR TYPE_OBJECT ( coordenades )? ( ^( ATTRIBUTES list_attributes ) )? )
             {
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:171:60: ^( CREATE_INSTR TYPE_OBJECT coordenades ( ^( ATTRIBUTES list_attributes ) )? )
+                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:171:61: ^( CREATE_INSTR TYPE_OBJECT ( coordenades )? ( ^( ATTRIBUTES list_attributes ) )? )
                 {
                 AslTree root_1 = (AslTree)adaptor.nil();
                 root_1 = (AslTree)adaptor.becomeRoot(
@@ -3873,11 +3890,16 @@ public TreeAdaptor getTreeAdaptor() {
                 stream_TYPE_OBJECT.nextNode()
                 );
 
-                adaptor.addChild(root_1, stream_coordenades.nextTree());
+                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:171:88: ( coordenades )?
+                if ( stream_coordenades.hasNext() ) {
+                    adaptor.addChild(root_1, stream_coordenades.nextTree());
 
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:171:99: ( ^( ATTRIBUTES list_attributes ) )?
+                }
+                stream_coordenades.reset();
+
+                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:171:101: ( ^( ATTRIBUTES list_attributes ) )?
                 if ( stream_list_attributes.hasNext() ) {
-                    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:171:99: ^( ATTRIBUTES list_attributes )
+                    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:171:101: ^( ATTRIBUTES list_attributes )
                     {
                     AslTree root_2 = (AslTree)adaptor.nil();
                     root_2 = (AslTree)adaptor.becomeRoot(
@@ -3951,11 +3973,11 @@ public TreeAdaptor getTreeAdaptor() {
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:173:8: ( DESTROY ID -> ^( ANIMATION DESTROY ID ) )
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:173:10: DESTROY ID
             {
-            DESTROY131=(Token)match(input,DESTROY,FOLLOW_DESTROY_in_destroy872);  
+            DESTROY131=(Token)match(input,DESTROY,FOLLOW_DESTROY_in_destroy874);  
             stream_DESTROY.add(DESTROY131);
 
 
-            ID132=(Token)match(input,ID,FOLLOW_ID_in_destroy874);  
+            ID132=(Token)match(input,ID,FOLLOW_ID_in_destroy876);  
             stream_ID.add(ID132);
 
 
@@ -4048,15 +4070,15 @@ public TreeAdaptor getTreeAdaptor() {
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:175:5: ( MOVE ID coordenades -> ^( ANIMATION MOVE ID coordenades ) )
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:175:9: MOVE ID coordenades
             {
-            MOVE133=(Token)match(input,MOVE,FOLLOW_MOVE_in_move893);  
+            MOVE133=(Token)match(input,MOVE,FOLLOW_MOVE_in_move895);  
             stream_MOVE.add(MOVE133);
 
 
-            ID134=(Token)match(input,ID,FOLLOW_ID_in_move895);  
+            ID134=(Token)match(input,ID,FOLLOW_ID_in_move897);  
             stream_ID.add(ID134);
 
 
-            pushFollow(FOLLOW_coordenades_in_move897);
+            pushFollow(FOLLOW_coordenades_in_move899);
             coordenades135=coordenades();
 
             state._fsp--;
@@ -4154,15 +4176,15 @@ public TreeAdaptor getTreeAdaptor() {
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:177:10: ( TRANSLATE ID coordenades -> ^( ANIMATION TRANSLATE ID coordenades ) )
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:177:13: TRANSLATE ID coordenades
             {
-            TRANSLATE136=(Token)match(input,TRANSLATE,FOLLOW_TRANSLATE_in_translate917);  
+            TRANSLATE136=(Token)match(input,TRANSLATE,FOLLOW_TRANSLATE_in_translate919);  
             stream_TRANSLATE.add(TRANSLATE136);
 
 
-            ID137=(Token)match(input,ID,FOLLOW_ID_in_translate919);  
+            ID137=(Token)match(input,ID,FOLLOW_ID_in_translate921);  
             stream_ID.add(ID137);
 
 
-            pushFollow(FOLLOW_coordenades_in_translate921);
+            pushFollow(FOLLOW_coordenades_in_translate923);
             coordenades138=coordenades();
 
             state._fsp--;
@@ -4260,15 +4282,15 @@ public TreeAdaptor getTreeAdaptor() {
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:179:7: ( MODIFY ID list_attributes -> ^( ANIMATION MODIFY ID list_attributes ) )
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:179:9: MODIFY ID list_attributes
             {
-            MODIFY139=(Token)match(input,MODIFY,FOLLOW_MODIFY_in_modify940);  
+            MODIFY139=(Token)match(input,MODIFY,FOLLOW_MODIFY_in_modify942);  
             stream_MODIFY.add(MODIFY139);
 
 
-            ID140=(Token)match(input,ID,FOLLOW_ID_in_modify942);  
+            ID140=(Token)match(input,ID,FOLLOW_ID_in_modify944);  
             stream_ID.add(ID140);
 
 
-            pushFollow(FOLLOW_list_attributes_in_modify944);
+            pushFollow(FOLLOW_list_attributes_in_modify946);
             list_attributes141=list_attributes();
 
             state._fsp--;
@@ -4366,15 +4388,15 @@ public TreeAdaptor getTreeAdaptor() {
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:181:7: ( ROTATE ID expr -> ^( ANIMATION ROTATE ID expr ) )
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:181:9: ROTATE ID expr
             {
-            ROTATE142=(Token)match(input,ROTATE,FOLLOW_ROTATE_in_rotate963);  
+            ROTATE142=(Token)match(input,ROTATE,FOLLOW_ROTATE_in_rotate965);  
             stream_ROTATE.add(ROTATE142);
 
 
-            ID143=(Token)match(input,ID,FOLLOW_ID_in_rotate965);  
+            ID143=(Token)match(input,ID,FOLLOW_ID_in_rotate967);  
             stream_ID.add(ID143);
 
 
-            pushFollow(FOLLOW_expr_in_rotate967);
+            pushFollow(FOLLOW_expr_in_rotate969);
             expr144=expr();
 
             state._fsp--;
@@ -4473,7 +4495,7 @@ public TreeAdaptor getTreeAdaptor() {
             root_0 = (AslTree)adaptor.nil();
 
 
-            pushFollow(FOLLOW_attribute_in_list_attributes986);
+            pushFollow(FOLLOW_attribute_in_list_attributes988);
             attribute145=attribute();
 
             state._fsp--;
@@ -4481,23 +4503,23 @@ public TreeAdaptor getTreeAdaptor() {
             adaptor.addChild(root_0, attribute145.getTree());
 
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:183:28: ( ',' ! attribute )*
-            loop28:
+            loop29:
             do {
-                int alt28=2;
-                int LA28_0 = input.LA(1);
+                int alt29=2;
+                int LA29_0 = input.LA(1);
 
-                if ( (LA28_0==67) ) {
-                    alt28=1;
+                if ( (LA29_0==67) ) {
+                    alt29=1;
                 }
 
 
-                switch (alt28) {
+                switch (alt29) {
             	case 1 :
             	    // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:183:29: ',' ! attribute
             	    {
-            	    char_literal146=(Token)match(input,67,FOLLOW_67_in_list_attributes989); 
+            	    char_literal146=(Token)match(input,67,FOLLOW_67_in_list_attributes991); 
 
-            	    pushFollow(FOLLOW_attribute_in_list_attributes992);
+            	    pushFollow(FOLLOW_attribute_in_list_attributes994);
             	    attribute147=attribute();
 
             	    state._fsp--;
@@ -4508,7 +4530,7 @@ public TreeAdaptor getTreeAdaptor() {
             	    break;
 
             	default :
-            	    break loop28;
+            	    break loop29;
                 }
             } while (true);
 
@@ -4567,16 +4589,16 @@ public TreeAdaptor getTreeAdaptor() {
             root_0 = (AslTree)adaptor.nil();
 
 
-            ATTRIBUTE148=(Token)match(input,ATTRIBUTE,FOLLOW_ATTRIBUTE_in_attribute1001); 
+            ATTRIBUTE148=(Token)match(input,ATTRIBUTE,FOLLOW_ATTRIBUTE_in_attribute1003); 
             ATTRIBUTE148_tree = 
             (AslTree)adaptor.create(ATTRIBUTE148)
             ;
             root_0 = (AslTree)adaptor.becomeRoot(ATTRIBUTE148_tree, root_0);
 
 
-            EQUAL149=(Token)match(input,EQUAL,FOLLOW_EQUAL_in_attribute1004); 
+            EQUAL149=(Token)match(input,EQUAL,FOLLOW_EQUAL_in_attribute1006); 
 
-            pushFollow(FOLLOW_expr_in_attribute1007);
+            pushFollow(FOLLOW_expr_in_attribute1009);
             expr150=expr();
 
             state._fsp--;
@@ -4641,25 +4663,25 @@ public TreeAdaptor getTreeAdaptor() {
             root_0 = (AslTree)adaptor.nil();
 
 
-            char_literal151=(Token)match(input,72,FOLLOW_72_in_coordenades1014); 
+            char_literal151=(Token)match(input,72,FOLLOW_72_in_coordenades1016); 
 
-            pushFollow(FOLLOW_expr_in_coordenades1017);
+            pushFollow(FOLLOW_expr_in_coordenades1019);
             expr152=expr();
 
             state._fsp--;
 
             adaptor.addChild(root_0, expr152.getTree());
 
-            char_literal153=(Token)match(input,67,FOLLOW_67_in_coordenades1019); 
+            char_literal153=(Token)match(input,67,FOLLOW_67_in_coordenades1021); 
 
-            pushFollow(FOLLOW_expr_in_coordenades1022);
+            pushFollow(FOLLOW_expr_in_coordenades1024);
             expr154=expr();
 
             state._fsp--;
 
             adaptor.addChild(root_0, expr154.getTree());
 
-            char_literal155=(Token)match(input,73,FOLLOW_73_in_coordenades1024); 
+            char_literal155=(Token)match(input,73,FOLLOW_73_in_coordenades1026); 
 
             }
 
@@ -4720,26 +4742,26 @@ public TreeAdaptor getTreeAdaptor() {
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:189:16: ( ID '.' att '(' ')' -> ^( ACCESATTRIBUTE ID att ) )
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:189:18: ID '.' att '(' ')'
             {
-            ID156=(Token)match(input,ID,FOLLOW_ID_in_acces_attribute1032);  
+            ID156=(Token)match(input,ID,FOLLOW_ID_in_acces_attribute1034);  
             stream_ID.add(ID156);
 
 
-            char_literal157=(Token)match(input,68,FOLLOW_68_in_acces_attribute1034);  
+            char_literal157=(Token)match(input,68,FOLLOW_68_in_acces_attribute1036);  
             stream_68.add(char_literal157);
 
 
-            pushFollow(FOLLOW_att_in_acces_attribute1036);
+            pushFollow(FOLLOW_att_in_acces_attribute1038);
             att158=att();
 
             state._fsp--;
 
             stream_att.add(att158.getTree());
 
-            char_literal159=(Token)match(input,65,FOLLOW_65_in_acces_attribute1038);  
+            char_literal159=(Token)match(input,65,FOLLOW_65_in_acces_attribute1040);  
             stream_65.add(char_literal159);
 
 
-            char_literal160=(Token)match(input,66,FOLLOW_66_in_acces_attribute1040);  
+            char_literal160=(Token)match(input,66,FOLLOW_66_in_acces_attribute1042);  
             stream_66.add(char_literal160);
 
 
@@ -5002,38 +5024,38 @@ public TreeAdaptor getTreeAdaptor() {
     public static final BitSet FOLLOW_EQUAL_in_finish_time830 = new BitSet(new long[]{0x1011084820000000L,0x0000000000000002L});
     public static final BitSet FOLLOW_expr_in_finish_time833 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_CREATE_in_create841 = new BitSet(new long[]{0x2000000000000000L});
-    public static final BitSet FOLLOW_TYPE_OBJECT_in_create843 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
+    public static final BitSet FOLLOW_TYPE_OBJECT_in_create843 = new BitSet(new long[]{0x0000000000000202L,0x0000000000000100L});
     public static final BitSet FOLLOW_coordenades_in_create845 = new BitSet(new long[]{0x0000000000000202L});
-    public static final BitSet FOLLOW_list_attributes_in_create847 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DESTROY_in_destroy872 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_ID_in_destroy874 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MOVE_in_move893 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_ID_in_move895 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
-    public static final BitSet FOLLOW_coordenades_in_move897 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TRANSLATE_in_translate917 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_ID_in_translate919 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
-    public static final BitSet FOLLOW_coordenades_in_translate921 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MODIFY_in_modify940 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_ID_in_modify942 = new BitSet(new long[]{0x0000000000000200L});
-    public static final BitSet FOLLOW_list_attributes_in_modify944 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ROTATE_in_rotate963 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_ID_in_rotate965 = new BitSet(new long[]{0x1011084820000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_expr_in_rotate967 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_attribute_in_list_attributes986 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000008L});
-    public static final BitSet FOLLOW_67_in_list_attributes989 = new BitSet(new long[]{0x0000000000000200L});
-    public static final BitSet FOLLOW_attribute_in_list_attributes992 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000008L});
-    public static final BitSet FOLLOW_ATTRIBUTE_in_attribute1001 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_EQUAL_in_attribute1004 = new BitSet(new long[]{0x1011084820000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_expr_in_attribute1007 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_72_in_coordenades1014 = new BitSet(new long[]{0x1011084820000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_expr_in_coordenades1017 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_67_in_coordenades1019 = new BitSet(new long[]{0x1011084820000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_expr_in_coordenades1022 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
-    public static final BitSet FOLLOW_73_in_coordenades1024 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ID_in_acces_attribute1032 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
-    public static final BitSet FOLLOW_68_in_acces_attribute1034 = new BitSet(new long[]{0x0000000000480A00L});
-    public static final BitSet FOLLOW_att_in_acces_attribute1036 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_65_in_acces_attribute1038 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_66_in_acces_attribute1040 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_list_attributes_in_create848 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DESTROY_in_destroy874 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_ID_in_destroy876 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_MOVE_in_move895 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_ID_in_move897 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
+    public static final BitSet FOLLOW_coordenades_in_move899 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TRANSLATE_in_translate919 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_ID_in_translate921 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
+    public static final BitSet FOLLOW_coordenades_in_translate923 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_MODIFY_in_modify942 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_ID_in_modify944 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_list_attributes_in_modify946 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ROTATE_in_rotate965 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_ID_in_rotate967 = new BitSet(new long[]{0x1011084820000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_expr_in_rotate969 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_attribute_in_list_attributes988 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000008L});
+    public static final BitSet FOLLOW_67_in_list_attributes991 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_attribute_in_list_attributes994 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000008L});
+    public static final BitSet FOLLOW_ATTRIBUTE_in_attribute1003 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_EQUAL_in_attribute1006 = new BitSet(new long[]{0x1011084820000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_expr_in_attribute1009 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_72_in_coordenades1016 = new BitSet(new long[]{0x1011084820000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_expr_in_coordenades1019 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_67_in_coordenades1021 = new BitSet(new long[]{0x1011084820000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_expr_in_coordenades1024 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
+    public static final BitSet FOLLOW_73_in_coordenades1026 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ID_in_acces_attribute1034 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
+    public static final BitSet FOLLOW_68_in_acces_attribute1036 = new BitSet(new long[]{0x0000000000480A00L});
+    public static final BitSet FOLLOW_att_in_acces_attribute1038 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_65_in_acces_attribute1040 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_66_in_acces_attribute1042 = new BitSet(new long[]{0x0000000000000002L});
 
 }

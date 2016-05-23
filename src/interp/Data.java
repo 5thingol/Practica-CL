@@ -60,17 +60,17 @@ public class Data {
     private int rotation;
     private String fill;
 
+    // FALTA AFEGIR EL VALOR TEXT PER GUARDAR EL TEXT DELS OBJECTES TIPUS TEXT
+    private String text;
+
     /** Valors de les animacions */
-    private int begin;
-    private int end;
+    private double begin;
+    private double end;
     private String idObject;
     private String attribute;
     private String from;
     private String to;
 
-
-    /** Valors de les animacions */
-    private 
 
     /** Constructor for integers */
     Data(int v) { type = Type.INTEGER; value = v; }
@@ -96,7 +96,7 @@ public class Data {
     }
 
     /** Constructors for animation data */
-    Data(String tip, String id, int b, int e, int cx, int cy, int r, String att, int f, int t, String fi) { 
+    Data(String tip, String id, double b, double e, int cx, int cy, int r, String att, int f, int t, String fi) { 
         type = Type.ANIMATION; 
         tipus = tip; 
         idObject = id; 
@@ -251,14 +251,14 @@ public class Data {
         return idObject;
     }
 
-    public int getAnimationBegin(){
+    public double getAnimationBegin(){
         assert type == Type.ANIMATION;
         return begin;
     }
 
-    public int getAnimationEnd(){
+    public double getAnimationEnd(){
         assert type = Type.ANIMATION;
-        return duration;
+        return end;
 
     }
 
@@ -302,9 +302,9 @@ public class Data {
     /** Defines an object for animation */
     public void setValue(int b, int e) { type = Type.ANIMATION; begin = b; end = e; }
 
-    public void setBegin(int b) { type = Type.ANIMATION; begin = b; }
+    public void setBegin(double b) { type = Type.ANIMATION; begin = b; }
 
-    public void setDuration(int d) { type = Type.ANIMATION; duration = d; }
+    public void setEnd(double e) { type = Type.ANIMATION; end = e; }
 
     /** Copies the value from another data */
     public void setData(Data d) { type = d.type; value = d.value; }
