@@ -15,6 +15,7 @@ public class SVGParser {
 	}
 
 	private class SVGGroup extends Animation {
+		
 		// Objectes que es troben dins del grup
 		private List<String> idObjects;
 		// Objectes ja tancats que es troben dins del grup
@@ -54,6 +55,7 @@ public class SVGParser {
 		filename = "SimpleAnimation.svg";
 		SVG = "";
 		SVGObjects = HashMap<String, List<Animation> >();
+		closedGroups = HashMap<String, List<SVGGroup> >();
 	}
 
 	public SVGParser(String filename) {
@@ -83,7 +85,6 @@ public class SVGParser {
 	}
 
 	
-
 	/** Afegeix a l'objecte idObject previament creat una animacio */ 
 	public void addSVGAnimation(String idObject, String idAnimation, Data animation) {
 		Animation anim = Animation(idAnimation, animation);
@@ -207,15 +208,21 @@ public class SVGParser {
 		if (tipus.equals("Circle")) return "circle";
 		if (tipus.equals("Ellipse")) return "ellipse";
 		if (tipus.equals("Line")) return "line";
+		if (tipus.equals("Group")) return "g";
 	}
 
 	private void writeObjectToSVGFile(String id, List<Animation> dades) {
 		String newObject = "<";
 		Dades initialProperties = dades.get(0).data;
-		newObject += toSvgBasicShape(initialProperties.getTipus());
+		newObject += toSvgBasicShape(initialProperties.getTipusObject());
 		newObject += propertiesToString(initialProperties);
 		
 		dades.remove(0);
+
+		if (initialProperties.getTipusObject().equals("Group")) {
+			SVGGroup group = (SVGGroup) dades.get(0);
+			
+		}
 
 		for (Animation anim : dades) {
 			newObject += animationToString(anim);
