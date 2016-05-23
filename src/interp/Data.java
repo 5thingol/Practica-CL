@@ -59,6 +59,7 @@ public class Data {
     private int radiy;
     private int rotation;
     private String fill;
+    private String group;
 
     // FALTA AFEGIR EL VALOR TEXT PER GUARDAR EL TEXT DELS OBJECTES TIPUS TEXT
     private String text;
@@ -93,6 +94,7 @@ public class Data {
         rotation = r;
         radix = rx;
         radiy = ry;
+        group = null;
     }
 
     /** Constructors for animation data */
@@ -206,6 +208,11 @@ public class Data {
         return rotation;
     }
 
+    public String getObjectGroup() {
+        assert type == Type.OBJECT;
+        return group;
+    }
+
     /**
      * Gets the values of an Animation data. The method asserts that
      * the data is an Animation.
@@ -298,6 +305,8 @@ public class Data {
     public void setColor(String c) { type = Type.OBJECT; fill = c; }
 
     public void setRotation(int r) { type = Type.OBJECT; rotation = r; }
+
+    public void setGroup(String g) { type = Type.OBJECT; group = g; }
 
     /** Defines an object for animation */
     public void setValue(int b, int e) { type = Type.ANIMATION; begin = b; end = e; }

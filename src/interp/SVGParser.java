@@ -18,8 +18,6 @@ public class SVGParser {
 		
 		// Objectes que es troben dins del grup
 		private List<String> idObjects;
-		// Objectes ja tancats que es troben dins del grup
-		private List<Animation> objects;
 
 		public SVGGroup(String id, Data initialProperties, List<String> idObjects) {
 			this.id = id;
@@ -28,18 +26,14 @@ public class SVGParser {
 			objects = new ArrayList<Animation>();
 		}
 
-		public addObject(String id) {
+		public List<String> getObjectsIds() {
+			return idObjects;
+		}
+
+		public void addObject(String id) {
 			idObjects.add(id);
 		}
 
-		public addClosedObject(Animation anim) {
-			for (int i = 0; i < idObjects; i++) {
-				if (idObjects.get(i).equals(anim.id)) {
-					idObjects.remove(i);
-				}
-			}			
-			objects.add(anim);
-		}
 	}
 
 	/** Nom del fitxer al que s'escriura el SVG */
@@ -82,6 +76,15 @@ public class SVGParser {
 	public void createSVGGroup(String id, List<String> idObjects) {
 		Data newData = new Data("Group", -1,-1,-1,-1,null,-1,-1,-1);
 		SVGGroup group = new SVGGroup(id, newData, idObjects);
+
+		for (String s : idObjects) {
+			List<Animation> objecte = SVGObjects.get(s);
+			if (objecte == null) Throw new RuntimeException("At least one of the grouping objects doesn't exists");
+			Animation a = objecte.get(0);
+			a.data.setGroup(id);
+			objecte.set(0, a);
+			SVGObjects.put(s, objecte);
+		}
 	}
 
 	
@@ -214,21 +217,32 @@ public class SVGParser {
 	private void writeObjectToSVGFile(String id, List<Animation> dades) {
 		String newObject = "<";
 		Dades initialProperties = dades.get(0).data;
-		newObject += toSvgBasicShape(initialProperties.getTipusObject());
-		newObject += propertiesToString(initialProperties);
+		if (initialProperties.getObjectGroup() != null) {
+			newObject += "defs><";
+		}
+
+		String basicShape = toSvgBasicShape(initialProperties.getTipusObject());
+		newObject += basicShape;
+		newObject += propertiesToString(initialProperties) + ">";
 		
 		dades.remove(0);
 
 		if (initialProperties.getTipusObject().equals("Group")) {
 			SVGGroup group = (SVGGroup) dades.get(0);
-			
+			for (String s : group.getObjectsIds()) {
+				newObject += "<use xlink:href=\"#" + s + "\"></use>";
+			}
 		}
 
 		for (Animation anim : dades) {
 			newObject += animationToString(anim);
 		}
 
-		newObject += "/>";
+		newObject += "</" + basicShape + ">";
+
+		if (initialProperties.getObjectGroup() != null) {
+			newObject += "</defs>";
+		}
 
 		SVG = SVG + newObject;
 
