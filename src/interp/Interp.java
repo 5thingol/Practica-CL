@@ -33,7 +33,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 import java.io.*;
-import interp.SVGPasrser;
+import interp.SVGParser;
 
 /** Class that implements the interpreter of the language. */
 
@@ -265,14 +265,13 @@ public class Interp {
             case AslLexer.TIMEANNOTATION:
                 currentTimeAnnotation = new TimeAnnotation();
                 currentTimeAnnotation.begin = (double) evaluateExpression(t.getChild(0));
-                if (t,getChild(1) != null) {
+                if (t.getChild(1) != null) {
                     if (t.getChild(1).getStringValue().equals("end")) {
                         double end = (double) evaluateExpression(t.getChild(1).getChild(0));
                         currentTimeAnnotation.duration = end - currentTimeAnnotation.begin;
                     } else 
                         currentTimeAnnotation.duration = (double) evaluateExpression(t.getChild(1).getChild(0));
-                }
-                else currentTimeAnnotation.duration = 0;
+                } else currentTimeAnnotation.duration = 0;
                 return null;
             case AslLexer.ANIMATION:
                 if (currentTimeAnnotation == null) throw new RuntimeException("Animation instruction doesn't have a proper previous Time Annotation");
@@ -386,7 +385,7 @@ public class Interp {
                 x = t.getChild(1);
                 ++child;
                 y = t.getChild(2); 
-                ++child
+                ++child;
             }
             if (t.getChild(child).getType() == AslLexer.INT)
             {
@@ -487,17 +486,17 @@ public class Interp {
             attribute = node.getChild(1).getText();
             switch(attribute){
                 
-                case 'width':
+                case "width":
                 from = Int.toString(idObject.getObjectCoordX());
                 to = node.getChild(1).getChild(0).getText();
                 break;
 
-                case 'height':
+                case "height":
                 from = Int.toString(idObject.getObjectCoordY());
                 to = node.getChild(1).getChild(0).getText();
                 break;
 
-                case 'color':
+                case "color":
                 from = idObject.getObjectColor();
                 to = node.getChild(1).getChild(0).getText();
                 break;
@@ -517,17 +516,17 @@ public class Interp {
             attribute = t.getChild(child).getText();
             switch(attribute){
                 
-                case 'width':
+                case "width":
                 from = Int.toString(idObject.getObjectCoordX());
                 to = t.getChild(child).getChild(0).getText();
                 break;
 
-                case 'height':
+                case "height":
                 from = Int.toString(idObject.getObjectCoordY());
                 to = t.getChild(child).getChild(0).getText();
                 break;
 
-                case 'color':
+                case "color":
                 from = idObject.getObjectColor();
                 to = t.getChild(child).getChild(0).getText();
                 break;

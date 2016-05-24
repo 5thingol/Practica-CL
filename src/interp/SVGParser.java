@@ -1,5 +1,15 @@
 package interp;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
+import java.io.BufferedWriter;
+import java.io.Writer;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map.Entry;
+import java.util.ArrayList;
+import java.util.List;
 
 /** Class responsible for transforming the structured data obtained from the tree to SVG language. */
 
@@ -19,11 +29,14 @@ public class SVGParser {
 		// Objectes que es troben dins del grup
 		private List<String> idObjects;
 
-		public SVGGroup(String id, Data initialProperties, List<String> idObjects) {
+		public SVGGroup(String id, Data initialProperties) {
+			super(id, initialProperties);
 			this.id = id;
 			this.data = initialProperties;
-			this.idObjects = idObjects;
-			objects = new ArrayList<Animation>();
+		}
+
+		public void setObjectsIds(List<String> objects) {
+			this.idObjects = objects;
 		}
 
 		public List<String> getObjectsIds() {
@@ -48,38 +61,38 @@ public class SVGParser {
 	public SVGParser() {
 		filename = "SimpleAnimation.svg";
 		SVG = "";
-		SVGObjects = HashMap<String, List<Animation> >();
-		closedGroups = HashMap<String, List<SVGGroup> >();
+		SVGObjects = new HashMap<String, List<Animation> >();
 	}
 
 	public SVGParser(String filename) {
 		this.filename = filename;
 		SVG = "";
-		SVGObjects = HashMap<String, List<Animation> >();
+		SVGObjects = new HashMap<String, List<Animation> >();
 	}
 
 	/** Crea un objecte de tipus SVG amb la data data com a propietats inicials */
 	public void createSVGObject(String id, Data data) {
 		List<Animation> dades = SVGObjects.get(id);
-      	List<Animation> newDades = new List<Animation>();
-      	Animation anim = Animation("InitialProperties",data);
+      	List<Animation> newDades = new ArrayList<Animation>();
+      	Animation anim = new Animation("InitialProperties",data);
        	newDades.add(anim);
         if (dades == null) {
         	SVGObjects.put(id, newDades); 
 		} else {
         	writeObjectToSVGFile(id, dades);
-        	SVGObjects.setData(newDades);
+        	SVGObjects.put(id,newDades);
         } 
 	}
 
 	/** Crea un grup agrupant diversos objectes */
 	public void createSVGGroup(String id, List<String> idObjects) {
 		Data newData = new Data("Group", -1,-1,-1,-1,null,-1,-1,-1);
-		SVGGroup group = new SVGGroup(id, newData, idObjects);
+		SVGGroup group = new SVGGroup(id, newData);
+		group.setObjectsIds(idObjects);
 
 		for (String s : idObjects) {
 			List<Animation> objecte = SVGObjects.get(s);
-			if (objecte == null) Throw new RuntimeException("At least one of the grouping objects doesn't exists");
+			if (objecte == null) throw new RuntimeException("At least one of the grouping objects doesn't exists");
 			Animation a = objecte.get(0);
 			a.data.setGroup(id);
 			objecte.set(0, a);
@@ -90,7 +103,7 @@ public class SVGParser {
 	
 	/** Afegeix a l'objecte idObject previament creat una animacio */ 
 	public void addSVGAnimation(String idObject, String idAnimation, Data animation) {
-		Animation anim = Animation(idAnimation, animation);
+		Animation anim = new Animation(idAnimation, animation);
 		List<Animation> aux = SVGObjects.get(idObject);
 		aux.add(anim);
 		SVGObjects.put(idObject, aux);
@@ -99,7 +112,7 @@ public class SVGParser {
 
 	/** Escriu i neteja les variables de tipus objecte tractats actualment. S'ha de cridar quan s'acabi una funcio */
 	public void clearObjects() {
-		for (Map.Entry<String, List<Animation> > entry : SVGObjects.entrySet()) {
+		for (Entry<String, List<Animation> > entry : SVGObjects.entrySet()) {
     		String key = entry.getKey();
 	    	List<Animation> dades = entry.getValue();
 	    	writeObjectToSVGFile(key, dades);
@@ -116,29 +129,32 @@ public class SVGParser {
 
 		String properties = "";
 		if (data.getTipusObject().equals("Rectangle")) {
-			if (data.getObjectCoordX() != null) properties += " x=\"" + data.getObjectCoordX() + "\"";
-			if (data.getObjectCoordY() != null) properties += " y=\"" + data.getObjectCoordY() + "\"";
-			if (data.getObjectWidth() != null) properties += " width=\"" + data.getObjectWidth() + "\"";
-			if (data.getObjectHeight() != null) properties += " height=\"" + data.getObjectHeight() + "\"";
+			properties += " x=\"" + data.getObjectCoordX() + "\"";
+			properties += " y=\"" + data.getObjectCoordY() + "\"";
+			properties += " width=\"" + data.getObjectWidth() + "\"";
+			properties += " height=\"" + data.getObjectHeight() + "\"";
 		} else if (data.getTipusObject().equals("Circle") || data.getTipusObject().equals("Ellipse")) {
-			if (data.getObjectCoordX() != null) properties += " cx=\"" + data.getObjectCoordX() + "\"";
-			if (data.getObjectCoordY() != null) properties += " cy=\"" + data.getObjectCoordY() + "\"";
+			properties += " cx=\"" + data.getObjectCoordX() + "\"";
+			properties += " cy=\"" + data.getObjectCoordY() + "\"";
 			
-			if (data.getTipusObject().equals("Circle") && data.getObjectRadi() != null) properties += " r=\"" + data.getObjectRadi() + "\"";
+			if (data.getTipusObject().equals("Circle")) properties += " r=\"" + data.getObjectRadiX() + "\"";
 			else {
-				if (data.getObjectRadiX() != null) properties += " rx=\"" + data.getObjectRadiX() + "\"";
-				if (data.getObjectRadiY() != null) properties += " ry=\"" + data.getObjectRadiY() + "\"";
+				properties += " rx=\"" + data.getObjectRadiX() + "\"";
+				properties += " ry=\"" + data.getObjectRadiY() + "\"";
 			}
 		} else if (data.getTipusObject().equals("Line")) {
-			if (data.getObjectCoordX() != null) properties += " x1=\"" + data.getObjectCoordX() + "\"";
-			if (data.getObjectCoordY() != null) properties += " y1=\"" + data.getObjectCoordY() + "\"";
-			if (data.getObjectRadiX() != null) properties += " x2=\"" + data.getObjectRadiX() + "\"";
-			if (data.getObjectRadiY() != null) properties += " y2=\"" + data.getObjectRadiY() + "\"";
+			properties += " x1=\"" + data.getObjectCoordX() + "\"";
+			properties += " y1=\"" + data.getObjectCoordY() + "\"";
+			properties += " x2=\"" + data.getObjectRadiX() + "\"";
+			properties += " y2=\"" + data.getObjectRadiY() + "\"";
 		}
 		
 		if (data.getObjectColor() != null) properties += " fill=\"" + data.getObjectColor() + "\"";
-		if (data.getObjectRotation() != null) properties += " transform=\"rotate(" + data.getObjectRotation() + ")\"";
-		if (data.getAttributes() != null) properties += data.getAttributes();
+		properties += " transform=\"rotate(" + data.getObjectRotation() + ")\"";
+		
+
+		// TODO: IMPLEMENTAR ATTRIBUTES SOBRANTS
+		//if (data.getAttributes() != null) properties += data.getAttributes();
 
 		return properties;
 	}
@@ -159,40 +175,38 @@ public class SVGParser {
 
 			animation += " attributeName=\"" + anim.getAnimationAttribute() + "\" attributeType=\"XML\" from=\"" + 
 				anim.getAnimationFrom() + "\" to=\"" + anim.getAnimationTo() + "\" begin=\"" + 
-				anim.getAnimationBegin()	+ "s\" dur=\"" + anim.getAnimationEnd()-anim.getAnimationBegin() 
+				anim.getAnimationBegin()	+ "s\" dur=\"" + (anim.getAnimationEnd() - anim.getAnimationBegin())
 				+ "s\"";
 		
 		} else if (anim.getTipusAnimation().equals("Move")) {
 			
-			if (anim.getAnimationCoordX() == null) throw new RuntimeException("Move animation has no X coordinate");
-			if (anim.getAnimationCoordY() == null) throw new RuntimeException("Move animation has no Y coordinate");
+			//if (anim.getAnimationCoordX() == null) throw new RuntimeException("Move animation has no X coordinate");
+			//if (anim.getAnimationCoordY() == null) throw new RuntimeException("Move animation has no Y coordinate");
 
-			animation += " attributeName=\"x\" attributeType=\"XML\" to=\"" + anim.getAnimationCoordX() + "\" 
-				begin=\"" + anim.getAnimationBegin() + "s\" dur=\"" + anim.getAnimationEnd()-anim.getAnimationBegin() + 
+			animation += " attributeName=\"x\" attributeType=\"XML\" to=\"" + anim.getAnimationCoordX() + "\" begin=\"" 
+			+ anim.getAnimationBegin() + "s\" dur=\"" + (anim.getAnimationEnd() - anim.getAnimationBegin()) + 
 				"s\"";
 			
 			if (anim.getAnimationFill() != null) animation += "fill=\"" + anim.getAnimationFill() + "\"";
 			
 			animation += "/><animate attributeName=\"y\" attributeType=\"XML\" to=\"" + 
 				anim.getAnimationCoordY() + "\" begin=\"" + anim.getAnimationBegin() + "s\" dur=\"" + 
-				anim.getAnimationEnd()-anim.getAnimationBegin() + "s\"";
+				(anim.getAnimationEnd() - anim.getAnimationBegin()) + "s\"";
 
 		} else if (anim.getTipusAnimation().equals("Translate")) { // QUAN HI HAGI TRANSLATE -> ANIMATEMOTION
 			
-			if (anim.getAnimationCoordX() == null) throw new RuntimeException("Translate animation has no X coordinate");
-			if (anim.getAnimationCoordY() == null) throw new RuntimeException("Translate animation has no Y coordinate");
+			//if (anim.getAnimationCoordX() == null) throw new RuntimeException("Translate animation has no X coordinate");
+			//if (anim.getAnimationCoordY() == null) throw new RuntimeException("Translate animation has no Y coordinate");
 
 			animation += "Transform attributeName=\"transform\" attributeType=\"XML\" type=\"translate\" to=\"" 
 				+ anim.getAnimationCoordX() + " " + anim.getAnimationCoordY() + "\" begin=\"" + anim.getAnimationBegin() + 
-				"s\" dur=\"" + anim.getAnimationEnd()-anim.getAnimationBegin() "s\"";
+				"s\" dur=\"" + (anim.getAnimationEnd() - anim.getAnimationBegin()) + "s\"";
 			
 		} else if (anim.getTipusAnimation().equals("Rotate")) {
 			
-			if (anim.getAnimationRotation() == null) throw new RuntimeException("Rotation animation has no rotation angle");
-
 			animation += "Transform attributeName=\"transform\" attributeType=\"XML\" type=\"rotate\" to=\"" 
 				+ anim.getAnimationRotation() + "\" begin=\"" + anim.getAnimationBegin() + "s\" dur=\"" 
-				+ anim.getAnimationEnd()-anim.getAnimationBegin() "s\"";
+				+ (anim.getAnimationEnd() - anim.getAnimationBegin()) + "s\"";
 		
 		} else if (anim.getTipusAnimation().equals("Destroy")) {
 			
@@ -216,7 +230,7 @@ public class SVGParser {
 
 	private void writeObjectToSVGFile(String id, List<Animation> dades) {
 		String newObject = "<";
-		Dades initialProperties = dades.get(0).data;
+		Data initialProperties = dades.get(0).data;
 		if (initialProperties.getObjectGroup() != null) {
 			newObject += "defs><";
 		}
