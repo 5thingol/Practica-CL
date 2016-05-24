@@ -33,7 +33,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 import java.io.*;
-import interp.SVGParser;
+import interp.SVGPasrser;
 
 /** Class that implements the interpreter of the language. */
 
@@ -285,7 +285,7 @@ public class Interp {
             case AslLexer.ASSIGN:
                 if (t.getChild(1).getType() == AslLexer.CREATE) {
                     value = createObject(t.getChild(1));
-                    svgParser.createSVGObject(t.getChild(0).getText(), value)
+                    svgParser.createSVGObject(t.getChild(0).getText(), value);
                 } 
                 else if (t.getChild(1).getType() == AslLexer.GROUP) {
                     List<String> idObjects = new ArrayList<String>();
@@ -297,7 +297,7 @@ public class Interp {
 
                 else if (t.getChild(1).getType() == AslLexer.ANIMATION) {
                     value = createAnimation(t.getChild(1));
-                    svgParser.addSVGAnimation(value.getAnimationIdObject(), t.getChild(0).getText(), value)
+                    svgParser.addSVGAnimation(value.getAnimationIdObject(), t.getChild(0).getText(), value);
                 } else
                     value = evaluateExpression(t.getChild(1));
                 Stack.defineVariable (t.getChild(0).getText(), value);
@@ -370,7 +370,7 @@ public class Interp {
     }
 
     private Data createObject(AslTree t) {
-        int child = 1
+        int child = 1;
         String tipus = t.getChild(0).getText();
         int x = 0;
         int y = 0;
@@ -397,7 +397,7 @@ public class Interp {
             }
             if (t.getChild(child).getType() == AslLexer.ATTRIBUTES)
             {
-                setAttributes(t.getChild(child), width, height,color)
+                setAttributes(t.getChild(child), width, height,color);
             }
         }
         return new Data(tipus, x, y, width, height, color, rotation);
@@ -423,11 +423,11 @@ public class Interp {
                 case AslLexer.STYLE:
                 String s = t.getChild(i).getText();
                 String[] parts = s.split(";");
-                String[] st
+                String[] st;
                 for(int i : parts) {
                     if (parts[i].contains("width")){
                         st = parts[i].split(":");
-                        st[1].replaceall('"')
+                        st[1].replaceall('"');
                         w = st[1];
                     }
 
@@ -504,7 +504,7 @@ public class Interp {
 
             }
             if (t.getChildCount() > 2){
-                novaAnimacio(node,idObject,2,t.getChildCount())
+                novaAnimacio(node,idObject,2,t.getChildCount());
             }
 
 

@@ -55,23 +55,16 @@ public class Data {
     private int y;
     private int width;
     private int height;
-    private int radix;
-    private int radiy;
     private int rotation;
     private String fill;
-    private String group;
-
-    // FALTA AFEGIR EL VALOR TEXT PER GUARDAR EL TEXT DELS OBJECTES TIPUS TEXT
-    private String text;
 
     /** Valors de les animacions */
-    private double begin;
-    private double end;
-    private String idObject;
-    private String attribute;
-    private String from;
-    private String to;
+    private int begin;
+    private int end;
 
+
+    /** Valors de les animacions */
+    private 
 
     /** Constructor for integers */
     Data(int v) { type = Type.INTEGER; value = v; }
@@ -83,7 +76,7 @@ public class Data {
     Data() {type = Type.VOID; }
 
     /** Constructor for object data */
-    Data(String tipus, int cx, int cy, int w, int h, String f, int r, int rx, int ry)
+    Data(String tipus, int cx, int cy, int w, int h, String f, int r)
     {
         type = Type.OBJECT;
         x = cx;
@@ -92,26 +85,11 @@ public class Data {
         height = h;
         fill = f;
         rotation = r;
-        radix = rx;
-        radiy = ry;
-        group = null;
+        this.tipus = tipus;
     }
 
-    /** Constructors for animation data */
-    Data(String tip, String id, double b, double e, int cx, int cy, int r, String att, int f, int t, String fi) { 
-        type = Type.ANIMATION; 
-        tipus = tip; 
-        idObject = id; 
-        begin = b; 
-        end = e; 
-        x = cx; 
-        y = cy;
-        rotation = r;
-        attribute = att;
-        from = f;
-        to = t;
-        fill = fi;
-    }
+    /** Constructor for animation data */
+    Data(int b, int e) { type = Type.ANIMATION; begin = b; end = e; }
 
     /** Copy constructor */
     Data(Data d) { type = d.type; value = d.value; }
@@ -152,18 +130,6 @@ public class Data {
         return value == 1;
     }
 
-     /** Retorna el tipus de objecte */
-    public String getTipusObject() {
-        assert type == Type.OBJECT;
-        return tipus;
-    }
-
-    /** Retorna el tipus d'animació */
-    public String getTipusAnimation() {
-        assert type == Type.ANIMATION;
-        return tipus;
-    }
-
     /**
      * Gets the values of an Object data. The method asserts that
      * the data is a Object.
@@ -188,82 +154,26 @@ public class Data {
         return height;
     }
 
-    public int getObjectRadiX() {
-        assert type == Type.OBJECT;
-        return radix;
-    }
-
-    public int getObjectRadiY() {
-        assert type == Type.OBJECT;
-        return radiy;
-    }
-
     public String getObjectColor() {
         assert type == Type.OBJECT;
         return fill;
     }
 
-    public int getObjectRotation() {
+    public int getRotation() {
         assert type == Type.OBJECT;
         return rotation;
-    }
-
-    public String getObjectGroup() {
-        assert type == Type.OBJECT;
-        return group;
     }
 
     /**
      * Gets the values of an Animation data. The method asserts that
      * the data is an Animation.
-     */
-    public String getAnimationAttribute(){
-        assert type == Type.ANIMATION;
-        return attribute;
-    }
-
-    public int getAnimationCoordX(){
-        assert type == Type.ANIMATION;
-        return x;
-    }
-
-    public int getAnimationCoordY(){
-        assert type == Type.ANIMATION;
-        return y;
-    }
-
-    public int getAnimationRotation(){
-        assert type == Type.ANIMATION;
-        return rotation;
-    }
-
-    public String getAnimationFill(){
-        assert type == Type.ANIMATION;
-        return fill;
-    }
-
-    public String getAnimationFrom(){
-        assert type == Type.ANIMATION;
-        return from;
-    }
-
-    public String getAnimationTo(){
+     */    
+    public int getBegin(){
         assert type == Type.ANIMATION;
         return begin;
     }
 
-
-    public String getAnimationIdObject(){
-        assert type == Type.ANIMATION;
-        return idObject;
-    }
-
-    public double getAnimationBegin(){
-        assert type == Type.ANIMATION;
-        return begin;
-    }
-
-    public double getAnimationEnd(){
+    public int getEnd(){
         assert type = Type.ANIMATION;
         return end;
 
@@ -306,14 +216,12 @@ public class Data {
 
     public void setRotation(int r) { type = Type.OBJECT; rotation = r; }
 
-    public void setGroup(String g) { type = Type.OBJECT; group = g; }
-
     /** Defines an object for animation */
     public void setValue(int b, int e) { type = Type.ANIMATION; begin = b; end = e; }
 
-    public void setBegin(double b) { type = Type.ANIMATION; begin = b; }
+    public void setBegin(int b) { type = Type.ANIMATION; begin = b; }
 
-    public void setEnd(double e) { type = Type.ANIMATION; end = e; }
+    public void setEnd(int e) { type = Type.ANIMATION; end = e; }
 
     /** Copies the value from another data */
     public void setData(Data d) { type = d.type; value = d.value; }
