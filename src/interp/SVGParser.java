@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.Map.Entry;
 import java.util.ArrayList;
 import java.util.List;
+import java.io.*;
 
 /** Class responsible for transforming the structured data obtained from the tree to SVG language. */
 
@@ -227,6 +228,7 @@ public class SVGParser {
 		if (tipus.equals("Ellipse")) return "ellipse";
 		if (tipus.equals("Line")) return "line";
 		if (tipus.equals("Group")) return "g";
+		return "";
 	}
 
 	private void writeObjectToSVGFile(String id, List<Animation> dades) {
@@ -275,6 +277,8 @@ public class SVGParser {
 		try (Writer writer = new BufferedWriter(new OutputStreamWriter(
               new FileOutputStream(filename+".svg"), "utf-8"))) {
    			writer.write(SVG);
+   		} catch (IOException e) {
+   			System.err.println("SVG file writing error: " + e.getMessage());
    		}
 	}
 }

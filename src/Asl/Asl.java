@@ -35,6 +35,7 @@ import org.antlr.stringtemplate.*;
 // Imports from Java
 import org.apache.commons.cli.*; // Command Language Interface
 import java.io.*;
+import java.util.List;
 
 // Parser and Interpreter
 import parser.*;
@@ -140,7 +141,7 @@ public class Asl{
     }
 
     /** Takes the tree and substitutes the import(s) (if present) for all its functions and includes */
-    private AslTree importModules(AslTree t) {
+    private static AslTree importModules(AslTree t) {
         int importsIndex = 0;
         if (t.getChildCount() == 1) return t;
         else if (t.getChild(0).getType() == AslLexer.MODULE) importsIndex++; // It's a module definition: import all the imports and return the list_func tree
@@ -156,7 +157,7 @@ public class Asl{
     }
 
     /** Open the module file and import its contents */
-    private AslTree getModuleTree(String moduleName) {
+    private static  AslTree getModuleTree(String moduleName) {
         CharStream input = null;
         try {
             input = new ANTLRFileStream(moduleName);

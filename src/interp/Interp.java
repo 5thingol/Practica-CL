@@ -283,6 +283,7 @@ public class Interp {
                 return null;
             // Assignment
             case AslLexer.ASSIGN:
+                value = null;
                 if (t.getChild(1).getType() == AslLexer.CREATE) {
                     value = createObject(t.getChild(1));
                     svgParser.createSVGObject(t.getChild(0).getText(), value);
@@ -450,7 +451,7 @@ public class Interp {
     {
         AslTree node = t.getChild(0);
         String tipus = node.getText();
-        String idObject; 
+        String idObject = ""; 
         double begin = currentTimeAnnotation.begin; 
         double end = currentTimeAnnotation.begin+currentTimeAnnotation.duration; 
         int x = 0; 
