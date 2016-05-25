@@ -252,7 +252,7 @@ public class Interp {
         
         setLineNumber(t);
         Data value; // The returned value
-        System.out.println(t.getType());
+
         if ((t.getType() != AslLexer.ANIMATION && (t.getChild(1) != null && t.getChild(1).getType() != AslLexer.ANIMATION ) )  && currentTimeAnnotation != null) {
             throw new RuntimeException("Bad placement of Time Annotation: not followed by an animation instruction (Move, Tranlate, Rotate, Modify or Destroy)");
         }
@@ -395,17 +395,17 @@ public class Interp {
 	{
 	    x = t.getChild(1).getIntValue();
 	    ++child;
-	    y = t.getChild(2).getIntValue(); 
+        y = t.getChild(2).getIntValue();
 	    ++child;
 	}
-	if (t.getChild(child).getType() == AslLexer.INT)
+	if (t.getChildCount() > child && t.getChild(child).getType() == AslLexer.INT)
 	{
 	    rx = t.getChild(child).getIntValue();
 	    ++child;
 	    ry = t.getChild(child).getIntValue();
 	    ++child;
 	}
-	if (t.getChild(child).getType() == AslLexer.ATTRIBUTES)
+	if (t.getChildCount() > child && t.getChild(child).getType() == AslLexer.ATTRIBUTES)
 	{
 	  for (int i = 0; i < t.getChild(child).getChildCount(); ++i){
 	    switch(t.getChild(child).getChild(i).getText())  {

@@ -7,72 +7,84 @@ digraph {
 	edge [arrowsize=.5, color="black", style="bold"]
 
   n0 [label="PROG"];
-  n1 [label="LIST_FUNCTIONS"];
-  n1 [label="LIST_FUNCTIONS"];
-  n2 [label="func"];
-  n2 [label="func"];
-  n3 [label="main"];
-  n4 [label="PARAMS"];
-  n5 [label="LIST_INSTR"];
-  n5 [label="LIST_INSTR"];
-  n6 [label=":="];
-  n6 [label=":="];
-  n7 [label="object1"];
-  n8 [label="Create"];
-  n8 [label="Create"];
-  n9 [label="Rectangle"];
-  n10 [label="20"];
-  n11 [label="32"];
-  n12 [label="ATTRIBUTES"];
-  n12 [label="ATTRIBUTES"];
-  n13 [label="width"];
-  n13 [label="width"];
-  n14 [label="100"];
-  n15 [label="height"];
-  n15 [label="height"];
-  n16 [label="30"];
-  n17 [label="TIMEANNOTATION"];
-  n17 [label="TIMEANNOTATION"];
-  n18 [label="0"];
-  n19 [label="end"];
-  n19 [label="end"];
-  n20 [label="3"];
-  n21 [label=":="];
-  n21 [label=":="];
-  n22 [label="anim2"];
-  n23 [label="ANIMATION"];
-  n23 [label="ANIMATION"];
-  n24 [label="Translate"];
-  n25 [label="object1"];
-  n26 [label="100"];
-  n27 [label="100"];
+  n1 [label="import"];
+  n1 [label="import"];
+  n2 [label="Rain"];
+  n3 [label="LIST_FUNCTIONS"];
+  n3 [label="LIST_FUNCTIONS"];
+  n4 [label="func"];
+  n4 [label="func"];
+  n5 [label="main"];
+  n6 [label="PARAMS"];
+  n7 [label="LIST_INSTR"];
+  n7 [label="LIST_INSTR"];
+  n8 [label=":="];
+  n8 [label=":="];
+  n9 [label="object1"];
+  n10 [label="Create"];
+  n10 [label="Create"];
+  n11 [label="Rectangle"];
+  n12 [label="20"];
+  n13 [label="32"];
+  n14 [label="ATTRIBUTES"];
+  n14 [label="ATTRIBUTES"];
+  n15 [label="width"];
+  n15 [label="width"];
+  n16 [label="100"];
+  n17 [label="height"];
+  n17 [label="height"];
+  n18 [label="30"];
+  n19 [label="TIMEANNOTATION"];
+  n19 [label="TIMEANNOTATION"];
+  n20 [label="0"];
+  n21 [label="end"];
+  n21 [label="end"];
+  n22 [label="3"];
+  n23 [label=":="];
+  n23 [label=":="];
+  n24 [label="anim2"];
+  n25 [label="ANIMATION"];
+  n25 [label="ANIMATION"];
+  n26 [label="Translate"];
+  n27 [label="object1"];
+  n28 [label="100"];
+  n29 [label="100"];
+  n30 [label="FUNCALL"];
+  n30 [label="FUNCALL"];
+  n31 [label="CreateRain"];
+  n32 [label="ARGLIST"];
 
-  n0 -> n1 // "PROG" -> "LIST_FUNCTIONS"
-  n1 -> n2 // "LIST_FUNCTIONS" -> "func"
-  n2 -> n3 // "func" -> "main"
-  n2 -> n4 // "func" -> "PARAMS"
-  n2 -> n5 // "func" -> "LIST_INSTR"
-  n5 -> n6 // "LIST_INSTR" -> ":="
-  n6 -> n7 // ":=" -> "object1"
-  n6 -> n8 // ":=" -> "Create"
-  n8 -> n9 // "Create" -> "Rectangle"
-  n8 -> n10 // "Create" -> "20"
-  n8 -> n11 // "Create" -> "32"
-  n8 -> n12 // "Create" -> "ATTRIBUTES"
-  n12 -> n13 // "ATTRIBUTES" -> "width"
-  n13 -> n14 // "width" -> "100"
-  n12 -> n15 // "ATTRIBUTES" -> "height"
-  n15 -> n16 // "height" -> "30"
-  n5 -> n17 // "LIST_INSTR" -> "TIMEANNOTATION"
-  n17 -> n18 // "TIMEANNOTATION" -> "0"
-  n17 -> n19 // "TIMEANNOTATION" -> "end"
-  n19 -> n20 // "end" -> "3"
-  n5 -> n21 // "LIST_INSTR" -> ":="
-  n21 -> n22 // ":=" -> "anim2"
-  n21 -> n23 // ":=" -> "ANIMATION"
-  n23 -> n24 // "ANIMATION" -> "Translate"
-  n23 -> n25 // "ANIMATION" -> "object1"
-  n23 -> n26 // "ANIMATION" -> "100"
-  n23 -> n27 // "ANIMATION" -> "100"
+  n0 -> n1 // "PROG" -> "import"
+  n1 -> n2 // "import" -> "Rain"
+  n0 -> n3 // "PROG" -> "LIST_FUNCTIONS"
+  n3 -> n4 // "LIST_FUNCTIONS" -> "func"
+  n4 -> n5 // "func" -> "main"
+  n4 -> n6 // "func" -> "PARAMS"
+  n4 -> n7 // "func" -> "LIST_INSTR"
+  n7 -> n8 // "LIST_INSTR" -> ":="
+  n8 -> n9 // ":=" -> "object1"
+  n8 -> n10 // ":=" -> "Create"
+  n10 -> n11 // "Create" -> "Rectangle"
+  n10 -> n12 // "Create" -> "20"
+  n10 -> n13 // "Create" -> "32"
+  n10 -> n14 // "Create" -> "ATTRIBUTES"
+  n14 -> n15 // "ATTRIBUTES" -> "width"
+  n15 -> n16 // "width" -> "100"
+  n14 -> n17 // "ATTRIBUTES" -> "height"
+  n17 -> n18 // "height" -> "30"
+  n7 -> n19 // "LIST_INSTR" -> "TIMEANNOTATION"
+  n19 -> n20 // "TIMEANNOTATION" -> "0"
+  n19 -> n21 // "TIMEANNOTATION" -> "end"
+  n21 -> n22 // "end" -> "3"
+  n7 -> n23 // "LIST_INSTR" -> ":="
+  n23 -> n24 // ":=" -> "anim2"
+  n23 -> n25 // ":=" -> "ANIMATION"
+  n25 -> n26 // "ANIMATION" -> "Translate"
+  n25 -> n27 // "ANIMATION" -> "object1"
+  n25 -> n28 // "ANIMATION" -> "100"
+  n25 -> n29 // "ANIMATION" -> "100"
+  n7 -> n30 // "LIST_INSTR" -> "FUNCALL"
+  n30 -> n31 // "FUNCALL" -> "CreateRain"
+  n30 -> n32 // "FUNCALL" -> "ARGLIST"
 
 }

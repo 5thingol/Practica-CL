@@ -121,6 +121,8 @@ public class Asl{
             int linenumber = -1;
             try {
                 t = importModules(t);
+                System.out.println(t.getChild(0).getType());
+
                 I = new Interp(t.getChild(0), tracefile); // prepares the interpreter
                 I.Run();                  // Executes the code
             } catch (RuntimeException e) {
@@ -129,13 +131,13 @@ public class Asl{
                 if (linenumber < 0) System.err.print (": ");
                 else System.err.print (" (" + infile + ", line " + linenumber + "): ");
                 System.err.println (e.getMessage() + ".");
-                System.err.format (I.getStackTrace());
+                if (I != null) System.err.format (I.getStackTrace());
             } catch (StackOverflowError e) {
                 if (I != null) linenumber = I.lineNumber();
                 System.err.print("Stack overflow error");
                 if (linenumber < 0) System.err.print (".");
                 else System.err.println (" (" + infile + ", line " + linenumber + ").");
-                System.err.format (I.getStackTrace(5));
+                if (I != null) System.err.format (I.getStackTrace(5));
             }
         }
     }
@@ -146,13 +148,16 @@ public class Asl{
         if (t.getChildCount() == 1) return t;
         else if (t.getChild(0).getType() == AslLexer.MODULE) importsIndex++; // It's a module definition: import all the imports and return the list_func tree
         
-        AslTree importedT = t.getChild(importsIndex);
-        for (int i = 0; i < importedT.getChildCount(); ++i) {
-            AslTree moduleTree = getModuleTree(importedT.getChild(i).getText());
-            List<AslTree> funcs = moduleTree.getChild(0).getChild(0).getChildren();
-            t.getChild(importsIndex+1).addChildren(funcs);
+        if (t.getChild(importsIndex).getType() == AslLexer.IMPORT) {
+            AslTree importedT = t.getChild(importsIndex);
+            for (int i = 0; i < importedT.getChildCount(); ++i) {
+                AslTree moduleTree = getModuleTree(importedT.getChild(i).getText());
+
+                List<AslTree> funcs = moduleTree.getChild(1).getChildren();
+                t.getChild(importsIndex+1).addChildren(funcs);
+            }
+            t.deleteChild(importsIndex);
         }
-        
         return t;
     }
 
@@ -191,7 +196,6 @@ public class Asl{
         AslTree t = (AslTree)result.getTree();
 
         t = importModules(t);
-
         return t;
 
     }
