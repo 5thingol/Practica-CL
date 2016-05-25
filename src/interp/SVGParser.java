@@ -86,7 +86,8 @@ public class SVGParser {
 
 	/** Crea un grup agrupant diversos objectes */
 	public void createSVGGroup(String id, List<String> idObjects) {
-		Data newData = new Data("Group", -1,-1,-1,-1,null,-1,-1,-1);
+		String n = null;
+		Data newData = new Data("Group",-1,-1,-1,-1,n,-1,-1,-1, n);
 		SVGGroup group = new SVGGroup(id, newData);
 		group.setObjectsIds(idObjects);
 

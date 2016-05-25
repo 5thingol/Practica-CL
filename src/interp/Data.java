@@ -83,7 +83,7 @@ public class Data {
     Data() {type = Type.VOID; }
 
     /** Constructor for object data */
-    Data(String tipus, int cx, int cy, int w, int h, String f, int r, int rx, int ry)
+    Data(String tipus, int cx, int cy, int w, int h, String f, int r, int rx, int ry, String txt)
     {
         type = Type.OBJECT;
         x = cx;
@@ -94,6 +94,7 @@ public class Data {
         rotation = r;
         radix = rx;
         radiy = ry;
+        text = txt;
         group = null;
     }
 
@@ -287,12 +288,6 @@ public class Data {
         rotation = r;
     }
 
-    public void setValue(int b, int e)
-    {
-        type = Type.ANIMATION;
-        begin = b;
-        end = e;
-    }
 
     public void setCoordX(int cx) { type = Type.OBJECT; x = cx; }
 

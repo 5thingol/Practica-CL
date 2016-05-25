@@ -32,6 +32,7 @@ import parser.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
+import java.util.List;
 import java.io.*;
 import interp.SVGParser;
 
@@ -257,26 +258,26 @@ public class Interp {
             case AslLexer.CREATE:
                 Data newObject = createObject(t);
                 Stack.defineVariable("newObject"+newId, newObject);
-                svgParser.createObject("newObject"+newId, newObject);
+                svgParser.createSVGObject("newObject"+newId, newObject);
                 newId++;
                 return null;
             case AslLexer.GROUP:
                 return null;
             case AslLexer.TIMEANNOTATION:
                 currentTimeAnnotation = new TimeAnnotation();
-                currentTimeAnnotation.begin = (double) evaluateExpression(t.getChild(0));
+                currentTimeAnnotation.begin = (double) t.getChild(0).getIntValue();
                 if (t.getChild(1) != null) {
                     if (t.getChild(1).getStringValue().equals("end")) {
-                        double end = (double) evaluateExpression(t.getChild(1).getChild(0));
+                        double end = (double) t.getChild(1).getChild(0).getIntValue();
                         currentTimeAnnotation.duration = end - currentTimeAnnotation.begin;
                     } else 
-                        currentTimeAnnotation.duration = (double) evaluateExpression(t.getChild(1).getChild(0));
+                        currentTimeAnnotation.duration = (double) t.getChild(1).getChild(0).getIntValue();
                 } else currentTimeAnnotation.duration = 0;
                 return null;
             case AslLexer.ANIMATION:
                 if (currentTimeAnnotation == null) throw new RuntimeException("Animation instruction doesn't have a proper previous Time Annotation");
                 Data newAnimation = createAnimation(t);
-                Stack.defineVariable (newAnimation.getAnimationIdObject(),"newAnimation"+newId, newAnimation);
+                Stack.defineVariable ("newAnimation"+newId, newAnimation);
                 svgParser.addSVGAnimation(newAnimation.getAnimationIdObject(),"newAnimation"+newId, newAnimation);
                 newId++;
                 return null;
@@ -291,7 +292,7 @@ public class Interp {
                     for (int i = 0; i < t.getChild(1).getChildCount(); ++i) {
                         idObjects.add(t.getChild(1).getChild(i).getText());
                     }
-                    svgParser.createSVGGroup(id, idObjects);
+                    svgParser.createSVGGroup(t.getChild(0).getText(), idObjects);
                 } 
 
                 else if (t.getChild(1).getType() == AslLexer.ANIMATION) {
@@ -369,79 +370,80 @@ public class Interp {
     }
 
     private Data createObject(AslTree t) {
-        int child = 1;
-        String tipus = t.getChild(0).getText();
-        int x = 0;
-        int y = 0;
-        int width = 0;
-        int height = 0;
-        String color = "black";
-        int rotation = 0;
-        int rx = null;
-        int ry = null;
-        if (t.getChildCount() > 1){
-            if (t.getChild(1).getType() == AslLexer.INT) 
-            {
-                x = t.getChild(1);
-                ++child;
-                y = t.getChild(2); 
-                ++child;
-            }
-            if (t.getChild(child).getType() == AslLexer.INT)
-            {
-                rx = t.getChild(child);
-                ++child;
-                ry = t.getChild(child);
-                ++child;
-            }
-            if (t.getChild(child).getType() == AslLexer.ATTRIBUTES)
-            {
-                setAttributes(t.getChild(child), width, height,color);
-            }
-        }
-        return new Data(tipus, x, y, width, height, color, rotation);
-    }
+      int child = 1;
+      String tipus = t.getChild(0).getText();
+      int x = 0;
+      int y = 0;
+      int width = 0;
+      int height = 0;
+      String color = "black";
+      int rotation = 0;
+      int rx = 0;
+      int ry = 0;
+      String text = null;
+      if (t.getChildCount() > 1){
+	if (t.getChild(1).getType() == AslLexer.INT) 
+	{
+	    x = t.getChild(1).getIntValue();
+	    ++child;
+	    y = t.getChild(2).getIntValue(); 
+	    ++child;
+	}
+	if (t.getChild(child).getType() == AslLexer.INT)
+	{
+	    rx = t.getChild(child).getIntValue();
+	    ++child;
+	    ry = t.getChild(child).getIntValue();
+	    ++child;
+	}
+	if (t.getChild(child).getType() == AslLexer.ATTRIBUTES)
+	{
+	  for (int i = 0; i < t.getChildCount(); ++i){
+	    switch(t.getText())  {
+	      
+	      case "width":
+	      width = t.getChild(i).getIntValue();
+	      break;
 
-    private void setAttributes(AslTree t, int w, int h, String color)
-    {
-        for (int i = 0; i < t.getChildCount(); ++i){
-            switch(t.getType())  {
-                
-                case AslLexer.WIDTH:
-                w = t.getChild(i).getIntValue();
-                break;
+	      case "height":
+	      height = t.getChild(i).getIntValue();
+	      break;
 
-                case AslLexer.HEIGHT:
-                h = t.getChild(i).getIntValue();
-                break;
+	      case "color":
+	      color = t.getChild(i).getText();
+	      break;
+	      
+	      case "txt":
+	      text = t.getChild(i).getText();
+	      break;
 
-                case AslLexer.COLOR:
-                color = t.getChild(i).getText();
-                break;
+	      case "style":
+	      String s = t.getChild(i).getText();
+	      String[] parts = s.split(";");
+	      String[] st;
+	      for(int j = 0; j < parts.length; ++j) {
+		  if (parts[j].contains("width")){
+		      st = parts[j].split(":");
+		      st[1].replaceAll("\"\"", "");
+		      width = Integer.parseInt(st[1]);
+		  }
 
-                case AslLexer.STYLE:
-                String s = t.getChild(i).getText();
-                String[] parts = s.split(";");
-                String[] st;
-                for(int i : parts) {
-                    if (parts[i].contains("width")){
-                        st = parts[i].split(":");
-                        st[1].replaceall('"');
-                        w = st[1];
-                    }
+		  else if (parts[j].contains("height")){
+		      st = parts[j].split(":");
+		      st[1].replaceAll("\"\"", "");
+		      height = Integer.parseInt(st[1]);
+		  }
 
-                    else if (parts[i].contains("height")){
-                        st = parts[i].split(":");
-                        h = st[1];
-                    }
-
-                    else if (parts[i].contains("color")){
-                        st = parts[i].split(":");
-                        color = st[1];
-                    }
-                }
-            }
-        }
+		  else if (parts[j].contains("color")){
+		      st = parts[j].split(":");
+		      color = st[1];
+		  }
+		}
+	      }
+	    }
+	  }
+	}
+      return new Data(tipus, x, y, width, height, color, rotation,rx, ry, text);
     }
 
     private Data createAnimation(AslTree t) 
@@ -449,15 +451,16 @@ public class Interp {
         AslTree node = t.getChild(0);
         String tipus = node.getText();
         String idObject; 
-        int begin = currentTimeAnnotation.begin; 
-        int end = currentTimeAnnotation.begin+currentTimeAnnotation.duration; 
-        int x = null; 
-        int y = null;
-        int rotation = null;
+        double begin = currentTimeAnnotation.begin; 
+        double end = currentTimeAnnotation.begin+currentTimeAnnotation.duration; 
+        int x = 0; 
+        int y = 0;
+        int rotation =0;
         String attribute = null;
         String from = null;
         String to = null;
         String fill = "freeze";
+        Data object;
         switch(tipus){
             
             case "Destroy":
@@ -472,8 +475,9 @@ public class Interp {
 
             case "Translate":
             idObject = node.getChild(0).getText();
-            x = idObject.getObjectCoordX() + node.getChild(1).getIntValue();
-            y = idObject.getObjectCoordY() + node.getChild(2).getIntValue();
+            object = Stack.getVariable(idObject);
+            x = object.getObjectCoordX() + node.getChild(1).getIntValue();
+            y = object.getObjectCoordY() + node.getChild(2).getIntValue();
             break;
 
             case "Rotation":
@@ -483,27 +487,28 @@ public class Interp {
 
             case "Modify":
             idObject = node.getChild(0).getText();
+            object = Stack.getVariable(idObject);
             attribute = node.getChild(1).getText();
             switch(attribute){
                 
                 case "width":
-                from = Int.toString(idObject.getObjectCoordX());
+                from = Integer.toString(object.getObjectCoordX());
                 to = node.getChild(1).getChild(0).getText();
                 break;
 
                 case "height":
-                from = Int.toString(idObject.getObjectCoordY());
+                from = Integer.toString(object.getObjectCoordY());
                 to = node.getChild(1).getChild(0).getText();
                 break;
 
                 case "color":
-                from = idObject.getObjectColor();
+                from = object.getObjectColor();
                 to = node.getChild(1).getChild(0).getText();
                 break;
 
             }
             if (t.getChildCount() > 2){
-                novaAnimacio(node,idObject,2,t.getChildCount());
+                novaAnimacio(node,idObject,2,t.getChildCount(), tipus, begin, end);
             }
 
 
@@ -511,27 +516,30 @@ public class Interp {
         return new Data(tipus, idObject, begin, end, x, y, rotation, attribute, from, to , fill);
     }
 
-    private void novaAnimacio(AslTree t, String id, int child, int totalChild, String tip, Int b, int e){
+    private void novaAnimacio(AslTree t, String id, int child, int totalChild, String tip, double b, double e){
         if (child < totalChild){
-            attribute = t.getChild(child).getText();
+	    String from = null;
+	    String to = null;
+            String attribute = t.getChild(child).getText();
+            Data object = Stack.getVariable(id);
             switch(attribute){
                 
                 case "width":
-                from = Int.toString(idObject.getObjectCoordX());
+                from = Integer.toString(object.getObjectCoordX());
                 to = t.getChild(child).getChild(0).getText();
                 break;
 
                 case "height":
-                from = Int.toString(idObject.getObjectCoordY());
+                from = Integer.toString(object.getObjectCoordY());
                 to = t.getChild(child).getChild(0).getText();
                 break;
 
                 case "color":
-                from = idObject.getObjectColor();
+                from = object.getObjectColor();
                 to = t.getChild(child).getChild(0).getText();
                 break;
             }
-            anim = new Data(tip,  id,  b,  e, null, null, null, attribute, from, to,"freeze");
+            Data anim = new Data(tip,  id,  b,  e, 0, 0, 0, attribute, from, to,"freeze");
             svgParser.addSVGAnimation(id,"newAnimation"+newId, anim);
             ++newId;
             novaAnimacio(t, id, child+1, totalChild, tip, b, e);
