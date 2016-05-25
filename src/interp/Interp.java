@@ -247,11 +247,11 @@ public class Interp {
         
         setLineNumber(t);
         Data value; // The returned value
-
-        if (t.getType() != AslLexer.ANIMATION && currentTimeAnnotation != null) {
+        
+        if ((t.getType() != AslLexer.ANIMATION && (t.getChild(1) != null && t.getChild(1).getType() != AslLexer.ANIMATION ) )  && currentTimeAnnotation != null) {
             throw new RuntimeException("Bad placement of Time Annotation: not followed by an animation instruction (Move, Tranlate, Rotate, Modify or Destroy)");
         }
-
+                
         // A big switch for all type of instructions
         switch (t.getType()) {
 
@@ -267,7 +267,8 @@ public class Interp {
                 currentTimeAnnotation = new TimeAnnotation();
                 currentTimeAnnotation.begin = (double) t.getChild(0).getIntValue();
                 if (t.getChild(1) != null) {
-                    if (t.getChild(1).getStringValue().equals("end")) {
+                    if (t.getChild(1).getType() == AslLexer.END) {
+
                         double end = (double) t.getChild(1).getChild(0).getIntValue();
                         currentTimeAnnotation.duration = end - currentTimeAnnotation.begin;
                     } else 
@@ -283,20 +284,19 @@ public class Interp {
                 return null;
             // Assignment
             case AslLexer.ASSIGN:
+                
                 value = null;
                 if (t.getChild(1).getType() == AslLexer.CREATE) {
                     value = createObject(t.getChild(1));
                     svgParser.createSVGObject(t.getChild(0).getText(), value);
-                } 
-                else if (t.getChild(1).getType() == AslLexer.GROUP) {
+                } else if (t.getChild(1).getType() == AslLexer.GROUP) {
                     List<String> idObjects = new ArrayList<String>();
                     for (int i = 0; i < t.getChild(1).getChildCount(); ++i) {
                         idObjects.add(t.getChild(1).getChild(i).getText());
                     }
                     svgParser.createSVGGroup(t.getChild(0).getText(), idObjects);
-                } 
+                } else if (t.getChild(1).getType() == AslLexer.ANIMATION) {
 
-                else if (t.getChild(1).getType() == AslLexer.ANIMATION) {
                     value = createAnimation(t.getChild(1));
                     svgParser.addSVGAnimation(value.getAnimationIdObject(), t.getChild(0).getText(), value);
                 } else
@@ -451,6 +451,7 @@ public class Interp {
     {
         AslTree node = t.getChild(0);
         String tipus = node.getText();
+
         String idObject = ""; 
         double begin = currentTimeAnnotation.begin; 
         double end = currentTimeAnnotation.begin+currentTimeAnnotation.duration; 
@@ -475,6 +476,7 @@ public class Interp {
             break;
 
             case "Translate":
+            //System.out.println(node.getChild(0));
             idObject = node.getChild(0).getText();
             object = Stack.getVariable(idObject);
             x = object.getObjectCoordX() + node.getChild(1).getIntValue();

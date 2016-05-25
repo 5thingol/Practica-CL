@@ -6,77 +6,73 @@ digraph {
 		width=.25, height=.25, color="black", fillcolor="white", style="filled, solid, bold"];
 	edge [arrowsize=.5, color="black", style="bold"]
 
-  n0 [label="LIST_FUNCTIONS"];
-  n1 [label="func"];
-  n1 [label="func"];
-  n2 [label="main"];
-  n3 [label="PARAMS"];
-  n4 [label="LIST_INSTR"];
-  n4 [label="LIST_INSTR"];
-  n5 [label=":="];
-  n5 [label=":="];
-  n6 [label="object1"];
-  n7 [label="Create"];
-  n7 [label="Create"];
-  n8 [label="Rectangle"];
-  n9 [label="20"];
-  n10 [label="32"];
-  n11 [label="ATTRIBUTES"];
-  n11 [label="ATTRIBUTES"];
-  n12 [label="width"];
-  n12 [label="width"];
-  n13 [label="100"];
-  n14 [label="height"];
-  n14 [label="height"];
-  n15 [label="30"];
-  n16 [label="TIMEANNOTATION"];
-  n16 [label="TIMEANNOTATION"];
-  n17 [label="0"];
-  n18 [label="end"];
-  n18 [label="end"];
-  n19 [label="3"];
-  n20 [label="Translate"];
-  n20 [label="Translate"];
-  n21 [label="object1"];
-  n22 [label="100"];
-  n23 [label="100"];
-  n24 [label=":="];
-  n24 [label=":="];
-  n25 [label="anim1"];
-  n26 [label="Move"];
-  n26 [label="Move"];
-  n27 [label="object1"];
-  n28 [label="100"];
-  n29 [label="100"];
+  n0 [label="PROG"];
+  n1 [label="LIST_FUNCTIONS"];
+  n1 [label="LIST_FUNCTIONS"];
+  n2 [label="func"];
+  n2 [label="func"];
+  n3 [label="main"];
+  n4 [label="PARAMS"];
+  n5 [label="LIST_INSTR"];
+  n5 [label="LIST_INSTR"];
+  n6 [label=":="];
+  n6 [label=":="];
+  n7 [label="object1"];
+  n8 [label="Create"];
+  n8 [label="Create"];
+  n9 [label="Rectangle"];
+  n10 [label="20"];
+  n11 [label="32"];
+  n12 [label="ATTRIBUTES"];
+  n12 [label="ATTRIBUTES"];
+  n13 [label="width"];
+  n13 [label="width"];
+  n14 [label="100"];
+  n15 [label="height"];
+  n15 [label="height"];
+  n16 [label="30"];
+  n17 [label="TIMEANNOTATION"];
+  n17 [label="TIMEANNOTATION"];
+  n18 [label="0"];
+  n19 [label="end"];
+  n19 [label="end"];
+  n20 [label="3"];
+  n21 [label=":="];
+  n21 [label=":="];
+  n22 [label="anim2"];
+  n23 [label="ANIMATION"];
+  n23 [label="ANIMATION"];
+  n24 [label="Translate"];
+  n25 [label="object1"];
+  n26 [label="100"];
+  n27 [label="100"];
 
-  n0 -> n1 // "LIST_FUNCTIONS" -> "func"
-  n1 -> n2 // "func" -> "main"
-  n1 -> n3 // "func" -> "PARAMS"
-  n1 -> n4 // "func" -> "LIST_INSTR"
-  n4 -> n5 // "LIST_INSTR" -> ":="
-  n5 -> n6 // ":=" -> "object1"
-  n5 -> n7 // ":=" -> "Create"
-  n7 -> n8 // "Create" -> "Rectangle"
-  n7 -> n9 // "Create" -> "20"
-  n7 -> n10 // "Create" -> "32"
-  n7 -> n11 // "Create" -> "ATTRIBUTES"
-  n11 -> n12 // "ATTRIBUTES" -> "width"
-  n12 -> n13 // "width" -> "100"
-  n11 -> n14 // "ATTRIBUTES" -> "height"
-  n14 -> n15 // "height" -> "30"
-  n4 -> n16 // "LIST_INSTR" -> "TIMEANNOTATION"
-  n16 -> n17 // "TIMEANNOTATION" -> "0"
-  n16 -> n18 // "TIMEANNOTATION" -> "end"
-  n18 -> n19 // "end" -> "3"
-  n4 -> n20 // "LIST_INSTR" -> "Translate"
-  n20 -> n21 // "Translate" -> "object1"
-  n20 -> n22 // "Translate" -> "100"
-  n20 -> n23 // "Translate" -> "100"
-  n4 -> n24 // "LIST_INSTR" -> ":="
-  n24 -> n25 // ":=" -> "anim1"
-  n24 -> n26 // ":=" -> "Move"
-  n26 -> n27 // "Move" -> "object1"
-  n26 -> n28 // "Move" -> "100"
-  n26 -> n29 // "Move" -> "100"
+  n0 -> n1 // "PROG" -> "LIST_FUNCTIONS"
+  n1 -> n2 // "LIST_FUNCTIONS" -> "func"
+  n2 -> n3 // "func" -> "main"
+  n2 -> n4 // "func" -> "PARAMS"
+  n2 -> n5 // "func" -> "LIST_INSTR"
+  n5 -> n6 // "LIST_INSTR" -> ":="
+  n6 -> n7 // ":=" -> "object1"
+  n6 -> n8 // ":=" -> "Create"
+  n8 -> n9 // "Create" -> "Rectangle"
+  n8 -> n10 // "Create" -> "20"
+  n8 -> n11 // "Create" -> "32"
+  n8 -> n12 // "Create" -> "ATTRIBUTES"
+  n12 -> n13 // "ATTRIBUTES" -> "width"
+  n13 -> n14 // "width" -> "100"
+  n12 -> n15 // "ATTRIBUTES" -> "height"
+  n15 -> n16 // "height" -> "30"
+  n5 -> n17 // "LIST_INSTR" -> "TIMEANNOTATION"
+  n17 -> n18 // "TIMEANNOTATION" -> "0"
+  n17 -> n19 // "TIMEANNOTATION" -> "end"
+  n19 -> n20 // "end" -> "3"
+  n5 -> n21 // "LIST_INSTR" -> ":="
+  n21 -> n22 // ":=" -> "anim2"
+  n21 -> n23 // ":=" -> "ANIMATION"
+  n23 -> n24 // "ANIMATION" -> "Translate"
+  n23 -> n25 // "ANIMATION" -> "object1"
+  n23 -> n26 // "ANIMATION" -> "100"
+  n23 -> n27 // "ANIMATION" -> "100"
 
 }

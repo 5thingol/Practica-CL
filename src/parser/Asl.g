@@ -42,7 +42,7 @@ BOOLEAN; // Boolean atom (for Boolean constants "true" or "false")
 // PVALUE; // Parameter by value in the list of parameters
 PREF; // Parameter by reference in the list of parameters
 TIMEANNOTATION;
-CREATE_INSTR;
+// CREATE_INSTR;
 ANIMATION;
 ACCESATTRIBUTE;
 ATTRIBUTES;
@@ -69,7 +69,7 @@ module_def : MODULE^ '"'! ID '"'! ';'!
 imports : (IMPORT^ '"'! ID '"'! ';'!)+
 ;
 
-list_func : func+ EOF -> ^(LIST_FUNCTIONS func+)
+list_func : func+ EOF-> ^(LIST_FUNCTIONS func+)
 ;
 
 // A function has a name, a list of parameters and a block of instructions
@@ -182,7 +182,7 @@ time_annotation:
 finish_time:
 (END^ EQUAL! expr | DURATION^ EQUAL! expr)
 ;
-create: CREATE TYPE_OBJECT coordenades? list_attributes? -> ^(CREATE_INSTR TYPE_OBJECT coordenades? ^(ATTRIBUTES list_attributes)?)
+create: CREATE TYPE_OBJECT coordenades? list_attributes? -> ^(CREATE TYPE_OBJECT coordenades? ^(ATTRIBUTES list_attributes)?)
 ;
 
 group: GROUP^ ID (','! ID)+

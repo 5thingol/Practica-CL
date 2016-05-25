@@ -1,4 +1,4 @@
-// $ANTLR 3.4 /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g 2016-05-25 14:13:13
+// $ANTLR 3.4 /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g 2016-05-25 14:47:28
 
 package parser;
 
@@ -11,6 +11,7 @@ import java.util.ArrayList;
 @SuppressWarnings({"all", "warnings", "unchecked"})
 public class AslLexer extends Lexer {
     public static final int EOF=-1;
+    public static final int T__68=68;
     public static final int T__69=69;
     public static final int T__70=70;
     public static final int T__71=71;
@@ -20,7 +21,6 @@ public class AslLexer extends Lexer {
     public static final int T__75=75;
     public static final int T__76=76;
     public static final int T__77=77;
-    public static final int T__78=78;
     public static final int ACCESATTRIBUTE=4;
     public static final int AND=5;
     public static final int ANIMATION=6;
@@ -33,59 +33,58 @@ public class AslLexer extends Lexer {
     public static final int COMMENT=13;
     public static final int COND_EQUAL=14;
     public static final int CREATE=15;
-    public static final int CREATE_INSTR=16;
-    public static final int DESTROY=17;
-    public static final int DIV=18;
-    public static final int DURATION=19;
-    public static final int ELSE=20;
-    public static final int ELSEIF=21;
-    public static final int END=22;
-    public static final int ENDFOR=23;
-    public static final int ENDFUNC=24;
-    public static final int ENDIF=25;
-    public static final int ENDWHILE=26;
-    public static final int EQUAL=27;
-    public static final int ESC_SEQ=28;
-    public static final int FALSE=29;
-    public static final int FOR=30;
-    public static final int FUNC=31;
-    public static final int FUNCALL=32;
-    public static final int GE=33;
-    public static final int GROUP=34;
-    public static final int GT=35;
-    public static final int ID=36;
-    public static final int IF=37;
-    public static final int IMPORT=38;
-    public static final int IN=39;
-    public static final int INT=40;
-    public static final int LE=41;
-    public static final int LIST_FUNCTIONS=42;
-    public static final int LIST_INSTR=43;
-    public static final int LT=44;
-    public static final int MINUS=45;
-    public static final int MOD=46;
-    public static final int MODIFY=47;
-    public static final int MODULE=48;
-    public static final int MOVE=49;
-    public static final int MUL=50;
-    public static final int NOT=51;
-    public static final int NOT_EQUAL=52;
-    public static final int OR=53;
-    public static final int PARAMS=54;
-    public static final int PLUS=55;
-    public static final int PREF=56;
-    public static final int PROG=57;
-    public static final int READ=58;
-    public static final int RETURN=59;
-    public static final int ROTATE=60;
-    public static final int STRING=61;
-    public static final int TIMEANNOTATION=62;
-    public static final int TRANSLATE=63;
-    public static final int TRUE=64;
-    public static final int TYPE_OBJECT=65;
-    public static final int WHILE=66;
-    public static final int WRITE=67;
-    public static final int WS=68;
+    public static final int DESTROY=16;
+    public static final int DIV=17;
+    public static final int DURATION=18;
+    public static final int ELSE=19;
+    public static final int ELSEIF=20;
+    public static final int END=21;
+    public static final int ENDFOR=22;
+    public static final int ENDFUNC=23;
+    public static final int ENDIF=24;
+    public static final int ENDWHILE=25;
+    public static final int EQUAL=26;
+    public static final int ESC_SEQ=27;
+    public static final int FALSE=28;
+    public static final int FOR=29;
+    public static final int FUNC=30;
+    public static final int FUNCALL=31;
+    public static final int GE=32;
+    public static final int GROUP=33;
+    public static final int GT=34;
+    public static final int ID=35;
+    public static final int IF=36;
+    public static final int IMPORT=37;
+    public static final int IN=38;
+    public static final int INT=39;
+    public static final int LE=40;
+    public static final int LIST_FUNCTIONS=41;
+    public static final int LIST_INSTR=42;
+    public static final int LT=43;
+    public static final int MINUS=44;
+    public static final int MOD=45;
+    public static final int MODIFY=46;
+    public static final int MODULE=47;
+    public static final int MOVE=48;
+    public static final int MUL=49;
+    public static final int NOT=50;
+    public static final int NOT_EQUAL=51;
+    public static final int OR=52;
+    public static final int PARAMS=53;
+    public static final int PLUS=54;
+    public static final int PREF=55;
+    public static final int PROG=56;
+    public static final int READ=57;
+    public static final int RETURN=58;
+    public static final int ROTATE=59;
+    public static final int STRING=60;
+    public static final int TIMEANNOTATION=61;
+    public static final int TRANSLATE=62;
+    public static final int TRUE=63;
+    public static final int TYPE_OBJECT=64;
+    public static final int WHILE=65;
+    public static final int WRITE=66;
+    public static final int WS=67;
 
     // delegates
     // delegators
@@ -102,15 +101,36 @@ public class AslLexer extends Lexer {
     }
     public String getGrammarFileName() { return "/home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g"; }
 
-    // $ANTLR start "T__69"
-    public final void mT__69() throws RecognitionException {
+    // $ANTLR start "T__68"
+    public final void mT__68() throws RecognitionException {
         try {
-            int _type = T__69;
+            int _type = T__68;
             int _channel = DEFAULT_TOKEN_CHANNEL;
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:6:7: ( '\"' )
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:6:9: '\"'
             {
             match('\"'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        	// do for sure before leaving
+        }
+    }
+    // $ANTLR end "T__68"
+
+    // $ANTLR start "T__69"
+    public final void mT__69() throws RecognitionException {
+        try {
+            int _type = T__69;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:7:7: ( '(' )
+            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:7:9: '('
+            {
+            match('('); 
 
             }
 
@@ -128,10 +148,10 @@ public class AslLexer extends Lexer {
         try {
             int _type = T__70;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:7:7: ( '(' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:7:9: '('
+            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:8:7: ( ')' )
+            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:8:9: ')'
             {
-            match('('); 
+            match(')'); 
 
             }
 
@@ -149,10 +169,10 @@ public class AslLexer extends Lexer {
         try {
             int _type = T__71;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:8:7: ( ')' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:8:9: ')'
+            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:9:7: ( ',' )
+            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:9:9: ','
             {
-            match(')'); 
+            match(','); 
 
             }
 
@@ -170,10 +190,10 @@ public class AslLexer extends Lexer {
         try {
             int _type = T__72;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:9:7: ( ',' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:9:9: ','
+            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:10:7: ( '.' )
+            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:10:9: '.'
             {
-            match(','); 
+            match('.'); 
 
             }
 
@@ -191,10 +211,10 @@ public class AslLexer extends Lexer {
         try {
             int _type = T__73;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:10:7: ( '.' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:10:9: '.'
+            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:11:7: ( ':' )
+            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:11:9: ':'
             {
-            match('.'); 
+            match(':'); 
 
             }
 
@@ -212,10 +232,10 @@ public class AslLexer extends Lexer {
         try {
             int _type = T__74;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:11:7: ( ':' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:11:9: ':'
+            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:12:7: ( ';' )
+            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:12:9: ';'
             {
-            match(':'); 
+            match(';'); 
 
             }
 
@@ -233,10 +253,10 @@ public class AslLexer extends Lexer {
         try {
             int _type = T__75;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:12:7: ( ';' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:12:9: ';'
+            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:13:7: ( '@' )
+            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:13:9: '@'
             {
-            match(';'); 
+            match('@'); 
 
             }
 
@@ -254,10 +274,10 @@ public class AslLexer extends Lexer {
         try {
             int _type = T__76;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:13:7: ( '@' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:13:9: '@'
+            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:14:7: ( '{' )
+            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:14:9: '{'
             {
-            match('@'); 
+            match('{'); 
 
             }
 
@@ -275,27 +295,6 @@ public class AslLexer extends Lexer {
         try {
             int _type = T__77;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:14:7: ( '{' )
-            // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:14:9: '{'
-            {
-            match('{'); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        	// do for sure before leaving
-        }
-    }
-    // $ANTLR end "T__77"
-
-    // $ANTLR start "T__78"
-    public final void mT__78() throws RecognitionException {
-        try {
-            int _type = T__78;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:15:7: ( '}' )
             // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:15:9: '}'
             {
@@ -310,7 +309,7 @@ public class AslLexer extends Lexer {
         	// do for sure before leaving
         }
     }
-    // $ANTLR end "T__78"
+    // $ANTLR end "T__77"
 
     // $ANTLR start "EQUAL"
     public final void mEQUAL() throws RecognitionException {
@@ -1880,86 +1879,86 @@ public class AslLexer extends Lexer {
     // $ANTLR end "WS"
 
     public void mTokens() throws RecognitionException {
-        // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:8: ( T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | EQUAL | COND_EQUAL | NOT_EQUAL | LT | LE | GT | GE | PLUS | MINUS | MUL | DIV | MOD | NOT | AND | OR | IF | ELSE | ELSEIF | ENDIF | WHILE | FOR | ENDWHILE | ENDFOR | IN | IMPORT | MODULE | FUNC | ENDFUNC | RETURN | READ | WRITE | TRUE | FALSE | BEGIN | END | DURATION | CREATE | GROUP | DESTROY | MOVE | TRANSLATE | MODIFY | ROTATE | TYPE_OBJECT | ATTRIBUTE | ID | INT | COMMENT | STRING | WS )
+        // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:8: ( T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | EQUAL | COND_EQUAL | NOT_EQUAL | LT | LE | GT | GE | PLUS | MINUS | MUL | DIV | MOD | NOT | AND | OR | IF | ELSE | ELSEIF | ENDIF | WHILE | FOR | ENDWHILE | ENDFOR | IN | IMPORT | MODULE | FUNC | ENDFUNC | RETURN | READ | WRITE | TRUE | FALSE | BEGIN | END | DURATION | CREATE | GROUP | DESTROY | MOVE | TRANSLATE | MODIFY | ROTATE | TYPE_OBJECT | ATTRIBUTE | ID | INT | COMMENT | STRING | WS )
         int alt10=60;
         alt10 = dfa10.predict(input);
         switch (alt10) {
             case 1 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:10: T__69
+                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:10: T__68
+                {
+                mT__68(); 
+
+
+                }
+                break;
+            case 2 :
+                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:16: T__69
                 {
                 mT__69(); 
 
 
                 }
                 break;
-            case 2 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:16: T__70
+            case 3 :
+                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:22: T__70
                 {
                 mT__70(); 
 
 
                 }
                 break;
-            case 3 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:22: T__71
+            case 4 :
+                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:28: T__71
                 {
                 mT__71(); 
 
 
                 }
                 break;
-            case 4 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:28: T__72
+            case 5 :
+                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:34: T__72
                 {
                 mT__72(); 
 
 
                 }
                 break;
-            case 5 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:34: T__73
+            case 6 :
+                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:40: T__73
                 {
                 mT__73(); 
 
 
                 }
                 break;
-            case 6 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:40: T__74
+            case 7 :
+                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:46: T__74
                 {
                 mT__74(); 
 
 
                 }
                 break;
-            case 7 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:46: T__75
+            case 8 :
+                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:52: T__75
                 {
                 mT__75(); 
 
 
                 }
                 break;
-            case 8 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:52: T__76
+            case 9 :
+                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:58: T__76
                 {
                 mT__76(); 
 
 
                 }
                 break;
-            case 9 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:58: T__77
+            case 10 :
+                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:64: T__77
                 {
                 mT__77(); 
-
-
-                }
-                break;
-            case 10 :
-                // /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/src/parser/Asl.g:1:64: T__78
-                {
-                mT__78(); 
 
 
                 }
@@ -2717,7 +2716,7 @@ public class AslLexer extends Lexer {
             this.transition = DFA10_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | EQUAL | COND_EQUAL | NOT_EQUAL | LT | LE | GT | GE | PLUS | MINUS | MUL | DIV | MOD | NOT | AND | OR | IF | ELSE | ELSEIF | ENDIF | WHILE | FOR | ENDWHILE | ENDFOR | IN | IMPORT | MODULE | FUNC | ENDFUNC | RETURN | READ | WRITE | TRUE | FALSE | BEGIN | END | DURATION | CREATE | GROUP | DESTROY | MOVE | TRANSLATE | MODIFY | ROTATE | TYPE_OBJECT | ATTRIBUTE | ID | INT | COMMENT | STRING | WS );";
+            return "1:1: Tokens : ( T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | EQUAL | COND_EQUAL | NOT_EQUAL | LT | LE | GT | GE | PLUS | MINUS | MUL | DIV | MOD | NOT | AND | OR | IF | ELSE | ELSEIF | ENDIF | WHILE | FOR | ENDWHILE | ENDFOR | IN | IMPORT | MODULE | FUNC | ENDFUNC | RETURN | READ | WRITE | TRUE | FALSE | BEGIN | END | DURATION | CREATE | GROUP | DESTROY | MOVE | TRANSLATE | MODIFY | ROTATE | TYPE_OBJECT | ATTRIBUTE | ID | INT | COMMENT | STRING | WS );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
