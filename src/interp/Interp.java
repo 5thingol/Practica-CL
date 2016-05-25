@@ -103,6 +103,7 @@ public class Interp {
     /** Runs the program by calling the main function without parameters. */
     public void Run() {
         executeFunction ("main", null);
+        svgParser.writeSVGFile();
     }
 
     /** Returns the contents of the stack trace */
@@ -226,6 +227,8 @@ public class Interp {
         assert t != null;
         Data result = null;
         int ninstr = t.getChildCount();
+        System.out.println(ninstr);
+        System.out.println("execute");
         for (int i = 0; i < ninstr; ++i) {
             result = executeInstruction (t.getChild(i));
 
@@ -264,6 +267,7 @@ public class Interp {
             case AslLexer.GROUP:
                 return null;
             case AslLexer.TIMEANNOTATION:
+                System.out.println("entra time");
                 currentTimeAnnotation = new TimeAnnotation();
                 currentTimeAnnotation.begin = (double) t.getChild(0).getIntValue();
                 if (t.getChild(1) != null) {
@@ -284,7 +288,7 @@ public class Interp {
                 return null;
             // Assignment
             case AslLexer.ASSIGN:
-                
+                System.out.println("assign");
                 value = null;
                 if (t.getChild(1).getType() == AslLexer.CREATE) {
                     value = createObject(t.getChild(1));
@@ -302,6 +306,7 @@ public class Interp {
                 } else
                     value = evaluateExpression(t.getChild(1));
                 Stack.defineVariable (t.getChild(0).getText(), value);
+                System.out.println("acaba assign");
                 return null;
 
             // If-then-else
@@ -449,9 +454,7 @@ public class Interp {
 
     private Data createAnimation(AslTree t) 
     {
-        AslTree node = t.getChild(0);
-        String tipus = node.getText();
-
+        String tipus = t.getChild(0).getText();
         String idObject = ""; 
         double begin = currentTimeAnnotation.begin; 
         double end = currentTimeAnnotation.begin+currentTimeAnnotation.duration; 
@@ -466,52 +469,52 @@ public class Interp {
         switch(tipus){
             
             case "Destroy":
-            idObject = node.getChild(0).getText();
+            idObject = t.getChild(1).getText();
             break;
 
             case "Move":
-            idObject = node.getChild(0).getText();
-            x = node.getChild(1).getIntValue();
-            y = node.getChild(2).getIntValue();
+            idObject = t.getChild(1).getText();
+            x = t.getChild(2).getIntValue();
+            y = t.getChild(3).getIntValue();
             break;
 
             case "Translate":
-            //System.out.println(node.getChild(0));
-            idObject = node.getChild(0).getText();
+            //System.out.println(t.getChild(0));
+            idObject = t.getChild(1).getText();
             object = Stack.getVariable(idObject);
-            x = object.getObjectCoordX() + node.getChild(1).getIntValue();
-            y = object.getObjectCoordY() + node.getChild(2).getIntValue();
+            x = object.getObjectCoordX() + t.getChild(2).getIntValue();
+            y = object.getObjectCoordY() + t.getChild(3).getIntValue();
             break;
 
             case "Rotation":
-            idObject = node.getChild(0).getText();
-            rotation = node.getChild(1).getIntValue();
+            idObject = t.getChild(1).getText();
+            rotation = t.getChild(2).getIntValue();
             break;
 
             case "Modify":
-            idObject = node.getChild(0).getText();
+            idObject = t.getChild(1).getText();
             object = Stack.getVariable(idObject);
-            attribute = node.getChild(1).getText();
+            attribute = t.getChild(2).getText();
             switch(attribute){
                 
                 case "width":
                 from = Integer.toString(object.getObjectCoordX());
-                to = node.getChild(1).getChild(0).getText();
+                to = t.getChild(2).getChild(0).getText();
                 break;
 
                 case "height":
                 from = Integer.toString(object.getObjectCoordY());
-                to = node.getChild(1).getChild(0).getText();
+                to = t.getChild(2).getChild(0).getText();
                 break;
 
                 case "color":
                 from = object.getObjectColor();
-                to = node.getChild(1).getChild(0).getText();
+                to = t.getChild(2).getChild(0).getText();
                 break;
 
             }
-            if (t.getChildCount() > 2){
-                novaAnimacio(node,idObject,2,t.getChildCount(), tipus, begin, end);
+            if (t.getChildCount() > 3){
+                novaAnimacio(t,idObject,3,t.getChildCount(), tipus, begin, end);
             }
 
 

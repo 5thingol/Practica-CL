@@ -73,6 +73,7 @@ public class SVGParser {
 
 	/** Crea un objecte de tipus SVG amb la data data com a propietats inicials */
 	public void createSVGObject(String id, Data data) {
+		System.out.println("create object");
 		List<Animation> dades = SVGObjects.get(id);
       	List<Animation> newDades = new ArrayList<Animation>();
       	Animation anim = new Animation("InitialProperties",data);
@@ -232,6 +233,7 @@ public class SVGParser {
 	}
 
 	private void writeObjectToSVGFile(String id, List<Animation> dades) {
+		System.out.print("write object");
 		String newObject = "<";
 		Data initialProperties = dades.get(0).data;
 		if (initialProperties.getObjectGroup() != null) {
