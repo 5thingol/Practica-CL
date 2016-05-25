@@ -212,6 +212,8 @@ public class Interp {
         // Destroy the activation record
         Stack.popActivationRecord();
 
+        svgParser.clearObjects();
+
         return result;
     }
 
@@ -250,7 +252,7 @@ public class Interp {
         
         setLineNumber(t);
         Data value; // The returned value
-        
+        System.out.println(t.getType());
         if ((t.getType() != AslLexer.ANIMATION && (t.getChild(1) != null && t.getChild(1).getType() != AslLexer.ANIMATION ) )  && currentTimeAnnotation != null) {
             throw new RuntimeException("Bad placement of Time Annotation: not followed by an animation instruction (Move, Tranlate, Rotate, Modify or Destroy)");
         }
@@ -285,6 +287,7 @@ public class Interp {
                 Stack.defineVariable ("newAnimation"+newId, newAnimation);
                 svgParser.addSVGAnimation(newAnimation.getAnimationIdObject(),"newAnimation"+newId, newAnimation);
                 newId++;
+                currentTimeAnnotation = null;
                 return null;
             // Assignment
             case AslLexer.ASSIGN:
@@ -300,9 +303,9 @@ public class Interp {
                     }
                     svgParser.createSVGGroup(t.getChild(0).getText(), idObjects);
                 } else if (t.getChild(1).getType() == AslLexer.ANIMATION) {
-
                     value = createAnimation(t.getChild(1));
                     svgParser.addSVGAnimation(value.getAnimationIdObject(), t.getChild(0).getText(), value);
+                    currentTimeAnnotation = null;
                 } else
                     value = evaluateExpression(t.getChild(1));
                 Stack.defineVariable (t.getChild(0).getText(), value);
@@ -404,27 +407,27 @@ public class Interp {
 	}
 	if (t.getChild(child).getType() == AslLexer.ATTRIBUTES)
 	{
-	  for (int i = 0; i < t.getChildCount(); ++i){
-	    switch(t.getText())  {
+	  for (int i = 0; i < t.getChild(child).getChildCount(); ++i){
+	    switch(t.getChild(child).getChild(i).getText())  {
 	      
 	      case "width":
-	      width = t.getChild(i).getIntValue();
+	      width = t.getChild(child).getChild(i).getChild(0).getIntValue();
 	      break;
 
 	      case "height":
-	      height = t.getChild(i).getIntValue();
+          height = t.getChild(child).getChild(i).getChild(0).getIntValue();
 	      break;
 
 	      case "color":
-	      color = t.getChild(i).getText();
+          color = t.getChild(child).getChild(i).getChild(0).getText();
 	      break;
 	      
 	      case "txt":
-	      text = t.getChild(i).getText();
+          text = t.getChild(child).getChild(i).getChild(0).getText();
 	      break;
 
 	      case "style":
-	      String s = t.getChild(i).getText();
+          String s = t.getChild(child).getChild(i).getChild(0).getText();
 	      String[] parts = s.split(";");
 	      String[] st;
 	      for(int j = 0; j < parts.length; ++j) {
@@ -449,7 +452,8 @@ public class Interp {
 	    }
 	  }
 	}
-      return new Data(tipus, x, y, width, height, color, rotation,rx, ry, text);
+      Data data = new Data(tipus, x, y, width, height, color, rotation,rx, ry, text);
+      return data;
     }
 
     private Data createAnimation(AslTree t) 

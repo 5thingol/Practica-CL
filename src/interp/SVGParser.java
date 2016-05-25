@@ -60,7 +60,7 @@ public class SVGParser {
 	private HashMap<String, List<Animation> > SVGObjects;
 	
 	public SVGParser() {
-		filename = "SimpleAnimation.svg";
+		filename = "SimpleAnimation";
 		SVG = "";
 		SVGObjects = new HashMap<String, List<Animation> >();
 	}
@@ -73,7 +73,8 @@ public class SVGParser {
 
 	/** Crea un objecte de tipus SVG amb la data data com a propietats inicials */
 	public void createSVGObject(String id, Data data) {
-		System.out.println("create object");
+ 		System.out.print("creating "+data.getTipusObject());
+
 		List<Animation> dades = SVGObjects.get(id);
       	List<Animation> newDades = new ArrayList<Animation>();
       	Animation anim = new Animation("InitialProperties",data);
@@ -81,6 +82,7 @@ public class SVGParser {
         if (dades == null) {
         	SVGObjects.put(id, newDades); 
 		} else {
+			System.out.println("substitute object");
         	writeObjectToSVGFile(id, dades);
         	SVGObjects.put(id,newDades);
         } 
@@ -118,6 +120,7 @@ public class SVGParser {
 		for (Entry<String, List<Animation> > entry : SVGObjects.entrySet()) {
     		String key = entry.getKey();
 	    	List<Animation> dades = entry.getValue();
+	    	System.out.println("Clearing objects");
 	    	writeObjectToSVGFile(key, dades);
 		}
 		SVGObjects.clear();
@@ -168,9 +171,9 @@ public class SVGParser {
 		if (!anim.isAnimation()) throw new RuntimeException("Added element to object is not an animation");
 		String animation = "<animate";																// Animation element
 
-		animation += " id=\"" + a.id + "\"";														// Animation id
 		
 		if (anim.getTipusAnimation().equals("Modify")) {
+			animation += " id=\"" + a.id + "\"";														// Animation id
 			
 			if (anim.getAnimationAttribute() == null) throw new RuntimeException("Modify animation has no attribute");
 			if (anim.getAnimationFrom() == null) throw new RuntimeException("Modify animation has no from attribute");
@@ -182,7 +185,8 @@ public class SVGParser {
 				+ "s\"";
 		
 		} else if (anim.getTipusAnimation().equals("Move")) {
-			
+			animation += " id=\"" + a.id + "\"";														// Animation id
+		
 			//if (anim.getAnimationCoordX() == null) throw new RuntimeException("Move animation has no X coordinate");
 			//if (anim.getAnimationCoordY() == null) throw new RuntimeException("Move animation has no Y coordinate");
 
@@ -197,17 +201,19 @@ public class SVGParser {
 				(anim.getAnimationEnd() - anim.getAnimationBegin()) + "s\"";
 
 		} else if (anim.getTipusAnimation().equals("Translate")) { // QUAN HI HAGI TRANSLATE -> ANIMATEMOTION
-			
+			animation += "Transform id=\"" + a.id + "\"";														// Animation id
+
 			//if (anim.getAnimationCoordX() == null) throw new RuntimeException("Translate animation has no X coordinate");
 			//if (anim.getAnimationCoordY() == null) throw new RuntimeException("Translate animation has no Y coordinate");
 
-			animation += "Transform attributeName=\"transform\" attributeType=\"XML\" type=\"translate\" to=\"" 
+			animation += " attributeName=\"transform\" attributeType=\"XML\" type=\"translate\" to=\"" 
 				+ anim.getAnimationCoordX() + " " + anim.getAnimationCoordY() + "\" begin=\"" + anim.getAnimationBegin() + 
 				"s\" dur=\"" + (anim.getAnimationEnd() - anim.getAnimationBegin()) + "s\"";
 			
 		} else if (anim.getTipusAnimation().equals("Rotate")) {
-			
-			animation += "Transform attributeName=\"transform\" attributeType=\"XML\" type=\"rotate\" to=\"" 
+			animation += "Transform id=\"" + a.id + "\"";														// Animation id
+
+			animation += " attributeName=\"transform\" attributeType=\"XML\" type=\"rotate\" to=\"" 
 				+ anim.getAnimationRotation() + "\" begin=\"" + anim.getAnimationBegin() + "s\" dur=\"" 
 				+ (anim.getAnimationEnd() - anim.getAnimationBegin()) + "s\"";
 		
@@ -218,7 +224,7 @@ public class SVGParser {
 		}
 
 		// TODO: DEBUUG
-		if (anim.getAnimationFill() != null) animation += "fill=\"" + anim.getAnimationFill() + "\"/>";
+		if (anim.getAnimationFill() != null) animation += " fill=\"" + anim.getAnimationFill() + "\"/>";
 		return animation;
 	}
 
@@ -233,23 +239,23 @@ public class SVGParser {
 	}
 
 	private void writeObjectToSVGFile(String id, List<Animation> dades) {
-		System.out.print("write object");
 		String newObject = "<";
 		Data initialProperties = dades.get(0).data;
+		System.out.print(dades.get(0).data);
 		if (initialProperties.getObjectGroup() != null) {
 			newObject += "defs><";
 		}
 
 		String basicShape = toSvgBasicShape(initialProperties.getTipusObject());
 		newObject += basicShape;
-		newObject += propertiesToString(initialProperties) + ">";
+		newObject += propertiesToString(initialProperties) + ">\n";
 		
 		dades.remove(0);
 
 		if (initialProperties.getTipusObject().equals("Group")) {
 			SVGGroup group = (SVGGroup) dades.get(0);
 			for (String s : group.getObjectsIds()) {
-				newObject += "<use xlink:href=\"#" + s + "\"></use>";
+				newObject += "<use xlink:href=\"#" + s + "\"></use>\n";
 			}
 		}
 
@@ -257,10 +263,10 @@ public class SVGParser {
 			newObject += animationToString(anim);
 		}
 
-		newObject += "</" + basicShape + ">";
+		newObject += "</" + basicShape + ">\n";
 
 		if (initialProperties.getObjectGroup() != null) {
-			newObject += "</defs>";
+			newObject += "</defs>\n";
 		}
 
 		SVG = SVG + newObject;
@@ -269,7 +275,7 @@ public class SVGParser {
 
 	/** Retorna la capcalera que ha de tenir el fitxer SVG */
 	private String getCapcalera() {
-		return "<svg>";
+		return "<svg width=\"400\" height=\"200\">\n";
 	}
 
 	/** Escriu el fitxer SVG final. S'ha de cridar al final de l'excecucio del programa*/

@@ -12,7 +12,10 @@ func createAnimatedCircle(x, r)
 endfunc
 
 func main()
+	x = 10;
+	y = 20;
 	r = Create Rectangle {x,y};	// <svg Cirle
+	@begin=0, end=1;
 	Translate r {3,3}; 
 	r = Create Rectangle {10,20};
 

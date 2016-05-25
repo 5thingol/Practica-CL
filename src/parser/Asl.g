@@ -63,10 +63,10 @@ prog : imports? list_func -> ^(PROG imports? list_func)
     | module_def imports? list_func -> ^(PROG module_def imports? list_func)
 ;
 
-module_def : MODULE^ '"'! ID '"'! ';'!
+module_def : MODULE^ ID ';'!
 ;
 
-imports : (IMPORT^ '"'! ID '"'! ';'!)+
+imports : (IMPORT^ ID '.sam'! ';'!)+
 ;
 
 list_func : func+ EOF-> ^(LIST_FUNCTIONS func+)

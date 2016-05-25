@@ -96,6 +96,7 @@ public class Data {
         radiy = ry;
         text = txt;
         group = null;
+        this.tipus = tipus;
     }
 
     /** Constructors for animation data */

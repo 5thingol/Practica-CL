@@ -160,7 +160,7 @@ public class Asl{
     private static  AslTree getModuleTree(String moduleName) {
         CharStream input = null;
         try {
-            input = new ANTLRFileStream(moduleName);
+            input = new ANTLRFileStream("examples/" + moduleName + ".sam");
         } catch (IOException e) {
             System.err.println ("Error: module file " + moduleName + " could not be opened.");
             System.exit(1);
@@ -178,7 +178,7 @@ public class Asl{
         try {
             result = parser.prog();
         } catch (Exception e) {} // Just catch the exception (nothing to do)
-        
+
         // Check for parsing errors
         int nerrors = parser.getNumberOfSyntaxErrors();
         if (nerrors > 0) {

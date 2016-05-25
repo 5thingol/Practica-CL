@@ -1,0 +1,5 @@
+module Rain;
+
+func CreateRain() 
+	Create Rectangle {10,10};
+endfunc
