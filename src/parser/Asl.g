@@ -132,8 +132,8 @@ while_stmt :    WHILE^ '('! expr ')'! block_instructions ENDWHILE!
 for_stmt :  FOR^ '('! for_form ')'! block_instructions ENDFOR!
 ;
 
-for_form:  assign ';'! expr ';'! assign 
-    |  ID IN! expr ':'! expr
+for_form:  assign ';'! expr ';'! assign
+    |  ID IN! expr ':'! expr 
     ;
 
 
@@ -182,9 +182,8 @@ time_annotation:
 finish_time:
 (END^ EQUAL! expr | DURATION^ EQUAL! expr)
 ;
-create: CREATE TYPE_OBJECT coordenades? list_attributes? -> ^(CREATE TYPE_OBJECT coordenades? ^(ATTRIBUTES list_attributes)?)
+create: CREATE TYPE_OBJECT coordenades? radis? list_attributes? -> ^(CREATE TYPE_OBJECT coordenades? radis? ^(ATTRIBUTES list_attributes)?)
 ;
-
 group: GROUP^ ID (','! ID)+
 ;
 destroy: DESTROY ID -> ^(ANIMATION DESTROY ID)
@@ -202,6 +201,10 @@ list_attributes: attribute (','! attribute)*
 attribute: ATTRIBUTE^ EQUAL! expr
 ;
 coordenades: '{'! expr ','! expr '}'!
+;
+radis: '('! expr (')'! | radi2)
+;
+radi2: ','! expr ')'!
 ;
 acces_attribute: ID '.' att '(' ')' -> ^(ACCESATTRIBUTE ID att)
 ;
@@ -257,7 +260,7 @@ TRANSLATE : 'Translate';
 MODIFY : 'Modify';
 ROTATE : 'Rotate';
 TYPE_OBJECT : 'Rectangle' | 'Circle' | 'Text' | 'Ellipse' | 'Line' ; // AMPLIAT
-ATTRIBUTE : 'width' | 'height' | 'style' | 'color' ; // A AMPLIAR
+ATTRIBUTE : 'width' | 'height' | 'style' | 'color' | 'stroke-width'; // A AMPLIAR
 ID :    ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'0'..'9'|'_')* ;
 INT :   '0'..'9'+ ;
 // C-style comments
