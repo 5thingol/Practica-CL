@@ -60,6 +60,7 @@ public class Data {
     private int rotation;
     private String fill;
     private String group;
+    private int strokeWidth;
 
     // FALTA AFEGIR EL VALOR TEXT PER GUARDAR EL TEXT DELS OBJECTES TIPUS TEXT
     private String text;
@@ -83,7 +84,7 @@ public class Data {
     Data() {type = Type.VOID; }
 
     /** Constructor for object data */
-    Data(String tipus, int cx, int cy, int w, int h, String f, int r, int rx, int ry, String txt)
+    Data(String tipus, int cx, int cy, int w, int h, String f, int r, int sW, int rx, int ry, String txt)
     {
         type = Type.OBJECT;
         x = cx;
@@ -92,6 +93,7 @@ public class Data {
         height = h;
         fill = f;
         rotation = r;
+        strokeWidth = sW;
         radix = rx;
         radiy = ry;
         text = txt;
@@ -208,6 +210,11 @@ public class Data {
     public int getObjectRotation() {
         assert type == Type.OBJECT;
         return rotation;
+    }
+
+    public int getObjectStroke() {
+        assert type == Type.OBJECT;
+        return strokeWidth;
     }
 
     public String getObjectGroup() {

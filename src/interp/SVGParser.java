@@ -91,7 +91,7 @@ public class SVGParser {
 	/** Crea un grup agrupant diversos objectes */
 	public void createSVGGroup(String id, List<String> idObjects) {
 		String n = null;
-		Data newData = new Data("Group",-1,-1,-1,-1,n,-1,-1,-1, n);
+		Data newData = new Data("Group",-1,-1,-1,-1,n,-1,-1,-1, -1, n);
 		SVGGroup group = new SVGGroup(id, newData);
 		group.setObjectsIds(idObjects);
 
@@ -156,6 +156,7 @@ public class SVGParser {
 		}
 		
 		if (data.getObjectColor() != null) properties += " fill=\"" + data.getObjectColor() + "\"";
+		if (data.getObjectStroke() != 0) properties += " stroke-width= \"" + data.getObjectStroke() + "\"";
 		properties += " transform=\"rotate(" + data.getObjectRotation() + ")\"";
 		
 
@@ -201,14 +202,14 @@ public class SVGParser {
 				(anim.getAnimationEnd() - anim.getAnimationBegin()) + "s\"";
 
 		} else if (anim.getTipusAnimation().equals("Translate")) { // QUAN HI HAGI TRANSLATE -> ANIMATEMOTION
-			animation += "Transform id=\"" + a.id + "\"";														// Animation id
+			animation += "Motion id=\"" + a.id + "\"";														// Animation id
 
 			//if (anim.getAnimationCoordX() == null) throw new RuntimeException("Translate animation has no X coordinate");
 			//if (anim.getAnimationCoordY() == null) throw new RuntimeException("Translate animation has no Y coordinate");
 
-			animation += " attributeName=\"transform\" attributeType=\"XML\" type=\"translate\" to=\"" 
-				+ anim.getAnimationCoordX() + " " + anim.getAnimationCoordY() + "\" begin=\"" + anim.getAnimationBegin() + 
-				"s\" dur=\"" + (anim.getAnimationEnd() - anim.getAnimationBegin()) + "s\"";
+			animation += " path=\"M 0 0 L "+  anim.getAnimationCoordX() + " " + anim.getAnimationCoordY() 
+			+ "\" begin=\"" + anim.getAnimationBegin() + "s\" dur=\"" + (anim.getAnimationEnd() - anim.getAnimationBegin()) 
+			+ "s\"";
 			
 		} else if (anim.getTipusAnimation().equals("Rotate")) {
 			animation += "Transform id=\"" + a.id + "\"";														// Animation id
