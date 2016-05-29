@@ -1,0 +1,9 @@
+module ParticleSytem;
+
+func CreateParticleSystem(particle, animation, nParticles, x0, y0, x1, y1)
+	
+	for (i in 1:nParticles)
+		
+	endfor
+
+endfunc

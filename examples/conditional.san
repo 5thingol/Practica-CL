@@ -1,19 +1,21 @@
 func main()
-	r = Create Rectangle {400,300} stroke-width="30",
-	if (id.stroke-width == 30) 
+	r = Create Rectangle {400,300} width=20,height=20,stroke-width="30";
+	if (r.stroke-width() == 30) 
+		@begin=0, end=3;
+		Modify r color="blue";
+	endif
 
-	Modify r color="blue"->"red",
-	@begin=0, end=3
-	anim1 = Move r {300,200}
+	@begin=0, end=3;
+	anim1 = Move r {300,200};
 	
 	if (anim1.width() < 400)
-		@begin=3, duration=1
-		Translate r {5,10} 
+		@begin=3, duration=1;
+		Translate r {5,10};
 	elseif (r.color() == blue)
-		@begin=3, end=5
-		Modify r color=red
+		@begin=3, end=5;
+		Modify r color=red;
 	else
-		@begin=3
-		Destroy r
+		@begin=3;
+		Destroy r;
 	endif
 endfunc

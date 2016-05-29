@@ -46,6 +46,8 @@ TIMEANNOTATION;
 ANIMATION;
 ACCESATTRIBUTE;
 ATTRIBUTES;
+DEFINES;
+IMPORTS;
 }
 
 @header {
@@ -59,15 +61,25 @@ package parser;
 
 // A program is a possible import and a list of functions
 // or a module
-prog : imports? list_func -> ^(PROG imports? list_func)
-    | module_def imports? list_func -> ^(PROG module_def imports? list_func)
+prog : imports defines list_func -> ^(PROG imports defines list_func)
+    | module_def imports defines list_func -> ^(PROG module_def imports defines list_func)
 ;
 
 module_def : MODULE^ ID ';'!
 ;
 
-imports : (IMPORT^ ID '.sam'! ';'!)+
+imports : iimport* -> ^(IMPORTS iimport*)
 ;
+
+iimport : IMPORT! FILE ';'!
+;
+
+defines : define* -> ^(DEFINES define*)
+;
+
+define : DEFINE ID STRING list_attributes? ';' -> ^(DEFINE ID STRING ^(ATTRIBUTES list_attributes?))
+;
+
 
 list_func : func+ EOF-> ^(LIST_FUNCTIONS func+)
 ;
@@ -94,6 +106,7 @@ block_instructions
 instruction
 :   assign // Assignment
 | basic_instruction // Basic SVG instruction
+| source
 | ite_stmt // if-then-else
 | while_stmt // while statement
 | for_stmt 
@@ -114,6 +127,7 @@ create
 | translate
 | modify
 | rotate
+| scale
 ;
 // if-then-else (else is optional)
 ite_stmt :  IF^ '('! expr ')'! block_instructions elseif_stmt else_stmt ENDIF!
@@ -182,7 +196,9 @@ time_annotation:
 finish_time:
 (END^ EQUAL! expr | DURATION^ EQUAL! expr)
 ;
-create: CREATE TYPE_OBJECT coordenades? radis? list_attributes? -> ^(CREATE TYPE_OBJECT coordenades? radis? ^(ATTRIBUTES list_attributes)?)
+create: CREATE tipus_objecte coordenades? radis? list_attributes? -> ^(CREATE tipus_objecte coordenades? radis? ^(ATTRIBUTES list_attributes)?)
+;
+tipus_objecte: TYPE_OBJECT | ID
 ;
 group: GROUP^ ID (','! ID)+
 ;
@@ -196,9 +212,15 @@ modify: MODIFY ID list_attributes -> ^(ANIMATION MODIFY ID list_attributes)
 ;
 rotate: ROTATE ID expr -> ^(ANIMATION ROTATE ID expr)
 ;
+scale: SCALE ID expr -> ^(ANIMATION SCALE ID expr)
+;
+//apply : APPLY^ ID 'to'! ID
+//;
+source: SOURCE^ FILE '('! (expr (','! expr)* )? ')'!
+;
 list_attributes: attribute (','! attribute)*
 ;
-attribute: ATTRIBUTE^ EQUAL! expr
+attribute: ATTRIBUTE^ EQUAL! (expr|STRING)
 ;
 coordenades: '{'! expr ','! expr '}'!
 ;
@@ -240,8 +262,9 @@ FOR : 'for' ;
 ENDWHILE: 'endwhile' ;
 ENDFOR : 'endfor' ;
 IN :    'in' ; 
-IMPORT : 'import';
 MODULE : 'module';
+IMPORT : 'import';
+DEFINE : 'define';
 FUNC : 'func' ;
 ENDFUNC : 'endfunc' ;
 RETURN : 'return' ;
@@ -259,9 +282,12 @@ MOVE : 'Move';
 TRANSLATE : 'Translate';
 MODIFY : 'Modify';
 ROTATE : 'Rotate';
+SCALE : 'Scale' ;
+SOURCE : 'Source';
 TYPE_OBJECT : 'Rectangle' | 'Circle' | 'Text' | 'Ellipse' | 'Line' ; // AMPLIAT
 ATTRIBUTE : 'width' | 'height' | 'style' | 'color' | 'stroke-width'; // A AMPLIAR
 ID :    ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'0'..'9'|'_')* ;
+FILE :    ('a'..'z'|'A'..'Z'|'0'..'9'|'_')+ '.'  ('a'..'z'|'A'..'Z'|'0'..'9'|'_')+;
 INT :   '0'..'9'+ ;
 // C-style comments
 COMMENT : '//' ~('\n'|'\r')* '\r'? '\n' {$channel=HIDDEN;}

@@ -113,61 +113,64 @@ public class Asl{
             }
             output.close();
         }
-
-        // Start interpretation (only if execution required)
+                // Start interpretation (only if execution required)
         if (execute) {
-            // Creates and prepares the interpreter
-            Interp I = null;
-            int linenumber = -1;
-            try {
-                t = importModules(t);
-                System.out.println(t.getChild(0).getType());
+            t = importModules(t);
+            executeTree(t);
+        } 
 
-                I = new Interp(t.getChild(0), tracefile); // prepares the interpreter
-                I.Run();                  // Executes the code
-            } catch (RuntimeException e) {
-                if (I != null) linenumber = I.lineNumber();
-                System.err.print ("Runtime error");
-                if (linenumber < 0) System.err.print (": ");
-                else System.err.print (" (" + infile + ", line " + linenumber + "): ");
-                System.err.println (e.getMessage() + ".");
-                if (I != null) System.err.format (I.getStackTrace());
-            } catch (StackOverflowError e) {
-                if (I != null) linenumber = I.lineNumber();
-                System.err.print("Stack overflow error");
-                if (linenumber < 0) System.err.print (".");
-                else System.err.println (" (" + infile + ", line " + linenumber + ").");
-                if (I != null) System.err.format (I.getStackTrace(5));
-            }
+    }
+
+    public static void executeTree(AslTree t) {
+        // Creates and prepares the interpreter
+        Interp I = null;
+        int linenumber = -1;
+        try {
+            I = new Interp(t, tracefile); // prepares the interpreter
+            I.Run();                  // Executes the code
+        } catch (RuntimeException e) {
+            if (I != null) linenumber = I.lineNumber();
+            System.err.print ("Runtime error");
+            if (linenumber < 0) System.err.print (": ");
+            else System.err.print (" (" + infile + ", line " + linenumber + "): ");
+            System.err.println (e.getMessage() + ".");
+            if (I != null) System.err.format (I.getStackTrace());
+        } catch (StackOverflowError e) {
+            if (I != null) linenumber = I.lineNumber();
+            System.err.print("Stack overflow error");
+            if (linenumber < 0) System.err.print (".");
+            else System.err.println (" (" + infile + ", line " + linenumber + ").");
+            if (I != null) System.err.format (I.getStackTrace(5));
         }
     }
 
     /** Takes the tree and substitutes the import(s) (if present) for all its functions and includes */
     private static AslTree importModules(AslTree t) {
         int importsIndex = 0;
-        if (t.getChildCount() == 1) return t;
-        else if (t.getChild(0).getType() == AslLexer.MODULE) importsIndex++; // It's a module definition: import all the imports and return the list_func tree
+        if (t.getChild(0).getType() == AslLexer.MODULE) importsIndex++; // It's a module definition: import all the imports and return the list_func tree
+        if (t.getChild(importsIndex).getChildCount() == 0) return t;
         
-        if (t.getChild(importsIndex).getType() == AslLexer.IMPORT) {
+        if (t.getChild(importsIndex).getType() == AslLexer.IMPORTS) {
             AslTree importedT = t.getChild(importsIndex);
             for (int i = 0; i < importedT.getChildCount(); ++i) {
-                AslTree moduleTree = getModuleTree(importedT.getChild(i).getText());
+                AslTree moduleTree = getFileTree(importedT.getChild(i).getText());
 
-                List<AslTree> funcs = moduleTree.getChild(1).getChildren();
-                t.getChild(importsIndex+1).addChildren(funcs);
+                List<AslTree> defs = moduleTree.getChild(2).getChildren();
+                if (defs != null) t.getChild(importsIndex+1).addChildren(defs);
+                List<AslTree> funcs = moduleTree.getChild(3).getChildren();
+                if (funcs != null) t.getChild(importsIndex+2).addChildren(funcs);
             }
-            t.deleteChild(importsIndex);
         }
         return t;
     }
 
     /** Open the module file and import its contents */
-    private static  AslTree getModuleTree(String moduleName) {
+    public static AslTree getFileTree(String fileName) {
         CharStream input = null;
         try {
-            input = new ANTLRFileStream("examples/" + moduleName + ".sam");
+            input = new ANTLRFileStream("examples/" + fileName);
         } catch (IOException e) {
-            System.err.println ("Error: module file " + moduleName + " could not be opened.");
+            System.err.println ("Error: file " + fileName + " could not be opened.");
             System.exit(1);
         }
 
@@ -187,7 +190,7 @@ public class Asl{
         // Check for parsing errors
         int nerrors = parser.getNumberOfSyntaxErrors();
         if (nerrors > 0) {
-            System.err.println (nerrors + " errors detected in the module" + moduleName + ". " +
+            System.err.println (nerrors + " errors detected in the file " + fileName + ". " +
                                 "The program has not been executed.");
             System.exit(1);
         }

@@ -28,6 +28,9 @@
 package interp;
 
 import parser.*;
+import Asl.*;
+
+import java.util.Random;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -82,6 +85,14 @@ public class Interp {
      */
     public Interp(AslTree T, String tracefile) {
         assert T != null;
+
+        // Add the definitions to the SVG file
+        svgParser = new SVGParser();
+        if (T.getChild(1).getType() == AslLexer.DEFINES) {
+            svgParser.addDefinitions(T.getChild(1));
+        } 
+
+        T = T.getChild(2);
         MapFunctions(T);  // Creates the table to map function names into AST nodes
         PreProcessAST(T); // Some internal pre-processing ot the AST
         Stack = new Stack(); // Creates the memory of the virtual machine
@@ -96,8 +107,6 @@ public class Interp {
             }
         }
         function_nesting = -1;
-
-        svgParser = new SVGParser();
     }
 
     /** Runs the program by calling the main function without parameters. */
@@ -266,19 +275,27 @@ public class Interp {
                 svgParser.createSVGObject("newObject"+newId, newObject);
                 newId++;
                 return null;
+            case AslLexer.DESTROY:
+                value = createAnimation(t);
+                svgParser.addSVGAnimation(value.getAnimationIdObject(),"newAnimation"+newId, value);
+                newId++;
+                return null;
             case AslLexer.GROUP:
                 return null;
             case AslLexer.TIMEANNOTATION:
                 System.out.println("entra time");
                 currentTimeAnnotation = new TimeAnnotation();
-                currentTimeAnnotation.begin = (double) t.getChild(0).getIntValue();
+                Data aux = evaluateExpression(t.getChild(0));
+                currentTimeAnnotation.begin = (double) aux.getIntegerValue();
                 if (t.getChild(1) != null) {
                     if (t.getChild(1).getType() == AslLexer.END) {
-
-                        double end = (double) t.getChild(1).getChild(0).getIntValue();
+                        aux = evaluateExpression(t.getChild(1).getChild(0));
+                        double end = (double) aux.getIntegerValue();
                         currentTimeAnnotation.duration = end - currentTimeAnnotation.begin;
-                    } else 
-                        currentTimeAnnotation.duration = (double) t.getChild(1).getChild(0).getIntValue();
+                    } else {
+                        aux = evaluateExpression(t.getChild(1).getChild(0));
+                        currentTimeAnnotation.duration = (double) aux.getIntegerValue();
+                    }
                 } else currentTimeAnnotation.duration = 0;
                 return null;
             case AslLexer.ANIMATION:
@@ -291,8 +308,8 @@ public class Interp {
                 return null;
             // Assignment
             case AslLexer.ASSIGN:
-                System.out.println("assign");
                 value = null;
+                System.out.println("assign");
                 if (t.getChild(1).getType() == AslLexer.CREATE) {
                     value = createObject(t.getChild(1));
                     svgParser.createSVGObject(t.getChild(0).getText(), value);
@@ -355,12 +372,13 @@ public class Interp {
                 else {
                     System.out.println("segundo for");
                     value = evaluateExpression(t.getChild(1));
+                    Data finish = evaluateExpression(t.getChild(2));
                     checkInteger(value);
                     Stack.defineVariable(t.getChild(0).getText(), value);
-                    while(value.getIntegerValue() < t.getChild(2).getIntValue()){
+                    while(value.getIntegerValue() < finish.getIntegerValue()){
+                        System.out.println("value");
                         Data r = executeListInstructions(t.getChild(3));
                         if (r != null) return r;
-                        System.out.println("value");
                         value.setValue(value.getIntegerValue()+1);
                         Stack.defineVariable(t.getChild(0).getText(), value);
                         System.out.println("fin value");
@@ -375,38 +393,26 @@ public class Interp {
                     return evaluateExpression(t.getChild(0));
                 }
                 return new Data(); // No expression: returns void data
-
-            // Read statement: reads a variable and raises an exception
-            // in case of a format error.
-            case AslLexer.READ:
-                String token = null;
-                Data val = new Data(0);;
-                try {
-                    token = stdin.next();
-                    val.setValue(Integer.parseInt(token)); 
-                } catch (NumberFormatException ex) {
-                    throw new RuntimeException ("Format error when reading a number: " + token);
+            case AslLexer.SOURCE:
+                AslTree tree = Asl.getFileTree(t.getChild(0).getText());
+                if (tree.getChild(0).getType() == AslLexer.MODULE) {
+                    throw new RuntimeException("A module file cannot be sourced. Use its functions by importing it.");
+                } else {
+                    List<AslTree> params = t.getChildren();
+                    params.remove(0);
+                    for (int i = 0; i < tree.getChildCount(); i++) {
+                        if (tree.getChild(0).getChild(i).getChild(0).getText().equals("main")) {
+                            tree.getChild(0).getChild(i).getChild(1).addChildren(params);
+                        }
+                    }
+                    Asl.executeTree(tree);
+                    svgParser.addExistingSVGFileContents();
                 }
-                Stack.defineVariable (t.getChild(0).getText(), val);
                 return null;
-
-            // Write statement: it can write an expression or a string.
-            case AslLexer.WRITE:
-                AslTree v = t.getChild(0);
-                // Special case for strings
-                if (v.getType() == AslLexer.STRING) {
-                    System.out.format(v.getStringValue());
-                    return null;
-                }
-
-                // Write an expression
-                System.out.print(evaluateExpression(v).toString());
-                return null;
-
             // Function call
             case AslLexer.FUNCALL:
                 System.out.println("function");
-                executeFunction(t.getChild(0).getText(), t.getChild(1));
+                if (!t.getChild(0).getText().equals("rand")) executeFunction(t.getChild(0).getText(), t.getChild(1));
                 return null;
 
             default: assert false; // Should never happen
@@ -416,9 +422,25 @@ public class Interp {
         assert false;
         return null;
     }
+    
+
+    private Random rand = new Random(); 
+        
+    /** Executes random function */
+    private Data executeRandom(AslTree t) {
+
+        int r0 = evaluateExpression(t.getChild(0)).getIntegerValue();
+        int r1 = evaluateExpression(t.getChild(1)).getIntegerValue();
+
+        if (r0 >= r1) return new Data(r0);
+        int value = rand.nextInt(r1-r0);
+
+        return new Data(value + r0); 
+    }
 
     private Data createObject(AslTree t) {
       int child = 1;
+
       String tipus = t.getChild(0).getText();
       int x = 0;
       int y = 0;
@@ -431,6 +453,7 @@ public class Interp {
       int ry = 0;
       String text = null;
       Data data;
+
       if (t.getChildCount() > 1){
 	if (t.getChild(1).getType() != AslLexer.ATTRIBUTES) 
 	{
@@ -455,6 +478,7 @@ public class Interp {
         }
 	    ++child;
 	}
+
 	if (t.getChildCount() > child && t.getChild(child).getType() != AslLexer.ATTRIBUTES)
 	{
 	    if (t.getChild(child).getType() != AslLexer.ID) {
@@ -608,7 +632,6 @@ public class Interp {
             break;
 
             case "Translate":
-            //System.out.println(t.getChild(0));
             idObject = t.getChild(1).getText();
             object = Stack.getVariable(idObject);
             if (t.getChild(2).getType() != AslLexer.ID) {
@@ -628,6 +651,19 @@ public class Interp {
             else {
                 data = Stack.getVariable(t.getChild(3).getText());
                 y = object.getObjectCoordY() + data.getIntegerValue();
+            }
+            break;
+
+            case "Scale":
+            idObject = t.getChild(1).getText();
+            if (t.getChild(2).getType() != AslLexer.ID) {
+                data = evaluateExpression(t.getChild(2));
+                checkInteger(data);
+                to = data.getIntegerValue() + "";
+            }
+            else {
+                data = Stack.getVariable(t.getChild(2).getText());
+                to = data.getIntegerValue() + "";
             }
             break;
 
@@ -740,10 +776,15 @@ public class Interp {
                 break;
             // A function call. Checks that the function returns a result.
             case AslLexer.FUNCALL:
-                value = executeFunction(t.getChild(0).getText(), t.getChild(1));
-                assert value != null;
-                if (value.isVoid()) {
-                    throw new RuntimeException ("function expected to return a value");
+
+                if (t.getChild(0).getText().equals("rand")) {
+                    value = executeRandom(t.getChild(1));
+                } else {
+                    value = executeFunction(t.getChild(0).getText(), t.getChild(1));
+                    assert value != null;
+                    if (value.isVoid()) {
+                        throw new RuntimeException ("function expected to return a value");
+                    }
                 }
                 break;
             default: break;
@@ -899,18 +940,14 @@ public class Interp {
             AslTree p = pars.getChild(i); // Parameters of the callee
             AslTree a = args.getChild(i); // Arguments passed by the caller
             setLineNumber(a);
-        //    if (p.getType() == AslLexer.PVALUE) {
-        //        // Pass by value: evaluate the expression
-        //        Params.add(i,evaluateExpression(a));
-        //    } else {
-                // Pass by reference: check that it is a variable
-                if (a.getType() != AslLexer.ID) {
-                    throw new RuntimeException("Wrong argument for pass by reference");
-                }
+            if (a.getType() != AslLexer.ID) {
+                Data value = evaluateExpression(a);
+                Params.add(i,value);
+            } else {
                 // Find the variable and pass the reference
                 Data v = Stack.getVariable(a.getText());
                 Params.add(i,v);
-        //    }
+            }
         }
         return Params;
     }

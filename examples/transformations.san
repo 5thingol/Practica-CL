@@ -1,0 +1,8 @@
+func main()
+
+	r = Create Rectangle {rand(35,40),20} width=20, height=20;
+
+	@begin=0, end=2;
+	Scale r 2;
+
+endfunc
