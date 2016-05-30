@@ -196,13 +196,9 @@ time_annotation:
 finish_time:
 (END^ EQUAL! expr | DURATION^ EQUAL! expr)
 ;
-<<<<<<< HEAD
-create: CREATE TYPE_OBJECT coordenades? radis? list_attributes? -> ^(CREATE TYPE_OBJECT coordenades? radis? ^(ATTRIBUTES list_attributes)?)
-=======
 create: CREATE tipus_objecte coordenades? radis? list_attributes? -> ^(CREATE tipus_objecte coordenades? radis? ^(ATTRIBUTES list_attributes)?)
 ;
 tipus_objecte: TYPE_OBJECT | ID
->>>>>>> 3b1c6f842fb6f19329f5980e84a79bd3ba22d346
 ;
 group: GROUP^ ID (','! ID)+
 ;
@@ -289,11 +285,7 @@ ROTATE : 'Rotate';
 SCALE : 'Scale' ;
 SOURCE : 'Source';
 TYPE_OBJECT : 'Rectangle' | 'Circle' | 'Text' | 'Ellipse' | 'Line' ; // AMPLIAT
-<<<<<<< HEAD
-ATTRIBUTE : 'width' | 'height' | 'style' | 'color' | 'stroke-width' | 'txt'; // A AMPLIAR
-=======
-ATTRIBUTE : 'width' | 'height' | 'style' | 'color' | 'stroke-width'; // AMPLIAT
->>>>>>> 3b1c6f842fb6f19329f5980e84a79bd3ba22d346
+ATTRIBUTE : 'width' | 'height' | 'style' | 'color' | 'stroke' | 'stroke-width' | 'txt'; // A AMPLIAR
 ID :    ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'0'..'9'|'_')* ;
 FILE :    ('a'..'z'|'A'..'Z'|'0'..'9'|'_')+ '.'  ('a'..'z'|'A'..'Z'|'0'..'9'|'_')+;
 INT :   '0'..'9'+ ;

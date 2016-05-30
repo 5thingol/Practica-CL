@@ -1,0 +1,19 @@
+func main()
+
+	// Es pot cridar a la instrucció create assignant l'objecte resultant a una variable o no
+	// Una instrucció bàsica de create no té cap anotació temporal
+	// Al final del create s'afegeixen els atributs complementaris de l'objecte
+
+	// Rectangle
+	Create Rectangle {50,70} width=40,height=200;
+	
+	// Cercle
+	c = Create Circle {200,90} (50)  color="red";
+	
+	// El·lipse
+	e = Create Ellipse {500,300} (80,30) stroke="#000", stroke-width=2, color="blue";
+
+	// Text
+	t = Create Text {750,30} txt="Valar morgulis";
+
+endfunc

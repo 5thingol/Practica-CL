@@ -1,20 +1,11 @@
 <svg width="1000" height="600">
-<defs>
-<path id="Triangle" d="M8 48 L56 48 L32 12 Z"/>
-</defs>
-<g id="Triforce">
-<use xlink:href="#t1"></use>
-<use xlink:href="#t2"></use>
-<use xlink:href="#t3"></use>
-<animateTransform id="newAnimation3" attributeName="transform" attributeType="XML" type="scale" to="2" begin="1.0s" dur="3.0s" fill="freeze"/></g>
-<defs><use xlink:href="#Triangle" id="t1" x="50" y="50" width="30" height="20" fill="black" transform="rotate(0)">
-<animateTransform id="newAnimation0" attributeName="transform" attributeType="XML" type="rotate" to="180" begin="0.0s" dur="0.0s" fill="freeze"/></use>
-</defs>
-<defs><use xlink:href="#Triangle" id="t2" x="70" y="50" width="30" height="20" fill="black" transform="rotate(0)">
-<animateTransform id="newAnimation1" attributeName="transform" attributeType="XML" type="rotate" to="180" begin="0.0s" dur="0.0s" fill="freeze"/></use>
-</defs>
-<defs><use xlink:href="#Triangle" id="t3" x="70" y="50" width="30" height="20" fill="black" transform="rotate(0)">
-<animateTransform id="newAnimation2" attributeName="transform" attributeType="XML" type="rotate" to="180" begin="0.0s" dur="0.0s" fill="freeze"/></use>
-</defs>
+<rect id="newObject0" x="50" y="30" width="40" height="200" fill="black" transform="rotate(0)">
+</rect>
+<text id="t" x="750" y="30" width="0" height="0" fill="black" transform="rotate(0)">
+Valar morgulis</text>
+<ellipse id="e" cx="500" cy="30" rx="80" ry="30" fill="blue" stroke= "#000" stroke-width= "2" transform="rotate(0)">
+</ellipse>
+<circle id="c" cx="200" cy="30" r="50" fill="red" transform="rotate(0)">
+</circle>
 
 </svg>

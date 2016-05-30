@@ -60,9 +60,9 @@ public class Data {
     private int rotation;
     private String fill;
     private String group;
+    private String stroke;
     private int strokeWidth;
 
-    // FALTA AFEGIR EL VALOR TEXT PER GUARDAR EL TEXT DELS OBJECTES TIPUS TEXT
     private String text;
 
     /** Valors de les animacions */
@@ -87,7 +87,7 @@ public class Data {
     Data(String s) {type = Type.STRING; text = s;}
 
     /** Constructor for object data */
-    Data(String tipus, int cx, int cy, int w, int h, String f, int r, int sW, int rx, int ry, String txt)
+    Data(String tipus, int cx, int cy, int w, int h, String f, int r, String sk, int sW, int rx, int ry, String txt)
     {
         type = Type.OBJECT;
         x = cx;
@@ -96,6 +96,7 @@ public class Data {
         height = h;
         fill = f;
         rotation = r;
+        stroke = sk;
         strokeWidth = sW;
         radix = rx;
         radiy = ry;
@@ -220,7 +221,12 @@ public class Data {
         return rotation;
     }
 
-    public int getObjectStroke() {
+    public String getObjectStroke() {
+        assert type == Type.OBJECT;
+        return stroke;
+    }
+
+    public int getObjectStrokeWidth() {
         assert type == Type.OBJECT;
         return strokeWidth;
     }
@@ -316,6 +322,8 @@ public class Data {
     public void setColor(String c) { type = Type.OBJECT; fill = c; }
 
     public void setRotation(int r) { type = Type.OBJECT; rotation = r; }
+
+    public void setStroke(String sk){ type = Type.OBJECT; stroke = sk; }
 
     public void setStrokeWidth(int sw){ type = Type.OBJECT; strokeWidth = sw; }
 

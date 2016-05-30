@@ -117,7 +117,7 @@ public class SVGParser {
 	/** Crea un grup agrupant diversos objectes */
 	public void createSVGGroup(String id, List<String> idObjects) {
 		String n = null;
-		Data newData = new Data("Group",-1,-1,-1,-1,n,-1,-1,-1, -1, n);
+		Data newData = new Data("Group",-1,-1,-1,-1,n,-1,"",-1,-1, -1, n);
 		SVGGroup group = new SVGGroup(id, newData);
 		group.setObjectsIds(idObjects);
 
@@ -200,30 +200,21 @@ public class SVGParser {
 			properties += " y=\"" + data.getObjectCoordY() + "\"";
 			properties += " width=\"" + data.getObjectWidth() + "\"";
 			properties += " height=\"" + data.getObjectHeight() + "\"";
-		}
-
-		if (!data.getTipusObject().equals("Group")) {
-			if (data.getObjectColor() != null) properties += " fill=\"" + data.getObjectColor() + "\"";
-			if (data.getObjectStroke() != 0) properties += " stroke-width= \"" + data.getObjectStroke() + "\"";
-			properties += " transform=\"rotate(" + data.getObjectRotation() + ")\"";
-		}
-<<<<<<< HEAD
-		else if (data.getTipusObject().equals("Text")) {
+		} else if (data.getTipusObject().equals("Text")) {
 			properties += " x=\"" + data.getObjectCoordX() + "\"";
 			properties += " y=\"" + data.getObjectCoordY() + "\"";
 			properties += " width=\"" + data.getObjectWidth() + "\"";
 			properties += " height=\"" + data.getObjectHeight() + "\"";
 		}
-		
-		if (data.getObjectColor() != null) properties += " fill=\"" + data.getObjectColor() + "\"";
-		if (data.getObjectStroke() != 0) properties += " stroke-width= \"" + data.getObjectStroke() + "\"";
-		properties += " transform=\"rotate(" + data.getObjectRotation() + ")\">";
-		if (data.getTipusObject().equals("Text")) {
-			properties += data.getStringValue();
-		}
-=======
->>>>>>> 3b1c6f842fb6f19329f5980e84a79bd3ba22d346
 
+		if (!data.getTipusObject().equals("Group")) {
+		
+			if (data.getObjectColor() != null) properties += " fill=\"" + data.getObjectColor() + "\"";
+			if (!data.getObjectStroke().equals("")) properties += " stroke= \"" + data.getObjectStroke() + "\"";
+			if (data.getObjectStrokeWidth() != 0) properties += " stroke-width= \"" + data.getObjectStrokeWidth() + "\"";
+			properties += " transform=\"rotate(" + data.getObjectRotation() + ")\"";
+		}
+		
 		// TODO: IMPLEMENTAR ATTRIBUTES SOBRANTS
 		//if (data.getAttributes() != null) properties += data.getAttributes();
 
@@ -277,15 +268,13 @@ public class SVGParser {
 		} else if (anim.getTipusAnimation().equals("Scale")) { 
 			animation += "Transform id=\"" + a.id + "\"";														// Animation id
 
-<<<<<<< HEAD
 			animation += " path=\"M 0 0 L "+  anim.getAnimationCoordX() + " " + anim.getAnimationCoordY() 
 			+ "\" begin=\"" + anim.getAnimationBegin() + "s\" dur=\"" + (anim.getAnimationEnd() - anim.getAnimationBegin()) 
 			+ "s\"";
-=======
-			animation += " attributeName=\"transform\" attributeType=\"XML\" type=\"scale\" to=\"" 
-				+ anim.getAnimationTo() + "\" begin=\"" + anim.getAnimationBegin() + "s\" dur=\"" 
-				+ (anim.getAnimationEnd() - anim.getAnimationBegin()) + "s\"";
->>>>>>> 3b1c6f842fb6f19329f5980e84a79bd3ba22d346
+			
+			//animation += " attributeName=\"transform\" attributeType=\"XML\" type=\"scale\" to=\"" 
+			//	+ anim.getAnimationTo() + "\" begin=\"" + anim.getAnimationBegin() + "s\" dur=\"" 
+			//	+ (anim.getAnimationEnd() - anim.getAnimationBegin()) + "s\"";
 			
 		} else if (anim.getTipusAnimation().equals("Rotate")) {
 			animation += "Transform id=\"" + a.id + "\"";														// Animation id
@@ -313,10 +302,7 @@ public class SVGParser {
 		if (tipus.equals("Ellipse")) return "ellipse";
 		if (tipus.equals("Line")) return "line";
 		if (tipus.equals("Group")) return "g";
-<<<<<<< HEAD
 		if (tipus.equals("Text")) return "text";
-		return "";
-=======
 		return "use xlink:href=\"#" + tipus + "\"";
 	}
 
@@ -326,8 +312,9 @@ public class SVGParser {
 		if (tipus.equals("Ellipse")) return "ellipse";
 		if (tipus.equals("Line")) return "line";
 		if (tipus.equals("Group")) return "g";
+		if (tipus.equals("Text")) return "text";
+
 		return "use";
->>>>>>> 3b1c6f842fb6f19329f5980e84a79bd3ba22d346
 	}
 
 	private void writeObjectToSVGFile(String id, List<Animation> dades) {
@@ -340,11 +327,7 @@ public class SVGParser {
 
 		String basicShape = toSvgBasicShape(initialProperties.getTipusObject());
 		newObject += basicShape;
-<<<<<<< HEAD
-		newObject += propertiesToString(initialProperties);
-=======
 		newObject += " id=\"" + id + "\"" + propertiesToString(initialProperties) + ">\n";
->>>>>>> 3b1c6f842fb6f19329f5980e84a79bd3ba22d346
 		
 		if (initialProperties.getTipusObject().equals("Group")) {
 			initialProperties.getTipusObject();
@@ -352,6 +335,8 @@ public class SVGParser {
 			for (String s : group.getObjectsIds()) {
 				newObject += "<use xlink:href=\"#" + s + "\"></use>\n";
 			}
+		} else if (initialProperties.getTipusObject().equals("Text")) {
+			newObject += initialProperties.getStringValue();
 		}
 
 		dades.remove(0);
