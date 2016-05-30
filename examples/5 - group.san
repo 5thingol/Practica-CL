@@ -1,3 +1,20 @@
 func main()
 
+	c = Create Circle {300,100} (90);
+
+	@begin=0, end=3;
+	Translate c {100,0};
+	
+	r = Create Rectangle {300,200} width=20,height=20;
+
+	@begin=0, end=3;
+	Translate r {-100,0};
+
+	g = Group c,r;
+
+	@begin=1, end=4;
+	Translate g {0,200};
+
+
+
 endfunc

@@ -57,7 +57,6 @@ public class Data {
     private int height;
     private int radix;
     private int radiy;
-    private int rotation;
     private String fill;
     private String group;
     private String stroke;
@@ -72,6 +71,7 @@ public class Data {
     private String attribute;
     private String from;
     private String to;
+    private int rotation;
 
 
     /** Constructor for integers */

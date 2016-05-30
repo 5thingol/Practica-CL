@@ -210,7 +210,9 @@ translate:  TRANSLATE ID coordenades -> ^(ANIMATION TRANSLATE ID coordenades)
 ;
 modify: MODIFY ID list_attributes -> ^(ANIMATION MODIFY ID list_attributes)
 ;
-rotate: ROTATE ID expr -> ^(ANIMATION ROTATE ID expr)
+rotate: ROTATE ID rotate_values -> ^(ANIMATION ROTATE ID rotate_values)
+;
+rotate_values :  '('! expr (','! expr ','! expr)? ')'! 
 ;
 scale: SCALE ID expr -> ^(ANIMATION SCALE ID expr)
 ;
@@ -287,7 +289,7 @@ SOURCE : 'Source';
 TYPE_OBJECT : 'Rectangle' | 'Circle' | 'Text' | 'Ellipse' | 'Line' ; // AMPLIAT
 ATTRIBUTE : 'width' | 'height' | 'style' | 'color' | 'stroke' | 'stroke-width' | 'txt'; // A AMPLIAR
 ID :    ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'0'..'9'|'_')* ;
-FILE :    ('a'..'z'|'A'..'Z'|'0'..'9'|'_')+ '.'  ('a'..'z'|'A'..'Z'|'0'..'9'|'_')+;
+FILE :   '"' ('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'-')+ '.'  ('a'..'z'|'A'..'Z'|'0'..'9'|'_')+ '"';
 INT :   '0'..'9'+ ;
 // C-style comments
 COMMENT : '//' ~('\n'|'\r')* '\r'? '\n' {$channel=HIDDEN;}

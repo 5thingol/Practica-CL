@@ -1,11 +1,23 @@
 <svg width="1000" height="600">
-<rect id="newObject0" x="50" y="30" width="40" height="200" fill="black" transform="rotate(0)">
-</rect>
-<text id="t" x="750" y="30" width="0" height="0" fill="black" transform="rotate(0)">
-Valar morgulis</text>
-<ellipse id="e" cx="500" cy="30" rx="80" ry="30" fill="blue" stroke= "#000" stroke-width= "2" transform="rotate(0)">
-</ellipse>
-<circle id="c" cx="200" cy="30" r="50" fill="red" transform="rotate(0)">
-</circle>
+<circle id="c" cx="69" cy="97" r="11" fill="blue">
+<animateTransform id="Anim1" attributeName="transform" type="translate" to="4 16" begin="0.0s" dur="2.0s" fill="freeze"/><animate id="newAnimation0" attributeName="fill" attributeType="XML" to="green" begin="0.0s" dur="1.0s" fill="freeze"/><animateTransform id="newAnimation1" attributeName="transform" type="translate" to="38 28" begin="2.0s" dur="4.0s" fill="freeze"/></circle>
+<circle id="c" cx="225" cy="166" r="17" fill="blue">
+<animateTransform id="Anim1" attributeName="transform" type="translate" to="6 19" begin="0.0s" dur="2.0s" fill="freeze"/><animate id="newAnimation2" attributeName="fill" attributeType="XML" to="green" begin="0.0s" dur="1.0s" fill="freeze"/><animateTransform id="newAnimation3" attributeName="transform" type="translate" to="35 23" begin="2.0s" dur="4.0s" fill="freeze"/></circle>
+<circle id="c" cx="262" cy="261" r="21" fill="blue">
+<animateTransform id="Anim1" attributeName="transform" type="translate" to="8 20" begin="0.0s" dur="2.0s" fill="freeze"/><animate id="newAnimation4" attributeName="fill" attributeType="XML" to="green" begin="0.0s" dur="2.0s" fill="freeze"/><animateTransform id="newAnimation5" attributeName="transform" type="translate" to="23 23" begin="2.0s" dur="4.0s" fill="freeze"/></circle>
+<circle id="c" cx="381" cy="210" r="21" fill="blue">
+<animateTransform id="Anim1" attributeName="transform" type="translate" to="3 16" begin="0.0s" dur="2.0s" fill="freeze"/><animate id="newAnimation6" attributeName="fill" attributeType="XML" to="green" begin="0.0s" dur="3.0s" fill="freeze"/><animateTransform id="newAnimation7" attributeName="transform" type="translate" to="33 28" begin="2.0s" dur="4.0s" fill="freeze"/></circle>
+<circle id="c" cx="2" cy="153" r="11" fill="blue">
+<animateTransform id="Anim1" attributeName="transform" type="translate" to="20 4" begin="0.0s" dur="2.0s" fill="freeze"/><animate id="newAnimation8" attributeName="fill" attributeType="XML" to="green" begin="0.0s" dur="3.0s" fill="freeze"/><animateTransform id="newAnimation9" attributeName="transform" type="translate" to="27 32" begin="2.0s" dur="4.0s" fill="freeze"/></circle>
+<circle id="c" cx="61" cy="257" r="14" fill="blue">
+<animateTransform id="Anim1" attributeName="transform" type="translate" to="25 19" begin="0.0s" dur="2.0s" fill="freeze"/><animate id="newAnimation10" attributeName="fill" attributeType="XML" to="green" begin="0.0s" dur="2.0s" fill="freeze"/><animateTransform id="newAnimation11" attributeName="transform" type="translate" to="26 38" begin="2.0s" dur="4.0s" fill="freeze"/></circle>
+<circle id="c" cx="288" cy="276" r="12" fill="blue">
+<animateTransform id="Anim1" attributeName="transform" type="translate" to="21 3" begin="0.0s" dur="2.0s" fill="freeze"/><animate id="newAnimation12" attributeName="fill" attributeType="XML" to="green" begin="0.0s" dur="2.0s" fill="freeze"/><animateTransform id="newAnimation13" attributeName="transform" type="translate" to="34 33" begin="2.0s" dur="4.0s" fill="freeze"/></circle>
+<circle id="c" cx="191" cy="153" r="27" fill="blue">
+<animateTransform id="Anim1" attributeName="transform" type="translate" to="29 9" begin="0.0s" dur="2.0s" fill="freeze"/><animate id="newAnimation14" attributeName="fill" attributeType="XML" to="green" begin="0.0s" dur="3.0s" fill="freeze"/><animateTransform id="newAnimation15" attributeName="transform" type="translate" to="27 28" begin="2.0s" dur="4.0s" fill="freeze"/></circle>
+<circle id="c" cx="307" cy="141" r="23" fill="blue">
+<animateTransform id="Anim1" attributeName="transform" type="translate" to="6 19" begin="0.0s" dur="2.0s" fill="freeze"/><animate id="newAnimation16" attributeName="fill" attributeType="XML" to="green" begin="0.0s" dur="3.0s" fill="freeze"/><animateTransform id="newAnimation17" attributeName="transform" type="translate" to="32 25" begin="2.0s" dur="4.0s" fill="freeze"/></circle>
+<circle id="c" cx="355" cy="43" r="13" fill="blue">
+<animateTransform id="Anim1" attributeName="transform" type="translate" to="25 12" begin="0.0s" dur="2.0s" fill="freeze"/><animate id="newAnimation18" attributeName="fill" attributeType="XML" to="green" begin="0.0s" dur="1.0s" fill="freeze"/><animateTransform id="newAnimation19" attributeName="transform" type="translate" to="24 32" begin="2.0s" dur="4.0s" fill="freeze"/></circle>
 
 </svg>

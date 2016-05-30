@@ -1,0 +1,169 @@
+digraph {
+
+	ordering=out;
+	ranksep=.4;
+	bgcolor="lightgrey"; node [shape=box, fixedsize=false, fontsize=12, fontname="Helvetica-bold", fontcolor="blue"
+		width=.25, height=.25, color="black", fillcolor="white", style="filled, solid, bold"];
+	edge [arrowsize=.5, color="black", style="bold"]
+
+  n0 [label="PROG"];
+  n1 [label="IMPORTS"];
+  n2 [label="DEFINES"];
+  n3 [label="LIST_FUNCTIONS"];
+  n3 [label="LIST_FUNCTIONS"];
+  n4 [label="func"];
+  n4 [label="func"];
+  n5 [label="main"];
+  n6 [label="PARAMS"];
+  n7 [label="LIST_INSTR"];
+  n7 [label="LIST_INSTR"];
+  n8 [label=":="];
+  n8 [label=":="];
+  n9 [label="r1"];
+  n10 [label="Create"];
+  n10 [label="Create"];
+  n11 [label="Rectangle"];
+  n12 [label="100"];
+  n13 [label="20"];
+  n14 [label="ATTRIBUTES"];
+  n14 [label="ATTRIBUTES"];
+  n15 [label="width"];
+  n15 [label="width"];
+  n16 [label="25"];
+  n17 [label="height"];
+  n17 [label="height"];
+  n18 [label="25"];
+  n19 [label="TIMEANNOTATION"];
+  n19 [label="TIMEANNOTATION"];
+  n20 [label="0"];
+  n21 [label="end"];
+  n21 [label="end"];
+  n22 [label="2"];
+  n23 [label="ANIMATION"];
+  n23 [label="ANIMATION"];
+  n24 [label="Scale"];
+  n25 [label="r1"];
+  n26 [label="2"];
+  n27 [label=":="];
+  n27 [label=":="];
+  n28 [label="r2"];
+  n29 [label="Create"];
+  n29 [label="Create"];
+  n30 [label="Rectangle"];
+  n31 [label="300"];
+  n32 [label="20"];
+  n33 [label="ATTRIBUTES"];
+  n33 [label="ATTRIBUTES"];
+  n34 [label="width"];
+  n34 [label="width"];
+  n35 [label="50"];
+  n36 [label="height"];
+  n36 [label="height"];
+  n37 [label="50"];
+  n38 [label="TIMEANNOTATION"];
+  n38 [label="TIMEANNOTATION"];
+  n39 [label="2"];
+  n40 [label="end"];
+  n40 [label="end"];
+  n41 [label="4"];
+  n42 [label="ANIMATION"];
+  n42 [label="ANIMATION"];
+  n43 [label="Translate"];
+  n44 [label="r2"];
+  n45 [label="0"];
+  n46 [label="100"];
+  n47 [label=":="];
+  n47 [label=":="];
+  n48 [label="r3"];
+  n49 [label="Create"];
+  n49 [label="Create"];
+  n50 [label="Rectangle"];
+  n51 [label="600"];
+  n52 [label="20"];
+  n53 [label="ATTRIBUTES"];
+  n53 [label="ATTRIBUTES"];
+  n54 [label="width"];
+  n54 [label="width"];
+  n55 [label="50"];
+  n56 [label="height"];
+  n56 [label="height"];
+  n57 [label="50"];
+  n58 [label="TIMEANNOTATION"];
+  n58 [label="TIMEANNOTATION"];
+  n59 [label="4"];
+  n60 [label="end"];
+  n60 [label="end"];
+  n61 [label="6"];
+  n62 [label="ANIMATION"];
+  n62 [label="ANIMATION"];
+  n63 [label="Rotate"];
+  n64 [label="r3"];
+  n65 [label="45"];
+
+  n0 -> n1 // "PROG" -> "IMPORTS"
+  n0 -> n2 // "PROG" -> "DEFINES"
+  n0 -> n3 // "PROG" -> "LIST_FUNCTIONS"
+  n3 -> n4 // "LIST_FUNCTIONS" -> "func"
+  n4 -> n5 // "func" -> "main"
+  n4 -> n6 // "func" -> "PARAMS"
+  n4 -> n7 // "func" -> "LIST_INSTR"
+  n7 -> n8 // "LIST_INSTR" -> ":="
+  n8 -> n9 // ":=" -> "r1"
+  n8 -> n10 // ":=" -> "Create"
+  n10 -> n11 // "Create" -> "Rectangle"
+  n10 -> n12 // "Create" -> "100"
+  n10 -> n13 // "Create" -> "20"
+  n10 -> n14 // "Create" -> "ATTRIBUTES"
+  n14 -> n15 // "ATTRIBUTES" -> "width"
+  n15 -> n16 // "width" -> "25"
+  n14 -> n17 // "ATTRIBUTES" -> "height"
+  n17 -> n18 // "height" -> "25"
+  n7 -> n19 // "LIST_INSTR" -> "TIMEANNOTATION"
+  n19 -> n20 // "TIMEANNOTATION" -> "0"
+  n19 -> n21 // "TIMEANNOTATION" -> "end"
+  n21 -> n22 // "end" -> "2"
+  n7 -> n23 // "LIST_INSTR" -> "ANIMATION"
+  n23 -> n24 // "ANIMATION" -> "Scale"
+  n23 -> n25 // "ANIMATION" -> "r1"
+  n23 -> n26 // "ANIMATION" -> "2"
+  n7 -> n27 // "LIST_INSTR" -> ":="
+  n27 -> n28 // ":=" -> "r2"
+  n27 -> n29 // ":=" -> "Create"
+  n29 -> n30 // "Create" -> "Rectangle"
+  n29 -> n31 // "Create" -> "300"
+  n29 -> n32 // "Create" -> "20"
+  n29 -> n33 // "Create" -> "ATTRIBUTES"
+  n33 -> n34 // "ATTRIBUTES" -> "width"
+  n34 -> n35 // "width" -> "50"
+  n33 -> n36 // "ATTRIBUTES" -> "height"
+  n36 -> n37 // "height" -> "50"
+  n7 -> n38 // "LIST_INSTR" -> "TIMEANNOTATION"
+  n38 -> n39 // "TIMEANNOTATION" -> "2"
+  n38 -> n40 // "TIMEANNOTATION" -> "end"
+  n40 -> n41 // "end" -> "4"
+  n7 -> n42 // "LIST_INSTR" -> "ANIMATION"
+  n42 -> n43 // "ANIMATION" -> "Translate"
+  n42 -> n44 // "ANIMATION" -> "r2"
+  n42 -> n45 // "ANIMATION" -> "0"
+  n42 -> n46 // "ANIMATION" -> "100"
+  n7 -> n47 // "LIST_INSTR" -> ":="
+  n47 -> n48 // ":=" -> "r3"
+  n47 -> n49 // ":=" -> "Create"
+  n49 -> n50 // "Create" -> "Rectangle"
+  n49 -> n51 // "Create" -> "600"
+  n49 -> n52 // "Create" -> "20"
+  n49 -> n53 // "Create" -> "ATTRIBUTES"
+  n53 -> n54 // "ATTRIBUTES" -> "width"
+  n54 -> n55 // "width" -> "50"
+  n53 -> n56 // "ATTRIBUTES" -> "height"
+  n56 -> n57 // "height" -> "50"
+  n7 -> n58 // "LIST_INSTR" -> "TIMEANNOTATION"
+  n58 -> n59 // "TIMEANNOTATION" -> "4"
+  n58 -> n60 // "TIMEANNOTATION" -> "end"
+  n60 -> n61 // "end" -> "6"
+  n7 -> n62 // "LIST_INSTR" -> "ANIMATION"
+  n62 -> n63 // "ANIMATION" -> "Rotate"
+  n62 -> n64 // "ANIMATION" -> "r3"
+  n62 -> n65 // "ANIMATION" -> "45"
+
+}

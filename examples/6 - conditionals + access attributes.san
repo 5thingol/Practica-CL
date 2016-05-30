@@ -1,5 +1,11 @@
-func main()
-	r = Create Rectangle {400,300} width=20,height=20,stroke-width="30";
+func main(x,y)
+	if (x > 300)
+		x = 300;
+	else
+		x = 100;
+	endif
+
+	r = Create Rectangle {x,y} width=20,height=20,stroke-width="30";
 	if (r.stroke-width() == 30) 
 		@begin=0, end=3;
 		Modify r color="blue";

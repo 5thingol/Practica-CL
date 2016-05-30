@@ -298,9 +298,9 @@ public class Interp {
             case AslLexer.ANIMATION:
 
                 if (currentTimeAnnotation == null) throw new RuntimeException("Animation instruction doesn't have a proper previous Time Annotation");
+
                 Data newAnimation = createAnimation(t);
                 Stack.defineVariable ("newAnimation"+newId, newAnimation);
-
                 svgParser.addSVGAnimation(newAnimation.getAnimationIdObject(),"newAnimation"+newId, newAnimation);
 
                 newId++;
@@ -321,6 +321,7 @@ public class Interp {
                     svgParser.createSVGGroup(t.getChild(0).getText(), idObjects);
                     value = new Data("Group",0,0,0,0,"",0,"",0,0,0,"");
                 } else if (t.getChild(1).getType() == AslLexer.ANIMATION) {
+                    if (currentTimeAnnotation == null) throw new RuntimeException("Animation instruction doesn't have a proper previous Time Annotation");
                     value = createAnimation(t.getChild(1));
                     svgParser.addSVGAnimation(value.getAnimationIdObject(), t.getChild(0).getText(), value);
                     currentTimeAnnotation = null;
@@ -374,9 +375,6 @@ public class Interp {
                         Data r = executeListInstructions(t.getChild(3));
                         value = evaluateExpression(t.getChild(2).getChild(1));
                         Stack.defineVariable(t.getChild(2).getChild(0).getText(), value);
-                        System.out.println("value");
-                        value = evaluateExpression(t.getChild(2).getChild(1));
-                        Stack.defineVariable(t.getChild(2).getChild(0).getText(), value);
                         System.out.println("fin value");
                         if (r != null) return r;
                     }
@@ -387,8 +385,7 @@ public class Interp {
                     Data finish = evaluateExpression(t.getChild(2));
                     checkInteger(value);
                     Stack.defineVariable(t.getChild(0).getText(), value);
-                    while(value.getIntegerValue() < finish.getIntegerValue()){
-                        System.out.println("value");
+                    while(value.getIntegerValue() <= finish.getIntegerValue()){
                         Data r = executeListInstructions(t.getChild(3));
                         if (r != null) return r;
                         value.setValue(value.getIntegerValue()+1);
@@ -397,7 +394,7 @@ public class Interp {
                     }
                 }
 
-
+                return null;
 
             // Return
             case AslLexer.RETURN:
@@ -406,19 +403,24 @@ public class Interp {
                 }
                 return new Data(); // No expression: returns void data
             case AslLexer.SOURCE:
-                AslTree tree = Asl.getFileTree(t.getChild(0).getText());
+                String file = t.getChild(0).getText();
+                if (file.contains("\"")) file = file.split("\"")[1];
+                AslTree tree = Asl.getFileTree(file);
                 if (tree.getChild(0).getType() == AslLexer.MODULE) {
                     throw new RuntimeException("A module file cannot be sourced. Use its functions by importing it.");
                 } else {
                     List<AslTree> params = t.getChildren();
                     params.remove(0);
-                    for (int i = 0; i < tree.getChildCount(); i++) {
-                        if (tree.getChild(0).getChild(i).getChild(0).getText().equals("main")) {
-                            tree.getChild(0).getChild(i).getChild(1).addChildren(params);
+                    for (int i = 0; i < tree.getChild(2).getChildCount(); i++) {
+                        if (tree.getChild(2).getChild(i).getChild(0).getText().equals("main")) {
+                            if (params.size() != tree.getChild(2).getChild(i).getChild(1).getChildCount())
+                                throw new RuntimeException("Main function of sourced file has a different number of parameters than the ones on the source instruction");
+                            tree.getChild(2).getChild(i).getChild(1).addChildren(params);
                         }
                     }
                     Asl.executeTree(tree);
                     svgParser.addExistingSVGFileContents();
+
                 }
                 return null;
             // Function call
@@ -627,6 +629,7 @@ public class Interp {
         String fill = "freeze";
         Data object;
         Data data;
+
         switch(tipus){
             
             case "Destroy":
@@ -664,23 +667,23 @@ public class Interp {
             if (t.getChild(2).getType() != AslLexer.ID) {
                 data = evaluateExpression(t.getChild(2));
                 checkInteger(data);
-                x = object.getObjectCoordX() + data.getIntegerValue();
+                x = data.getIntegerValue();
             }
             else {
                 data = Stack.getVariable(t.getChild(2).getText());
-                x = object.getObjectCoordX() + data.getIntegerValue();
+                x = data.getIntegerValue();
             }
             if (t.getChild(3).getType() != AslLexer.ID) {
                 data = evaluateExpression(t.getChild(3));
                 checkInteger(data);
-                y = object.getObjectCoordY() + data.getIntegerValue();
+                y = data.getIntegerValue();
             }
             else {
                 data = Stack.getVariable(t.getChild(3).getText());
-                y = object.getObjectCoordY() + data.getIntegerValue();
+                y = data.getIntegerValue();
             }
-            object.setCoordX(x);
-            object.setCoordY(y);
+            //object.setCoordX(x);
+            //object.setCoordY(y);
             break;
 
             case "Scale":
@@ -698,19 +701,15 @@ public class Interp {
             break;
 
             case "Rotate":
-            object = Stack.getVariable(idObject);
-
             idObject = t.getChild(1).getText();
-            if (t.getChild(2).getType() != AslLexer.ID) {
-                data = evaluateExpression(t.getChild(2));
-                checkInteger(data);
-                rotation = data.getIntegerValue();
-            }
-            else {
-                data = Stack.getVariable(t.getChild(2).getText());
-                rotation = data.getIntegerValue();
-            }
+            object = Stack.getVariable(idObject);
+            data = evaluateExpression(t.getChild(2));
+            checkInteger(data);
+            rotation = data.getIntegerValue();
             object.setRotation(rotation);
+            if (t.getChildCount() > 3) {
+                to = t.getChild(3).getText() + " " + t.getChild(4).getText();
+            }
             break;
 
             case "Modify":
@@ -720,33 +719,37 @@ public class Interp {
             switch(attribute){
 
                 case "stroke":
-                from = object.getObjectStroke();
+                //from = object.getObjectStroke();
                 to = t.getChild(2).getChild(0).getText();
-                object.setStroke(to);
+                if (to.contains("\"")) to = to.split("\"")[1];
+
+                //object.setStroke(to);
                 break;
 
                 case "stroke-width":
-                from = Integer.toString(object.getObjectStrokeWidth());
+                //from = Integer.toString(object.getObjectStrokeWidth());
                 to = t.getChild(2).getChild(0).getText();
-                object.setStrokeWidth(Integer.parseInt(to));
+                //object.setStrokeWidth(Integer.parseInt(to));
                 break;
                 
                 case "width":
-                from = Integer.toString(object.getObjectCoordX());
+                //from = Integer.toString(object.getObjectCoordX());
                 to = t.getChild(2).getChild(0).getText();
-                object.setWidth(Integer.parseInt(to));
+                //object.setWidth(Integer.parseInt(to));
                 break;
 
                 case "height":
-                from = Integer.toString(object.getObjectCoordY());
+                //from = Integer.toString(object.getObjectCoordY());
                 to = t.getChild(2).getChild(0).getText();
-                object.setHeight(Integer.parseInt(to));
+                //object.setHeight(Integer.parseInt(to));
                 break;
 
                 case "color":
-                from = object.getObjectColor();
+                //from = object.getObjectColor();
                 to = t.getChild(2).getChild(0).getText();
-                object.setColor(to);
+                if (to.contains("\"")) to = to.split("\"")[1];
+
+                //object.setColor(to);
                 break;
 
             }

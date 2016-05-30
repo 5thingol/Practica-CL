@@ -1,3 +1,19 @@
 func main()
 
+	// Crea un rectangle que mou a la posició (300,200) 
+	// Durant el mateix interval i un segon més tard de que es 
+	// vagi movent, el color del rectangle canvia de negre a blau
+	// I despres el rectangle deixa de ser visible
+
+	r = Create Rectangle {200,200} width=100, height=50;
+	
+	@begin=1, duration=3;
+	Move r {300,200};
+	
+	@begin=1, end=4;
+	m = Modify r color="blue";
+	
+	@begin=4;
+	Destroy r;
+
 endfunc
