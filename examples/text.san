@@ -1,4 +1,0 @@
-func main() 
-	
-	t = Create Text {20,20} width=10,height=10,txt="Hoaaaaaaaaaaaa";
-endfunc
