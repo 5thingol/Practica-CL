@@ -129,14 +129,30 @@ public class SVGParser {
 			objecte.set(0, a);
 			SVGObjects.put(s, objecte);
 		}
+
+		List<Animation> dades = SVGObjects.get(id);
+      	List<Animation> newDades = new ArrayList<Animation>();
+      	newDades.add(group);
+        if (dades == null) {
+
+        	SVGObjects.put(id, newDades); 
+		} else {
+			System.out.println("substitute object");
+        	writeObjectToSVGFile(id, dades);
+        	SVGObjects.put(id,newDades);
+        } 
+
 	}
 
 	
 	/** Afegeix a l'objecte idObject previament creat una animacio */ 
 	public void addSVGAnimation(String idObject, String idAnimation, Data animation) {
+		
+                
 		Animation anim = new Animation(idAnimation, animation);
 		List<Animation> aux = SVGObjects.get(idObject);
 		aux.add(anim);
+		System.out.println(idAnimation);
 		SVGObjects.put(idObject, aux);
 	}
 
@@ -179,17 +195,18 @@ public class SVGParser {
 			properties += " y1=\"" + data.getObjectCoordY() + "\"";
 			properties += " x2=\"" + data.getObjectRadiX() + "\"";
 			properties += " y2=\"" + data.getObjectRadiY() + "\"";
-		} else {
+		} else if (!data.getTipusObject().equals("Group")) {
 			properties += " x=\"" + data.getObjectCoordX() + "\"";
 			properties += " y=\"" + data.getObjectCoordY() + "\"";
 			properties += " width=\"" + data.getObjectWidth() + "\"";
 			properties += " height=\"" + data.getObjectHeight() + "\"";
 		}
-		
-		if (data.getObjectColor() != null) properties += " fill=\"" + data.getObjectColor() + "\"";
-		if (data.getObjectStroke() != 0) properties += " stroke-width= \"" + data.getObjectStroke() + "\"";
-		properties += " transform=\"rotate(" + data.getObjectRotation() + ")\"";
-		
+
+		if (!data.getTipusObject().equals("Group")) {
+			if (data.getObjectColor() != null) properties += " fill=\"" + data.getObjectColor() + "\"";
+			if (data.getObjectStroke() != 0) properties += " stroke-width= \"" + data.getObjectStroke() + "\"";
+			properties += " transform=\"rotate(" + data.getObjectRotation() + ")\"";
+		}
 
 		// TODO: IMPLEMENTAR ATTRIBUTES SOBRANTS
 		//if (data.getAttributes() != null) properties += data.getAttributes();
@@ -295,16 +312,17 @@ public class SVGParser {
 
 		String basicShape = toSvgBasicShape(initialProperties.getTipusObject());
 		newObject += basicShape;
-		newObject += propertiesToString(initialProperties) + ">\n";
+		newObject += " id=\"" + id + "\"" + propertiesToString(initialProperties) + ">\n";
 		
-		dades.remove(0);
-
 		if (initialProperties.getTipusObject().equals("Group")) {
+			initialProperties.getTipusObject();
 			SVGGroup group = (SVGGroup) dades.get(0);
 			for (String s : group.getObjectsIds()) {
 				newObject += "<use xlink:href=\"#" + s + "\"></use>\n";
 			}
 		}
+
+		dades.remove(0);
 
 		for (Animation anim : dades) {
 			newObject += animationToString(anim);
@@ -322,7 +340,7 @@ public class SVGParser {
 
 	/** Retorna la capcalera que ha de tenir el fitxer SVG */
 	private String getCapcalera() {
-		return "<svg width=\"400\" height=\"200\">\n";
+		return "<svg width=\"1000\" height=\"600\">\n";
 	}
 
 	/** Escriu el fitxer SVG final. S'ha de cridar al final de l'excecucio del programa*/

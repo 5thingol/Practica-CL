@@ -13,13 +13,9 @@ func CreateRain(nParticles, x0, y0, x1, y1)
 		drop = Create RainDrop {rand(x0,x1),rand(y0,y1)} width=10,height=10,color="blue";
 		@begin=rand(0,3), duration=rand(1,3);
 		t = Translate drop {0,100};
-		@begin=3;
+		@begin=t.end();
 		Destroy drop;
 	endfor
 	
 
-	//CreateParticleSystem(drop,t,10,10,1,400,1);
-	//@begin=0;
-	//Destroy drop;
-	
 endfunc

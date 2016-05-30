@@ -1,3 +1,3 @@
 #!/bin/sh
 
-exec java -enableassertions -jar /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/bin/Asl.jar "$@"
+exec java -enableassertions -jar /home2/users/alumnes/1171466/dades/8equadri/CL/Practica/SimpleAnimator/bin/Asl.jar "$@"

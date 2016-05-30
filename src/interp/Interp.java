@@ -299,10 +299,13 @@ public class Interp {
                 } else currentTimeAnnotation.duration = 0;
                 return null;
             case AslLexer.ANIMATION:
+
                 if (currentTimeAnnotation == null) throw new RuntimeException("Animation instruction doesn't have a proper previous Time Annotation");
                 Data newAnimation = createAnimation(t);
                 Stack.defineVariable ("newAnimation"+newId, newAnimation);
+
                 svgParser.addSVGAnimation(newAnimation.getAnimationIdObject(),"newAnimation"+newId, newAnimation);
+
                 newId++;
                 currentTimeAnnotation = null;
                 return null;
@@ -319,6 +322,7 @@ public class Interp {
                         idObjects.add(t.getChild(1).getChild(i).getText());
                     }
                     svgParser.createSVGGroup(t.getChild(0).getText(), idObjects);
+                    value = new Data("Group",0,0,0,0,"",0,0,0,0,"");
                 } else if (t.getChild(1).getType() == AslLexer.ANIMATION) {
                     value = createAnimation(t.getChild(1));
                     svgParser.addSVGAnimation(value.getAnimationIdObject(), t.getChild(0).getText(), value);
@@ -667,7 +671,7 @@ public class Interp {
             }
             break;
 
-            case "Rotation":
+            case "Rotate":
             idObject = t.getChild(1).getText();
             if (t.getChild(2).getType() != AslLexer.ID) {
                 data = evaluateExpression(t.getChild(2));
@@ -713,6 +717,7 @@ public class Interp {
 
 
         }
+
         return new Data(tipus, idObject, begin, end, x, y, rotation, attribute, from, to , fill);
     }
 

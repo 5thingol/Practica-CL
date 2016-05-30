@@ -285,7 +285,7 @@ ROTATE : 'Rotate';
 SCALE : 'Scale' ;
 SOURCE : 'Source';
 TYPE_OBJECT : 'Rectangle' | 'Circle' | 'Text' | 'Ellipse' | 'Line' ; // AMPLIAT
-ATTRIBUTE : 'width' | 'height' | 'style' | 'color' | 'stroke-width'; // A AMPLIAR
+ATTRIBUTE : 'width' | 'height' | 'style' | 'color' | 'stroke-width'; // AMPLIAT
 ID :    ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'0'..'9'|'_')* ;
 FILE :    ('a'..'z'|'A'..'Z'|'0'..'9'|'_')+ '.'  ('a'..'z'|'A'..'Z'|'0'..'9'|'_')+;
 INT :   '0'..'9'+ ;

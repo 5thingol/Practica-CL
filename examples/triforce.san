@@ -1,0 +1,23 @@
+define Triangle "M8 48 L56 48 L32 12 Z";
+
+func main()
+
+	t1 = Create Triangle {50,50} width=30,height=20;
+	@begin=0,duration=0;
+	Rotate t1 180;
+	
+	t2 = Create Triangle {70,50} width=30,height=20;
+	@begin=0,duration=0;
+	Rotate t2 180;
+	
+	t3 = Create Triangle {70,50} width=30,height=20;
+	@begin=0,duration=0;
+	Rotate t3 180;
+
+	Triforce = Group t1,t2,t3;
+
+	@begin=1,duration=3;
+	Scale Triforce 2;
+
+
+endfunc
