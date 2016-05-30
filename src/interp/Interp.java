@@ -238,8 +238,6 @@ public class Interp {
         assert t != null;
         Data result = null;
         int ninstr = t.getChildCount();
-        System.out.println(ninstr);
-        System.out.println("execute");
         for (int i = 0; i < ninstr; ++i) {
             result = executeInstruction (t.getChild(i));
 
@@ -283,7 +281,6 @@ public class Interp {
             case AslLexer.GROUP:
                 return null;
             case AslLexer.TIMEANNOTATION:
-                System.out.println("entra time");
                 currentTimeAnnotation = new TimeAnnotation();
                 Data aux = evaluateExpression(t.getChild(0));
                 currentTimeAnnotation.begin = (double) aux.getIntegerValue();
@@ -330,16 +327,25 @@ public class Interp {
                 } else
                     value = evaluateExpression(t.getChild(1));
                 Stack.defineVariable (t.getChild(0).getText(), value);
-                System.out.println("acaba assign");
                 return null;
 
             // If-then-else
             case AslLexer.IF:
                 value = evaluateExpression(t.getChild(0));
                 checkBoolean(value);
-                if (value.getBooleanValue()) return executeListInstructions(t.getChild(1));
+                if (value.getBooleanValue()) 
+                    return executeListInstructions(t.getChild(1));
                 // Is there else statement ?
-                if (t.getChildCount() == 3) return executeListInstructions(t.getChild(2));
+                for (int i = 2; i < t.getChildCount(); ++i){
+                    if (t.getChild(i).getType() == AslLexer.ELSEIF){
+                        value = evaluateExpression(t.getChild(i).getChild(0));
+                        checkBoolean(value);
+                        if (value.getBooleanValue()) return executeListInstructions(t.getChild(i).getChild(1));
+                    }
+                    else if (t.getChild(i).getType() == AslLexer.ELSE) {
+                        return executeListInstructions(t.getChild(i).getChild(0));
+                    }
+                }
                 return null;
 
             // While
@@ -355,10 +361,15 @@ public class Interp {
 
             // For
             case AslLexer.FOR:
+<<<<<<< HEAD
+                Data value2;
+                if (t.getChild(0).getChildCount() > 0) {
+=======
                 System.out.println("for");
                 Data value2;
                 if (t.getChild(0).getChildCount() > 0) {
                     System.out.println("primer for");
+>>>>>>> 3b1c6f842fb6f19329f5980e84a79bd3ba22d346
                     value = evaluateExpression(t.getChild(0).getChild(1));
                     Stack.defineVariable(t.getChild(0).getChild(0).getText(), value);
                     while(true){
@@ -366,14 +377,25 @@ public class Interp {
                         checkBoolean(value2);
                         if (!value2.getBooleanValue()) return null;
                         Data r = executeListInstructions(t.getChild(3));
+<<<<<<< HEAD
+                        value = evaluateExpression(t.getChild(2).getChild(1));
+                        Stack.defineVariable(t.getChild(2).getChild(0).getText(), value);
+=======
                         System.out.println("value");
                         value = evaluateExpression(t.getChild(2).getChild(1));
                         Stack.defineVariable(t.getChild(2).getChild(0).getText(), value);
                         System.out.println("fin value");
+>>>>>>> 3b1c6f842fb6f19329f5980e84a79bd3ba22d346
                         if (r != null) return r;
                     }
                 }
                 else {
+<<<<<<< HEAD
+                    value = evaluateExpression(t.getChild(1));
+                    checkInteger(value);
+                    Stack.defineVariable(t.getChild(0).getText(), value);
+                    while(value.getIntegerValue() < t.getChild(2).getIntValue()){
+=======
                     System.out.println("segundo for");
                     value = evaluateExpression(t.getChild(1));
                     Data finish = evaluateExpression(t.getChild(2));
@@ -381,11 +403,15 @@ public class Interp {
                     Stack.defineVariable(t.getChild(0).getText(), value);
                     while(value.getIntegerValue() < finish.getIntegerValue()){
                         System.out.println("value");
+>>>>>>> 3b1c6f842fb6f19329f5980e84a79bd3ba22d346
                         Data r = executeListInstructions(t.getChild(3));
                         if (r != null) return r;
                         value.setValue(value.getIntegerValue()+1);
                         Stack.defineVariable(t.getChild(0).getText(), value);
+<<<<<<< HEAD
+=======
                         System.out.println("fin value");
+>>>>>>> 3b1c6f842fb6f19329f5980e84a79bd3ba22d346
                     }
                 }
 
@@ -457,7 +483,10 @@ public class Interp {
       int ry = 0;
       String text = null;
       Data data;
+<<<<<<< HEAD
+=======
 
+>>>>>>> 3b1c6f842fb6f19329f5980e84a79bd3ba22d346
       if (t.getChildCount() > 1){
 	if (t.getChild(1).getType() != AslLexer.ATTRIBUTES) 
 	{
@@ -482,7 +511,10 @@ public class Interp {
         }
 	    ++child;
 	}
+<<<<<<< HEAD
+=======
 
+>>>>>>> 3b1c6f842fb6f19329f5980e84a79bd3ba22d346
 	if (t.getChildCount() > child && t.getChild(child).getType() != AslLexer.ATTRIBUTES)
 	{
 	    if (t.getChild(child).getType() != AslLexer.ID) {
@@ -615,6 +647,10 @@ public class Interp {
 
             case "Move":
             idObject = t.getChild(1).getText();
+<<<<<<< HEAD
+            object = Stack.getVariable(idObject);
+=======
+>>>>>>> 3b1c6f842fb6f19329f5980e84a79bd3ba22d346
             if (t.getChild(2).getType() != AslLexer.ID) {
                 data = evaluateExpression(t.getChild(2));
                 checkInteger(data);
@@ -633,6 +669,11 @@ public class Interp {
                 data = Stack.getVariable(t.getChild(3).getText());
                 y = data.getIntegerValue();
             }
+<<<<<<< HEAD
+            object.setCoordX(x);
+            object.setCoordY(y);
+=======
+>>>>>>> 3b1c6f842fb6f19329f5980e84a79bd3ba22d346
             break;
 
             case "Translate":
@@ -656,10 +697,18 @@ public class Interp {
                 data = Stack.getVariable(t.getChild(3).getText());
                 y = object.getObjectCoordY() + data.getIntegerValue();
             }
+<<<<<<< HEAD
+            object.setCoordX(x);
+            object.setCoordY(y);
+=======
+>>>>>>> 3b1c6f842fb6f19329f5980e84a79bd3ba22d346
             break;
 
             case "Scale":
             idObject = t.getChild(1).getText();
+<<<<<<< HEAD
+            object = Stack.getVariable(idObject);
+=======
             if (t.getChild(2).getType() != AslLexer.ID) {
                 data = evaluateExpression(t.getChild(2));
                 checkInteger(data);
@@ -673,6 +722,7 @@ public class Interp {
 
             case "Rotate":
             idObject = t.getChild(1).getText();
+>>>>>>> 3b1c6f842fb6f19329f5980e84a79bd3ba22d346
             if (t.getChild(2).getType() != AslLexer.ID) {
                 data = evaluateExpression(t.getChild(2));
                 checkInteger(data);
@@ -682,6 +732,10 @@ public class Interp {
                 data = Stack.getVariable(t.getChild(2).getText());
                 rotation = data.getIntegerValue();
             }
+<<<<<<< HEAD
+            object.setRotation(rotation);
+=======
+>>>>>>> 3b1c6f842fb6f19329f5980e84a79bd3ba22d346
             break;
 
             case "Modify":
@@ -693,24 +747,32 @@ public class Interp {
                 case "stroke-width":
                 from = Integer.toString(object.getObjectStroke());
                 to = t.getChild(2).getChild(0).getText();
+<<<<<<< HEAD
+                object.setStrokeWidth(Integer.parseInt(to));
+=======
+>>>>>>> 3b1c6f842fb6f19329f5980e84a79bd3ba22d346
                 break;
                 
                 case "width":
                 from = Integer.toString(object.getObjectCoordX());
                 to = t.getChild(2).getChild(0).getText();
+                object.setWidth(Integer.parseInt(to));
                 break;
 
                 case "height":
                 from = Integer.toString(object.getObjectCoordY());
                 to = t.getChild(2).getChild(0).getText();
+                object.setHeight(Integer.parseInt(to));
                 break;
 
                 case "color":
                 from = object.getObjectColor();
                 to = t.getChild(2).getChild(0).getText();
+                object.setColor(to);
                 break;
 
             }
+            if(object != null) Stack.defineVariable(idObject, object);
             if (t.getChildCount() > 3){
                 novaAnimacio(t,idObject,3,t.getChildCount(), tipus, begin, end);
             }
@@ -792,6 +854,15 @@ public class Interp {
                     }
                 }
                 break;
+            case AslLexer.ACCESATTRIBUTE:
+                Data d = Stack.getVariable(t.getChild(0).getText());
+                String s = t.getChild(1).getText();
+                switch(s){
+                    case "width":
+                    int l = d.getObjectWidth();
+                    value = new Data(d.getObjectWidth());
+                    break;
+                }
             default: break;
         }
 
@@ -826,7 +897,7 @@ public class Interp {
         Data value2;
         switch (type) {
             // Relational operators
-            case AslLexer.EQUAL:
+            case AslLexer.COND_EQUAL:
             case AslLexer.NOT_EQUAL:
             case AslLexer.LT:
             case AslLexer.LE:

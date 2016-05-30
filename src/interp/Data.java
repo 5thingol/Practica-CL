@@ -41,7 +41,7 @@ import parser.*;
 
 public class Data {
     /** Types of data */
-    public enum Type {VOID, BOOLEAN, INTEGER, OBJECT, ANIMATION;}
+    public enum Type {VOID, BOOLEAN, INTEGER, STRING, OBJECT, ANIMATION;}
 
     /** Type of data*/
     private Type type;
@@ -82,6 +82,9 @@ public class Data {
 
     /** Constructor for void data */
     Data() {type = Type.VOID; }
+
+    /** Constructor for tipus string */
+    Data(String s) {type = Type.STRING; text = s;}
 
     /** Constructor for object data */
     Data(String tipus, int cx, int cy, int w, int h, String f, int r, int sW, int rx, int ry, String txt)
@@ -160,6 +163,11 @@ public class Data {
     public String getTipusObject() {
         assert type == Type.OBJECT;
         return tipus;
+    }
+
+    public String getStringValue() {
+        assert type == Type.OBJECT;
+        return text;
     }
 
     /** Retorna el tipus d'animació */
@@ -309,6 +317,8 @@ public class Data {
 
     public void setRotation(int r) { type = Type.OBJECT; rotation = r; }
 
+    public void setStrokeWidth(int sw){ type = Type.OBJECT; strokeWidth = sw; }
+
     public void setGroup(String g) { type = Type.OBJECT; group = g; }
 
     /** Defines an object for animation */
@@ -363,7 +373,7 @@ public class Data {
     public Data evaluateRelational (int op, Data d) {
         assert type != Type.VOID && type == d.type;
         switch (op) {
-            case AslLexer.EQUAL: return new Data(value == d.value);
+            case AslLexer.COND_EQUAL: return new Data(value == d.value);
             case AslLexer.NOT_EQUAL: return new Data(value != d.value);
             case AslLexer.LT: return new Data(value < d.value);
             case AslLexer.LE: return new Data(value <= d.value);
