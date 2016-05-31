@@ -179,6 +179,7 @@ factor : (NOT^ | PLUS^ | MINUS^)? atom
 // in parenthesis
 atom : ID
 | INT
+| DOUBLE
 | (b=TRUE | b=FALSE) -> ^(BOOLEAN[$b,$b.text])
 | funcall
 | '('! expr ')'!
@@ -224,7 +225,7 @@ list_attributes: attribute (','! attribute)*
 ;
 attribute: ATTRIBUTE^ EQUAL! (expr|STRING)
 ;
-coordenades: '{'! expr ','! expr '}'!
+coordenades: '{'! expr ','! expr ( ','! expr ','! expr)? '}'!
 ;
 radis: '('! expr (')'! | radi2)
 ;
@@ -291,6 +292,7 @@ ATTRIBUTE : 'width' | 'height' | 'style' | 'color' | 'stroke' | 'stroke-width' |
 ID :    ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'0'..'9'|'_')* ;
 FILE :   '"' ('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'-')+ '.'  ('a'..'z'|'A'..'Z'|'0'..'9'|'_')+ '"';
 INT :   '0'..'9'+ ;
+DOUBLE :   '0'..'9'+ '.' '0'..'9'+;
 // C-style comments
 COMMENT : '//' ~('\n'|'\r')* '\r'? '\n' {$channel=HIDDEN;}
 | '/*' ( options {greedy=false;} : . )* '*/' {$channel=HIDDEN;}

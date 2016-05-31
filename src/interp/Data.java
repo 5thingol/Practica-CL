@@ -41,13 +41,14 @@ import parser.*;
 
 public class Data {
     /** Types of data */
-    public enum Type {VOID, BOOLEAN, INTEGER, STRING, OBJECT, ANIMATION;}
+    public enum Type {VOID, BOOLEAN, INTEGER, DOUBLE, STRING, OBJECT, ANIMATION;}
 
     /** Type of data*/
     private Type type;
 
     /** Value of the data */
     private int value; 
+    private double doubleValue;
 
     /** Valors dels objectes */
     private String tipus;
@@ -76,6 +77,9 @@ public class Data {
 
     /** Constructor for integers */
     Data(int v) { type = Type.INTEGER; value = v; }
+
+    /** Constructor for integers */
+    Data(double d) { type = Type.DOUBLE; doubleValue = d; }
 
     /** Constructor for Booleans */
     Data(boolean b) { type = Type.BOOLEAN; value = b ? 1 : 0; }
@@ -133,6 +137,9 @@ public class Data {
     /** Indicates whether the data is integer */
     public boolean isInteger() { return type == Type.INTEGER; }
 
+    /** Indicates whether the data is double */
+    public boolean isDouble() { return type == Type.DOUBLE; }
+
     /** Indicates whether the data is void */
     public boolean isVoid() { return type == Type.VOID; }
 
@@ -149,6 +156,15 @@ public class Data {
     public int getIntegerValue() {
         assert type == Type.INTEGER;
         return value;
+    }
+
+    /**
+     * Gets the value of an double data. The method asserts that
+     * the data is an double.
+     */
+    public double getDoubleValue() {
+        assert type == Type.DOUBLE;
+        return doubleValue;
     }
 
     /**
@@ -298,6 +314,9 @@ public class Data {
     /** Defines an integer value for the data */
     public void setValue(int v) { type = Type.INTEGER; value = v; }
 
+    /** Defines an double value for the data */
+    public void setValue(double d) { type = Type.DOUBLE; doubleValue = d; }
+
     /** Defines an object for the data */
     public void setValue(String tipus, int cx, int cy, int w, int h, String f, int r)
     {
@@ -342,7 +361,7 @@ public class Data {
     /** Returns a string representing the data in textual form. */
     public String toString() {
         if (type == Type.BOOLEAN) return value == 1 ? "true" : "false";
-        return Integer.toString(value);
+        return Integer.toString((int)value);
     }
     
     /**

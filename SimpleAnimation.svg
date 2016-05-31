@@ -1,23 +1,210 @@
 <svg width="1000" height="600">
-<circle id="c" cx="69" cy="97" r="11" fill="blue">
-<animateTransform id="Anim1" attributeName="transform" type="translate" to="4 16" begin="0.0s" dur="2.0s" fill="freeze"/><animate id="newAnimation0" attributeName="fill" attributeType="XML" to="green" begin="0.0s" dur="1.0s" fill="freeze"/><animateTransform id="newAnimation1" attributeName="transform" type="translate" to="38 28" begin="2.0s" dur="4.0s" fill="freeze"/></circle>
-<circle id="c" cx="225" cy="166" r="17" fill="blue">
-<animateTransform id="Anim1" attributeName="transform" type="translate" to="6 19" begin="0.0s" dur="2.0s" fill="freeze"/><animate id="newAnimation2" attributeName="fill" attributeType="XML" to="green" begin="0.0s" dur="1.0s" fill="freeze"/><animateTransform id="newAnimation3" attributeName="transform" type="translate" to="35 23" begin="2.0s" dur="4.0s" fill="freeze"/></circle>
-<circle id="c" cx="262" cy="261" r="21" fill="blue">
-<animateTransform id="Anim1" attributeName="transform" type="translate" to="8 20" begin="0.0s" dur="2.0s" fill="freeze"/><animate id="newAnimation4" attributeName="fill" attributeType="XML" to="green" begin="0.0s" dur="2.0s" fill="freeze"/><animateTransform id="newAnimation5" attributeName="transform" type="translate" to="23 23" begin="2.0s" dur="4.0s" fill="freeze"/></circle>
-<circle id="c" cx="381" cy="210" r="21" fill="blue">
-<animateTransform id="Anim1" attributeName="transform" type="translate" to="3 16" begin="0.0s" dur="2.0s" fill="freeze"/><animate id="newAnimation6" attributeName="fill" attributeType="XML" to="green" begin="0.0s" dur="3.0s" fill="freeze"/><animateTransform id="newAnimation7" attributeName="transform" type="translate" to="33 28" begin="2.0s" dur="4.0s" fill="freeze"/></circle>
-<circle id="c" cx="2" cy="153" r="11" fill="blue">
-<animateTransform id="Anim1" attributeName="transform" type="translate" to="20 4" begin="0.0s" dur="2.0s" fill="freeze"/><animate id="newAnimation8" attributeName="fill" attributeType="XML" to="green" begin="0.0s" dur="3.0s" fill="freeze"/><animateTransform id="newAnimation9" attributeName="transform" type="translate" to="27 32" begin="2.0s" dur="4.0s" fill="freeze"/></circle>
-<circle id="c" cx="61" cy="257" r="14" fill="blue">
-<animateTransform id="Anim1" attributeName="transform" type="translate" to="25 19" begin="0.0s" dur="2.0s" fill="freeze"/><animate id="newAnimation10" attributeName="fill" attributeType="XML" to="green" begin="0.0s" dur="2.0s" fill="freeze"/><animateTransform id="newAnimation11" attributeName="transform" type="translate" to="26 38" begin="2.0s" dur="4.0s" fill="freeze"/></circle>
-<circle id="c" cx="288" cy="276" r="12" fill="blue">
-<animateTransform id="Anim1" attributeName="transform" type="translate" to="21 3" begin="0.0s" dur="2.0s" fill="freeze"/><animate id="newAnimation12" attributeName="fill" attributeType="XML" to="green" begin="0.0s" dur="2.0s" fill="freeze"/><animateTransform id="newAnimation13" attributeName="transform" type="translate" to="34 33" begin="2.0s" dur="4.0s" fill="freeze"/></circle>
-<circle id="c" cx="191" cy="153" r="27" fill="blue">
-<animateTransform id="Anim1" attributeName="transform" type="translate" to="29 9" begin="0.0s" dur="2.0s" fill="freeze"/><animate id="newAnimation14" attributeName="fill" attributeType="XML" to="green" begin="0.0s" dur="3.0s" fill="freeze"/><animateTransform id="newAnimation15" attributeName="transform" type="translate" to="27 28" begin="2.0s" dur="4.0s" fill="freeze"/></circle>
-<circle id="c" cx="307" cy="141" r="23" fill="blue">
-<animateTransform id="Anim1" attributeName="transform" type="translate" to="6 19" begin="0.0s" dur="2.0s" fill="freeze"/><animate id="newAnimation16" attributeName="fill" attributeType="XML" to="green" begin="0.0s" dur="3.0s" fill="freeze"/><animateTransform id="newAnimation17" attributeName="transform" type="translate" to="32 25" begin="2.0s" dur="4.0s" fill="freeze"/></circle>
-<circle id="c" cx="355" cy="43" r="13" fill="blue">
-<animateTransform id="Anim1" attributeName="transform" type="translate" to="25 12" begin="0.0s" dur="2.0s" fill="freeze"/><animate id="newAnimation18" attributeName="fill" attributeType="XML" to="green" begin="0.0s" dur="1.0s" fill="freeze"/><animateTransform id="newAnimation19" attributeName="transform" type="translate" to="24 32" begin="2.0s" dur="4.0s" fill="freeze"/></circle>
+<defs>
+<path id="RainDrop" d="M16,0
+     C 16,0 0,24 0,33
+     C 0,42 7,49 16,49
+     C 25,49 32,42 32,33
+     C 32,24 16,0 16,0" fill="blue" stroke="black" stroke-width="2"/>
+</defs>
+<use xlink:href="#RainDrop" id="drop" x="248" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="1.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="51" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="1.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="387" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="1.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="108" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="2.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="38" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="0.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="217" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="1.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="315" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="1.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="187" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="2.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="342" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="0.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="101" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="1.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="352" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="2.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="66" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="0.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="472" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="0.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="187" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="0.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="540" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="2.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="550" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="1.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="552" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="2.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="595" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="1.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="153" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="2.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="229" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="0.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="375" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="1.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="44" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="0.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="356" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="1.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="481" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="0.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="537" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="0.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="21" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="1.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="544" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="2.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="440" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="0.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="389" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="1.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="575" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="2.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="108" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="2.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="306" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="2.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="357" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="0.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="86" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="1.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="35" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="1.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="69" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="2.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="80" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="1.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="127" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="2.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="494" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="0.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="186" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="1.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="317" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="1.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="54" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="2.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="72" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="0.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="485" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="1.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="529" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="2.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="464" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="2.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="579" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="0.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="190" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="1.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="103" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="1.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="346" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="2.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="244" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="1.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="396" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="0.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="279" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="2.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="518" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="2.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="459" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="0.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="288" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="0.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="581" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="0.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="430" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="0.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="104" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="1.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="91" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="2.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="390" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="1.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="311" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="2.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="157" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="0.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="478" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="1.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="365" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="0.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="259" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="1.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="178" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="0.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="280" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="1.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="218" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="0.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="100" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="0.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="230" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="1.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="25" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="0.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="241" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="1.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="325" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="0.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="129" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="0.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="514" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="2.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="424" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="0.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="220" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="1.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="561" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="2.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="138" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="1.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="410" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="0.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="227" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="1.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="178" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="0.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="578" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="1.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="372" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="1.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="528" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="2.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="414" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="1.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="373" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="1.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="14" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="0.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="325" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="2.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="541" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="0.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="543" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="2.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="534" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="0.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="543" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="2.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="396" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="1.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="249" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="0.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="437" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="1.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="257" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="1.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="553" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="0.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="64" y="-100" width="1" height="1" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="0 1000" begin="1.0s" dur="1.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="3.0s" dur="3.0s" fill="freeze"/></use>
 
 </svg>

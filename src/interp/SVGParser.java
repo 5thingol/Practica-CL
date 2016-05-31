@@ -12,6 +12,7 @@ import java.util.HashMap;
 import java.util.Map.Entry;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 import java.io.*;
 
 /** Class responsible for transforming the structured data obtained from the tree to SVG language. */
@@ -58,19 +59,24 @@ public class SVGParser {
 	/** Conte el fitxer SVG escrit fins al moment */
 	private String SVG;
 
+	private Stack< HashMap<String, List<Animation> > > stack;
+
 	/** Mapa amb les variables de tipus objecte tractats actualment */
 	private HashMap<String, List<Animation> > SVGObjects;
+
+	/** */
+	private String returnVariable;
 	
 	public SVGParser() {
 		filename = "SimpleAnimation";
 		SVG = "";
-		SVGObjects = new HashMap<String, List<Animation> >();
+		stack = new Stack< HashMap<String, List<Animation> > >(); 
 	}
 
 	public SVGParser(String filename) {
 		this.filename = filename;
 		SVG = "";
-		SVGObjects = new HashMap<String, List<Animation> >();
+		stack = new Stack< HashMap<String, List<Animation> > >(); 
 	}
 
 	/** Adds the initial shapes definitions to the SVG */
@@ -133,6 +139,7 @@ public class SVGParser {
 		List<Animation> dades = SVGObjects.get(id);
       	List<Animation> newDades = new ArrayList<Animation>();
       	newDades.add(group);
+
         if (dades == null) {
         	SVGObjects.put(id, newDades); 
 		} else {
@@ -141,12 +148,12 @@ public class SVGParser {
         	SVGObjects.put(id,newDades);
         } 
 
+//			newDades = SVGObjects.get(id);
 	}
 
 	
 	/** Afegeix a l'objecte idObject previament creat una animacio */ 
 	public void addSVGAnimation(String idObject, String idAnimation, Data animation) {
-		
                 
 		Animation anim = new Animation(idAnimation, animation);
 		List<Animation> aux = SVGObjects.get(idObject);
@@ -155,14 +162,39 @@ public class SVGParser {
 		SVGObjects.put(idObject, aux);
 	}
 
+	/**  */ 
+	public void enterFunction() {
+		if (SVGObjects != null) {
+			stack.push(SVGObjects);
+		}
+		SVGObjects = new HashMap<String, List<Animation> >();
+	}
+
+	public void setReturnVariable(String id) {
+		returnVariable = id;
+	}
+
+	public void exitFunction() {
+ 		List<Animation> dades = SVGObjects.get(returnVariable);
+
+		clearObjects(returnVariable);
+		if (!stack.empty()) SVGObjects = stack.pop();
+		
+		if (returnVariable != null && SVGObjects != null && dades != null) {
+			SVGObjects.put(returnVariable, dades); 
+		}
+		returnVariable = null;
+	}
 
 	/** Escriu i neteja les variables de tipus objecte tractats actualment. S'ha de cridar quan s'acabi una funcio */
-	public void clearObjects() {
+	private void clearObjects(String returnVariable) {
 		for (Entry<String, List<Animation> > entry : SVGObjects.entrySet()) {
     		String key = entry.getKey();
-	    	List<Animation> dades = entry.getValue();
-	    	System.out.println("Clearing objects");
-	    	writeObjectToSVGFile(key, dades);
+    		if (returnVariable == null || !returnVariable.equals(key)){ 
+		    	List<Animation> dades = entry.getValue();
+		    	System.out.println("Clearing objects");
+		    	writeObjectToSVGFile(key, dades);
+	    	}
 		}
 		SVGObjects.clear();
 	}
@@ -194,6 +226,7 @@ public class SVGParser {
 			properties += " y1=\"" + data.getObjectCoordY() + "\"";
 			properties += " x2=\"" + data.getObjectRadiX() + "\"";
 			properties += " y2=\"" + data.getObjectRadiY() + "\"";
+			if (data.getObjectStroke().equals("")) properties += " stroke= \"black\"";
 		} else if (!data.getTipusObject().equals("Group")) {
 			properties += " x=\"" + data.getObjectCoordX() + "\"";
 			properties += " y=\"" + data.getObjectCoordY() + "\"";
@@ -337,7 +370,7 @@ public class SVGParser {
 		String newObject = "<";
 		Animation object = dades.get(0);
 		Data initialProperties = object.data;
-		System.out.print(dades.get(0).data);
+
 		if (initialProperties.getObjectGroup() != null) {
 			newObject += "defs><";
 		}

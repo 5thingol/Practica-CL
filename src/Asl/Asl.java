@@ -153,7 +153,10 @@ public class Asl{
         if (t.getChild(importsIndex).getType() == AslLexer.IMPORTS) {
             AslTree importedT = t.getChild(importsIndex);
             for (int i = 0; i < importedT.getChildCount(); ++i) {
-                AslTree moduleTree = getFileTree(importedT.getChild(i).getText());
+                String moduleFile = importedT.getChild(i).getText();
+                if (moduleFile.contains("\"")) moduleFile = moduleFile.split("\"")[1];
+                
+                AslTree moduleTree = getFileTree(moduleFile);
 
                 List<AslTree> defs = moduleTree.getChild(2).getChildren();
                 if (defs != null) t.getChild(importsIndex+1).addChildren(defs);

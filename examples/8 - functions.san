@@ -1,5 +1,5 @@
 func createAnimatedCircle(x, y, r)
-	c = Create Circle {x,y} (r) color=blue; // <svg Cirle
+	c = Create Circle {x,y} (r) color=blue; 
 	
 	@begin=0, duration=2;
 	Anim1 = Translate c {rand(1,30),rand(1,30)};
@@ -13,7 +13,8 @@ endfunc
 
 func main()
 
-	// Crea 10 cercles amb de 
+	// Crea 10 cercles que passen de blau a verd amb posicions i 
+	// mides aleatòries
 	
 	for (i = 0; i < 10; i=i+1)
 		createAnimatedCircle(rand(1,400), rand(1,300),rand(10,30));

@@ -181,6 +181,9 @@ public class Interp {
      * @return The data returned by the function.
      */
     private Data executeFunction (String funcname, AslTree args) {
+
+        svgParser.enterFunction();
+
         // Get the AST of the function
         AslTree f = FuncName2Tree.get(funcname);
         if (f == null) throw new RuntimeException(" function " + funcname + " not declared");
@@ -221,7 +224,7 @@ public class Interp {
         // Destroy the activation record
         Stack.popActivationRecord();
 
-        svgParser.clearObjects();
+        svgParser.exitFunction();
 
         return result;
     }
@@ -240,8 +243,10 @@ public class Interp {
         int ninstr = t.getChildCount();
         for (int i = 0; i < ninstr; ++i) {
             result = executeInstruction (t.getChild(i));
-
-            if (result != null) return result;
+                        
+            if (result != null) {
+                return result;
+            }
         }
         return null;
     }
@@ -283,15 +288,15 @@ public class Interp {
             case AslLexer.TIMEANNOTATION:
                 currentTimeAnnotation = new TimeAnnotation();
                 Data aux = evaluateExpression(t.getChild(0));
-                currentTimeAnnotation.begin = (double) aux.getIntegerValue();
+                currentTimeAnnotation.begin = (double) aux.getDoubleValue();
                 if (t.getChild(1) != null) {
                     if (t.getChild(1).getType() == AslLexer.END) {
                         aux = evaluateExpression(t.getChild(1).getChild(0));
-                        double end = (double) aux.getIntegerValue();
+                        double end = (double) aux.getDoubleValue();
                         currentTimeAnnotation.duration = end - currentTimeAnnotation.begin;
                     } else {
                         aux = evaluateExpression(t.getChild(1).getChild(0));
-                        currentTimeAnnotation.duration = (double) aux.getIntegerValue();
+                        currentTimeAnnotation.duration = (double) aux.getDoubleValue();
                     }
                 } else currentTimeAnnotation.duration = 0;
                 return null;
@@ -320,6 +325,7 @@ public class Interp {
                     }
                     svgParser.createSVGGroup(t.getChild(0).getText(), idObjects);
                     value = new Data("Group",0,0,0,0,"",0,"",0,0,0,"");
+
                 } else if (t.getChild(1).getType() == AslLexer.ANIMATION) {
                     if (currentTimeAnnotation == null) throw new RuntimeException("Animation instruction doesn't have a proper previous Time Annotation");
                     value = createAnimation(t.getChild(1));
@@ -399,6 +405,8 @@ public class Interp {
             // Return
             case AslLexer.RETURN:
                 if (t.getChildCount() != 0) {
+                    if (t.getChild(0).getType() == AslLexer.ID) svgParser.setReturnVariable(t.getChild(0).getText());
+
                     return evaluateExpression(t.getChild(0));
                 }
                 return new Data(); // No expression: returns void data
@@ -817,6 +825,9 @@ public class Interp {
             // An integer literal
             case AslLexer.INT:
                 value = new Data(t.getIntValue());
+                break;
+            case AslLexer.DOUBLE:
+                value = new Data(Double.parseDouble(t.getText()));
                 break;
             // A Boolean literal
             case AslLexer.BOOLEAN:

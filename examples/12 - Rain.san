@@ -1,10 +1,7 @@
-import Rain.sam;
+import "Rain.sam";
 
 func main()
-	for (i in 1:10)
-		x = 1;
-	endfor
 
-	CreateRain(100,10,-100,400,-10);
+	CreateRain(100,10,-100,600,-100);
 
 endfunc

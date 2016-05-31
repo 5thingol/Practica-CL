@@ -1,3 +1,6 @@
-func main()
+import "Shapes.sam";
 
+func main()
+	Create Triangle {100,100};
+	CreateAllShapes();
 endfunc

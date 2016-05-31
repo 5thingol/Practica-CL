@@ -21,7 +21,7 @@ digraph {
   n8 [label="Create"];
   n9 [label="Rectangle"];
   n10 [label="50"];
-  n11 [label="30"];
+  n11 [label="70"];
   n12 [label="ATTRIBUTES"];
   n12 [label="ATTRIBUTES"];
   n13 [label="width"];
@@ -37,7 +37,7 @@ digraph {
   n19 [label="Create"];
   n20 [label="Circle"];
   n21 [label="200"];
-  n22 [label="30"];
+  n22 [label="90"];
   n23 [label="50"];
   n24 [label="ATTRIBUTES"];
   n24 [label="ATTRIBUTES"];
@@ -51,7 +51,7 @@ digraph {
   n29 [label="Create"];
   n30 [label="Ellipse"];
   n31 [label="500"];
-  n32 [label="30"];
+  n32 [label="300"];
   n33 [label="80"];
   n34 [label="30"];
   n35 [label="ATTRIBUTES"];
@@ -65,19 +65,34 @@ digraph {
   n40 [label="color"];
   n40 [label="color"];
   n41 [label="\"blue\""];
-  n42 [label=":="];
-  n42 [label=":="];
-  n43 [label="t"];
-  n44 [label="Create"];
-  n44 [label="Create"];
-  n45 [label="Text"];
-  n46 [label="750"];
-  n47 [label="30"];
+  n42 [label="Create"];
+  n42 [label="Create"];
+  n43 [label="Line"];
+  n44 [label="400"];
+  n45 [label="100"];
+  n46 [label="640"];
+  n47 [label="110"];
   n48 [label="ATTRIBUTES"];
   n48 [label="ATTRIBUTES"];
-  n49 [label="txt"];
-  n49 [label="txt"];
-  n50 [label="\"Valar morgulis\""];
+  n49 [label="stroke"];
+  n49 [label="stroke"];
+  n50 [label="\"black\""];
+  n51 [label="stroke-width"];
+  n51 [label="stroke-width"];
+  n52 [label="3"];
+  n53 [label=":="];
+  n53 [label=":="];
+  n54 [label="t"];
+  n55 [label="Create"];
+  n55 [label="Create"];
+  n56 [label="Text"];
+  n57 [label="750"];
+  n58 [label="30"];
+  n59 [label="ATTRIBUTES"];
+  n59 [label="ATTRIBUTES"];
+  n60 [label="txt"];
+  n60 [label="txt"];
+  n61 [label="\"Valar morgulis\""];
 
   n0 -> n1 // "PROG" -> "IMPORTS"
   n0 -> n2 // "PROG" -> "DEFINES"
@@ -89,7 +104,7 @@ digraph {
   n7 -> n8 // "LIST_INSTR" -> "Create"
   n8 -> n9 // "Create" -> "Rectangle"
   n8 -> n10 // "Create" -> "50"
-  n8 -> n11 // "Create" -> "30"
+  n8 -> n11 // "Create" -> "70"
   n8 -> n12 // "Create" -> "ATTRIBUTES"
   n12 -> n13 // "ATTRIBUTES" -> "width"
   n13 -> n14 // "width" -> "40"
@@ -100,7 +115,7 @@ digraph {
   n17 -> n19 // ":=" -> "Create"
   n19 -> n20 // "Create" -> "Circle"
   n19 -> n21 // "Create" -> "200"
-  n19 -> n22 // "Create" -> "30"
+  n19 -> n22 // "Create" -> "90"
   n19 -> n23 // "Create" -> "50"
   n19 -> n24 // "Create" -> "ATTRIBUTES"
   n24 -> n25 // "ATTRIBUTES" -> "color"
@@ -110,7 +125,7 @@ digraph {
   n27 -> n29 // ":=" -> "Create"
   n29 -> n30 // "Create" -> "Ellipse"
   n29 -> n31 // "Create" -> "500"
-  n29 -> n32 // "Create" -> "30"
+  n29 -> n32 // "Create" -> "300"
   n29 -> n33 // "Create" -> "80"
   n29 -> n34 // "Create" -> "30"
   n29 -> n35 // "Create" -> "ATTRIBUTES"
@@ -120,14 +135,25 @@ digraph {
   n38 -> n39 // "stroke-width" -> "2"
   n35 -> n40 // "ATTRIBUTES" -> "color"
   n40 -> n41 // "color" -> "\"blue\""
-  n7 -> n42 // "LIST_INSTR" -> ":="
-  n42 -> n43 // ":=" -> "t"
-  n42 -> n44 // ":=" -> "Create"
-  n44 -> n45 // "Create" -> "Text"
-  n44 -> n46 // "Create" -> "750"
-  n44 -> n47 // "Create" -> "30"
-  n44 -> n48 // "Create" -> "ATTRIBUTES"
-  n48 -> n49 // "ATTRIBUTES" -> "txt"
-  n49 -> n50 // "txt" -> "\"Valar morgulis\""
+  n7 -> n42 // "LIST_INSTR" -> "Create"
+  n42 -> n43 // "Create" -> "Line"
+  n42 -> n44 // "Create" -> "400"
+  n42 -> n45 // "Create" -> "100"
+  n42 -> n46 // "Create" -> "640"
+  n42 -> n47 // "Create" -> "110"
+  n42 -> n48 // "Create" -> "ATTRIBUTES"
+  n48 -> n49 // "ATTRIBUTES" -> "stroke"
+  n49 -> n50 // "stroke" -> "\"black\""
+  n48 -> n51 // "ATTRIBUTES" -> "stroke-width"
+  n51 -> n52 // "stroke-width" -> "3"
+  n7 -> n53 // "LIST_INSTR" -> ":="
+  n53 -> n54 // ":=" -> "t"
+  n53 -> n55 // ":=" -> "Create"
+  n55 -> n56 // "Create" -> "Text"
+  n55 -> n57 // "Create" -> "750"
+  n55 -> n58 // "Create" -> "30"
+  n55 -> n59 // "Create" -> "ATTRIBUTES"
+  n59 -> n60 // "ATTRIBUTES" -> "txt"
+  n60 -> n61 // "txt" -> "\"Valar morgulis\""
 
 }

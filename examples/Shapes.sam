@@ -1,0 +1,13 @@
+module Shapes;
+
+define Triangle "M8 48 L56 48 L32 12 Z";
+
+func CreateAllShapes()
+	
+	Create Rectangle {100,100} width=20,height=20;
+	Create Circle {200,100} (20);
+	Create Ellipse {300,100} (20,40);
+	Create Line {400,100,640,110} stroke-width=8;
+	Create Triangle {500,100} width=20,height=20;
+
+endfunc
