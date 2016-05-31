@@ -114,7 +114,6 @@ public class SVGParser {
         if (dades == null) {
         	SVGObjects.put(id, newDades); 
 		} else {
-			System.out.println("substitute object");
         	writeObjectToSVGFile(id, dades);
         	SVGObjects.put(id,newDades);
         } 
@@ -143,7 +142,6 @@ public class SVGParser {
         if (dades == null) {
         	SVGObjects.put(id, newDades); 
 		} else {
-			System.out.println("substitute object");
         	writeObjectToSVGFile(id, dades);
         	SVGObjects.put(id,newDades);
         } 
@@ -158,7 +156,7 @@ public class SVGParser {
 		Animation anim = new Animation(idAnimation, animation);
 		List<Animation> aux = SVGObjects.get(idObject);
 		aux.add(anim);
-		System.out.println(idAnimation);
+
 		SVGObjects.put(idObject, aux);
 	}
 
@@ -192,7 +190,6 @@ public class SVGParser {
     		String key = entry.getKey();
     		if (returnVariable == null || !returnVariable.equals(key)){ 
 		    	List<Animation> dades = entry.getValue();
-		    	System.out.println("Clearing objects");
 		    	writeObjectToSVGFile(key, dades);
 	    	}
 		}
@@ -257,7 +254,6 @@ public class SVGParser {
 		Data object = objectA.data;
 
 		Data anim = a.data;
-		System.out.println(anim.isObject());
 
 		if (!anim.isAnimation()) throw new RuntimeException("Added element to object is not an animation");
 		String animation = "<animate";																// Animation element

@@ -222,7 +222,6 @@ public class Interp {
         // Copy the parameters to the current activation record
         for (int i = 0; i < nparam; ++i) {
             String param_name = p.getChild(i).getText();
-            System.out.println(p.getChild(i).getText());
             Stack.defineVariable(param_name, Arg_values.get(i));
         }
 
@@ -328,7 +327,6 @@ public class Interp {
             // Assignment
             case AslLexer.ASSIGN:
                 value = null;
-                System.out.println("assign");
                 if (t.getChild(1).getType() == AslLexer.CREATE) {
                     value = createObject(t.getChild(1));
                     svgParser.createSVGObject(t.getChild(0).getText(), value);
@@ -371,7 +369,6 @@ public class Interp {
 
             // While
             case AslLexer.WHILE:
-                System.out.println("while");
                 while (true) {
                     value = evaluateExpression(t.getChild(0));
                     checkBoolean(value);
@@ -382,10 +379,8 @@ public class Interp {
 
             // For
             case AslLexer.FOR:
-                System.out.println("for");
                 Data value2;
                 if (t.getChild(0).getChildCount() > 0) {
-                    System.out.println("primer for");
                     value = evaluateExpression(t.getChild(0).getChild(1));
                     Stack.defineVariable(t.getChild(0).getChild(0).getText(), value);
                     while(true){
@@ -395,12 +390,10 @@ public class Interp {
                         Data r = executeListInstructions(t.getChild(3));
                         value = evaluateExpression(t.getChild(2).getChild(1));
                         Stack.defineVariable(t.getChild(2).getChild(0).getText(), value);
-                        System.out.println("fin value");
                         if (r != null) return r;
                     }
                 }
                 else {
-                    System.out.println("segundo for");
                     value = evaluateExpression(t.getChild(1));
                     Data finish = evaluateExpression(t.getChild(2));
                     checkInteger(value);
@@ -410,7 +403,6 @@ public class Interp {
                         if (r != null) return r;
                         value.setValue(value.getIntegerValue()+1);
                         Stack.defineVariable(t.getChild(0).getText(), value);
-                        System.out.println("fin value");
                     }
                 }
 
@@ -452,7 +444,6 @@ public class Interp {
                 return null;
             // Function call
             case AslLexer.FUNCALL:
-                System.out.println("function");
                 if (!t.getChild(0).getText().equals("rand")) executeFunction(t.getChild(0).getText(), t.getChild(1));
                 return null;
 
