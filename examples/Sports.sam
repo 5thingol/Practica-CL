@@ -1,7 +1,0 @@
-module Sports;
-
-define FootBall "M 304 156.5 A 149 149 0 1 1  6,156.5 A 149 149 0 1 1  304 156.5 z";
-
-func CreatBall()
-	
-endfunc

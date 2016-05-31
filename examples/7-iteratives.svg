@@ -1,0 +1,9 @@
+<svg width="1000" height="600">
+<circle id="c" cx="500" cy="100" r="20" fill="black">
+<animateTransform id="newAnimation1" attributeName="transform" type="translate" to="0 100" begin="0.0s" dur="1.0s" fill="freeze"/></circle>
+<rect id="newObject0" x="40" y="40" width="20" height="20" fill="black">
+</rect>
+<circle id="c" cx="530" cy="100" r="20" fill="black">
+<animateTransform id="newAnimation2" attributeName="transform" type="translate" to="0 100" begin="30.0s" dur="1.0s" fill="freeze"/></circle>
+
+</svg>

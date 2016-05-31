@@ -1,5 +1,5 @@
 func createAnimatedCircle(x, y, r)
-	c = Create Circle {x,y} (r) color=blue; 
+	c = Create Circle {x,y} (r) color="blue"; 
 	
 	@begin=0, duration=2;
 	Anim1 = Translate c {rand(1,30),rand(1,30)};

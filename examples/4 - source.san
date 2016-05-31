@@ -1,5 +1,8 @@
 func main() 
+
+	// Executa dos fitxers amb o sense paràmetres
+
 	Source "1-create.san" ();
 
-	//Source "6 - conditionals + access attributes" (400,300);
+	Source "6-conditionalsAndAccessAttributes.san" (400,300);
 endfunc

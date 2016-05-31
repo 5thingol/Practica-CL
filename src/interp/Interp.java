@@ -83,11 +83,13 @@ public class Interp {
      * Constructor of the interpreter. It prepares the main
      * data structures for the execution of the main program.
      */
-    public Interp(AslTree T, String tracefile) {
+    public Interp(AslTree T, String tracefile, String filename) {
         assert T != null;
 
         // Add the definitions to the SVG file
-        svgParser = new SVGParser();
+        if (filename == null) svgParser = new SVGParser();
+        else svgParser = new SVGParser(filename); 
+
         if (T.getChild(1).getType() == AslLexer.DEFINES) {
             svgParser.addDefinitions(T.getChild(1));
         } 
@@ -111,6 +113,7 @@ public class Interp {
 
     /** Runs the program by calling the main function without parameters. */
     public void Run() {
+
         executeFunction ("main", null);
         svgParser.writeSVGFile();
     }
@@ -188,6 +191,16 @@ public class Interp {
         AslTree f = FuncName2Tree.get(funcname);
         if (f == null) throw new RuntimeException(" function " + funcname + " not declared");
 
+        if (funcname.equals("main")) {
+            AslTree par = f.getChild(1);
+            args = new AslTree(par.token);
+            int n = (int) par.getChildCount()/2;
+            for (int i = 0 ; i < n; i++) {
+                args.addChild(par.getChild(n));
+                par.deleteChild(n);
+            }
+        }
+
         // Gather the list of arguments of the caller. This function
         // performs all the checks required for the compatibility of
         // parameters.
@@ -209,6 +222,7 @@ public class Interp {
         // Copy the parameters to the current activation record
         for (int i = 0; i < nparam; ++i) {
             String param_name = p.getChild(i).getText();
+            System.out.println(p.getChild(i).getText());
             Stack.defineVariable(param_name, Arg_values.get(i));
         }
 
@@ -421,9 +435,14 @@ public class Interp {
                     params.remove(0);
                     for (int i = 0; i < tree.getChild(2).getChildCount(); i++) {
                         if (tree.getChild(2).getChild(i).getChild(0).getText().equals("main")) {
-                            if (params.size() != tree.getChild(2).getChild(i).getChild(1).getChildCount())
+                            int params2 = tree.getChild(2).getChild(i).getChild(1).getChildCount();
+                            if (params.size() != params2)
                                 throw new RuntimeException("Main function of sourced file has a different number of parameters than the ones on the source instruction");
-                            tree.getChild(2).getChild(i).getChild(1).addChildren(params);
+                            //tree.getChild(2).getChild(i).getChild(1).replaceChildren(0,1,params);
+                            
+                            //for (int j = 0; j < params2; j++) tree.getChild(2).getChild(i).getChild(1).deleteChild(0);
+
+                            tree.getChild(2).getChild(i).getChild(1).addChildren(params);                               
                         }
                     }
                     Asl.executeTree(tree);
@@ -485,7 +504,6 @@ public class Interp {
       int ry = 0;
       String text = null;
       Data data;
-
       if (t.getChildCount() > 1){
 	if (t.getChild(1).getType() != AslLexer.ATTRIBUTES) 
 	{
@@ -510,6 +528,7 @@ public class Interp {
         }
 	    ++child;
 	}
+
 	if (t.getChildCount() > child && t.getChild(child).getType() != AslLexer.ATTRIBUTES)
 	{
 	    if (t.getChild(child).getType() != AslLexer.ID) {
@@ -523,7 +542,8 @@ public class Interp {
         }
 	    ++child;
     }
-	if (t.getChildCount() > child && t.getChild(child).getType() != AslLexer.ATTRIBUTES)
+	
+    if (t.getChildCount() > child && t.getChild(child).getType() != AslLexer.ATTRIBUTES)
     {
         if (t.getChild(child).getType() != AslLexer.ID) {
             data = evaluateExpression(t.getChild(child));
@@ -632,6 +652,7 @@ public class Interp {
 	    }
 	  }
 	}
+
       return new Data(tipus, x, y, width, height, color, rotation, stroke, strokeWidth, rx, ry, text);
     }
 
@@ -827,7 +848,6 @@ public class Interp {
         int previous_line = lineNumber();
         setLineNumber(t);
         int type = t.getType();
-
         Data value = null;
         // Atoms
         switch (type) {
@@ -866,6 +886,7 @@ public class Interp {
                 break;
             case AslLexer.ACCESATTRIBUTE:
                 Data d = Stack.getVariable(t.getChild(0).getText());
+
                 String s = t.getChild(1).getText();
                 if (d.isObject()){
                     switch(s){
@@ -881,7 +902,7 @@ public class Interp {
                         case "coordY":
                         value = new Data(d.getObjectCoordY());
                         break;
-                        case "strokeWidth":
+                        case "stroke-width":
                         value = new Data(d.getObjectStrokeWidth());
                         break;
                         case "stroke":
@@ -893,7 +914,7 @@ public class Interp {
                         case "radiX":
                         value = new Data(d.getObjectRadiX());
                         break;
-                        case "radiy":
+                        case "radiY":
                         value = new Data(d.getObjectRadiY());
                         break;
                         case "tipus":
@@ -914,6 +935,7 @@ public class Interp {
                         break;
                     }
                 }
+
                 break;
         }
 

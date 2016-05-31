@@ -1,0 +1,5 @@
+<svg width="1000" height="600">
+<rect id="r" x="300" y="200" width="100" height="50" fill="black">
+<animate id="newAnimation0" attributeName="x" attributeType="XML" to="300" begin="1.0s" dur="3.0s"/><animate attributeName="y" attributeType="XML" to="200" begin="1.0s" dur="3.0s" fill="freeze"/><animate id="m" attributeName="fill" attributeType="XML" to="blue" begin="1.0s" dur="3.0s" fill="freeze"/><set attributeName="visibility" attributeType="XML" to="hidden" begin="4.0s" dur="4.0s" fill="freeze"/></rect>
+
+</svg>

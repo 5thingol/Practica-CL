@@ -1,6 +1,9 @@
 import "Rain.sam";
 
 func main()
+	
+	// Crea una cortina de pluja cridant amb parametres adequats la funcio
+	// CreateRain del modul Rain
 
 	CreateRain(100,10,-100,600,-100);
 

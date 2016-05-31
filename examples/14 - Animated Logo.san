@@ -1,5 +1,7 @@
 func main() 
 	
+	// Crea un logo animat 
+
 	t = Create Text {100,100} txt="Chicken Secrets, S.L.";
 	@begin=0, duration=1.5;
 	Translate t {10,0};

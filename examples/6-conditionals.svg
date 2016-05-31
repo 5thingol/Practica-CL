@@ -1,0 +1,6 @@
+<svg width="1000" height="600">
+<rect id="r" x="300" y="200" width="20" height="20" fill="black" stroke-width= "30">
+<animate id="newAnimation0" attributeName="fill" attributeType="XML" to="blue" begin="0.0s" dur="3.0s" fill="freeze"/><animate id="anim1" attributeName="x" attributeType="XML" to="300" begin="0.0s" dur="3.0s"/><animate attributeName="y" attributeType="XML" to="200" begin="0.0s" dur="3.0s" fill="freeze"/><animateTransform id="newAnimation1" attributeName="transform" type="translate" to="5 10" begin="3.0s" dur="1.0s" fill="freeze"/></rect>
+
+
+</svg>

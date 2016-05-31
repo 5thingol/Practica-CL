@@ -1,6 +1,10 @@
 import "Shapes.sam";
 
 func main()
+
+	// Importa el modul Shapes i l'utilitza per crear un triangle (definit al modul)
+	// i cridar-ne una funcio
+
 	Create Triangle {100,100};
 	CreateAllShapes();
 endfunc

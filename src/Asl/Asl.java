@@ -60,6 +60,8 @@ public class Asl{
     private static String tracefile = null;
     /** Flag to indicate whether the program must be executed after parsing. */
     private static boolean execute = true;
+    /** Name of the output SVG file */
+    private static String filename = null;
       
     /** Main program that invokes the parser and the interpreter. */
     
@@ -126,7 +128,7 @@ public class Asl{
         Interp I = null;
         int linenumber = -1;
         try {
-            I = new Interp(t, tracefile); // prepares the interpreter
+            I = new Interp(t, tracefile, filename); // prepares the interpreter
             I.Run();                  // Executes the code
         } catch (RuntimeException e) {
             if (I != null) linenumber = I.lineNumber();
@@ -171,7 +173,7 @@ public class Asl{
     public static AslTree getFileTree(String fileName) {
         CharStream input = null;
         try {
-            input = new ANTLRFileStream("examples/" + fileName);
+            input = new ANTLRFileStream("modules/" + fileName);
         } catch (IOException e) {
             System.err.println ("Error: file " + fileName + " could not be opened.");
             System.exit(1);
@@ -222,6 +224,11 @@ public class Asl{
                         .hasArg()
                         .withDescription ("write the AST")
                         .create ("ast");
+        Option o = OptionBuilder
+                        .withArgName ("file")
+                        .hasArg()
+                        .withDescription ("specify the SVG output file")
+                        .create ("o");
         Option trace = OptionBuilder
                         .withArgName ("file")
                         .hasArg()
@@ -233,6 +240,7 @@ public class Asl{
         options.addOption(dot);
         options.addOption(ast);
         options.addOption(trace);
+        options.addOption(o);
         options.addOption(noexec);
         CommandLineParser clp = new GnuParser();
         CommandLine line = null;
@@ -263,6 +271,9 @@ public class Asl{
 
         // Option -ast dotfile
         if (line.hasOption ("ast")) astfile = line.getOptionValue ("ast");
+
+        // Option -o output svg image
+        if (line.hasOption ("o")) filename = line.getOptionValue ("o");
         
         // Option -trace dotfile
         if (line.hasOption ("trace")) tracefile = line.getOptionValue ("trace");

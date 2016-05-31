@@ -1,0 +1,210 @@
+<svg width="1000" height="600">
+<defs>
+<path id="RainDrop" d="M16,0
+     C 16,0 0,24 0,33
+     C 0,42 7,49 16,49
+     C 25,49 32,42 32,33
+     C 32,24 16,0 16,0" fill="blue" stroke="black" stroke-width="2"/>
+</defs>
+<use xlink:href="#RainDrop" id="drop" x="318" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="1.5226309918015728s" dur="1.2357441520177024s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="337" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="3.657647330387148s" dur="1.2321552170005732s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="286" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="1.1888650296235728s" dur="1.0962576160148898s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="412" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="2.666631072364588s" dur="1.3836230436648247s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="561" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="3.567670506558413s" dur="1.3512371493013613s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="210" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="3.5416880302340434s" dur="1.4623998773847813s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="536" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="3.1045399794214106s" dur="1.110724299106959s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="435" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="2.541335057605664s" dur="1.4945233350629663s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="591" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="2.1591487499207136s" dur="1.4112647439835482s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="280" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="2.0161062207825386s" dur="1.3484436079702862s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="342" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="0.19401886262411372s" dur="1.2708226388844224s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="597" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="2.0641946073445996s" dur="1.4778840632102148s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="545" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="1.6508053087168233s" dur="1.376070297538495s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="16" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="2.078525379147392s" dur="1.1530544929344355s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="304" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="1.1878129838311478s" dur="1.4363643682574279s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="342" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="0.5950467666939514s" dur="1.3989816278372098s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="451" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="1.7774877423781623s" dur="1.4715269407533214s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="180" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="1.477312831462514s" dur="1.4558435742101827s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="228" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="1.1167512261071928s" dur="1.252731401889689s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="220" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="3.1769704846714677s" dur="1.0727436772278636s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="564" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="2.4586581766778504s" dur="1.1258537226063798s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="201" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="2.203453506181763s" dur="1.015477535658115s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="137" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="2.472212218980665s" dur="1.4449681381616801s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="562" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="3.8230389691840365s" dur="1.2746730241738184s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="36" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="0.5609822832834408s" dur="1.0098806517981336s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="551" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="2.520601748084495s" dur="1.4594803640071863s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="85" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="2.28020523529996s" dur="1.272414016357661s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="561" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="1.7305179626564655s" dur="1.0790778358291924s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="272" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="2.3747687013633523s" dur="1.2383940558144375s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="218" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="3.058615747362689s" dur="1.4184659041432366s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="266" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="3.679709876681873s" dur="1.323967382072626s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="348" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="0.7968513032833564s" dur="1.0269577617649832s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="151" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="2.5609373386932917s" dur="1.3004792647156846s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="452" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="0.362226719581344s" dur="1.4489094889816552s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="123" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="0.19292898683406712s" dur="1.4160666020763752s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="460" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="0.993673970701678s" dur="1.1713406938474042s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="209" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="3.171092915845078s" dur="1.3277112601826362s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="183" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="1.6364844701135284s" dur="1.179267119893812s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="68" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="1.9745486586390686s" dur="1.1069337645970263s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="590" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="1.9710279212359678s" dur="1.2306216051088072s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="395" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="0.8652104829710177s" dur="1.425935632375671s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="83" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="3.0181644996317227s" dur="1.338404014889289s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="78" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="0.9170206424642497s" dur="1.2327404924954157s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="43" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="2.9990767189398744s" dur="1.343197805891899s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="576" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="0.043919866203020685s" dur="1.2924552444667226s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="73" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="1.5938110058005512s" dur="1.1794833316060411s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="114" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="0.6200628563482433s" dur="1.1956300500385393s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="149" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="1.1065848852248283s" dur="1.0411629354259384s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="261" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="2.232450532009428s" dur="1.40172650851405s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="588" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="3.9594518881518135s" dur="1.1448347617030596s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="78" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="0.018293017189947136s" dur="1.2267792035082854s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="56" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="3.9543972996483676s" dur="1.4928151467323163s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="475" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="3.22048598009356s" dur="1.3630219583137135s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="539" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="0.0656409808731806s" dur="1.252578478613838s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="93" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="2.076954244456039s" dur="1.317038383761615s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="157" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="2.3107833808278007s" dur="1.0381178177735881s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="526" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="3.258520226498474s" dur="1.4595921846168478s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="592" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="3.418283225534686s" dur="1.0501921511347452s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="527" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="2.6503385357207767s" dur="1.4555892879466246s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="94" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="0.5089522271707119s" dur="1.206947829218851s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="441" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="1.6813303974786562s" dur="1.4551331143875306s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="224" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="3.7270746591568664s" dur="1.2266097612546178s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="328" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="0.6515446888913425s" dur="1.0662598055937489s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="525" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="1.3129609537919773s" dur="1.454966778953605s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="124" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="1.8799135177115813s" dur="1.4671193095417148s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="122" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="0.43825258491873154s" dur="1.1072245904860605s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="55" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="1.4689045217924015s" dur="1.349703608595401s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="540" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="0.3567764258298425s" dur="1.128304106116504s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="415" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="1.3442187816580597s" dur="1.0328979172710397s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="434" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="1.198110026380189s" dur="1.256292974608595s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="371" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="1.5095570276477983s" dur="1.465964276955083s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="54" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="2.7250767977583483s" dur="1.3170622471331401s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="356" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="0.8822575908098371s" dur="1.0412615333681037s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="569" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="2.422280173649638s" dur="1.3612188235976377s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="490" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="2.3425218137236365s" dur="1.1596932128000845s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="61" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="3.098641205109067s" dur="1.334117414845537s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="300" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="0.9812387894722745s" dur="1.3352537006882677s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="122" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="1.3595612795560625s" dur="1.282124341312468s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="423" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="3.703006833782023s" dur="1.3934807576251043s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="88" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="3.789534922908949s" dur="1.154034495447796s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="421" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="2.0702723029314467s" dur="1.2597438814303499s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="30" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="0.21691974940405956s" dur="1.2786235514634048s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="348" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="2.219860219506961s" dur="1.1127069858895529s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="371" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="3.351909609352236s" dur="1.0254412889343683s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="270" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="3.1914579109073156s" dur="1.48618667421517s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="448" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="0.24570255241201489s" dur="1.1110201602631364s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="92" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="3.814819580558209s" dur="1.2876519409018834s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="375" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="3.495755394298734s" dur="1.1762789708307482s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="344" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="0.868839374090129s" dur="1.4861130655057746s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="270" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="2.681899364470048s" dur="1.1940184468186175s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="450" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="0.03381579271229196s" dur="1.4302653842374646s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="76" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="3.7885268905780594s" dur="1.0263888499493454s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="598" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="2.9273103657077635s" dur="1.1912624339326245s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="36" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="2.9019418817466467s" dur="1.2227982616837214s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="387" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="3.9078187095757935s" dur="1.249238348545612s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="193" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="3.9508690418977794s" dur="1.1063969971951835s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="198" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="3.363117183475156s" dur="1.201637656681771s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="202" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="3.2289036191967946s" dur="1.0108563171308886s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="597" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="0.16686577683717108s" dur="1.3184077166292296s" fill="freeze"/></use>
+<use xlink:href="#RainDrop" id="drop" x="326" y="-100" width="10" height="10" fill="blue">
+<animateTransform id="t" attributeName="transform" type="translate" to="-3 1000" begin="3.097849350320271s" dur="1.1203708303088225s" fill="freeze"/></use>
+
+</svg>

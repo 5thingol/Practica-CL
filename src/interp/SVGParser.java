@@ -68,7 +68,7 @@ public class SVGParser {
 	private String returnVariable;
 	
 	public SVGParser() {
-		filename = "SimpleAnimation";
+		filename = "SimpleAnimation.svg";
 		SVG = "";
 		stack = new Stack< HashMap<String, List<Animation> > >(); 
 	}
@@ -415,7 +415,7 @@ public class SVGParser {
 		SVG = getCapcalera() + SVG;
 		SVG += "\n</svg>\n";
 		try (Writer writer = new BufferedWriter(new OutputStreamWriter(
-              new FileOutputStream(filename+".svg"), "utf-8"))) {
+              new FileOutputStream(filename), "utf-8"))) {
    			writer.write(SVG);
    		} catch (IOException e) {
    			System.err.println("SVG file writing error: " + e.getMessage());
@@ -426,7 +426,7 @@ public class SVGParser {
 	/** Copies the content of an existing SVG file into the current SVG file*/
 	public void addExistingSVGFileContents() {
 		try {
-			String content = new String(Files.readAllBytes(Paths.get(filename + ".svg")));
+			String content = new String(Files.readAllBytes(Paths.get(filename)));
 			String[] file = content.split("<");
 			
 			for (int i = 2; i < file.length - 1; i++) {

@@ -1,0 +1,7 @@
+<svg width="1000" height="600">
+<rect id="r" x="-300" y="100" width="300" height="10" fill="yellow">
+<animateTransform id="newAnimation0" attributeName="transform" type="translate" to="300 0" begin="0.0s" dur="10.0s" fill="freeze"/></rect>
+<text id="newObject1" x="50" y="70" width="0" height="10" fill="black">
+DOWNLOAD PROGRESS</text>
+
+</svg>

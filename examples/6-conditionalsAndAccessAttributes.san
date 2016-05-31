@@ -1,27 +1,30 @@
 func main(x,y)
+
+	// Accedeix a diversos atributs amb condicionals
+
 	if (x > 300)
 		x = 300;
 	else
 		x = 100;
-	endif
+	endif;
 
-	r = Create Rectangle {x,y} width=20,height=20,stroke-width="30";
+	r = Create Rectangle {x,y} width=20,height=20,stroke-width=30;
 	if (r.stroke-width() == 30) 
 		@begin=0, end=3;
 		Modify r color="blue";
-	endif
+	endif;
 
 	@begin=0, end=3;
 	anim1 = Move r {300,200};
 	
-	if (anim1.width() < 400)
+	if (anim1.duration() < 400.0)
 		@begin=3, duration=1;
 		Translate r {5,10};
-	elseif (r.color() == blue)
+	elseif (r.color() == "blue")
 		@begin=3, end=5;
 		Modify r color=red;
 	else
 		@begin=3;
 		Destroy r;
-	endif
+	endif;
 endfunc

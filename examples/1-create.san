@@ -4,6 +4,9 @@ func main()
 	// Una instrucció bàsica de create no té cap anotació temporal
 	// Al final del create s'afegeixen els atributs complementaris de l'objecte
 
+
+	// Crea un objecte de cada tipus de forma bàsica
+
 	// Rectangle
 	Create Rectangle {50,70} width=40,height=200;
 	

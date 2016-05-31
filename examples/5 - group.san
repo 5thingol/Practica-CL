@@ -1,5 +1,8 @@
 func main()
 
+	// Crea un rectangle i un cercle que es mouen en direccions contraries,
+	// els agrupa i mou el grup resultant cap a baix simultaniament
+
 	c = Create Circle {300,100} (90);
 
 	@begin=0, end=3;

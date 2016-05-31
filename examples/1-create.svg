@@ -1,0 +1,13 @@
+<svg width="1000" height="600">
+<rect id="newObject0" x="50" y="70" width="40" height="200" fill="black">
+</rect>
+<line id="newObject1" x1="400" y1="100" x2="640" y2="110" fill="black" stroke= "black" stroke-width= "3">
+</line>
+<text id="t" x="750" y="30" width="0" height="0" fill="black">
+Valar morgulis</text>
+<ellipse id="e" cx="500" cy="300" rx="80" ry="30" fill="blue" stroke= "#000" stroke-width= "2">
+</ellipse>
+<circle id="c" cx="200" cy="90" r="50" fill="red">
+</circle>
+
+</svg>
