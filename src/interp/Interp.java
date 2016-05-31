@@ -329,6 +329,7 @@ public class Interp {
                 value = null;
                 if (t.getChild(1).getType() == AslLexer.CREATE) {
                     value = createObject(t.getChild(1));
+
                     svgParser.createSVGObject(t.getChild(0).getText(), value);
                 } else if (t.getChild(1).getType() == AslLexer.GROUP) {
                     List<String> idObjects = new ArrayList<String>();
@@ -502,6 +503,7 @@ public class Interp {
             data = evaluateExpression(t.getChild(1));
             checkInteger(data);
             x = data.getIntegerValue();
+
         }
         else {
             data = Stack.getVariable(t.getChild(1).getText());
@@ -543,7 +545,7 @@ public class Interp {
         }
         else {
             data = Stack.getVariable(t.getChild(child).getText());
-            ry= data.getIntegerValue();
+            ry = data.getIntegerValue();
         }
         ++child;
     }
@@ -690,8 +692,8 @@ public class Interp {
                 data = Stack.getVariable(t.getChild(3).getText());
                 y = data.getIntegerValue();
             }
-            object.setCoordX(x);
-            object.setCoordY(y);
+            //object.setCoordX(x);
+            //object.setCoordY(y);
             break;
 
             case "Translate":
@@ -739,7 +741,7 @@ public class Interp {
             data = evaluateExpression(t.getChild(2));
             checkInteger(data);
             rotation = data.getIntegerValue();
-            object.setRotation(rotation);
+            //object.setRotation(rotation);
             if (t.getChildCount() > 3) {
                 to = t.getChild(3).getText() + " " + t.getChild(4).getText();
             }
@@ -786,7 +788,7 @@ public class Interp {
                 break;
 
             }
-            if(object != null) Stack.defineVariable(idObject, object);
+            //if(object != null) Stack.defineVariable(idObject, object);
             if (t.getChildCount() > 3){
                 novaAnimacio(t,idObject,3,t.getChildCount(), tipus, begin, end);
             }
@@ -980,9 +982,11 @@ public class Interp {
             case AslLexer.MUL:
             case AslLexer.DIV:
             case AslLexer.MOD:
+
                 value2 = evaluateExpression(t.getChild(1));
                 checkInteger(value); checkInteger(value2);
-                value.evaluateArithmetic(type, value2);
+                value = value.evaluateArithmetic(type, value2);
+
                 break;
 
             // Boolean operators

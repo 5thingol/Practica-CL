@@ -389,16 +389,17 @@ public class Data {
      * @param d Second operand.
      */
      
-    public void evaluateArithmetic (int op, Data d) {
+    public Data evaluateArithmetic (int op, Data d) {
         assert type == Type.INTEGER && d.type == Type.INTEGER;
         switch (op) {
-            case AslLexer.PLUS: value += d.value; break;
-            case AslLexer.MINUS: value -= d.value; break;
-            case AslLexer.MUL: value *= d.value; break;
-            case AslLexer.DIV: checkDivZero(d); value /= d.value; break;
-            case AslLexer.MOD: checkDivZero(d); value %= d.value; break;
+            case AslLexer.PLUS: return new Data((int)value + (int)d.value);
+            case AslLexer.MINUS: return new Data((int)value - (int)d.value);
+            case AslLexer.MUL: return new Data((int)value * (int)d.value);
+            case AslLexer.DIV: checkDivZero(d); return new Data((int)value / (int)d.value);
+            case AslLexer.MOD: checkDivZero(d); return new Data((int)value % (int)d.value);
             default: assert false;
         }
+        return new Data(0);
     }
 
     /**

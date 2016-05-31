@@ -105,8 +105,7 @@ public class SVGParser {
 
 	/** Crea un objecte de tipus SVG amb la data data com a propietats inicials */
 	public void createSVGObject(String id, Data data) {
- 		System.out.print("creating "+data.getTipusObject());
-
+ 		
 		List<Animation> dades = SVGObjects.get(id);
       	List<Animation> newDades = new ArrayList<Animation>();
       	Animation anim = new Animation(id,data);
@@ -223,30 +222,27 @@ public class SVGParser {
 			properties += " y1=\"" + data.getObjectCoordY() + "\"";
 			properties += " x2=\"" + data.getObjectRadiX() + "\"";
 			properties += " y2=\"" + data.getObjectRadiY() + "\"";
-			if (data.getObjectStroke().equals("")) properties += " stroke= \"black\"";
-		} else if (!data.getTipusObject().equals("Group")) {
-			properties += " x=\"" + data.getObjectCoordX() + "\"";
-			properties += " y=\"" + data.getObjectCoordY() + "\"";
-			properties += " width=\"" + data.getObjectWidth() + "\"";
-			properties += " height=\"" + data.getObjectHeight() + "\"";
+			if (data.getObjectStroke().equals("")) properties += " stroke=\"black\"";
 		} else if (data.getTipusObject().equals("Text")) {
 			properties += " x=\"" + data.getObjectCoordX() + "\"";
 			properties += " y=\"" + data.getObjectCoordY() + "\"";
 			properties += " width=\"" + data.getObjectWidth() + "\"";
 			properties += " height=\"" + data.getObjectHeight() + "\"";
-		}
+		} else if (!data.getTipusObject().equals("Group")) {
+			properties += " x=\"" + data.getObjectCoordX() + "\"";
+			properties += " y=\"" + data.getObjectCoordY() + "\"";
+			properties += " width=\"" + data.getObjectWidth() + "\"";
+			properties += " height=\"" + data.getObjectHeight() + "\"";
+		} 
 
 		if (!data.getTipusObject().equals("Group")) {
 		
 			if (data.getObjectColor() != null) properties += " fill=\"" + data.getObjectColor() + "\"";
-			if (!data.getObjectStroke().equals("")) properties += " stroke= \"" + data.getObjectStroke() + "\"";
-			if (data.getObjectStrokeWidth() != 0) properties += " stroke-width= \"" + data.getObjectStrokeWidth() + "\"";
-			//properties += " transform=\"rotate(" + data.getObjectRotation() + ")\"";
+			if (!data.getObjectStroke().equals("")) properties += " stroke=\"" + data.getObjectStroke() + "\"";
+			if (data.getObjectStrokeWidth() != 0) properties += " stroke-width=\"" + data.getObjectStrokeWidth() + "\"";
+			
 		}		
 		
-		// TODO: IMPLEMENTAR ATTRIBUTES SOBRANTS
-		//if (data.getAttributes() != null) properties += data.getAttributes();
-
 		return properties;
 	}
 

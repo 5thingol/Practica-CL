@@ -2,13 +2,13 @@
 <defs>
 <path id="Triangle" d="M8 48 L56 48 L32 12 Z"/>
 </defs>
-<defs><use xlink:href="#Triangle" id="t3" x="175" y="174" width="30" height="30" fill="yellow" stroke= "black" stroke-width= "2">
+<defs><use xlink:href="#Triangle" id="t3" x="125" y="137" width="30" height="30" fill="yellow" stroke="black" stroke-width="2">
 </use>
 </defs>
-<defs><use xlink:href="#Triangle" id="t2" x="150" y="174" width="30" height="30" fill="yellow" stroke= "black" stroke-width= "2">
+<defs><use xlink:href="#Triangle" id="t2" x="150" y="174" width="30" height="30" fill="yellow" stroke="black" stroke-width="2">
 </use>
 </defs>
-<defs><use xlink:href="#Triangle" id="t1" x="100" y="137" width="30" height="30" fill="yellow" stroke= "black" stroke-width= "2">
+<defs><use xlink:href="#Triangle" id="t1" x="100" y="174" width="30" height="30" fill="yellow" stroke="black" stroke-width="2">
 </use>
 </defs>
 <g id="Triforce">
