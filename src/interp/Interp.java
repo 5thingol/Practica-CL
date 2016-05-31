@@ -849,13 +849,54 @@ public class Interp {
             case AslLexer.ACCESATTRIBUTE:
                 Data d = Stack.getVariable(t.getChild(0).getText());
                 String s = t.getChild(1).getText();
-                switch(s){
-                    case "width":
-                    int l = d.getObjectWidth();
-                    value = new Data(d.getObjectWidth());
-                    break;
+                if (d.isObject()){
+                    switch(s){
+                        case "width":
+                        value = new Data(d.getObjectWidth());
+                        break;
+                        case "height":
+                        value = new Data(d.getObjectHeight());
+                        break;
+                        case "coordX":
+                        value = new Data(d.getObjectCoordX());
+                        break;
+                        case "coordY":
+                        value = new Data(d.getObjectCoordY());
+                        break;
+                        case "strokeWidth":
+                        value = new Data(d.getObjectStrokeWidth());
+                        break;
+                        case "stroke":
+                        value = new Data(d.getObjectStroke());
+                        break;
+                        case "rotation":
+                        value = new Data(d.getObjectRotation());
+                        break;
+                        case "radiX":
+                        value = new Data(d.getObjectRadiX());
+                        break;
+                        case "radiy":
+                        value = new Data(d.getObjectRadiY());
+                        break;
+                        case "tipus":
+                        value = new Data(d.getTipusObject());
+                        break;
+                    }
                 }
-            default: break;
+                else if (d.isAnimation()){
+                    switch(s){
+                        case "begin":
+                        value = new Data(d.getAnimationBegin());
+                        break;
+                        case "end":
+                        value = new Data(d.getAnimationEnd());
+                        break;
+                        case "duration":
+                        value = new Data(d.getAnimationEnd()-d.getAnimationBegin());
+                        break;
+                    }
+                }
+                break;
         }
 
         // Retrieve the original line and return
