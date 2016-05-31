@@ -8,17 +8,13 @@ define RainDrop "M16,0
 
 func CreateRain(nParticles, x0, y0, x1, y1) 
 	
+	orientation = rand(-60,60);
+
 	for (i in 1:nParticles)
-		drop = Create RainDrop {rand(x0,x1),rand(y0,y1)} color="blue";
-		@begin=1.5, duration=rand(1,2);
-		t = Translate drop {0,1000};
-		@begin=3;
-		Destroy drop;
+		drop = Create RainDrop {rand(x0,x1),rand(y0,y1)} color="blue",width=10,height=10;
+		@begin=rand(0.0,4.0), duration=rand(1.0,1.5);
+		t = Translate drop {orientation,1000};
 	endfor;
 	
-
-	//CreateParticleSystem(drop,t,10,10,1,400,1);
-	//@begin=0;
-	//Destroy drop;
 	
 endfunc

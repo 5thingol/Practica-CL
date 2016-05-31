@@ -386,7 +386,7 @@ public class SVGParser {
 				newObject += "<use id=\"" + group.id + "-" + s + "\" xlink:href=\"#" + s + "\"></use>\n";
 			}
 		} else if (initialProperties.getTipusObject().equals("Text")) {
-			newObject += initialProperties.getStringValue();
+			newObject += initialProperties.getObjectText();
 		}
 
 		dades.remove(0);

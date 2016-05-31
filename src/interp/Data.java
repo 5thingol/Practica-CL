@@ -47,8 +47,8 @@ public class Data {
     private Type type;
 
     /** Value of the data */
-    private int value; 
-    private double doubleValue;
+    private double value; 
+    //private double doubleValue;
 
     /** Valors dels objectes */
     private String tipus;
@@ -76,10 +76,10 @@ public class Data {
 
 
     /** Constructor for integers */
-    Data(int v) { type = Type.INTEGER; value = v; }
+    Data(int v) { type = Type.INTEGER; value = (int) v; }
 
     /** Constructor for integers */
-    Data(double d) { type = Type.DOUBLE; doubleValue = d; }
+    Data(double d) { type = Type.DOUBLE; value = d; }
 
     /** Constructor for Booleans */
     Data(boolean b) { type = Type.BOOLEAN; value = b ? 1 : 0; }
@@ -140,6 +140,9 @@ public class Data {
     /** Indicates whether the data is double */
     public boolean isDouble() { return type == Type.DOUBLE; }
 
+    /** Indicates whether the data is string */
+    public boolean isString() { return type == Type.STRING; }
+
     /** Indicates whether the data is void */
     public boolean isVoid() { return type == Type.VOID; }
 
@@ -155,7 +158,7 @@ public class Data {
      */
     public int getIntegerValue() {
         assert type == Type.INTEGER;
-        return value;
+        return (int) value;
     }
 
     /**
@@ -163,8 +166,8 @@ public class Data {
      * the data is an double.
      */
     public double getDoubleValue() {
-        assert type == Type.DOUBLE;
-        return doubleValue;
+        assert type == Type.DOUBLE || type == Type.INTEGER;
+        return (double) value;
     }
 
     /**
@@ -183,7 +186,7 @@ public class Data {
     }
 
     public String getStringValue() {
-        assert type == Type.OBJECT;
+        assert type == Type.STRING;
         return text;
     }
 
@@ -252,6 +255,11 @@ public class Data {
         return group;
     }
 
+    public String getObjectText() {
+        assert type == Type.OBJECT;
+        return text;
+    }
+
     /**
      * Gets the values of an Animation data. The method asserts that
      * the data is an Animation.
@@ -312,10 +320,10 @@ public class Data {
     public void setValue(boolean b) { type = Type.BOOLEAN; value = b ? 1 : 0; }
 
     /** Defines an integer value for the data */
-    public void setValue(int v) { type = Type.INTEGER; value = v; }
+    public void setValue(int v) { type = Type.INTEGER; value = (int) v; }
 
     /** Defines an double value for the data */
-    public void setValue(double d) { type = Type.DOUBLE; doubleValue = d; }
+    public void setValue(double d) { type = Type.DOUBLE; value = d; }
 
     /** Defines an object for the data */
     public void setValue(String tipus, int cx, int cy, int w, int h, String f, int r)
@@ -361,7 +369,9 @@ public class Data {
     /** Returns a string representing the data in textual form. */
     public String toString() {
         if (type == Type.BOOLEAN) return value == 1 ? "true" : "false";
-        return Integer.toString((int)value);
+        else if (type == Type.INTEGER) return Integer.toString((int)value);
+        else if (type == Type.DOUBLE) return Double.toString(value);
+        else return null;
     }
     
     /**

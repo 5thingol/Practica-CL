@@ -180,6 +180,7 @@ factor : (NOT^ | PLUS^ | MINUS^)? atom
 atom : ID
 | INT
 | DOUBLE
+| STRING
 | (b=TRUE | b=FALSE) -> ^(BOOLEAN[$b,$b.text])
 | funcall
 | '('! expr ')'!
@@ -223,7 +224,7 @@ source: SOURCE^ FILE '('! (expr (','! expr)* )? ')'!
 ;
 list_attributes: attribute (','! attribute)*
 ;
-attribute: ATTRIBUTE^ EQUAL! (expr|STRING)
+attribute: ATTRIBUTE^ EQUAL! expr
 ;
 coordenades: '{'! expr ','! expr ( ','! expr ','! expr)? '}'!
 ;

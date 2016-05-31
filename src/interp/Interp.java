@@ -450,14 +450,23 @@ public class Interp {
         
     /** Executes random function */
     private Data executeRandom(AslTree t) {
-
-        int r0 = evaluateExpression(t.getChild(0)).getIntegerValue();
-        int r1 = evaluateExpression(t.getChild(1)).getIntegerValue();
-
-        if (r0 >= r1) return new Data(r0);
-        int value = rand.nextInt(r1-r0);
-
-        return new Data(value + r0); 
+        Data result;
+        Data r0 = evaluateExpression(t.getChild(0));
+        Data r1 = evaluateExpression(t.getChild(1));
+        if (r0.isDouble() || r1.isDouble()) { 
+            double d0 = r0.getDoubleValue();
+            double d1 = r1.getDoubleValue();
+            
+            if (d0 >= d1) return new Data(d0);
+            result = new Data(d0 + (d1-d0)*rand.nextDouble());
+        } else {
+            int i0 = r0.getIntegerValue();
+            int i1 = r1.getIntegerValue();
+            
+            if (i0 >= i1) return new Data(i0);
+            result = new Data(i0+rand.nextInt(i1-i0));
+        }
+        return result; 
     }
 
     private Data createObject(AslTree t) {
@@ -557,12 +566,16 @@ public class Interp {
 	      break;
 
 	      case "color":
-          color = t.getChild(child).getChild(i).getChild(0).getText();
+          data = evaluateExpression(t.getChild(child).getChild(i).getChild(0));
+          
+          color = data.getStringValue();
           if (color.contains("\"")) color = color.split("\"")[1];
 	      break;
 	      
           case "txt":
-          text = t.getChild(child).getChild(i).getChild(0).getText();
+          data = evaluateExpression(t.getChild(child).getChild(i).getChild(0));
+
+          text = data.getStringValue();
           if (text.contains("\"")) text = text.split("\"")[1];
           break;
 
@@ -699,8 +712,8 @@ public class Interp {
             object = Stack.getVariable(idObject);
             if (t.getChild(2).getType() != AslLexer.ID) {
                 data = evaluateExpression(t.getChild(2));
-                checkInteger(data);
-                to = data.getIntegerValue() + "";
+                checkDouble(data);
+                to = data.getDoubleValue() + "";
             }
             else {
                 data = Stack.getVariable(t.getChild(2).getText());
@@ -820,12 +833,17 @@ public class Interp {
         switch (type) {
             // A variable
             case AslLexer.ID:
-                value = new Data(Stack.getVariable(t.getText()));
+                value = Stack.getVariable(t.getText());
                 break;
             // An integer literal
             case AslLexer.INT:
                 value = new Data(t.getIntValue());
                 break;
+            // A string literal
+            case AslLexer.STRING:
+                value = new Data(t.getText());
+                break;
+            // A double literal
             case AslLexer.DOUBLE:
                 value = new Data(Double.parseDouble(t.getText()));
                 break;
@@ -972,6 +990,13 @@ public class Interp {
     /** Checks that the data is integer and raises an exception if it is not. */
     private void checkInteger (Data b) {
         if (!b.isInteger()) {
+            throw new RuntimeException ("Expecting integer numerical expression");
+        }
+    }
+
+    /** Checks that the data is integer and raises an exception if it is not. */
+    private void checkDouble (Data b) {
+        if (!b.isDouble() && !b.isInteger()) {
             throw new RuntimeException ("Expecting numerical expression");
         }
     }

@@ -1,0 +1,8 @@
+import "ProgressBar.sam";
+
+func main()
+	
+	CreateProgressBar("yellow",10);
+	SetText("DOWNLOAD PROGRESS");
+
+endfunc

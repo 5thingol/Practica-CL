@@ -1,0 +1,20 @@
+func main() 
+	
+	t = Create Text {100,100} txt="Chicken Secrets, S.L.";
+	@begin=0, duration=1.5;
+	Translate t {10,0};
+
+	c = Create Circle {180,50} (30,30) color="green",stroke="black",stroke-width=3;
+	@begin=0, duration=1.5;
+	Scale c 2;
+
+	r = Create Rectangle {-300,120} width=300,height=30,color="cyan", stroke="blue",stroke-width=3;
+	@begin=0, duration=1.5;
+	Translate r {400,0};
+
+	e = Create Rectangle {120,130} width=80,height=80,color="yellow",stroke="green",stroke-width=3;
+	@begin=0, duration=1.5;
+	Rotate e (360,140,120);
+
+
+endfunc

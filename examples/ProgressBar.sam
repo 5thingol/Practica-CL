@@ -1,0 +1,14 @@
+module ProgressBar;
+
+func CreateProgressBar(colorS, dur) 
+
+	r = Create Rectangle {-300,100} width=300,height=10,color=colorS;
+
+	@begin=0, duration=dur;
+	Translate r {300,0};
+
+endfunc
+
+func SetText(txtS) 
+	Create Text {50,70} height=10,txt=txtS;
+endfunc
