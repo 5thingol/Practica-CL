@@ -195,7 +195,11 @@ public class SVGParser {
 		SVGObjects.clear();
 	}
 
-
+	public void eliminaObject(String name) {
+		List<Animation> dades = SVGObjects.get(name);
+		writeObjectToSVGFile(name, dades);
+		SVGObjects.remove(name);
+	}
 
 	/** FUNCIONS PER A ESCRIURE AL SVG */
 

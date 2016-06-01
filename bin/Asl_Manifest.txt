@@ -1,2 +1,2 @@
 Main-Class: Asl.Asl
-Class-Path: /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/libs/antlr-3.4-complete.jar /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/libs/commons-cli-1.2.jar
+Class-Path: /home/carlos/CL/Practica-CL/libs/antlr-3.4-complete.jar /home/carlos/CL/Practica-CL/libs/commons-cli-1.2.jar

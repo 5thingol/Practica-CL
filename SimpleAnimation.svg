@@ -1,0 +1,7 @@
+<svg width="1000" height="600">
+<rect id="y" x="50" y="70" width="40" height="200" fill="black">
+</rect>
+<rect id="x" x="50" y="70" width="40" height="200" fill="black">
+</rect>
+
+</svg>

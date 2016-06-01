@@ -327,9 +327,11 @@ public class Interp {
             // Assignment
             case AslLexer.ASSIGN:
                 value = null;
+                if (Stack.isObject(t.getChild(0).getText())){
+                    svgParser.eliminaObject(t.getChild(0).getText());
+                }
                 if (t.getChild(1).getType() == AslLexer.CREATE) {
                     value = createObject(t.getChild(1));
-
                     svgParser.createSVGObject(t.getChild(0).getText(), value);
                 } else if (t.getChild(1).getType() == AslLexer.GROUP) {
                     List<String> idObjects = new ArrayList<String>();
@@ -344,7 +346,11 @@ public class Interp {
                     value = createAnimation(t.getChild(1));
                     svgParser.addSVGAnimation(value.getAnimationIdObject(), t.getChild(0).getText(), value);
                     currentTimeAnnotation = null;
-                } else
+                } else if (t.getChild(1).getType() == AslLexer.ID) {
+                    value = new Data(Stack.getVariable(t.getChild(1).getText()));
+                    svgParser.createSVGObject(t.getChild(0).getText(), value);
+                }
+                else
                     value = evaluateExpression(t.getChild(1));
                 Stack.defineVariable (t.getChild(0).getText(), value);
                 return null;

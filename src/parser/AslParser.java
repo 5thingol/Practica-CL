@@ -1,4 +1,4 @@
-// $ANTLR 3.4 /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g 2016-05-31 23:48:27
+// $ANTLR 3.4 /home/carlos/CL/Practica-CL/src/parser/Asl.g 2016-06-01 19:34:38
 
 package parser;
 import interp.AslTree;
@@ -150,7 +150,7 @@ public TreeAdaptor getTreeAdaptor() {
     return adaptor;
 }
     public String[] getTokenNames() { return AslParser.tokenNames; }
-    public String getGrammarFileName() { return "/home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g"; }
+    public String getGrammarFileName() { return "/home/carlos/CL/Practica-CL/src/parser/Asl.g"; }
 
 
     public static class prog_return extends ParserRuleReturnScope {
@@ -160,7 +160,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "prog"
-    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:64:1: prog : ( imports defines list_func -> ^( PROG imports defines list_func ) | module_def imports defines list_func -> ^( PROG module_def imports defines list_func ) );
+    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:64:1: prog : ( imports defines list_func -> ^( PROG imports defines list_func ) | module_def imports defines list_func -> ^( PROG module_def imports defines list_func ) );
     public final AslParser.prog_return prog() throws RecognitionException {
         AslParser.prog_return retval = new AslParser.prog_return();
         retval.start = input.LT(1);
@@ -188,7 +188,7 @@ public TreeAdaptor getTreeAdaptor() {
         RewriteRuleSubtreeStream stream_module_def=new RewriteRuleSubtreeStream(adaptor,"rule module_def");
         RewriteRuleSubtreeStream stream_imports=new RewriteRuleSubtreeStream(adaptor,"rule imports");
         try {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:64:6: ( imports defines list_func -> ^( PROG imports defines list_func ) | module_def imports defines list_func -> ^( PROG module_def imports defines list_func ) )
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:64:6: ( imports defines list_func -> ^( PROG imports defines list_func ) | module_def imports defines list_func -> ^( PROG module_def imports defines list_func ) )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -207,7 +207,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt1) {
                 case 1 :
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:64:8: imports defines list_func
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:64:8: imports defines list_func
                     {
                     pushFollow(FOLLOW_imports_in_prog107);
                     imports1=imports();
@@ -231,7 +231,7 @@ public TreeAdaptor getTreeAdaptor() {
                     stream_list_func.add(list_func3.getTree());
 
                     // AST REWRITE
-                    // elements: defines, imports, list_func
+                    // elements: defines, list_func, imports
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -243,7 +243,7 @@ public TreeAdaptor getTreeAdaptor() {
                     root_0 = (AslTree)adaptor.nil();
                     // 64:34: -> ^( PROG imports defines list_func )
                     {
-                        // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:64:37: ^( PROG imports defines list_func )
+                        // /home/carlos/CL/Practica-CL/src/parser/Asl.g:64:37: ^( PROG imports defines list_func )
                         {
                         AslTree root_1 = (AslTree)adaptor.nil();
                         root_1 = (AslTree)adaptor.becomeRoot(
@@ -267,7 +267,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:65:7: module_def imports defines list_func
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:65:7: module_def imports defines list_func
                     {
                     pushFollow(FOLLOW_module_def_in_prog131);
                     module_def4=module_def();
@@ -298,7 +298,7 @@ public TreeAdaptor getTreeAdaptor() {
                     stream_list_func.add(list_func7.getTree());
 
                     // AST REWRITE
-                    // elements: defines, imports, module_def, list_func
+                    // elements: list_func, module_def, defines, imports
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -310,7 +310,7 @@ public TreeAdaptor getTreeAdaptor() {
                     root_0 = (AslTree)adaptor.nil();
                     // 65:44: -> ^( PROG module_def imports defines list_func )
                     {
-                        // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:65:47: ^( PROG module_def imports defines list_func )
+                        // /home/carlos/CL/Practica-CL/src/parser/Asl.g:65:47: ^( PROG module_def imports defines list_func )
                         {
                         AslTree root_1 = (AslTree)adaptor.nil();
                         root_1 = (AslTree)adaptor.becomeRoot(
@@ -366,7 +366,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "module_def"
-    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:68:1: module_def : MODULE ^ ID ';' !;
+    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:68:1: module_def : MODULE ^ ID ';' !;
     public final AslParser.module_def_return module_def() throws RecognitionException {
         AslParser.module_def_return retval = new AslParser.module_def_return();
         retval.start = input.LT(1);
@@ -383,8 +383,8 @@ public TreeAdaptor getTreeAdaptor() {
         AslTree char_literal10_tree=null;
 
         try {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:68:12: ( MODULE ^ ID ';' !)
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:68:14: MODULE ^ ID ';' !
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:68:12: ( MODULE ^ ID ';' !)
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:68:14: MODULE ^ ID ';' !
             {
             root_0 = (AslTree)adaptor.nil();
 
@@ -436,7 +436,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "imports"
-    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:71:1: imports : ( iimport )* -> ^( IMPORTS ( iimport )* ) ;
+    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:71:1: imports : ( iimport )* -> ^( IMPORTS ( iimport )* ) ;
     public final AslParser.imports_return imports() throws RecognitionException {
         AslParser.imports_return retval = new AslParser.imports_return();
         retval.start = input.LT(1);
@@ -449,10 +449,10 @@ public TreeAdaptor getTreeAdaptor() {
 
         RewriteRuleSubtreeStream stream_iimport=new RewriteRuleSubtreeStream(adaptor,"rule iimport");
         try {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:71:9: ( ( iimport )* -> ^( IMPORTS ( iimport )* ) )
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:71:11: ( iimport )*
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:71:9: ( ( iimport )* -> ^( IMPORTS ( iimport )* ) )
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:71:11: ( iimport )*
             {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:71:11: ( iimport )*
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:71:11: ( iimport )*
             loop2:
             do {
                 int alt2=2;
@@ -465,7 +465,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt2) {
             	case 1 :
-            	    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:71:11: iimport
+            	    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:71:11: iimport
             	    {
             	    pushFollow(FOLLOW_iimport_in_imports175);
             	    iimport11=iimport();
@@ -496,14 +496,14 @@ public TreeAdaptor getTreeAdaptor() {
             root_0 = (AslTree)adaptor.nil();
             // 71:20: -> ^( IMPORTS ( iimport )* )
             {
-                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:71:23: ^( IMPORTS ( iimport )* )
+                // /home/carlos/CL/Practica-CL/src/parser/Asl.g:71:23: ^( IMPORTS ( iimport )* )
                 {
                 AslTree root_1 = (AslTree)adaptor.nil();
                 root_1 = (AslTree)adaptor.becomeRoot(
                 (AslTree)adaptor.create(IMPORTS, "IMPORTS")
                 , root_1);
 
-                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:71:33: ( iimport )*
+                // /home/carlos/CL/Practica-CL/src/parser/Asl.g:71:33: ( iimport )*
                 while ( stream_iimport.hasNext() ) {
                     adaptor.addChild(root_1, stream_iimport.nextTree());
 
@@ -549,7 +549,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "iimport"
-    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:74:1: iimport : IMPORT ! FILE ';' !;
+    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:74:1: iimport : IMPORT ! FILE ';' !;
     public final AslParser.iimport_return iimport() throws RecognitionException {
         AslParser.iimport_return retval = new AslParser.iimport_return();
         retval.start = input.LT(1);
@@ -566,8 +566,8 @@ public TreeAdaptor getTreeAdaptor() {
         AslTree char_literal14_tree=null;
 
         try {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:74:9: ( IMPORT ! FILE ';' !)
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:74:11: IMPORT ! FILE ';' !
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:74:9: ( IMPORT ! FILE ';' !)
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:74:11: IMPORT ! FILE ';' !
             {
             root_0 = (AslTree)adaptor.nil();
 
@@ -614,7 +614,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "defines"
-    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:77:1: defines : ( define )* -> ^( DEFINES ( define )* ) ;
+    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:77:1: defines : ( define )* -> ^( DEFINES ( define )* ) ;
     public final AslParser.defines_return defines() throws RecognitionException {
         AslParser.defines_return retval = new AslParser.defines_return();
         retval.start = input.LT(1);
@@ -627,10 +627,10 @@ public TreeAdaptor getTreeAdaptor() {
 
         RewriteRuleSubtreeStream stream_define=new RewriteRuleSubtreeStream(adaptor,"rule define");
         try {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:77:9: ( ( define )* -> ^( DEFINES ( define )* ) )
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:77:11: ( define )*
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:77:9: ( ( define )* -> ^( DEFINES ( define )* ) )
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:77:11: ( define )*
             {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:77:11: ( define )*
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:77:11: ( define )*
             loop3:
             do {
                 int alt3=2;
@@ -643,7 +643,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt3) {
             	case 1 :
-            	    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:77:11: define
+            	    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:77:11: define
             	    {
             	    pushFollow(FOLLOW_define_in_defines209);
             	    define15=define();
@@ -674,14 +674,14 @@ public TreeAdaptor getTreeAdaptor() {
             root_0 = (AslTree)adaptor.nil();
             // 77:19: -> ^( DEFINES ( define )* )
             {
-                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:77:22: ^( DEFINES ( define )* )
+                // /home/carlos/CL/Practica-CL/src/parser/Asl.g:77:22: ^( DEFINES ( define )* )
                 {
                 AslTree root_1 = (AslTree)adaptor.nil();
                 root_1 = (AslTree)adaptor.becomeRoot(
                 (AslTree)adaptor.create(DEFINES, "DEFINES")
                 , root_1);
 
-                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:77:32: ( define )*
+                // /home/carlos/CL/Practica-CL/src/parser/Asl.g:77:32: ( define )*
                 while ( stream_define.hasNext() ) {
                     adaptor.addChild(root_1, stream_define.nextTree());
 
@@ -727,7 +727,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "define"
-    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:80:1: define : DEFINE ID STRING ( list_attributes )? ';' -> ^( DEFINE ID STRING ^( ATTRIBUTES ( list_attributes )? ) ) ;
+    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:80:1: define : DEFINE ID STRING ( list_attributes )? ';' -> ^( DEFINE ID STRING ^( ATTRIBUTES ( list_attributes )? ) ) ;
     public final AslParser.define_return define() throws RecognitionException {
         AslParser.define_return retval = new AslParser.define_return();
         retval.start = input.LT(1);
@@ -752,8 +752,8 @@ public TreeAdaptor getTreeAdaptor() {
         RewriteRuleTokenStream stream_STRING=new RewriteRuleTokenStream(adaptor,"token STRING");
         RewriteRuleSubtreeStream stream_list_attributes=new RewriteRuleSubtreeStream(adaptor,"rule list_attributes");
         try {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:80:8: ( DEFINE ID STRING ( list_attributes )? ';' -> ^( DEFINE ID STRING ^( ATTRIBUTES ( list_attributes )? ) ) )
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:80:10: DEFINE ID STRING ( list_attributes )? ';'
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:80:8: ( DEFINE ID STRING ( list_attributes )? ';' -> ^( DEFINE ID STRING ^( ATTRIBUTES ( list_attributes )? ) ) )
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:80:10: DEFINE ID STRING ( list_attributes )? ';'
             {
             DEFINE16=(Token)match(input,DEFINE,FOLLOW_DEFINE_in_define228);  
             stream_DEFINE.add(DEFINE16);
@@ -767,7 +767,7 @@ public TreeAdaptor getTreeAdaptor() {
             stream_STRING.add(STRING18);
 
 
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:80:27: ( list_attributes )?
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:80:27: ( list_attributes )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -776,7 +776,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt4) {
                 case 1 :
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:80:27: list_attributes
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:80:27: list_attributes
                     {
                     pushFollow(FOLLOW_list_attributes_in_define234);
                     list_attributes19=list_attributes();
@@ -796,7 +796,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
             // AST REWRITE
-            // elements: ID, list_attributes, STRING, DEFINE
+            // elements: STRING, list_attributes, ID, DEFINE
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -808,7 +808,7 @@ public TreeAdaptor getTreeAdaptor() {
             root_0 = (AslTree)adaptor.nil();
             // 80:48: -> ^( DEFINE ID STRING ^( ATTRIBUTES ( list_attributes )? ) )
             {
-                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:80:51: ^( DEFINE ID STRING ^( ATTRIBUTES ( list_attributes )? ) )
+                // /home/carlos/CL/Practica-CL/src/parser/Asl.g:80:51: ^( DEFINE ID STRING ^( ATTRIBUTES ( list_attributes )? ) )
                 {
                 AslTree root_1 = (AslTree)adaptor.nil();
                 root_1 = (AslTree)adaptor.becomeRoot(
@@ -823,14 +823,14 @@ public TreeAdaptor getTreeAdaptor() {
                 stream_STRING.nextNode()
                 );
 
-                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:80:70: ^( ATTRIBUTES ( list_attributes )? )
+                // /home/carlos/CL/Practica-CL/src/parser/Asl.g:80:70: ^( ATTRIBUTES ( list_attributes )? )
                 {
                 AslTree root_2 = (AslTree)adaptor.nil();
                 root_2 = (AslTree)adaptor.becomeRoot(
                 (AslTree)adaptor.create(ATTRIBUTES, "ATTRIBUTES")
                 , root_2);
 
-                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:80:83: ( list_attributes )?
+                // /home/carlos/CL/Practica-CL/src/parser/Asl.g:80:83: ( list_attributes )?
                 if ( stream_list_attributes.hasNext() ) {
                     adaptor.addChild(root_2, stream_list_attributes.nextTree());
 
@@ -879,7 +879,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "list_func"
-    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:84:1: list_func : ( func )+ EOF -> ^( LIST_FUNCTIONS ( func )+ ) ;
+    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:84:1: list_func : ( func )+ EOF -> ^( LIST_FUNCTIONS ( func )+ ) ;
     public final AslParser.list_func_return list_func() throws RecognitionException {
         AslParser.list_func_return retval = new AslParser.list_func_return();
         retval.start = input.LT(1);
@@ -895,10 +895,10 @@ public TreeAdaptor getTreeAdaptor() {
         RewriteRuleTokenStream stream_EOF=new RewriteRuleTokenStream(adaptor,"token EOF");
         RewriteRuleSubtreeStream stream_func=new RewriteRuleSubtreeStream(adaptor,"rule func");
         try {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:84:11: ( ( func )+ EOF -> ^( LIST_FUNCTIONS ( func )+ ) )
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:84:13: ( func )+ EOF
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:84:11: ( ( func )+ EOF -> ^( LIST_FUNCTIONS ( func )+ ) )
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:84:13: ( func )+ EOF
             {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:84:13: ( func )+
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:84:13: ( func )+
             int cnt5=0;
             loop5:
             do {
@@ -912,7 +912,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt5) {
             	case 1 :
-            	    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:84:13: func
+            	    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:84:13: func
             	    {
             	    pushFollow(FOLLOW_func_in_list_func264);
             	    func21=func();
@@ -951,7 +951,7 @@ public TreeAdaptor getTreeAdaptor() {
             root_0 = (AslTree)adaptor.nil();
             // 84:22: -> ^( LIST_FUNCTIONS ( func )+ )
             {
-                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:84:25: ^( LIST_FUNCTIONS ( func )+ )
+                // /home/carlos/CL/Practica-CL/src/parser/Asl.g:84:25: ^( LIST_FUNCTIONS ( func )+ )
                 {
                 AslTree root_1 = (AslTree)adaptor.nil();
                 root_1 = (AslTree)adaptor.becomeRoot(
@@ -1006,7 +1006,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "func"
-    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:88:1: func : FUNC ^ ID params block_instructions ENDFUNC !;
+    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:88:1: func : FUNC ^ ID params block_instructions ENDFUNC !;
     public final AslParser.func_return func() throws RecognitionException {
         AslParser.func_return retval = new AslParser.func_return();
         retval.start = input.LT(1);
@@ -1027,8 +1027,8 @@ public TreeAdaptor getTreeAdaptor() {
         AslTree ENDFUNC27_tree=null;
 
         try {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:88:6: ( FUNC ^ ID params block_instructions ENDFUNC !)
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:88:8: FUNC ^ ID params block_instructions ENDFUNC !
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:88:6: ( FUNC ^ ID params block_instructions ENDFUNC !)
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:88:8: FUNC ^ ID params block_instructions ENDFUNC !
             {
             root_0 = (AslTree)adaptor.nil();
 
@@ -1094,7 +1094,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "params"
-    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:91:1: params : '(' ( paramlist )? ')' -> ^( PARAMS ( paramlist )? ) ;
+    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:91:1: params : '(' ( paramlist )? ')' -> ^( PARAMS ( paramlist )? ) ;
     public final AslParser.params_return params() throws RecognitionException {
         AslParser.params_return retval = new AslParser.params_return();
         retval.start = input.LT(1);
@@ -1113,14 +1113,14 @@ public TreeAdaptor getTreeAdaptor() {
         RewriteRuleTokenStream stream_76=new RewriteRuleTokenStream(adaptor,"token 76");
         RewriteRuleSubtreeStream stream_paramlist=new RewriteRuleSubtreeStream(adaptor,"rule paramlist");
         try {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:91:8: ( '(' ( paramlist )? ')' -> ^( PARAMS ( paramlist )? ) )
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:91:10: '(' ( paramlist )? ')'
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:91:8: ( '(' ( paramlist )? ')' -> ^( PARAMS ( paramlist )? ) )
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:91:10: '(' ( paramlist )? ')'
             {
             char_literal28=(Token)match(input,75,FOLLOW_75_in_params305);  
             stream_75.add(char_literal28);
 
 
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:91:14: ( paramlist )?
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:91:14: ( paramlist )?
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -1129,7 +1129,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt6) {
                 case 1 :
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:91:14: paramlist
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:91:14: paramlist
                     {
                     pushFollow(FOLLOW_paramlist_in_params307);
                     paramlist29=paramlist();
@@ -1161,14 +1161,14 @@ public TreeAdaptor getTreeAdaptor() {
             root_0 = (AslTree)adaptor.nil();
             // 91:29: -> ^( PARAMS ( paramlist )? )
             {
-                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:91:32: ^( PARAMS ( paramlist )? )
+                // /home/carlos/CL/Practica-CL/src/parser/Asl.g:91:32: ^( PARAMS ( paramlist )? )
                 {
                 AslTree root_1 = (AslTree)adaptor.nil();
                 root_1 = (AslTree)adaptor.becomeRoot(
                 (AslTree)adaptor.create(PARAMS, "PARAMS")
                 , root_1);
 
-                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:91:41: ( paramlist )?
+                // /home/carlos/CL/Practica-CL/src/parser/Asl.g:91:41: ( paramlist )?
                 if ( stream_paramlist.hasNext() ) {
                     adaptor.addChild(root_1, stream_paramlist.nextTree());
 
@@ -1214,7 +1214,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "paramlist"
-    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:94:1: paramlist : param ( ',' ! param )* ;
+    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:94:1: paramlist : param ( ',' ! param )* ;
     public final AslParser.paramlist_return paramlist() throws RecognitionException {
         AslParser.paramlist_return retval = new AslParser.paramlist_return();
         retval.start = input.LT(1);
@@ -1231,8 +1231,8 @@ public TreeAdaptor getTreeAdaptor() {
         AslTree char_literal32_tree=null;
 
         try {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:94:10: ( param ( ',' ! param )* )
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:94:12: param ( ',' ! param )*
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:94:10: ( param ( ',' ! param )* )
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:94:12: param ( ',' ! param )*
             {
             root_0 = (AslTree)adaptor.nil();
 
@@ -1244,7 +1244,7 @@ public TreeAdaptor getTreeAdaptor() {
 
             adaptor.addChild(root_0, param31.getTree());
 
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:94:18: ( ',' ! param )*
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:94:18: ( ',' ! param )*
             loop7:
             do {
                 int alt7=2;
@@ -1257,7 +1257,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt7) {
             	case 1 :
-            	    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:94:19: ',' ! param
+            	    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:94:19: ',' ! param
             	    {
             	    char_literal32=(Token)match(input,77,FOLLOW_77_in_paramlist330); 
 
@@ -1308,7 +1308,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "param"
-    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:98:1: param : id= ID -> ^( PREF[$id,$id.text] ) ;
+    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:98:1: param : id= ID -> ^( PREF[$id,$id.text] ) ;
     public final AslParser.param_return param() throws RecognitionException {
         AslParser.param_return retval = new AslParser.param_return();
         retval.start = input.LT(1);
@@ -1322,8 +1322,8 @@ public TreeAdaptor getTreeAdaptor() {
         RewriteRuleTokenStream stream_ID=new RewriteRuleTokenStream(adaptor,"token ID");
 
         try {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:98:7: (id= ID -> ^( PREF[$id,$id.text] ) )
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:98:9: id= ID
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:98:7: (id= ID -> ^( PREF[$id,$id.text] ) )
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:98:9: id= ID
             {
             id=(Token)match(input,ID,FOLLOW_ID_in_param347);  
             stream_ID.add(id);
@@ -1342,7 +1342,7 @@ public TreeAdaptor getTreeAdaptor() {
             root_0 = (AslTree)adaptor.nil();
             // 98:15: -> ^( PREF[$id,$id.text] )
             {
-                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:98:18: ^( PREF[$id,$id.text] )
+                // /home/carlos/CL/Practica-CL/src/parser/Asl.g:98:18: ^( PREF[$id,$id.text] )
                 {
                 AslTree root_1 = (AslTree)adaptor.nil();
                 root_1 = (AslTree)adaptor.becomeRoot(
@@ -1388,7 +1388,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "block_instructions"
-    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:101:1: block_instructions : instruction ( ';' instruction )* -> ^( LIST_INSTR ( instruction )+ ) ;
+    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:101:1: block_instructions : instruction ( ';' instruction )* -> ^( LIST_INSTR ( instruction )+ ) ;
     public final AslParser.block_instructions_return block_instructions() throws RecognitionException {
         AslParser.block_instructions_return retval = new AslParser.block_instructions_return();
         retval.start = input.LT(1);
@@ -1406,8 +1406,8 @@ public TreeAdaptor getTreeAdaptor() {
         RewriteRuleTokenStream stream_80=new RewriteRuleTokenStream(adaptor,"token 80");
         RewriteRuleSubtreeStream stream_instruction=new RewriteRuleSubtreeStream(adaptor,"rule instruction");
         try {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:102:5: ( instruction ( ';' instruction )* -> ^( LIST_INSTR ( instruction )+ ) )
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:102:5: instruction ( ';' instruction )*
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:102:5: ( instruction ( ';' instruction )* -> ^( LIST_INSTR ( instruction )+ ) )
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:102:5: instruction ( ';' instruction )*
             {
             pushFollow(FOLLOW_instruction_in_block_instructions365);
             instruction34=instruction();
@@ -1416,7 +1416,7 @@ public TreeAdaptor getTreeAdaptor() {
 
             stream_instruction.add(instruction34.getTree());
 
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:102:17: ( ';' instruction )*
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:102:17: ( ';' instruction )*
             loop8:
             do {
                 int alt8=2;
@@ -1429,7 +1429,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt8) {
             	case 1 :
-            	    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:102:18: ';' instruction
+            	    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:102:18: ';' instruction
             	    {
             	    char_literal35=(Token)match(input,80,FOLLOW_80_in_block_instructions368);  
             	    stream_80.add(char_literal35);
@@ -1464,7 +1464,7 @@ public TreeAdaptor getTreeAdaptor() {
             root_0 = (AslTree)adaptor.nil();
             // 103:4: -> ^( LIST_INSTR ( instruction )+ )
             {
-                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:103:4: ^( LIST_INSTR ( instruction )+ )
+                // /home/carlos/CL/Practica-CL/src/parser/Asl.g:103:4: ^( LIST_INSTR ( instruction )+ )
                 {
                 AslTree root_1 = (AslTree)adaptor.nil();
                 root_1 = (AslTree)adaptor.becomeRoot(
@@ -1519,7 +1519,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "instruction"
-    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:106:1: instruction : ( assign | basic_instruction | source | ite_stmt | while_stmt | for_stmt | funcall | return_stmt | time_annotation |);
+    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:106:1: instruction : ( assign | basic_instruction | source | ite_stmt | while_stmt | for_stmt | funcall | return_stmt | time_annotation |);
     public final AslParser.instruction_return instruction() throws RecognitionException {
         AslParser.instruction_return retval = new AslParser.instruction_return();
         retval.start = input.LT(1);
@@ -1548,7 +1548,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
         try {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:107:5: ( assign | basic_instruction | source | ite_stmt | while_stmt | for_stmt | funcall | return_stmt | time_annotation |)
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:107:5: ( assign | basic_instruction | source | ite_stmt | while_stmt | for_stmt | funcall | return_stmt | time_annotation |)
             int alt9=10;
             switch ( input.LA(1) ) {
             case ID:
@@ -1633,7 +1633,7 @@ public TreeAdaptor getTreeAdaptor() {
 
             switch (alt9) {
                 case 1 :
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:107:5: assign
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:107:5: assign
                     {
                     root_0 = (AslTree)adaptor.nil();
 
@@ -1648,7 +1648,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:108:3: basic_instruction
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:108:3: basic_instruction
                     {
                     root_0 = (AslTree)adaptor.nil();
 
@@ -1663,7 +1663,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 3 :
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:109:3: source
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:109:3: source
                     {
                     root_0 = (AslTree)adaptor.nil();
 
@@ -1678,7 +1678,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 4 :
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:110:3: ite_stmt
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:110:3: ite_stmt
                     {
                     root_0 = (AslTree)adaptor.nil();
 
@@ -1693,7 +1693,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 5 :
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:111:3: while_stmt
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:111:3: while_stmt
                     {
                     root_0 = (AslTree)adaptor.nil();
 
@@ -1708,7 +1708,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 6 :
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:112:3: for_stmt
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:112:3: for_stmt
                     {
                     root_0 = (AslTree)adaptor.nil();
 
@@ -1723,7 +1723,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 7 :
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:113:3: funcall
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:113:3: funcall
                     {
                     root_0 = (AslTree)adaptor.nil();
 
@@ -1738,7 +1738,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 8 :
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:114:3: return_stmt
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:114:3: return_stmt
                     {
                     root_0 = (AslTree)adaptor.nil();
 
@@ -1753,7 +1753,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 9 :
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:115:3: time_annotation
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:115:3: time_annotation
                     {
                     root_0 = (AslTree)adaptor.nil();
 
@@ -1768,7 +1768,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 10 :
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:117:1: 
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:117:1: 
                     {
                     root_0 = (AslTree)adaptor.nil();
 
@@ -1806,7 +1806,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "assign"
-    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:119:1: assign : ( ID eq= EQUAL basic_instruction -> ^( ASSIGN[$eq,\":=\"] ID basic_instruction ) | ID eq= EQUAL expr -> ^( ASSIGN[$eq,\":=\"] ID expr ) );
+    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:119:1: assign : ( ID eq= EQUAL basic_instruction -> ^( ASSIGN[$eq,\":=\"] ID basic_instruction ) | ID eq= EQUAL expr -> ^( ASSIGN[$eq,\":=\"] ID expr ) );
     public final AslParser.assign_return assign() throws RecognitionException {
         AslParser.assign_return retval = new AslParser.assign_return();
         retval.start = input.LT(1);
@@ -1830,7 +1830,7 @@ public TreeAdaptor getTreeAdaptor() {
         RewriteRuleSubtreeStream stream_expr=new RewriteRuleSubtreeStream(adaptor,"rule expr");
         RewriteRuleSubtreeStream stream_basic_instruction=new RewriteRuleSubtreeStream(adaptor,"rule basic_instruction");
         try {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:119:8: ( ID eq= EQUAL basic_instruction -> ^( ASSIGN[$eq,\":=\"] ID basic_instruction ) | ID eq= EQUAL expr -> ^( ASSIGN[$eq,\":=\"] ID expr ) )
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:119:8: ( ID eq= EQUAL basic_instruction -> ^( ASSIGN[$eq,\":=\"] ID basic_instruction ) | ID eq= EQUAL expr -> ^( ASSIGN[$eq,\":=\"] ID expr ) )
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -1871,7 +1871,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt10) {
                 case 1 :
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:119:13: ID eq= EQUAL basic_instruction
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:119:13: ID eq= EQUAL basic_instruction
                     {
                     ID46=(Token)match(input,ID,FOLLOW_ID_in_assign447);  
                     stream_ID.add(ID46);
@@ -1901,7 +1901,7 @@ public TreeAdaptor getTreeAdaptor() {
                     root_0 = (AslTree)adaptor.nil();
                     // 119:43: -> ^( ASSIGN[$eq,\":=\"] ID basic_instruction )
                     {
-                        // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:119:46: ^( ASSIGN[$eq,\":=\"] ID basic_instruction )
+                        // /home/carlos/CL/Practica-CL/src/parser/Asl.g:119:46: ^( ASSIGN[$eq,\":=\"] ID basic_instruction )
                         {
                         AslTree root_1 = (AslTree)adaptor.nil();
                         root_1 = (AslTree)adaptor.becomeRoot(
@@ -1925,7 +1925,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:120:3: ID eq= EQUAL expr
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:120:3: ID eq= EQUAL expr
                     {
                     ID48=(Token)match(input,ID,FOLLOW_ID_in_assign469);  
                     stream_ID.add(ID48);
@@ -1955,7 +1955,7 @@ public TreeAdaptor getTreeAdaptor() {
                     root_0 = (AslTree)adaptor.nil();
                     // 120:20: -> ^( ASSIGN[$eq,\":=\"] ID expr )
                     {
-                        // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:120:23: ^( ASSIGN[$eq,\":=\"] ID expr )
+                        // /home/carlos/CL/Practica-CL/src/parser/Asl.g:120:23: ^( ASSIGN[$eq,\":=\"] ID expr )
                         {
                         AslTree root_1 = (AslTree)adaptor.nil();
                         root_1 = (AslTree)adaptor.becomeRoot(
@@ -2009,7 +2009,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "basic_instruction"
-    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:122:1: basic_instruction : ( create | group | destroy | move | translate | modify | rotate | scale );
+    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:122:1: basic_instruction : ( create | group | destroy | move | translate | modify | rotate | scale );
     public final AslParser.basic_instruction_return basic_instruction() throws RecognitionException {
         AslParser.basic_instruction_return retval = new AslParser.basic_instruction_return();
         retval.start = input.LT(1);
@@ -2036,7 +2036,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
         try {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:122:18: ( create | group | destroy | move | translate | modify | rotate | scale )
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:122:18: ( create | group | destroy | move | translate | modify | rotate | scale )
             int alt11=8;
             switch ( input.LA(1) ) {
             case CREATE:
@@ -2089,7 +2089,7 @@ public TreeAdaptor getTreeAdaptor() {
 
             switch (alt11) {
                 case 1 :
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:123:1: create
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:123:1: create
                     {
                     root_0 = (AslTree)adaptor.nil();
 
@@ -2104,7 +2104,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:124:3: group
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:124:3: group
                     {
                     root_0 = (AslTree)adaptor.nil();
 
@@ -2119,7 +2119,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 3 :
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:125:3: destroy
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:125:3: destroy
                     {
                     root_0 = (AslTree)adaptor.nil();
 
@@ -2134,7 +2134,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 4 :
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:126:3: move
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:126:3: move
                     {
                     root_0 = (AslTree)adaptor.nil();
 
@@ -2149,7 +2149,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 5 :
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:127:3: translate
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:127:3: translate
                     {
                     root_0 = (AslTree)adaptor.nil();
 
@@ -2164,7 +2164,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 6 :
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:128:3: modify
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:128:3: modify
                     {
                     root_0 = (AslTree)adaptor.nil();
 
@@ -2179,7 +2179,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 7 :
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:129:3: rotate
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:129:3: rotate
                     {
                     root_0 = (AslTree)adaptor.nil();
 
@@ -2194,7 +2194,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 8 :
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:130:3: scale
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:130:3: scale
                     {
                     root_0 = (AslTree)adaptor.nil();
 
@@ -2239,7 +2239,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "ite_stmt"
-    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:133:1: ite_stmt : IF ^ '(' ! expr ')' ! block_instructions elseif_stmt else_stmt ENDIF !;
+    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:133:1: ite_stmt : IF ^ '(' ! expr ')' ! block_instructions elseif_stmt else_stmt ENDIF !;
     public final AslParser.ite_stmt_return ite_stmt() throws RecognitionException {
         AslParser.ite_stmt_return retval = new AslParser.ite_stmt_return();
         retval.start = input.LT(1);
@@ -2266,8 +2266,8 @@ public TreeAdaptor getTreeAdaptor() {
         AslTree ENDIF65_tree=null;
 
         try {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:133:10: ( IF ^ '(' ! expr ')' ! block_instructions elseif_stmt else_stmt ENDIF !)
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:133:13: IF ^ '(' ! expr ')' ! block_instructions elseif_stmt else_stmt ENDIF !
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:133:10: ( IF ^ '(' ! expr ')' ! block_instructions elseif_stmt else_stmt ENDIF !)
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:133:13: IF ^ '(' ! expr ')' ! block_instructions elseif_stmt else_stmt ENDIF !
             {
             root_0 = (AslTree)adaptor.nil();
 
@@ -2344,7 +2344,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "elseif_stmt"
-    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:136:1: elseif_stmt : ( ELSEIF ^ '(' ! expr ')' ! block_instructions )* ;
+    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:136:1: elseif_stmt : ( ELSEIF ^ '(' ! expr ')' ! block_instructions )* ;
     public final AslParser.elseif_stmt_return elseif_stmt() throws RecognitionException {
         AslParser.elseif_stmt_return retval = new AslParser.elseif_stmt_return();
         retval.start = input.LT(1);
@@ -2365,13 +2365,13 @@ public TreeAdaptor getTreeAdaptor() {
         AslTree char_literal69_tree=null;
 
         try {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:136:12: ( ( ELSEIF ^ '(' ! expr ')' ! block_instructions )* )
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:136:14: ( ELSEIF ^ '(' ! expr ')' ! block_instructions )*
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:136:12: ( ( ELSEIF ^ '(' ! expr ')' ! block_instructions )* )
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:136:14: ( ELSEIF ^ '(' ! expr ')' ! block_instructions )*
             {
             root_0 = (AslTree)adaptor.nil();
 
 
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:136:14: ( ELSEIF ^ '(' ! expr ')' ! block_instructions )*
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:136:14: ( ELSEIF ^ '(' ! expr ')' ! block_instructions )*
             loop12:
             do {
                 int alt12=2;
@@ -2384,7 +2384,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt12) {
             	case 1 :
-            	    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:136:15: ELSEIF ^ '(' ! expr ')' ! block_instructions
+            	    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:136:15: ELSEIF ^ '(' ! expr ')' ! block_instructions
             	    {
             	    ELSEIF66=(Token)match(input,ELSEIF,FOLLOW_ELSEIF_in_elseif_stmt559); 
             	    ELSEIF66_tree = 
@@ -2451,7 +2451,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "else_stmt"
-    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:139:1: else_stmt : ( ELSE ^ block_instructions )? ;
+    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:139:1: else_stmt : ( ELSE ^ block_instructions )? ;
     public final AslParser.else_stmt_return else_stmt() throws RecognitionException {
         AslParser.else_stmt_return retval = new AslParser.else_stmt_return();
         retval.start = input.LT(1);
@@ -2466,13 +2466,13 @@ public TreeAdaptor getTreeAdaptor() {
         AslTree ELSE71_tree=null;
 
         try {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:139:10: ( ( ELSE ^ block_instructions )? )
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:139:12: ( ELSE ^ block_instructions )?
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:139:10: ( ( ELSE ^ block_instructions )? )
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:139:12: ( ELSE ^ block_instructions )?
             {
             root_0 = (AslTree)adaptor.nil();
 
 
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:139:12: ( ELSE ^ block_instructions )?
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:139:12: ( ELSE ^ block_instructions )?
             int alt13=2;
             int LA13_0 = input.LA(1);
 
@@ -2481,7 +2481,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt13) {
                 case 1 :
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:139:13: ELSE ^ block_instructions
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:139:13: ELSE ^ block_instructions
                     {
                     ELSE71=(Token)match(input,ELSE,FOLLOW_ELSE_in_else_stmt581); 
                     ELSE71_tree = 
@@ -2534,7 +2534,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "while_stmt"
-    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:143:1: while_stmt : WHILE ^ '(' ! expr ')' ! block_instructions ENDWHILE !;
+    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:143:1: while_stmt : WHILE ^ '(' ! expr ')' ! block_instructions ENDWHILE !;
     public final AslParser.while_stmt_return while_stmt() throws RecognitionException {
         AslParser.while_stmt_return retval = new AslParser.while_stmt_return();
         retval.start = input.LT(1);
@@ -2557,8 +2557,8 @@ public TreeAdaptor getTreeAdaptor() {
         AslTree ENDWHILE78_tree=null;
 
         try {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:143:12: ( WHILE ^ '(' ! expr ')' ! block_instructions ENDWHILE !)
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:143:17: WHILE ^ '(' ! expr ')' ! block_instructions ENDWHILE !
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:143:12: ( WHILE ^ '(' ! expr ')' ! block_instructions ENDWHILE !)
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:143:17: WHILE ^ '(' ! expr ')' ! block_instructions ENDWHILE !
             {
             root_0 = (AslTree)adaptor.nil();
 
@@ -2621,7 +2621,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "for_stmt"
-    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:146:1: for_stmt : FOR ^ '(' ! for_form ')' ! block_instructions ENDFOR !;
+    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:146:1: for_stmt : FOR ^ '(' ! for_form ')' ! block_instructions ENDFOR !;
     public final AslParser.for_stmt_return for_stmt() throws RecognitionException {
         AslParser.for_stmt_return retval = new AslParser.for_stmt_return();
         retval.start = input.LT(1);
@@ -2644,8 +2644,8 @@ public TreeAdaptor getTreeAdaptor() {
         AslTree ENDFOR84_tree=null;
 
         try {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:146:10: ( FOR ^ '(' ! for_form ')' ! block_instructions ENDFOR !)
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:146:13: FOR ^ '(' ! for_form ')' ! block_instructions ENDFOR !
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:146:10: ( FOR ^ '(' ! for_form ')' ! block_instructions ENDFOR !)
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:146:13: FOR ^ '(' ! for_form ')' ! block_instructions ENDFOR !
             {
             root_0 = (AslTree)adaptor.nil();
 
@@ -2708,7 +2708,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "for_form"
-    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:149:1: for_form : ( assign ';' ! expr ';' ! assign | ID IN ! expr ':' ! expr );
+    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:149:1: for_form : ( assign ';' ! expr ';' ! assign | ID IN ! expr ':' ! expr );
     public final AslParser.for_form_return for_form() throws RecognitionException {
         AslParser.for_form_return retval = new AslParser.for_form_return();
         retval.start = input.LT(1);
@@ -2739,7 +2739,7 @@ public TreeAdaptor getTreeAdaptor() {
         AslTree char_literal93_tree=null;
 
         try {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:149:9: ( assign ';' ! expr ';' ! assign | ID IN ! expr ':' ! expr )
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:149:9: ( assign ';' ! expr ';' ! assign | ID IN ! expr ':' ! expr )
             int alt14=2;
             int LA14_0 = input.LA(1);
 
@@ -2769,7 +2769,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt14) {
                 case 1 :
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:149:12: assign ';' ! expr ';' ! assign
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:149:12: assign ';' ! expr ';' ! assign
                     {
                     root_0 = (AslTree)adaptor.nil();
 
@@ -2802,7 +2802,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:150:8: ID IN ! expr ':' ! expr
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:150:8: ID IN ! expr ':' ! expr
                     {
                     root_0 = (AslTree)adaptor.nil();
 
@@ -2865,7 +2865,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "return_stmt"
-    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:155:1: return_stmt : RETURN ^ ( expr )? ;
+    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:155:1: return_stmt : RETURN ^ ( expr )? ;
     public final AslParser.return_stmt_return return_stmt() throws RecognitionException {
         AslParser.return_stmt_return retval = new AslParser.return_stmt_return();
         retval.start = input.LT(1);
@@ -2880,8 +2880,8 @@ public TreeAdaptor getTreeAdaptor() {
         AslTree RETURN95_tree=null;
 
         try {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:155:13: ( RETURN ^ ( expr )? )
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:155:17: RETURN ^ ( expr )?
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:155:13: ( RETURN ^ ( expr )? )
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:155:17: RETURN ^ ( expr )?
             {
             root_0 = (AslTree)adaptor.nil();
 
@@ -2893,7 +2893,7 @@ public TreeAdaptor getTreeAdaptor() {
             root_0 = (AslTree)adaptor.becomeRoot(RETURN95_tree, root_0);
 
 
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:155:25: ( expr )?
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:155:25: ( expr )?
             int alt15=2;
             int LA15_0 = input.LA(1);
 
@@ -2902,7 +2902,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt15) {
                 case 1 :
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:155:25: expr
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:155:25: expr
                     {
                     pushFollow(FOLLOW_expr_in_return_stmt696);
                     expr96=expr();
@@ -2948,7 +2948,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "expr"
-    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:165:1: expr : boolterm ( OR ^ boolterm )* ;
+    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:165:1: expr : boolterm ( OR ^ boolterm )* ;
     public final AslParser.expr_return expr() throws RecognitionException {
         AslParser.expr_return retval = new AslParser.expr_return();
         retval.start = input.LT(1);
@@ -2965,8 +2965,8 @@ public TreeAdaptor getTreeAdaptor() {
         AslTree OR98_tree=null;
 
         try {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:165:6: ( boolterm ( OR ^ boolterm )* )
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:165:8: boolterm ( OR ^ boolterm )*
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:165:6: ( boolterm ( OR ^ boolterm )* )
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:165:8: boolterm ( OR ^ boolterm )*
             {
             root_0 = (AslTree)adaptor.nil();
 
@@ -2978,7 +2978,7 @@ public TreeAdaptor getTreeAdaptor() {
 
             adaptor.addChild(root_0, boolterm97.getTree());
 
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:165:17: ( OR ^ boolterm )*
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:165:17: ( OR ^ boolterm )*
             loop16:
             do {
                 int alt16=2;
@@ -2991,7 +2991,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt16) {
             	case 1 :
-            	    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:165:18: OR ^ boolterm
+            	    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:165:18: OR ^ boolterm
             	    {
             	    OR98=(Token)match(input,OR,FOLLOW_OR_in_expr716); 
             	    OR98_tree = 
@@ -3047,7 +3047,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "boolterm"
-    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:167:1: boolterm : boolfact ( AND ^ boolfact )* ;
+    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:167:1: boolterm : boolfact ( AND ^ boolfact )* ;
     public final AslParser.boolterm_return boolterm() throws RecognitionException {
         AslParser.boolterm_return retval = new AslParser.boolterm_return();
         retval.start = input.LT(1);
@@ -3064,8 +3064,8 @@ public TreeAdaptor getTreeAdaptor() {
         AslTree AND101_tree=null;
 
         try {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:167:9: ( boolfact ( AND ^ boolfact )* )
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:167:11: boolfact ( AND ^ boolfact )*
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:167:9: ( boolfact ( AND ^ boolfact )* )
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:167:11: boolfact ( AND ^ boolfact )*
             {
             root_0 = (AslTree)adaptor.nil();
 
@@ -3077,7 +3077,7 @@ public TreeAdaptor getTreeAdaptor() {
 
             adaptor.addChild(root_0, boolfact100.getTree());
 
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:167:20: ( AND ^ boolfact )*
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:167:20: ( AND ^ boolfact )*
             loop17:
             do {
                 int alt17=2;
@@ -3090,7 +3090,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt17) {
             	case 1 :
-            	    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:167:21: AND ^ boolfact
+            	    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:167:21: AND ^ boolfact
             	    {
             	    AND101=(Token)match(input,AND,FOLLOW_AND_in_boolterm731); 
             	    AND101_tree = 
@@ -3146,7 +3146,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "boolfact"
-    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:169:1: boolfact : num_expr ( ( COND_EQUAL ^| NOT_EQUAL ^| LT ^| LE ^| GT ^| GE ^) num_expr )? ;
+    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:169:1: boolfact : num_expr ( ( COND_EQUAL ^| NOT_EQUAL ^| LT ^| LE ^| GT ^| GE ^) num_expr )? ;
     public final AslParser.boolfact_return boolfact() throws RecognitionException {
         AslParser.boolfact_return retval = new AslParser.boolfact_return();
         retval.start = input.LT(1);
@@ -3173,8 +3173,8 @@ public TreeAdaptor getTreeAdaptor() {
         AslTree GE109_tree=null;
 
         try {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:169:9: ( num_expr ( ( COND_EQUAL ^| NOT_EQUAL ^| LT ^| LE ^| GT ^| GE ^) num_expr )? )
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:169:11: num_expr ( ( COND_EQUAL ^| NOT_EQUAL ^| LT ^| LE ^| GT ^| GE ^) num_expr )?
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:169:9: ( num_expr ( ( COND_EQUAL ^| NOT_EQUAL ^| LT ^| LE ^| GT ^| GE ^) num_expr )? )
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:169:11: num_expr ( ( COND_EQUAL ^| NOT_EQUAL ^| LT ^| LE ^| GT ^| GE ^) num_expr )?
             {
             root_0 = (AslTree)adaptor.nil();
 
@@ -3186,7 +3186,7 @@ public TreeAdaptor getTreeAdaptor() {
 
             adaptor.addChild(root_0, num_expr103.getTree());
 
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:169:20: ( ( COND_EQUAL ^| NOT_EQUAL ^| LT ^| LE ^| GT ^| GE ^) num_expr )?
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:169:20: ( ( COND_EQUAL ^| NOT_EQUAL ^| LT ^| LE ^| GT ^| GE ^) num_expr )?
             int alt19=2;
             int LA19_0 = input.LA(1);
 
@@ -3195,9 +3195,9 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt19) {
                 case 1 :
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:169:21: ( COND_EQUAL ^| NOT_EQUAL ^| LT ^| LE ^| GT ^| GE ^) num_expr
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:169:21: ( COND_EQUAL ^| NOT_EQUAL ^| LT ^| LE ^| GT ^| GE ^) num_expr
                     {
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:169:21: ( COND_EQUAL ^| NOT_EQUAL ^| LT ^| LE ^| GT ^| GE ^)
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:169:21: ( COND_EQUAL ^| NOT_EQUAL ^| LT ^| LE ^| GT ^| GE ^)
                     int alt18=6;
                     switch ( input.LA(1) ) {
                     case COND_EQUAL:
@@ -3240,7 +3240,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                     switch (alt18) {
                         case 1 :
-                            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:169:22: COND_EQUAL ^
+                            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:169:22: COND_EQUAL ^
                             {
                             COND_EQUAL104=(Token)match(input,COND_EQUAL,FOLLOW_COND_EQUAL_in_boolfact747); 
                             COND_EQUAL104_tree = 
@@ -3252,7 +3252,7 @@ public TreeAdaptor getTreeAdaptor() {
                             }
                             break;
                         case 2 :
-                            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:169:36: NOT_EQUAL ^
+                            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:169:36: NOT_EQUAL ^
                             {
                             NOT_EQUAL105=(Token)match(input,NOT_EQUAL,FOLLOW_NOT_EQUAL_in_boolfact752); 
                             NOT_EQUAL105_tree = 
@@ -3264,7 +3264,7 @@ public TreeAdaptor getTreeAdaptor() {
                             }
                             break;
                         case 3 :
-                            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:169:49: LT ^
+                            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:169:49: LT ^
                             {
                             LT106=(Token)match(input,LT,FOLLOW_LT_in_boolfact757); 
                             LT106_tree = 
@@ -3276,7 +3276,7 @@ public TreeAdaptor getTreeAdaptor() {
                             }
                             break;
                         case 4 :
-                            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:169:55: LE ^
+                            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:169:55: LE ^
                             {
                             LE107=(Token)match(input,LE,FOLLOW_LE_in_boolfact762); 
                             LE107_tree = 
@@ -3288,7 +3288,7 @@ public TreeAdaptor getTreeAdaptor() {
                             }
                             break;
                         case 5 :
-                            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:169:61: GT ^
+                            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:169:61: GT ^
                             {
                             GT108=(Token)match(input,GT,FOLLOW_GT_in_boolfact767); 
                             GT108_tree = 
@@ -3300,7 +3300,7 @@ public TreeAdaptor getTreeAdaptor() {
                             }
                             break;
                         case 6 :
-                            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:169:67: GE ^
+                            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:169:67: GE ^
                             {
                             GE109=(Token)match(input,GE,FOLLOW_GE_in_boolfact772); 
                             GE109_tree = 
@@ -3359,7 +3359,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "num_expr"
-    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:171:1: num_expr : term ( ( PLUS ^| MINUS ^) term )* ;
+    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:171:1: num_expr : term ( ( PLUS ^| MINUS ^) term )* ;
     public final AslParser.num_expr_return num_expr() throws RecognitionException {
         AslParser.num_expr_return retval = new AslParser.num_expr_return();
         retval.start = input.LT(1);
@@ -3378,8 +3378,8 @@ public TreeAdaptor getTreeAdaptor() {
         AslTree MINUS113_tree=null;
 
         try {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:171:9: ( term ( ( PLUS ^| MINUS ^) term )* )
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:171:11: term ( ( PLUS ^| MINUS ^) term )*
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:171:9: ( term ( ( PLUS ^| MINUS ^) term )* )
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:171:11: term ( ( PLUS ^| MINUS ^) term )*
             {
             root_0 = (AslTree)adaptor.nil();
 
@@ -3391,7 +3391,7 @@ public TreeAdaptor getTreeAdaptor() {
 
             adaptor.addChild(root_0, term111.getTree());
 
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:171:16: ( ( PLUS ^| MINUS ^) term )*
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:171:16: ( ( PLUS ^| MINUS ^) term )*
             loop21:
             do {
                 int alt21=2;
@@ -3404,9 +3404,9 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt21) {
             	case 1 :
-            	    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:171:18: ( PLUS ^| MINUS ^) term
+            	    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:171:18: ( PLUS ^| MINUS ^) term
             	    {
-            	    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:171:18: ( PLUS ^| MINUS ^)
+            	    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:171:18: ( PLUS ^| MINUS ^)
             	    int alt20=2;
             	    int LA20_0 = input.LA(1);
 
@@ -3425,7 +3425,7 @@ public TreeAdaptor getTreeAdaptor() {
             	    }
             	    switch (alt20) {
             	        case 1 :
-            	            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:171:19: PLUS ^
+            	            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:171:19: PLUS ^
             	            {
             	            PLUS112=(Token)match(input,PLUS,FOLLOW_PLUS_in_num_expr790); 
             	            PLUS112_tree = 
@@ -3437,7 +3437,7 @@ public TreeAdaptor getTreeAdaptor() {
             	            }
             	            break;
             	        case 2 :
-            	            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:171:27: MINUS ^
+            	            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:171:27: MINUS ^
             	            {
             	            MINUS113=(Token)match(input,MINUS,FOLLOW_MINUS_in_num_expr795); 
             	            MINUS113_tree = 
@@ -3499,7 +3499,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "term"
-    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:173:1: term : factor ( ( MUL ^| DIV ^| MOD ^) factor )* ;
+    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:173:1: term : factor ( ( MUL ^| DIV ^| MOD ^) factor )* ;
     public final AslParser.term_return term() throws RecognitionException {
         AslParser.term_return retval = new AslParser.term_return();
         retval.start = input.LT(1);
@@ -3520,8 +3520,8 @@ public TreeAdaptor getTreeAdaptor() {
         AslTree MOD118_tree=null;
 
         try {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:173:6: ( factor ( ( MUL ^| DIV ^| MOD ^) factor )* )
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:173:8: factor ( ( MUL ^| DIV ^| MOD ^) factor )*
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:173:6: ( factor ( ( MUL ^| DIV ^| MOD ^) factor )* )
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:173:8: factor ( ( MUL ^| DIV ^| MOD ^) factor )*
             {
             root_0 = (AslTree)adaptor.nil();
 
@@ -3533,7 +3533,7 @@ public TreeAdaptor getTreeAdaptor() {
 
             adaptor.addChild(root_0, factor115.getTree());
 
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:173:15: ( ( MUL ^| DIV ^| MOD ^) factor )*
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:173:15: ( ( MUL ^| DIV ^| MOD ^) factor )*
             loop23:
             do {
                 int alt23=2;
@@ -3546,9 +3546,9 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt23) {
             	case 1 :
-            	    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:173:17: ( MUL ^| DIV ^| MOD ^) factor
+            	    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:173:17: ( MUL ^| DIV ^| MOD ^) factor
             	    {
-            	    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:173:17: ( MUL ^| DIV ^| MOD ^)
+            	    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:173:17: ( MUL ^| DIV ^| MOD ^)
             	    int alt22=3;
             	    switch ( input.LA(1) ) {
             	    case MUL:
@@ -3576,7 +3576,7 @@ public TreeAdaptor getTreeAdaptor() {
 
             	    switch (alt22) {
             	        case 1 :
-            	            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:173:18: MUL ^
+            	            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:173:18: MUL ^
             	            {
             	            MUL116=(Token)match(input,MUL,FOLLOW_MUL_in_term814); 
             	            MUL116_tree = 
@@ -3588,7 +3588,7 @@ public TreeAdaptor getTreeAdaptor() {
             	            }
             	            break;
             	        case 2 :
-            	            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:173:25: DIV ^
+            	            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:173:25: DIV ^
             	            {
             	            DIV117=(Token)match(input,DIV,FOLLOW_DIV_in_term819); 
             	            DIV117_tree = 
@@ -3600,7 +3600,7 @@ public TreeAdaptor getTreeAdaptor() {
             	            }
             	            break;
             	        case 3 :
-            	            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:173:32: MOD ^
+            	            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:173:32: MOD ^
             	            {
             	            MOD118=(Token)match(input,MOD,FOLLOW_MOD_in_term824); 
             	            MOD118_tree = 
@@ -3662,7 +3662,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "factor"
-    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:175:1: factor : ( NOT ^| PLUS ^| MINUS ^)? atom ;
+    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:175:1: factor : ( NOT ^| PLUS ^| MINUS ^)? atom ;
     public final AslParser.factor_return factor() throws RecognitionException {
         AslParser.factor_return retval = new AslParser.factor_return();
         retval.start = input.LT(1);
@@ -3681,13 +3681,13 @@ public TreeAdaptor getTreeAdaptor() {
         AslTree MINUS122_tree=null;
 
         try {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:175:8: ( ( NOT ^| PLUS ^| MINUS ^)? atom )
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:175:10: ( NOT ^| PLUS ^| MINUS ^)? atom
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:175:8: ( ( NOT ^| PLUS ^| MINUS ^)? atom )
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:175:10: ( NOT ^| PLUS ^| MINUS ^)? atom
             {
             root_0 = (AslTree)adaptor.nil();
 
 
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:175:10: ( NOT ^| PLUS ^| MINUS ^)?
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:175:10: ( NOT ^| PLUS ^| MINUS ^)?
             int alt24=4;
             switch ( input.LA(1) ) {
                 case NOT:
@@ -3709,7 +3709,7 @@ public TreeAdaptor getTreeAdaptor() {
 
             switch (alt24) {
                 case 1 :
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:175:11: NOT ^
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:175:11: NOT ^
                     {
                     NOT120=(Token)match(input,NOT,FOLLOW_NOT_in_factor839); 
                     NOT120_tree = 
@@ -3721,7 +3721,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:175:18: PLUS ^
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:175:18: PLUS ^
                     {
                     PLUS121=(Token)match(input,PLUS,FOLLOW_PLUS_in_factor844); 
                     PLUS121_tree = 
@@ -3733,7 +3733,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 3 :
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:175:26: MINUS ^
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:175:26: MINUS ^
                     {
                     MINUS122=(Token)match(input,MINUS,FOLLOW_MINUS_in_factor849); 
                     MINUS122_tree = 
@@ -3786,7 +3786,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "atom"
-    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:180:1: atom : ( ID | INT | DOUBLE | STRING | (b= TRUE |b= FALSE ) -> ^( BOOLEAN[$b,$b.text] ) | funcall | '(' ! expr ')' !| acces_attribute );
+    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:180:1: atom : ( ID | INT | DOUBLE | STRING | (b= TRUE |b= FALSE ) -> ^( BOOLEAN[$b,$b.text] ) | funcall | '(' ! expr ')' !| acces_attribute );
     public final AslParser.atom_return atom() throws RecognitionException {
         AslParser.atom_return retval = new AslParser.atom_return();
         retval.start = input.LT(1);
@@ -3819,7 +3819,7 @@ public TreeAdaptor getTreeAdaptor() {
         RewriteRuleTokenStream stream_TRUE=new RewriteRuleTokenStream(adaptor,"token TRUE");
 
         try {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:180:6: ( ID | INT | DOUBLE | STRING | (b= TRUE |b= FALSE ) -> ^( BOOLEAN[$b,$b.text] ) | funcall | '(' ! expr ')' !| acces_attribute )
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:180:6: ( ID | INT | DOUBLE | STRING | (b= TRUE |b= FALSE ) -> ^( BOOLEAN[$b,$b.text] ) | funcall | '(' ! expr ')' !| acces_attribute )
             int alt26=8;
             switch ( input.LA(1) ) {
             case ID:
@@ -3909,7 +3909,7 @@ public TreeAdaptor getTreeAdaptor() {
 
             switch (alt26) {
                 case 1 :
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:180:8: ID
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:180:8: ID
                     {
                     root_0 = (AslTree)adaptor.nil();
 
@@ -3924,7 +3924,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:181:3: INT
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:181:3: INT
                     {
                     root_0 = (AslTree)adaptor.nil();
 
@@ -3939,7 +3939,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 3 :
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:182:3: DOUBLE
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:182:3: DOUBLE
                     {
                     root_0 = (AslTree)adaptor.nil();
 
@@ -3954,7 +3954,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 4 :
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:183:3: STRING
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:183:3: STRING
                     {
                     root_0 = (AslTree)adaptor.nil();
 
@@ -3969,9 +3969,9 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 5 :
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:184:3: (b= TRUE |b= FALSE )
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:184:3: (b= TRUE |b= FALSE )
                     {
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:184:3: (b= TRUE |b= FALSE )
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:184:3: (b= TRUE |b= FALSE )
                     int alt25=2;
                     int LA25_0 = input.LA(1);
 
@@ -3990,7 +3990,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     switch (alt25) {
                         case 1 :
-                            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:184:4: b= TRUE
+                            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:184:4: b= TRUE
                             {
                             b=(Token)match(input,TRUE,FOLLOW_TRUE_in_atom884);  
                             stream_TRUE.add(b);
@@ -3999,7 +3999,7 @@ public TreeAdaptor getTreeAdaptor() {
                             }
                             break;
                         case 2 :
-                            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:184:13: b= FALSE
+                            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:184:13: b= FALSE
                             {
                             b=(Token)match(input,FALSE,FOLLOW_FALSE_in_atom890);  
                             stream_FALSE.add(b);
@@ -4024,7 +4024,7 @@ public TreeAdaptor getTreeAdaptor() {
                     root_0 = (AslTree)adaptor.nil();
                     // 184:22: -> ^( BOOLEAN[$b,$b.text] )
                     {
-                        // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:184:25: ^( BOOLEAN[$b,$b.text] )
+                        // /home/carlos/CL/Practica-CL/src/parser/Asl.g:184:25: ^( BOOLEAN[$b,$b.text] )
                         {
                         AslTree root_1 = (AslTree)adaptor.nil();
                         root_1 = (AslTree)adaptor.becomeRoot(
@@ -4042,7 +4042,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 6 :
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:185:3: funcall
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:185:3: funcall
                     {
                     root_0 = (AslTree)adaptor.nil();
 
@@ -4057,7 +4057,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 7 :
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:186:3: '(' ! expr ')' !
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:186:3: '(' ! expr ')' !
                     {
                     root_0 = (AslTree)adaptor.nil();
 
@@ -4076,7 +4076,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 8 :
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:187:3: acces_attribute
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:187:3: acces_attribute
                     {
                     root_0 = (AslTree)adaptor.nil();
 
@@ -4121,7 +4121,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "funcall"
-    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:190:1: funcall : ID '(' ( expr_list )? ')' -> ^( FUNCALL ID ^( ARGLIST ( expr_list )? ) ) ;
+    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:190:1: funcall : ID '(' ( expr_list )? ')' -> ^( FUNCALL ID ^( ARGLIST ( expr_list )? ) ) ;
     public final AslParser.funcall_return funcall() throws RecognitionException {
         AslParser.funcall_return retval = new AslParser.funcall_return();
         retval.start = input.LT(1);
@@ -4143,8 +4143,8 @@ public TreeAdaptor getTreeAdaptor() {
         RewriteRuleTokenStream stream_76=new RewriteRuleTokenStream(adaptor,"token 76");
         RewriteRuleSubtreeStream stream_expr_list=new RewriteRuleSubtreeStream(adaptor,"rule expr_list");
         try {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:190:9: ( ID '(' ( expr_list )? ')' -> ^( FUNCALL ID ^( ARGLIST ( expr_list )? ) ) )
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:190:11: ID '(' ( expr_list )? ')'
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:190:9: ( ID '(' ( expr_list )? ')' -> ^( FUNCALL ID ^( ARGLIST ( expr_list )? ) ) )
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:190:11: ID '(' ( expr_list )? ')'
             {
             ID133=(Token)match(input,ID,FOLLOW_ID_in_funcall925);  
             stream_ID.add(ID133);
@@ -4154,7 +4154,7 @@ public TreeAdaptor getTreeAdaptor() {
             stream_75.add(char_literal134);
 
 
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:190:18: ( expr_list )?
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:190:18: ( expr_list )?
             int alt27=2;
             int LA27_0 = input.LA(1);
 
@@ -4163,7 +4163,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt27) {
                 case 1 :
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:190:18: expr_list
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:190:18: expr_list
                     {
                     pushFollow(FOLLOW_expr_list_in_funcall929);
                     expr_list135=expr_list();
@@ -4183,7 +4183,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
             // AST REWRITE
-            // elements: ID, expr_list
+            // elements: expr_list, ID
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -4195,7 +4195,7 @@ public TreeAdaptor getTreeAdaptor() {
             root_0 = (AslTree)adaptor.nil();
             // 190:33: -> ^( FUNCALL ID ^( ARGLIST ( expr_list )? ) )
             {
-                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:190:36: ^( FUNCALL ID ^( ARGLIST ( expr_list )? ) )
+                // /home/carlos/CL/Practica-CL/src/parser/Asl.g:190:36: ^( FUNCALL ID ^( ARGLIST ( expr_list )? ) )
                 {
                 AslTree root_1 = (AslTree)adaptor.nil();
                 root_1 = (AslTree)adaptor.becomeRoot(
@@ -4206,14 +4206,14 @@ public TreeAdaptor getTreeAdaptor() {
                 stream_ID.nextNode()
                 );
 
-                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:190:49: ^( ARGLIST ( expr_list )? )
+                // /home/carlos/CL/Practica-CL/src/parser/Asl.g:190:49: ^( ARGLIST ( expr_list )? )
                 {
                 AslTree root_2 = (AslTree)adaptor.nil();
                 root_2 = (AslTree)adaptor.becomeRoot(
                 (AslTree)adaptor.create(ARGLIST, "ARGLIST")
                 , root_2);
 
-                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:190:59: ( expr_list )?
+                // /home/carlos/CL/Practica-CL/src/parser/Asl.g:190:59: ( expr_list )?
                 if ( stream_expr_list.hasNext() ) {
                     adaptor.addChild(root_2, stream_expr_list.nextTree());
 
@@ -4262,7 +4262,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "expr_list"
-    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:193:1: expr_list : expr ( ',' ! expr )* ;
+    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:193:1: expr_list : expr ( ',' ! expr )* ;
     public final AslParser.expr_list_return expr_list() throws RecognitionException {
         AslParser.expr_list_return retval = new AslParser.expr_list_return();
         retval.start = input.LT(1);
@@ -4279,8 +4279,8 @@ public TreeAdaptor getTreeAdaptor() {
         AslTree char_literal138_tree=null;
 
         try {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:193:10: ( expr ( ',' ! expr )* )
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:193:12: expr ( ',' ! expr )*
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:193:10: ( expr ( ',' ! expr )* )
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:193:12: expr ( ',' ! expr )*
             {
             root_0 = (AslTree)adaptor.nil();
 
@@ -4292,7 +4292,7 @@ public TreeAdaptor getTreeAdaptor() {
 
             adaptor.addChild(root_0, expr137.getTree());
 
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:193:17: ( ',' ! expr )*
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:193:17: ( ',' ! expr )*
             loop28:
             do {
                 int alt28=2;
@@ -4305,7 +4305,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt28) {
             	case 1 :
-            	    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:193:18: ',' ! expr
+            	    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:193:18: ',' ! expr
             	    {
             	    char_literal138=(Token)match(input,77,FOLLOW_77_in_expr_list958); 
 
@@ -4356,7 +4356,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "time_annotation"
-    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:195:1: time_annotation : '@' BEGIN EQUAL expr ( ',' finish_time )? -> ^( TIMEANNOTATION expr ( finish_time )? ) ;
+    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:195:1: time_annotation : '@' BEGIN EQUAL expr ( ',' finish_time )? -> ^( TIMEANNOTATION expr ( finish_time )? ) ;
     public final AslParser.time_annotation_return time_annotation() throws RecognitionException {
         AslParser.time_annotation_return retval = new AslParser.time_annotation_return();
         retval.start = input.LT(1);
@@ -4384,8 +4384,8 @@ public TreeAdaptor getTreeAdaptor() {
         RewriteRuleSubtreeStream stream_finish_time=new RewriteRuleSubtreeStream(adaptor,"rule finish_time");
         RewriteRuleSubtreeStream stream_expr=new RewriteRuleSubtreeStream(adaptor,"rule expr");
         try {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:195:16: ( '@' BEGIN EQUAL expr ( ',' finish_time )? -> ^( TIMEANNOTATION expr ( finish_time )? ) )
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:196:1: '@' BEGIN EQUAL expr ( ',' finish_time )?
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:195:16: ( '@' BEGIN EQUAL expr ( ',' finish_time )? -> ^( TIMEANNOTATION expr ( finish_time )? ) )
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:196:1: '@' BEGIN EQUAL expr ( ',' finish_time )?
             {
             char_literal140=(Token)match(input,81,FOLLOW_81_in_time_annotation970);  
             stream_81.add(char_literal140);
@@ -4406,7 +4406,7 @@ public TreeAdaptor getTreeAdaptor() {
 
             stream_expr.add(expr143.getTree());
 
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:196:22: ( ',' finish_time )?
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:196:22: ( ',' finish_time )?
             int alt29=2;
             int LA29_0 = input.LA(1);
 
@@ -4415,7 +4415,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt29) {
                 case 1 :
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:196:23: ',' finish_time
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:196:23: ',' finish_time
                     {
                     char_literal144=(Token)match(input,77,FOLLOW_77_in_time_annotation979);  
                     stream_77.add(char_literal144);
@@ -4435,7 +4435,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
             // AST REWRITE
-            // elements: expr, finish_time
+            // elements: finish_time, expr
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -4447,7 +4447,7 @@ public TreeAdaptor getTreeAdaptor() {
             root_0 = (AslTree)adaptor.nil();
             // 196:41: -> ^( TIMEANNOTATION expr ( finish_time )? )
             {
-                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:196:44: ^( TIMEANNOTATION expr ( finish_time )? )
+                // /home/carlos/CL/Practica-CL/src/parser/Asl.g:196:44: ^( TIMEANNOTATION expr ( finish_time )? )
                 {
                 AslTree root_1 = (AslTree)adaptor.nil();
                 root_1 = (AslTree)adaptor.becomeRoot(
@@ -4456,7 +4456,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 adaptor.addChild(root_1, stream_expr.nextTree());
 
-                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:196:66: ( finish_time )?
+                // /home/carlos/CL/Practica-CL/src/parser/Asl.g:196:66: ( finish_time )?
                 if ( stream_finish_time.hasNext() ) {
                     adaptor.addChild(root_1, stream_finish_time.nextTree());
 
@@ -4502,7 +4502,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "finish_time"
-    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:198:1: finish_time : ( END ^ EQUAL ! expr | DURATION ^ EQUAL ! expr ) ;
+    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:198:1: finish_time : ( END ^ EQUAL ! expr | DURATION ^ EQUAL ! expr ) ;
     public final AslParser.finish_time_return finish_time() throws RecognitionException {
         AslParser.finish_time_return retval = new AslParser.finish_time_return();
         retval.start = input.LT(1);
@@ -4525,13 +4525,13 @@ public TreeAdaptor getTreeAdaptor() {
         AslTree EQUAL150_tree=null;
 
         try {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:198:12: ( ( END ^ EQUAL ! expr | DURATION ^ EQUAL ! expr ) )
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:199:2: ( END ^ EQUAL ! expr | DURATION ^ EQUAL ! expr )
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:198:12: ( ( END ^ EQUAL ! expr | DURATION ^ EQUAL ! expr ) )
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:199:2: ( END ^ EQUAL ! expr | DURATION ^ EQUAL ! expr )
             {
             root_0 = (AslTree)adaptor.nil();
 
 
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:199:2: ( END ^ EQUAL ! expr | DURATION ^ EQUAL ! expr )
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:199:2: ( END ^ EQUAL ! expr | DURATION ^ EQUAL ! expr )
             int alt30=2;
             int LA30_0 = input.LA(1);
 
@@ -4550,7 +4550,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt30) {
                 case 1 :
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:199:2: END ^ EQUAL ! expr
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:199:2: END ^ EQUAL ! expr
                     {
                     END146=(Token)match(input,END,FOLLOW_END_in_finish_time1002); 
                     END146_tree = 
@@ -4571,7 +4571,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:199:21: DURATION ^ EQUAL ! expr
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:199:21: DURATION ^ EQUAL ! expr
                     {
                     DURATION149=(Token)match(input,DURATION,FOLLOW_DURATION_in_finish_time1012); 
                     DURATION149_tree = 
@@ -4626,7 +4626,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "create"
-    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:201:1: create : CREATE tipus_objecte ( coordenades )? ( radis )? ( list_attributes )? -> ^( CREATE tipus_objecte ( coordenades )? ( radis )? ( ^( ATTRIBUTES list_attributes ) )? ) ;
+    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:201:1: create : CREATE tipus_objecte ( coordenades )? ( radis )? ( list_attributes )? -> ^( CREATE tipus_objecte ( coordenades )? ( radis )? ( ^( ATTRIBUTES list_attributes ) )? ) ;
     public final AslParser.create_return create() throws RecognitionException {
         AslParser.create_return retval = new AslParser.create_return();
         retval.start = input.LT(1);
@@ -4651,8 +4651,8 @@ public TreeAdaptor getTreeAdaptor() {
         RewriteRuleSubtreeStream stream_tipus_objecte=new RewriteRuleSubtreeStream(adaptor,"rule tipus_objecte");
         RewriteRuleSubtreeStream stream_radis=new RewriteRuleSubtreeStream(adaptor,"rule radis");
         try {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:201:7: ( CREATE tipus_objecte ( coordenades )? ( radis )? ( list_attributes )? -> ^( CREATE tipus_objecte ( coordenades )? ( radis )? ( ^( ATTRIBUTES list_attributes ) )? ) )
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:201:9: CREATE tipus_objecte ( coordenades )? ( radis )? ( list_attributes )?
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:201:7: ( CREATE tipus_objecte ( coordenades )? ( radis )? ( list_attributes )? -> ^( CREATE tipus_objecte ( coordenades )? ( radis )? ( ^( ATTRIBUTES list_attributes ) )? ) )
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:201:9: CREATE tipus_objecte ( coordenades )? ( radis )? ( list_attributes )?
             {
             CREATE152=(Token)match(input,CREATE,FOLLOW_CREATE_in_create1026);  
             stream_CREATE.add(CREATE152);
@@ -4665,7 +4665,7 @@ public TreeAdaptor getTreeAdaptor() {
 
             stream_tipus_objecte.add(tipus_objecte153.getTree());
 
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:201:30: ( coordenades )?
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:201:30: ( coordenades )?
             int alt31=2;
             int LA31_0 = input.LA(1);
 
@@ -4674,7 +4674,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt31) {
                 case 1 :
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:201:30: coordenades
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:201:30: coordenades
                     {
                     pushFollow(FOLLOW_coordenades_in_create1030);
                     coordenades154=coordenades();
@@ -4689,7 +4689,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
 
 
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:201:43: ( radis )?
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:201:43: ( radis )?
             int alt32=2;
             int LA32_0 = input.LA(1);
 
@@ -4698,7 +4698,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt32) {
                 case 1 :
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:201:43: radis
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:201:43: radis
                     {
                     pushFollow(FOLLOW_radis_in_create1033);
                     radis155=radis();
@@ -4713,7 +4713,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
 
 
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:201:50: ( list_attributes )?
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:201:50: ( list_attributes )?
             int alt33=2;
             int LA33_0 = input.LA(1);
 
@@ -4722,7 +4722,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt33) {
                 case 1 :
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:201:50: list_attributes
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:201:50: list_attributes
                     {
                     pushFollow(FOLLOW_list_attributes_in_create1036);
                     list_attributes156=list_attributes();
@@ -4738,7 +4738,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
             // AST REWRITE
-            // elements: tipus_objecte, coordenades, list_attributes, CREATE, radis
+            // elements: tipus_objecte, CREATE, radis, coordenades, list_attributes
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -4750,7 +4750,7 @@ public TreeAdaptor getTreeAdaptor() {
             root_0 = (AslTree)adaptor.nil();
             // 201:67: -> ^( CREATE tipus_objecte ( coordenades )? ( radis )? ( ^( ATTRIBUTES list_attributes ) )? )
             {
-                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:201:70: ^( CREATE tipus_objecte ( coordenades )? ( radis )? ( ^( ATTRIBUTES list_attributes ) )? )
+                // /home/carlos/CL/Practica-CL/src/parser/Asl.g:201:70: ^( CREATE tipus_objecte ( coordenades )? ( radis )? ( ^( ATTRIBUTES list_attributes ) )? )
                 {
                 AslTree root_1 = (AslTree)adaptor.nil();
                 root_1 = (AslTree)adaptor.becomeRoot(
@@ -4759,23 +4759,23 @@ public TreeAdaptor getTreeAdaptor() {
 
                 adaptor.addChild(root_1, stream_tipus_objecte.nextTree());
 
-                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:201:93: ( coordenades )?
+                // /home/carlos/CL/Practica-CL/src/parser/Asl.g:201:93: ( coordenades )?
                 if ( stream_coordenades.hasNext() ) {
                     adaptor.addChild(root_1, stream_coordenades.nextTree());
 
                 }
                 stream_coordenades.reset();
 
-                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:201:106: ( radis )?
+                // /home/carlos/CL/Practica-CL/src/parser/Asl.g:201:106: ( radis )?
                 if ( stream_radis.hasNext() ) {
                     adaptor.addChild(root_1, stream_radis.nextTree());
 
                 }
                 stream_radis.reset();
 
-                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:201:113: ( ^( ATTRIBUTES list_attributes ) )?
+                // /home/carlos/CL/Practica-CL/src/parser/Asl.g:201:113: ( ^( ATTRIBUTES list_attributes ) )?
                 if ( stream_list_attributes.hasNext() ) {
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:201:113: ^( ATTRIBUTES list_attributes )
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:201:113: ^( ATTRIBUTES list_attributes )
                     {
                     AslTree root_2 = (AslTree)adaptor.nil();
                     root_2 = (AslTree)adaptor.becomeRoot(
@@ -4829,7 +4829,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "tipus_objecte"
-    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:203:1: tipus_objecte : ( TYPE_OBJECT | ID );
+    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:203:1: tipus_objecte : ( TYPE_OBJECT | ID );
     public final AslParser.tipus_objecte_return tipus_objecte() throws RecognitionException {
         AslParser.tipus_objecte_return retval = new AslParser.tipus_objecte_return();
         retval.start = input.LT(1);
@@ -4842,8 +4842,8 @@ public TreeAdaptor getTreeAdaptor() {
         AslTree set157_tree=null;
 
         try {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:203:14: ( TYPE_OBJECT | ID )
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:203:14: ( TYPE_OBJECT | ID )
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:
             {
             root_0 = (AslTree)adaptor.nil();
 
@@ -4894,7 +4894,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "group"
-    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:205:1: group : GROUP ^ ID ( ',' ! ID )+ ;
+    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:205:1: group : GROUP ^ ID ( ',' ! ID )+ ;
     public final AslParser.group_return group() throws RecognitionException {
         AslParser.group_return retval = new AslParser.group_return();
         retval.start = input.LT(1);
@@ -4913,8 +4913,8 @@ public TreeAdaptor getTreeAdaptor() {
         AslTree ID161_tree=null;
 
         try {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:205:6: ( GROUP ^ ID ( ',' ! ID )+ )
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:205:8: GROUP ^ ID ( ',' ! ID )+
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:205:6: ( GROUP ^ ID ( ',' ! ID )+ )
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:205:8: GROUP ^ ID ( ',' ! ID )+
             {
             root_0 = (AslTree)adaptor.nil();
 
@@ -4933,7 +4933,7 @@ public TreeAdaptor getTreeAdaptor() {
             adaptor.addChild(root_0, ID159_tree);
 
 
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:205:18: ( ',' ! ID )+
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:205:18: ( ',' ! ID )+
             int cnt34=0;
             loop34:
             do {
@@ -4947,7 +4947,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt34) {
             	case 1 :
-            	    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:205:19: ',' ! ID
+            	    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:205:19: ',' ! ID
             	    {
             	    char_literal160=(Token)match(input,77,FOLLOW_77_in_group1082); 
 
@@ -5002,7 +5002,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "destroy"
-    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:207:1: destroy : DESTROY ID -> ^( ANIMATION DESTROY ID ) ;
+    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:207:1: destroy : DESTROY ID -> ^( ANIMATION DESTROY ID ) ;
     public final AslParser.destroy_return destroy() throws RecognitionException {
         AslParser.destroy_return retval = new AslParser.destroy_return();
         retval.start = input.LT(1);
@@ -5019,8 +5019,8 @@ public TreeAdaptor getTreeAdaptor() {
         RewriteRuleTokenStream stream_ID=new RewriteRuleTokenStream(adaptor,"token ID");
 
         try {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:207:8: ( DESTROY ID -> ^( ANIMATION DESTROY ID ) )
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:207:10: DESTROY ID
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:207:8: ( DESTROY ID -> ^( ANIMATION DESTROY ID ) )
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:207:10: DESTROY ID
             {
             DESTROY162=(Token)match(input,DESTROY,FOLLOW_DESTROY_in_destroy1094);  
             stream_DESTROY.add(DESTROY162);
@@ -5043,7 +5043,7 @@ public TreeAdaptor getTreeAdaptor() {
             root_0 = (AslTree)adaptor.nil();
             // 207:21: -> ^( ANIMATION DESTROY ID )
             {
-                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:207:24: ^( ANIMATION DESTROY ID )
+                // /home/carlos/CL/Practica-CL/src/parser/Asl.g:207:24: ^( ANIMATION DESTROY ID )
                 {
                 AslTree root_1 = (AslTree)adaptor.nil();
                 root_1 = (AslTree)adaptor.becomeRoot(
@@ -5097,7 +5097,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "move"
-    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:209:1: move : MOVE ID coordenades -> ^( ANIMATION MOVE ID coordenades ) ;
+    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:209:1: move : MOVE ID coordenades -> ^( ANIMATION MOVE ID coordenades ) ;
     public final AslParser.move_return move() throws RecognitionException {
         AslParser.move_return retval = new AslParser.move_return();
         retval.start = input.LT(1);
@@ -5116,8 +5116,8 @@ public TreeAdaptor getTreeAdaptor() {
         RewriteRuleTokenStream stream_MOVE=new RewriteRuleTokenStream(adaptor,"token MOVE");
         RewriteRuleSubtreeStream stream_coordenades=new RewriteRuleSubtreeStream(adaptor,"rule coordenades");
         try {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:209:5: ( MOVE ID coordenades -> ^( ANIMATION MOVE ID coordenades ) )
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:209:9: MOVE ID coordenades
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:209:5: ( MOVE ID coordenades -> ^( ANIMATION MOVE ID coordenades ) )
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:209:9: MOVE ID coordenades
             {
             MOVE164=(Token)match(input,MOVE,FOLLOW_MOVE_in_move1115);  
             stream_MOVE.add(MOVE164);
@@ -5135,7 +5135,7 @@ public TreeAdaptor getTreeAdaptor() {
             stream_coordenades.add(coordenades166.getTree());
 
             // AST REWRITE
-            // elements: ID, MOVE, coordenades
+            // elements: coordenades, MOVE, ID
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -5147,7 +5147,7 @@ public TreeAdaptor getTreeAdaptor() {
             root_0 = (AslTree)adaptor.nil();
             // 209:29: -> ^( ANIMATION MOVE ID coordenades )
             {
-                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:209:32: ^( ANIMATION MOVE ID coordenades )
+                // /home/carlos/CL/Practica-CL/src/parser/Asl.g:209:32: ^( ANIMATION MOVE ID coordenades )
                 {
                 AslTree root_1 = (AslTree)adaptor.nil();
                 root_1 = (AslTree)adaptor.becomeRoot(
@@ -5203,7 +5203,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "translate"
-    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:211:1: translate : TRANSLATE ID coordenades -> ^( ANIMATION TRANSLATE ID coordenades ) ;
+    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:211:1: translate : TRANSLATE ID coordenades -> ^( ANIMATION TRANSLATE ID coordenades ) ;
     public final AslParser.translate_return translate() throws RecognitionException {
         AslParser.translate_return retval = new AslParser.translate_return();
         retval.start = input.LT(1);
@@ -5222,8 +5222,8 @@ public TreeAdaptor getTreeAdaptor() {
         RewriteRuleTokenStream stream_TRANSLATE=new RewriteRuleTokenStream(adaptor,"token TRANSLATE");
         RewriteRuleSubtreeStream stream_coordenades=new RewriteRuleSubtreeStream(adaptor,"rule coordenades");
         try {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:211:10: ( TRANSLATE ID coordenades -> ^( ANIMATION TRANSLATE ID coordenades ) )
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:211:13: TRANSLATE ID coordenades
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:211:10: ( TRANSLATE ID coordenades -> ^( ANIMATION TRANSLATE ID coordenades ) )
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:211:13: TRANSLATE ID coordenades
             {
             TRANSLATE167=(Token)match(input,TRANSLATE,FOLLOW_TRANSLATE_in_translate1139);  
             stream_TRANSLATE.add(TRANSLATE167);
@@ -5241,7 +5241,7 @@ public TreeAdaptor getTreeAdaptor() {
             stream_coordenades.add(coordenades169.getTree());
 
             // AST REWRITE
-            // elements: TRANSLATE, coordenades, ID
+            // elements: TRANSLATE, ID, coordenades
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -5253,7 +5253,7 @@ public TreeAdaptor getTreeAdaptor() {
             root_0 = (AslTree)adaptor.nil();
             // 211:38: -> ^( ANIMATION TRANSLATE ID coordenades )
             {
-                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:211:41: ^( ANIMATION TRANSLATE ID coordenades )
+                // /home/carlos/CL/Practica-CL/src/parser/Asl.g:211:41: ^( ANIMATION TRANSLATE ID coordenades )
                 {
                 AslTree root_1 = (AslTree)adaptor.nil();
                 root_1 = (AslTree)adaptor.becomeRoot(
@@ -5309,7 +5309,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "modify"
-    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:213:1: modify : MODIFY ID list_attributes -> ^( ANIMATION MODIFY ID list_attributes ) ;
+    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:213:1: modify : MODIFY ID list_attributes -> ^( ANIMATION MODIFY ID list_attributes ) ;
     public final AslParser.modify_return modify() throws RecognitionException {
         AslParser.modify_return retval = new AslParser.modify_return();
         retval.start = input.LT(1);
@@ -5328,8 +5328,8 @@ public TreeAdaptor getTreeAdaptor() {
         RewriteRuleTokenStream stream_ID=new RewriteRuleTokenStream(adaptor,"token ID");
         RewriteRuleSubtreeStream stream_list_attributes=new RewriteRuleSubtreeStream(adaptor,"rule list_attributes");
         try {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:213:7: ( MODIFY ID list_attributes -> ^( ANIMATION MODIFY ID list_attributes ) )
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:213:9: MODIFY ID list_attributes
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:213:7: ( MODIFY ID list_attributes -> ^( ANIMATION MODIFY ID list_attributes ) )
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:213:9: MODIFY ID list_attributes
             {
             MODIFY170=(Token)match(input,MODIFY,FOLLOW_MODIFY_in_modify1162);  
             stream_MODIFY.add(MODIFY170);
@@ -5347,7 +5347,7 @@ public TreeAdaptor getTreeAdaptor() {
             stream_list_attributes.add(list_attributes172.getTree());
 
             // AST REWRITE
-            // elements: ID, MODIFY, list_attributes
+            // elements: MODIFY, list_attributes, ID
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -5359,7 +5359,7 @@ public TreeAdaptor getTreeAdaptor() {
             root_0 = (AslTree)adaptor.nil();
             // 213:35: -> ^( ANIMATION MODIFY ID list_attributes )
             {
-                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:213:38: ^( ANIMATION MODIFY ID list_attributes )
+                // /home/carlos/CL/Practica-CL/src/parser/Asl.g:213:38: ^( ANIMATION MODIFY ID list_attributes )
                 {
                 AslTree root_1 = (AslTree)adaptor.nil();
                 root_1 = (AslTree)adaptor.becomeRoot(
@@ -5415,7 +5415,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "rotate"
-    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:215:1: rotate : ROTATE ID rotate_values -> ^( ANIMATION ROTATE ID rotate_values ) ;
+    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:215:1: rotate : ROTATE ID rotate_values -> ^( ANIMATION ROTATE ID rotate_values ) ;
     public final AslParser.rotate_return rotate() throws RecognitionException {
         AslParser.rotate_return retval = new AslParser.rotate_return();
         retval.start = input.LT(1);
@@ -5434,8 +5434,8 @@ public TreeAdaptor getTreeAdaptor() {
         RewriteRuleTokenStream stream_ID=new RewriteRuleTokenStream(adaptor,"token ID");
         RewriteRuleSubtreeStream stream_rotate_values=new RewriteRuleSubtreeStream(adaptor,"rule rotate_values");
         try {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:215:7: ( ROTATE ID rotate_values -> ^( ANIMATION ROTATE ID rotate_values ) )
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:215:9: ROTATE ID rotate_values
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:215:7: ( ROTATE ID rotate_values -> ^( ANIMATION ROTATE ID rotate_values ) )
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:215:9: ROTATE ID rotate_values
             {
             ROTATE173=(Token)match(input,ROTATE,FOLLOW_ROTATE_in_rotate1185);  
             stream_ROTATE.add(ROTATE173);
@@ -5453,7 +5453,7 @@ public TreeAdaptor getTreeAdaptor() {
             stream_rotate_values.add(rotate_values175.getTree());
 
             // AST REWRITE
-            // elements: ROTATE, rotate_values, ID
+            // elements: ID, ROTATE, rotate_values
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -5465,7 +5465,7 @@ public TreeAdaptor getTreeAdaptor() {
             root_0 = (AslTree)adaptor.nil();
             // 215:33: -> ^( ANIMATION ROTATE ID rotate_values )
             {
-                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:215:36: ^( ANIMATION ROTATE ID rotate_values )
+                // /home/carlos/CL/Practica-CL/src/parser/Asl.g:215:36: ^( ANIMATION ROTATE ID rotate_values )
                 {
                 AslTree root_1 = (AslTree)adaptor.nil();
                 root_1 = (AslTree)adaptor.becomeRoot(
@@ -5521,7 +5521,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "rotate_values"
-    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:217:1: rotate_values : '(' ! expr ( ',' ! expr ',' ! expr )? ')' !;
+    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:217:1: rotate_values : '(' ! expr ( ',' ! expr ',' ! expr )? ')' !;
     public final AslParser.rotate_values_return rotate_values() throws RecognitionException {
         AslParser.rotate_values_return retval = new AslParser.rotate_values_return();
         retval.start = input.LT(1);
@@ -5546,8 +5546,8 @@ public TreeAdaptor getTreeAdaptor() {
         AslTree char_literal182_tree=null;
 
         try {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:217:15: ( '(' ! expr ( ',' ! expr ',' ! expr )? ')' !)
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:217:18: '(' ! expr ( ',' ! expr ',' ! expr )? ')' !
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:217:15: ( '(' ! expr ( ',' ! expr ',' ! expr )? ')' !)
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:217:18: '(' ! expr ( ',' ! expr ',' ! expr )? ')' !
             {
             root_0 = (AslTree)adaptor.nil();
 
@@ -5561,7 +5561,7 @@ public TreeAdaptor getTreeAdaptor() {
 
             adaptor.addChild(root_0, expr177.getTree());
 
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:217:28: ( ',' ! expr ',' ! expr )?
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:217:28: ( ',' ! expr ',' ! expr )?
             int alt35=2;
             int LA35_0 = input.LA(1);
 
@@ -5570,7 +5570,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt35) {
                 case 1 :
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:217:29: ',' ! expr ',' ! expr
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:217:29: ',' ! expr ',' ! expr
                     {
                     char_literal178=(Token)match(input,77,FOLLOW_77_in_rotate_values1216); 
 
@@ -5629,7 +5629,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "scale"
-    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:219:1: scale : SCALE ID expr -> ^( ANIMATION SCALE ID expr ) ;
+    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:219:1: scale : SCALE ID expr -> ^( ANIMATION SCALE ID expr ) ;
     public final AslParser.scale_return scale() throws RecognitionException {
         AslParser.scale_return retval = new AslParser.scale_return();
         retval.start = input.LT(1);
@@ -5648,8 +5648,8 @@ public TreeAdaptor getTreeAdaptor() {
         RewriteRuleTokenStream stream_ID=new RewriteRuleTokenStream(adaptor,"token ID");
         RewriteRuleSubtreeStream stream_expr=new RewriteRuleSubtreeStream(adaptor,"rule expr");
         try {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:219:6: ( SCALE ID expr -> ^( ANIMATION SCALE ID expr ) )
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:219:8: SCALE ID expr
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:219:6: ( SCALE ID expr -> ^( ANIMATION SCALE ID expr ) )
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:219:8: SCALE ID expr
             {
             SCALE183=(Token)match(input,SCALE,FOLLOW_SCALE_in_scale1237);  
             stream_SCALE.add(SCALE183);
@@ -5667,7 +5667,7 @@ public TreeAdaptor getTreeAdaptor() {
             stream_expr.add(expr185.getTree());
 
             // AST REWRITE
-            // elements: ID, expr, SCALE
+            // elements: expr, ID, SCALE
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -5679,7 +5679,7 @@ public TreeAdaptor getTreeAdaptor() {
             root_0 = (AslTree)adaptor.nil();
             // 219:22: -> ^( ANIMATION SCALE ID expr )
             {
-                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:219:25: ^( ANIMATION SCALE ID expr )
+                // /home/carlos/CL/Practica-CL/src/parser/Asl.g:219:25: ^( ANIMATION SCALE ID expr )
                 {
                 AslTree root_1 = (AslTree)adaptor.nil();
                 root_1 = (AslTree)adaptor.becomeRoot(
@@ -5735,7 +5735,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "source"
-    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:223:1: source : SOURCE ^ FILE '(' ! ( expr ( ',' ! expr )* )? ')' !;
+    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:223:1: source : SOURCE ^ FILE '(' ! ( expr ( ',' ! expr )* )? ')' !;
     public final AslParser.source_return source() throws RecognitionException {
         AslParser.source_return retval = new AslParser.source_return();
         retval.start = input.LT(1);
@@ -5760,8 +5760,8 @@ public TreeAdaptor getTreeAdaptor() {
         AslTree char_literal192_tree=null;
 
         try {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:223:7: ( SOURCE ^ FILE '(' ! ( expr ( ',' ! expr )* )? ')' !)
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:223:9: SOURCE ^ FILE '(' ! ( expr ( ',' ! expr )* )? ')' !
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:223:7: ( SOURCE ^ FILE '(' ! ( expr ( ',' ! expr )* )? ')' !)
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:223:9: SOURCE ^ FILE '(' ! ( expr ( ',' ! expr )* )? ')' !
             {
             root_0 = (AslTree)adaptor.nil();
 
@@ -5782,7 +5782,7 @@ public TreeAdaptor getTreeAdaptor() {
 
             char_literal188=(Token)match(input,75,FOLLOW_75_in_source1267); 
 
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:223:27: ( expr ( ',' ! expr )* )?
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:223:27: ( expr ( ',' ! expr )* )?
             int alt37=2;
             int LA37_0 = input.LA(1);
 
@@ -5791,7 +5791,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt37) {
                 case 1 :
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:223:28: expr ( ',' ! expr )*
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:223:28: expr ( ',' ! expr )*
                     {
                     pushFollow(FOLLOW_expr_in_source1271);
                     expr189=expr();
@@ -5800,7 +5800,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                     adaptor.addChild(root_0, expr189.getTree());
 
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:223:33: ( ',' ! expr )*
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:223:33: ( ',' ! expr )*
                     loop36:
                     do {
                         int alt36=2;
@@ -5813,7 +5813,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                         switch (alt36) {
                     	case 1 :
-                    	    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:223:34: ',' ! expr
+                    	    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:223:34: ',' ! expr
                     	    {
                     	    char_literal190=(Token)match(input,77,FOLLOW_77_in_source1274); 
 
@@ -5872,7 +5872,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "list_attributes"
-    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:225:1: list_attributes : attribute ( ',' ! attribute )* ;
+    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:225:1: list_attributes : attribute ( ',' ! attribute )* ;
     public final AslParser.list_attributes_return list_attributes() throws RecognitionException {
         AslParser.list_attributes_return retval = new AslParser.list_attributes_return();
         retval.start = input.LT(1);
@@ -5889,8 +5889,8 @@ public TreeAdaptor getTreeAdaptor() {
         AslTree char_literal194_tree=null;
 
         try {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:225:16: ( attribute ( ',' ! attribute )* )
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:225:18: attribute ( ',' ! attribute )*
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:225:16: ( attribute ( ',' ! attribute )* )
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:225:18: attribute ( ',' ! attribute )*
             {
             root_0 = (AslTree)adaptor.nil();
 
@@ -5902,7 +5902,7 @@ public TreeAdaptor getTreeAdaptor() {
 
             adaptor.addChild(root_0, attribute193.getTree());
 
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:225:28: ( ',' ! attribute )*
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:225:28: ( ',' ! attribute )*
             loop38:
             do {
                 int alt38=2;
@@ -5915,7 +5915,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt38) {
             	case 1 :
-            	    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:225:29: ',' ! attribute
+            	    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:225:29: ',' ! attribute
             	    {
             	    char_literal194=(Token)match(input,77,FOLLOW_77_in_list_attributes1295); 
 
@@ -5966,7 +5966,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "attribute"
-    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:227:1: attribute : ATTRIBUTE ^ EQUAL ! expr ;
+    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:227:1: attribute : ATTRIBUTE ^ EQUAL ! expr ;
     public final AslParser.attribute_return attribute() throws RecognitionException {
         AslParser.attribute_return retval = new AslParser.attribute_return();
         retval.start = input.LT(1);
@@ -5983,8 +5983,8 @@ public TreeAdaptor getTreeAdaptor() {
         AslTree EQUAL197_tree=null;
 
         try {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:227:10: ( ATTRIBUTE ^ EQUAL ! expr )
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:227:12: ATTRIBUTE ^ EQUAL ! expr
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:227:10: ( ATTRIBUTE ^ EQUAL ! expr )
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:227:12: ATTRIBUTE ^ EQUAL ! expr
             {
             root_0 = (AslTree)adaptor.nil();
 
@@ -6036,7 +6036,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "coordenades"
-    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:229:1: coordenades : '{' ! expr ',' ! expr ( ',' ! expr ',' ! expr )? '}' !;
+    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:229:1: coordenades : '{' ! expr ',' ! expr ( ',' ! expr ',' ! expr )? '}' !;
     public final AslParser.coordenades_return coordenades() throws RecognitionException {
         AslParser.coordenades_return retval = new AslParser.coordenades_return();
         retval.start = input.LT(1);
@@ -6065,8 +6065,8 @@ public TreeAdaptor getTreeAdaptor() {
         AslTree char_literal207_tree=null;
 
         try {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:229:12: ( '{' ! expr ',' ! expr ( ',' ! expr ',' ! expr )? '}' !)
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:229:14: '{' ! expr ',' ! expr ( ',' ! expr ',' ! expr )? '}' !
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:229:12: ( '{' ! expr ',' ! expr ( ',' ! expr ',' ! expr )? '}' !)
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:229:14: '{' ! expr ',' ! expr ( ',' ! expr ',' ! expr )? '}' !
             {
             root_0 = (AslTree)adaptor.nil();
 
@@ -6089,7 +6089,7 @@ public TreeAdaptor getTreeAdaptor() {
 
             adaptor.addChild(root_0, expr202.getTree());
 
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:229:34: ( ',' ! expr ',' ! expr )?
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:229:34: ( ',' ! expr ',' ! expr )?
             int alt39=2;
             int LA39_0 = input.LA(1);
 
@@ -6098,7 +6098,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt39) {
                 case 1 :
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:229:36: ',' ! expr ',' ! expr
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:229:36: ',' ! expr ',' ! expr
                     {
                     char_literal203=(Token)match(input,77,FOLLOW_77_in_coordenades1332); 
 
@@ -6157,7 +6157,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "radis"
-    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:231:1: radis : '(' ! expr ( ')' !| radi2 ) ;
+    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:231:1: radis : '(' ! expr ( ')' !| radi2 ) ;
     public final AslParser.radis_return radis() throws RecognitionException {
         AslParser.radis_return retval = new AslParser.radis_return();
         retval.start = input.LT(1);
@@ -6176,8 +6176,8 @@ public TreeAdaptor getTreeAdaptor() {
         AslTree char_literal210_tree=null;
 
         try {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:231:6: ( '(' ! expr ( ')' !| radi2 ) )
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:231:8: '(' ! expr ( ')' !| radi2 )
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:231:6: ( '(' ! expr ( ')' !| radi2 ) )
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:231:8: '(' ! expr ( ')' !| radi2 )
             {
             root_0 = (AslTree)adaptor.nil();
 
@@ -6191,7 +6191,7 @@ public TreeAdaptor getTreeAdaptor() {
 
             adaptor.addChild(root_0, expr209.getTree());
 
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:231:18: ( ')' !| radi2 )
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:231:18: ( ')' !| radi2 )
             int alt40=2;
             int LA40_0 = input.LA(1);
 
@@ -6210,14 +6210,14 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt40) {
                 case 1 :
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:231:19: ')' !
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:231:19: ')' !
                     {
                     char_literal210=(Token)match(input,76,FOLLOW_76_in_radis1358); 
 
                     }
                     break;
                 case 2 :
-                    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:231:26: radi2
+                    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:231:26: radi2
                     {
                     pushFollow(FOLLOW_radi2_in_radis1363);
                     radi2211=radi2();
@@ -6263,7 +6263,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "radi2"
-    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:233:1: radi2 : ',' ! expr ')' !;
+    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:233:1: radi2 : ',' ! expr ')' !;
     public final AslParser.radi2_return radi2() throws RecognitionException {
         AslParser.radi2_return retval = new AslParser.radi2_return();
         retval.start = input.LT(1);
@@ -6280,8 +6280,8 @@ public TreeAdaptor getTreeAdaptor() {
         AslTree char_literal214_tree=null;
 
         try {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:233:6: ( ',' ! expr ')' !)
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:233:8: ',' ! expr ')' !
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:233:6: ( ',' ! expr ')' !)
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:233:8: ',' ! expr ')' !
             {
             root_0 = (AslTree)adaptor.nil();
 
@@ -6328,7 +6328,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "acces_attribute"
-    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:235:1: acces_attribute : ID '.' att '(' ')' -> ^( ACCESATTRIBUTE ID att ) ;
+    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:235:1: acces_attribute : ID '.' att '(' ')' -> ^( ACCESATTRIBUTE ID att ) ;
     public final AslParser.acces_attribute_return acces_attribute() throws RecognitionException {
         AslParser.acces_attribute_return retval = new AslParser.acces_attribute_return();
         retval.start = input.LT(1);
@@ -6353,8 +6353,8 @@ public TreeAdaptor getTreeAdaptor() {
         RewriteRuleTokenStream stream_76=new RewriteRuleTokenStream(adaptor,"token 76");
         RewriteRuleSubtreeStream stream_att=new RewriteRuleSubtreeStream(adaptor,"rule att");
         try {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:235:16: ( ID '.' att '(' ')' -> ^( ACCESATTRIBUTE ID att ) )
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:235:18: ID '.' att '(' ')'
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:235:16: ( ID '.' att '(' ')' -> ^( ACCESATTRIBUTE ID att ) )
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:235:18: ID '.' att '(' ')'
             {
             ID215=(Token)match(input,ID,FOLLOW_ID_in_acces_attribute1384);  
             stream_ID.add(ID215);
@@ -6392,7 +6392,7 @@ public TreeAdaptor getTreeAdaptor() {
             root_0 = (AslTree)adaptor.nil();
             // 235:37: -> ^( ACCESATTRIBUTE ID att )
             {
-                // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:235:40: ^( ACCESATTRIBUTE ID att )
+                // /home/carlos/CL/Practica-CL/src/parser/Asl.g:235:40: ^( ACCESATTRIBUTE ID att )
                 {
                 AslTree root_1 = (AslTree)adaptor.nil();
                 root_1 = (AslTree)adaptor.becomeRoot(
@@ -6444,7 +6444,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "att"
-    // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:238:1: att : ( ATTRIBUTE | BEGIN | END | DURATION );
+    // /home/carlos/CL/Practica-CL/src/parser/Asl.g:238:1: att : ( ATTRIBUTE | BEGIN | END | DURATION );
     public final AslParser.att_return att() throws RecognitionException {
         AslParser.att_return retval = new AslParser.att_return();
         retval.start = input.LT(1);
@@ -6457,8 +6457,8 @@ public TreeAdaptor getTreeAdaptor() {
         AslTree set220_tree=null;
 
         try {
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:238:4: ( ATTRIBUTE | BEGIN | END | DURATION )
-            // /home/guillem/Dropbox/FIB/Quadri8/CL/SimpleAnimator/Practica-CL/src/parser/Asl.g:
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:238:4: ( ATTRIBUTE | BEGIN | END | DURATION )
+            // /home/carlos/CL/Practica-CL/src/parser/Asl.g:
             {
             root_0 = (AslTree)adaptor.nil();
 

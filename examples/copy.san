@@ -1,0 +1,4 @@
+func main()
+	x = Create Rectangle {50,70} width=40,height=200;
+	y = x;
+endfunc

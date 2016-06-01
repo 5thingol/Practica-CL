@@ -110,6 +110,13 @@ public class Stack {
         return v;
     }
 
+    public boolean isObject(String name) {
+        Data v = CurrentAR.get(name);
+        if (v == null) return false;
+        if(v.isObject()) return true;
+        return false;
+    }
+
     /**
      * Generates a string with the contents of the stack trace.
      * Each line contains a function name and the line number where

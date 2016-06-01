@@ -126,7 +126,29 @@ public class Data {
     }
 
     /** Copy constructor */
-    Data(Data d) { type = d.type; value = d.value; }
+    Data(Data d) {
+        type = d.type;
+        value = d.value; 
+        tipus = d.tipus;
+        x = d.x;
+        y = d.y;
+        width = d.width;
+        height = d.height;
+        radix = d.radix;
+        radiy = d.radiy;
+        fill = d.fill;
+        group = d.group;
+        stroke = d.stroke;
+        strokeWidth = d.strokeWidth;
+        text = d.text;
+        begin = d.begin;
+        end = d.end;
+        idObject = d.idObject;
+        attribute = d.attribute;
+        from = d.from;
+        to = d.to;
+        rotation = d.rotation;
+    }
 
     /** Returns the type of data */
     public Type getType() { return type; }
