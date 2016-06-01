@@ -158,7 +158,7 @@ public class Asl{
                 String moduleFile = importedT.getChild(i).getText();
                 if (moduleFile.contains("\"")) moduleFile = moduleFile.split("\"")[1];
                 
-                AslTree moduleTree = getFileTree(moduleFile);
+                AslTree moduleTree = getFileTree("modules/"+moduleFile);
 
                 List<AslTree> defs = moduleTree.getChild(2).getChildren();
                 if (defs != null) t.getChild(importsIndex+1).addChildren(defs);
@@ -173,7 +173,7 @@ public class Asl{
     public static AslTree getFileTree(String fileName) {
         CharStream input = null;
         try {
-            input = new ANTLRFileStream("modules/" + fileName);
+            input = new ANTLRFileStream(fileName);
         } catch (IOException e) {
             System.err.println ("Error: file " + fileName + " could not be opened.");
             System.exit(1);

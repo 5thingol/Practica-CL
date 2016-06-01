@@ -426,7 +426,7 @@ public class Interp {
             case AslLexer.SOURCE:
                 String file = t.getChild(0).getText();
                 if (file.contains("\"")) file = file.split("\"")[1];
-                AslTree tree = Asl.getFileTree(file);
+                AslTree tree = Asl.getFileTree("examples/"+file);
                 if (tree.getChild(0).getType() == AslLexer.MODULE) {
                     throw new RuntimeException("A module file cannot be sourced. Use its functions by importing it.");
                 } else {

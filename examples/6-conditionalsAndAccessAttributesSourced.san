@@ -1,8 +1,7 @@
-func main()
+func main(x,y)
 
 	// Accedeix a diversos atributs amb condicionals
-	x = 200;
-	y = 100;
+
 	if (x > 300)
 		x = 300;
 	else

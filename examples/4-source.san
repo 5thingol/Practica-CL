@@ -4,5 +4,5 @@ func main()
 
 	Source "1-create.san" ();
 
-	Source "6-conditionalsAndAccessAttributes.san" (400,300);
+	Source "6-conditionalsAndAccessAttributesSourced.san" (400,300);
 endfunc
